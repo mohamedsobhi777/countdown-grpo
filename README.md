@@ -5,10 +5,79 @@ using [`Jiayi-Pan/Countdown-Tasks-3to4`](https://huggingface.co/datasets/Jiayi-P
 No supervised fine-tuning stage. Designed for one NVIDIA GPU with 16 GB VRAM,
 using BF16 LoRA and Hugging Face TRL's GRPO trainer.
 
-CPU unit tests cover reward verification, data splits, and configuration. Actual
-training metrics and evaluation results are recorded in the
-[W&B workspace](https://wandb.ai/mohamedsobhi777/countdown-grpo/workspace).
-Earlier runtime estimates were planning estimates, not measurements.
+## Results
+
+One 300-step run improved greedy exact-solve accuracy from **0/256 to 85/256
+(33.2%)** on the same held-out Countdown puzzles, with no SFT or formatting bonus.
+Training took **85.6 minutes** on an **RTX 4090 Laptop GPU (16 GB VRAM)**.
+
+| Held-out metric | Base model | After GRPO |
+| --- | ---: | ---: |
+| Exact solutions | 0 / 256 (0.0%) | **85 / 256 (33.2%)** |
+| Valid expressions using all input numbers | 11 / 256 (4.3%) | **90 / 256 (35.2%)** |
+
+![Training reward and held-out exact-solve accuracy](results/2026-09-14/learning-curve.png)
+
+Training used seed 42, BF16 LoRA rank 16, eight sampled answers per puzzle,
+32 completions per optimizer step, and a 256-token completion limit. Both
+evaluations used greedy decoding with that same limit. The first positive
+training reward appeared at step 31. Peak **PyTorch-allocated** GPU memory was
+2.72 GiB; this excludes reserved memory and other GPU allocations.
+
+### Logs, artifacts, and reproducibility
+
+- **[W&B training run and learning curves](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/uv3hjjih)**
+- [Baseline evaluation and completions](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/qu1ovu2z)
+- [Final evaluation and completions](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/1qrixzrf)
+- [Final LoRA adapter artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/uv3hjjih-adapter/v0)
+- [Training artifacts: source snapshot, puzzle splits, checkpoints, and results](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/uv3hjjih/artifacts)
+- [Complete W&B workspace](https://wandb.ai/mohamedsobhi777/countdown-grpo/workspace)
+- [Experiment report and raw results in this repository](results/2026-09-14/README.md)
+- [Exact training-code commit](https://github.com/mohamedsobhi777/countdown-grpo/tree/0a432a272591f7683b711a9c867c01e7d939fca1)
+
+The raw evaluation reports and per-step metrics are also committed here so the
+results can be inspected without W&B access. Model weights remain in W&B artifacts.
+The experiment used a clean working tree and pinned model/dataset revisions;
+configuration and package versions are recorded in the run.
+
+### Example from the held-out set
+
+Numbers: `[67, 54, 98, 19]`; target: `66`. These are the actual model outputs:
+
+**Before:**
+
+```text
+(67 - 54) * (98 / 19) = 66
+```
+
+**After:**
+
+```text
+(98 - 67) = 31
+31 + 54 = 85
+85 - 19 = 66
+
+<answer>(98-67)+54-19</answer>
+```
+
+The baseline expression is mathematically incorrect and lacks the required answer
+block. The trained model's expression evaluates exactly to 66 and uses every input
+number once. This example is selected to illustrate a success; the aggregate
+score above includes all 256 puzzles, and the raw reports include failures.
+
+### Limitations
+
+This is one seed on 256 held-out puzzles, not evidence of general reasoning
+improvement. Exact-solve scoring requires the specified answer format, so the
+improvement reflects both formatting and arithmetic task performance. The split
+excludes duplicate/permuted puzzles from training, but cannot rule out exposure
+during the base model's pretraining. About **59.9% of completions in the final 30
+training steps** hit the 256-token cap. A longer-output evaluation and additional
+training seeds are useful next experiments; neither has been run for this report.
+
+CPU unit tests cover reward verification, data splits, and configuration. The
+archived reports have also been re-scored with the verifier, checked for identical
+evaluation puzzles, and checked for overlap with the selected training puzzles.
 
 ## Setup
 
@@ -34,7 +103,7 @@ uv run countdown-grpo config
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
-## Run later
+## Run the experiment
 
 Run the complete baseline → 300-step training → final evaluation sequence with
 W&B logging (requires a local `wandb login`):
@@ -101,8 +170,8 @@ uv run --extra train countdown-grpo evaluate \
 Compare `solve_rate` and `valid_rate` in the two reports and inspect their saved
 completions. This measures greedy exact-solve accuracy, not pass@8. Keep the same
 config, seed, dataset revision, and completion limit for a meaningful comparison.
-The report refuses to overwrite an existing file. Training does not automatically
-run evaluation; the commands above make its cost explicit.
+The report refuses to overwrite an existing file. The standalone `train` command
+does not run evaluation; `scripts/run_experiment.py` runs both evaluations automatically.
 
 ## Reward and split
 

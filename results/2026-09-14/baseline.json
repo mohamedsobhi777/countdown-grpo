@@ -1,0 +1,2979 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3.5-0.8B-Base",
+    "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+    "dataset": "Jiayi-Pan/Countdown-Tasks-3to4",
+    "dataset_revision": "408f70d177020686d34a56bba5952feb45aaaee4",
+    "output_dir": "outputs/countdown",
+    "seed": 42,
+    "eval_fraction": 0.02,
+    "eval_samples": 256,
+    "train_samples": 20000,
+    "max_steps": 300,
+    "max_completion_length": 256,
+    "num_generations": 8,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 32,
+    "learning_rate": 1e-05,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "save_steps": 50,
+    "format_reward": 0.0
+  },
+  "adapter": null,
+  "decoding": "greedy",
+  "samples": 256,
+  "solve_rate": 0.0,
+  "valid_rate": 0.04296875,
+  "results": [
+    {
+      "target": 81,
+      "nums": [
+        2,
+        4,
+        55,
+        25
+      ],
+      "completion": "(25 - 2) * (55 + 4) = 81\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 58,
+      "nums": [
+        22,
+        2,
+        78,
+        57
+      ],
+      "completion": "(22 - 2) * (78 - 57) = 20 * 21 = 420\n\n<answer>420</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 66,
+      "nums": [
+        67,
+        54,
+        98,
+        19
+      ],
+      "completion": "(67 - 54) * (98 / 19) = 66\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 75,
+      "nums": [
+        1,
+        26,
+        51,
+        17
+      ],
+      "completion": "(17 + 51) * (1 + 26) = 68 * 27 = 1836\n\n<answer>(17 + 51) * (1 + 26)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 45,
+      "nums": [
+        9,
+        31,
+        67
+      ],
+      "completion": "(9 + 31) * (67 / 9) = 45\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 77,
+      "nums": [
+        1,
+        30,
+        79,
+        60
+      ],
+      "completion": "(79 - 60) * (1 + 30 / 1) = 77\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 55,
+      "nums": [
+        27,
+        83,
+        5,
+        5
+      ],
+      "completion": "(27 - 5) * (5 + 83) = 22 * 88 = 1936\n\n<answer>1936</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 46,
+      "nums": [
+        65,
+        20,
+        41,
+        42
+      ],
+      "completion": "(65 - 41) * (42 / 20) = 24 * 2.1 = 50.4\n\n<answer>(65 - 41) * (42 / 20)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        42,
+        40,
+        12,
+        29
+      ],
+      "completion": "(42 + 40) * (12 - 29) / 42 = 82\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 59,
+      "nums": [
+        65,
+        9,
+        53,
+        11
+      ],
+      "completion": "(65 - 53) * (9 + 11) = 12 * 20 = 240\n\n<answer>240</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 89,
+      "nums": [
+        70,
+        40,
+        20,
+        17
+      ],
+      "completion": "(70 - 40) * (20 + 17) = 30 * 37 = 1110\n\n<answer>1110</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 50,
+      "nums": [
+        26,
+        96,
+        4
+      ],
+      "completion": "(26 + 4) * (96 / 2) = 50\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 50,
+      "nums": [
+        8,
+        8,
+        34
+      ],
+      "completion": "(8 + 8) * (34 - 8) = 50\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 10,
+      "nums": [
+        13,
+        88,
+        6
+      ],
+      "completion": "(13 - 88 / 6) * 1 = 10\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        67,
+        65,
+        41
+      ],
+      "completion": "(67 - 65) * (41 / 67) = 2 * 0.6132075471698113 = 1.2264150943396226\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 33,
+      "nums": [
+        92,
+        95,
+        99
+      ],
+      "completion": "(92 + 95) * (99 - 92) = 33\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 32,
+      "nums": [
+        92,
+        28,
+        43,
+        53
+      ],
+      "completion": "(92 - 28) * (43 + 53) = 32\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 56,
+      "nums": [
+        10,
+        4,
+        16
+      ],
+      "completion": "(10 + 4) * (16 - 10) = 56\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        55,
+        75,
+        46,
+        16
+      ],
+      "completion": "(55 - 46) * (75 / 16) = 9 * 4.6875 = 42.1875\n\n<answer>(55 - 46) * (75 / 16)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 98,
+      "nums": [
+        47,
+        16,
+        4,
+        14
+      ],
+      "completion": "(47 - 16) * (4 + 14) = 98\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 22,
+      "nums": [
+        73,
+        19,
+        47,
+        15
+      ],
+      "completion": "(73 - 19) * (47 + 15) = 22\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 24,
+      "nums": [
+        25,
+        91,
+        90
+      ],
+      "completion": "(25 - 91) / 90 + 25 = -66 / 90 + 25 = -7/10 + 25 = 24.3\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 42,
+      "nums": [
+        43,
+        24,
+        61
+      ],
+      "completion": "(43 - 24) * (61 / 43) = 42\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 100,
+      "nums": [
+        26,
+        21,
+        20
+      ],
+      "completion": "(26 - 21) * (20 / 26) = 100\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 98,
+      "nums": [
+        14,
+        29,
+        36
+      ],
+      "completion": "(14 + 29) * (36 / 14) = 98\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 54,
+      "nums": [
+        69,
+        11,
+        26
+      ],
+      "completion": "(69 - 11) * (26 / 69) = 54\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 40,
+      "nums": [
+        46,
+        29,
+        10,
+        47
+      ],
+      "completion": "(46 + 29) * (47 - 10) = 75\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 74,
+      "nums": [
+        19,
+        17,
+        76
+      ],
+      "completion": "(19 - 17) * (76 / 19) = 2 * 4 = 8\n\n<answer>(19 - 17) * (76 / 19)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 35,
+      "nums": [
+        65,
+        79,
+        49
+      ],
+      "completion": "(65 - 49) * (79 / 65) = 16 * 1.2153846153846154 = 19.446153846153846\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 64,
+      "nums": [
+        10,
+        81,
+        7
+      ],
+      "completion": "(10 + 81) * (7 - 10 / 81) = 64\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 29,
+      "nums": [
+        60,
+        58,
+        14,
+        48
+      ],
+      "completion": "(60 - 58) * (14 + 48) = 2 * 62 = 124\n\n<answer>124</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 66,
+      "nums": [
+        13,
+        25,
+        44,
+        11
+      ],
+      "completion": "(13 + 25) * (44 - 11) = 66\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 36,
+      "nums": [
+        96,
+        7,
+        44,
+        56
+      ],
+      "completion": "(96 - 44) * (56 / 7) = 36\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 55,
+      "nums": [
+        62,
+        87,
+        30
+      ],
+      "completion": "(62 + 87) * (30 / 62) = 149 * 0.4838709677419355 = 72.25\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 49,
+      "nums": [
+        26,
+        38,
+        37
+      ],
+      "completion": "(26 + 38) * (37 - 26) = 64 * 11 = 704\n\n<answer>(26 + 38) * (37 - 26)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 42,
+      "nums": [
+        48,
+        30,
+        60
+      ],
+      "completion": "(48 - 30) * (60 / 48) = 18 * 1.25 = 22.5\n\n<answer>(48 - 30) * (60 / 48)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 33,
+      "nums": [
+        15,
+        18,
+        99
+      ],
+      "completion": "(15 + 18) * (99 / 15) = 33\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 16,
+      "nums": [
+        2,
+        78,
+        86,
+        81
+      ],
+      "completion": "(86 - 78) * (81 - 2) = 8 * 79 = 632\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 79,
+      "nums": [
+        75,
+        10,
+        63,
+        23
+      ],
+      "completion": "(75 - 23) * (10 + 63) = 79\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        2,
+        94,
+        27
+      ],
+      "completion": "(27 - 2) * (94 / 2) = 69\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 83,
+      "nums": [
+        32,
+        86,
+        60,
+        77
+      ],
+      "completion": "(32 + 86) * (60 - 77) = 118 * (-17) = -2006\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 57,
+      "nums": [
+        7,
+        46,
+        18
+      ],
+      "completion": "(7 + 46) * (18 / 7) = 53 * 2.5714285714285714 = 136.30612244897958\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 67,
+      "nums": [
+        64,
+        66,
+        64
+      ],
+      "completion": "(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n(64 + 64)",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 28,
+      "nums": [
+        11,
+        23,
+        29,
+        35
+      ],
+      "completion": "(23 + 35) / (11 - 29) = 58 / -18 = -31/9 \u2248 -3.444...\n\n<answer>\n(23 + 35) / (11 - 29)\n</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 31,
+      "nums": [
+        90,
+        22,
+        69,
+        59
+      ],
+      "completion": "(90 - 22) * (69 + 59) = 31\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 75,
+      "nums": [
+        37,
+        98,
+        71,
+        11
+      ],
+      "completion": "(37 + 98) * (71 - 11) = 135\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 41,
+      "nums": [
+        47,
+        48,
+        41
+      ],
+      "completion": "(47 - 48) * 41 = -1 * 41 = -41\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 98,
+      "nums": [
+        46,
+        67,
+        77
+      ],
+      "completion": "(46 + 67) * (77 - 46) = 113 * 31 = 3503, which is not 98.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (7",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 43,
+      "nums": [
+        56,
+        41,
+        28
+      ],
+      "completion": "(56 - 41) * (28 / 56) = 15 * 0.5 = 7.5\n\n<answer>(56 - 41) * (28 / 56)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 48,
+      "nums": [
+        23,
+        38,
+        88,
+        46
+      ],
+      "completion": "(23 + 38) * (88 - 46) = 48\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 61,
+      "nums": [
+        33,
+        52,
+        80
+      ],
+      "completion": "(33 + 52) * (80 / 33) = 61\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 97,
+      "nums": [
+        85,
+        43,
+        26,
+        36
+      ],
+      "completion": "(85 - 43) * (26 + 36) = 97\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 85,
+      "nums": [
+        99,
+        33,
+        47
+      ],
+      "completion": "(99 - 33) * (47 / 99) = 85\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 64,
+      "nums": [
+        16,
+        24,
+        72
+      ],
+      "completion": "(16 + 24) * (72 / 16) = 64\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 23,
+      "nums": [
+        10,
+        82,
+        69
+      ],
+      "completion": "(10 + 82) * (69 / 10) = 92 * 6.9 = 638.8\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 87,
+      "nums": [
+        12,
+        94,
+        71,
+        98
+      ],
+      "completion": "(98 - 71) * (12 + 94) / 98 = 87\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 28,
+      "nums": [
+        17,
+        96,
+        91,
+        17
+      ],
+      "completion": "(17 + 96) * (91 - 17) = 113 * 74 = 8382\n\n<answer>(17 + 96) * (91 - 17)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 100,
+      "nums": [
+        41,
+        91,
+        88,
+        44
+      ],
+      "completion": "(41 + 91) * (88 - 44) = 132 * 44 = 5808\n\n<answer>5808</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 38,
+      "nums": [
+        7,
+        40,
+        63,
+        22
+      ],
+      "completion": "(7 + 40) * (63 - 22) = 38\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 37,
+      "nums": [
+        15,
+        25,
+        3
+      ],
+      "completion": "(15 + 25) * (3 / 15) = 40 * 0.2 = 8\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 30,
+      "nums": [
+        75,
+        47,
+        92
+      ],
+      "completion": "(75 - 47) * (92 / 75) = 30\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        57,
+        49,
+        36,
+        52
+      ],
+      "completion": "(57 - 49) * (36 + 52) = 8 * 88 = 704\n\n<answer>704</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        5,
+        80,
+        7
+      ],
+      "completion": "(5 + 80) * (7 - 5) = 82\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 90,
+      "nums": [
+        19,
+        99,
+        10
+      ],
+      "completion": "(19 + 99) * (10 / 19) = 90\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 38,
+      "nums": [
+        33,
+        19,
+        38,
+        62
+      ],
+      "completion": "(33 + 19) * (38 - 62) = 52 * (-24) = -1248\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 100,
+      "nums": [
+        35,
+        85,
+        19,
+        69
+      ],
+      "completion": "(35 + 85) * (19 - 69) / 35 = 100\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 79,
+      "nums": [
+        69,
+        8,
+        80
+      ],
+      "completion": "(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 6",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 91,
+      "nums": [
+        54,
+        3,
+        71
+      ],
+      "completion": "(54 + 3) * (71 - 54) = 91\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 56,
+      "nums": [
+        12,
+        16,
+        42
+      ],
+      "completion": "(12 + 42) * (16 / 12) = 56\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 83,
+      "nums": [
+        80,
+        92,
+        95
+      ],
+      "completion": "(92 - 80) * (95 / 80) = 12 * 1.1875 = 14.25\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 60,
+      "nums": [
+        12,
+        47,
+        25
+      ],
+      "completion": "(12 + 47) * (25 - 12) = 60\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 24,
+      "nums": [
+        91,
+        4,
+        29,
+        92
+      ],
+      "completion": "(91 - 4) * (29 + 92) / 91 = 24\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 94,
+      "nums": [
+        8,
+        82,
+        15,
+        50
+      ],
+      "completion": "(82 - 8) * (15 + 50) = 94\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 15,
+      "nums": [
+        12,
+        36,
+        33
+      ],
+      "completion": "(12 + 36) / (33 - 12) = 48 / 21 = 16/7 \u2248 2.2857, which is not 15.\n\n(12 * 36) / (33 - 12) = 432 / 21 = 144/7 \u2248 20.5714, not 15.\n\n(12 + 36) * (33 - 12) = 48 * 21 = 1008, not 15.\n\n(12 * 36) / (33 - 12) = 432 / 21 = 144/7 \u2248 20.5714.\n\n(12 + 36) / (33 - 12) = 48 / 21 = 16/7 \u2248 2.2857.\n\n(12 * 36) / (33 - 12) = 432 / 21 = 144/7 \u2248 2",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 96,
+      "nums": [
+        9,
+        23,
+        82
+      ],
+      "completion": "(9 + 23) * (82 / 9) = 96\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 99,
+      "nums": [
+        57,
+        27,
+        69
+      ],
+      "completion": "(57 - 27) * (69 / 57) = 30 * 1.207047 = 36.21141\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 39,
+      "nums": [
+        28,
+        4,
+        6,
+        79
+      ],
+      "completion": "(28 + 4) * (79 - 6) = 32 * 73 = 2336\n\n<answer>(28 + 4) * (79 - 6)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 10,
+      "nums": [
+        5,
+        71,
+        22,
+        89
+      ],
+      "completion": "(5 + 71) * (22 / 89) = 10\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 56,
+      "nums": [
+        52,
+        89,
+        93
+      ],
+      "completion": "(52 + 89) * (93 / 52) = 56\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 42,
+      "nums": [
+        76,
+        84,
+        34
+      ],
+      "completion": "(76 - 84) * (34 / 76) = -16 * 0.4473684210526315 = -7.157894736842105\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 32,
+      "nums": [
+        24,
+        91,
+        35
+      ],
+      "completion": "(24 + 91) * (35 / 24) = 115 * 1.4583333333333333 = 168.33333333333333\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 46,
+      "nums": [
+        76,
+        87,
+        35
+      ],
+      "completion": "(76 - 87) * (35 / 76) = -11 * 0.4578947368421053 = -5.036842105263157\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 89,
+      "nums": [
+        87,
+        12,
+        78,
+        9
+      ],
+      "completion": "(87 - 12) * (78 + 9) = 89\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        20,
+        31,
+        11,
+        70
+      ],
+      "completion": "(20 + 31) * (11 - 70 / 20) = 69\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 43,
+      "nums": [
+        3,
+        62,
+        57
+      ],
+      "completion": "(3 + 62) * (57 - 3) = 43\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 10,
+      "nums": [
+        49,
+        11,
+        49
+      ],
+      "completion": "(49 - 11) * (49 / 49) = 38\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 13,
+      "nums": [
+        81,
+        46,
+        22
+      ],
+      "completion": "(81 - 46) * (22 / 81) = 13\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 32,
+      "nums": [
+        17,
+        46,
+        11,
+        14
+      ],
+      "completion": "(17 - 46) * (11 + 14) / 17 = -29 * 25 / 17 = -725 / 17 = -42.64705882352941\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 70,
+      "nums": [
+        8,
+        26,
+        88
+      ],
+      "completion": "(88 - 26) * (8 - 8) = 70\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 26,
+      "nums": [
+        48,
+        40,
+        34
+      ],
+      "completion": "(48 - 34) * (40 / 48) = 14 * (40/48) = 14 * (5/6) = 70/6 = 35/3 \u2248 11.666...\n\nBut the problem asks for exactly 26. Let's try a different combination.\n\n(48 - 34) * (40 + 48) = 14 * 88 = 1232. Too big.\n\n(48 - 34) * (40 - 48) = 14 * (-8) = -112. Too small.\n\n(48 - 34) * (40 / 48) = 14 * (5/6) = 70/6 = 35/3 \u2248 11.666...\n\n(48 - 34) * (40 / 48) = 14 * (5/6) = 35/3.\n\nLet's try to get 26.\n\n(48 - 34) * (40",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 67,
+      "nums": [
+        61,
+        48,
+        21,
+        29
+      ],
+      "completion": "(61 + 48) * (21 - 29) = 109 * (-8) = -872\n\n<answer>-872</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 61,
+      "nums": [
+        12,
+        97,
+        24
+      ],
+      "completion": "(12 + 97) * (24 / 12) = 109\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 57,
+      "nums": [
+        68,
+        64,
+        80,
+        27
+      ],
+      "completion": "(68 - 64) * (80 / 27) = 4 * 2.962962962962963 = 11.85185185185185\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 89,
+      "nums": [
+        49,
+        46,
+        69,
+        48
+      ],
+      "completion": "(49 - 46) * (48 / 49) = 3 * 0.9795918367346939 = 2.9387755102040817\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 36,
+      "nums": [
+        10,
+        93,
+        98,
+        86
+      ],
+      "completion": "(98 - 10) * (93 + 86) / 93 = 36\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 75,
+      "nums": [
+        94,
+        36,
+        5,
+        60
+      ],
+      "completion": "(94 - 36) * (5 + 60) = 75\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 91,
+      "nums": [
+        97,
+        24,
+        1,
+        18
+      ],
+      "completion": "(97 - 1) * (24 / 18) = 91\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 95,
+      "nums": [
+        8,
+        11,
+        76
+      ],
+      "completion": "(8 + 11) * (76 - 8) = 95\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 22,
+      "nums": [
+        14,
+        11,
+        19
+      ],
+      "completion": "(14 + 11) * (19 - 14) = 22\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 23,
+      "nums": [
+        9,
+        43,
+        1,
+        56
+      ],
+      "completion": "(9 + 43) * (1 - 56 / 9) = 23\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 29,
+      "nums": [
+        73,
+        58,
+        87,
+        59
+      ],
+      "completion": "(73 - 58) * (87 - 59) = 29\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 19,
+      "nums": [
+        50,
+        2,
+        18,
+        49
+      ],
+      "completion": "(50 - 2) * (18 + 49) = 19\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 76,
+      "nums": [
+        54,
+        16,
+        58,
+        35
+      ],
+      "completion": "(54 - 16) * (58 + 35) = 76\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 75,
+      "nums": [
+        61,
+        20,
+        68,
+        2
+      ],
+      "completion": "(61 + 20) * (68 - 2) = 75\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 29,
+      "nums": [
+        22,
+        34,
+        41
+      ],
+      "completion": "(22 + 34) * (41 / 22) = 56 * 1.863636... = 104.363636...\n\n<answer>(22 + 34) * (41 / 22)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 80,
+      "nums": [
+        90,
+        99,
+        88
+      ],
+      "completion": "(90 - 88) * (99 / 90) = 2 * 1.1 = 2.2\n\n<answer>(90 - 88) * (99 / 90)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 50,
+      "nums": [
+        15,
+        67,
+        32
+      ],
+      "completion": "(15 + 67) * (32 / 15) = 50\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 34,
+      "nums": [
+        31,
+        6,
+        3
+      ],
+      "completion": "(31 + 6) * (3 / 1) = 34\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 53,
+      "nums": [
+        34,
+        73,
+        82,
+        3
+      ],
+      "completion": "(34 - 73) * (82 / 3) = -39 * 27.333... = -1066.666...\n\n<answer>(34 - 73) * (82 / 3)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 54,
+      "nums": [
+        13,
+        30,
+        43,
+        54
+      ],
+      "completion": "(13 + 30) * (43 - 54) / 13 = 43\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 39,
+      "nums": [
+        70,
+        97,
+        5,
+        7
+      ],
+      "completion": "(70 - 5) * (7 - 97) = 65 * (-90) = -5850\n\n<answer>-5850</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 35,
+      "nums": [
+        95,
+        41,
+        89
+      ],
+      "completion": "(95 - 41) * (89 / 95) = 35\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 81,
+      "nums": [
+        70,
+        38,
+        37,
+        3
+      ],
+      "completion": "(70 - 38) * (37 + 3) = 32 * 40 = 1280\n\n<answer>1280</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 45,
+      "nums": [
+        81,
+        70,
+        20,
+        76
+      ],
+      "completion": "(81 - 70) * (20 + 76) = 11 * 96 = 1056\n\n<answer>1056</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 73,
+      "nums": [
+        71,
+        18,
+        77,
+        57
+      ],
+      "completion": "(71 + 77) * (57 / 18) = 73\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 97,
+      "nums": [
+        30,
+        61,
+        66
+      ],
+      "completion": "(61 + 30) * (66 - 30) / 61 = 97\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 56,
+      "nums": [
+        58,
+        69,
+        67
+      ],
+      "completion": "(69 - 58) * (67 / 58) = 11 * 1.1585 = 12.74395\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 27,
+      "nums": [
+        49,
+        53,
+        75
+      ],
+      "completion": "(49 + 53) * (75 - 49) = 102 * 26 = 2652\n\n<answer>2652</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 27,
+      "nums": [
+        18,
+        81,
+        68,
+        65
+      ],
+      "completion": "(68 - 18) * (65 - 81) = 27\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 49,
+      "nums": [
+        47,
+        40,
+        54,
+        2
+      ],
+      "completion": "(47 - 40) * (54 / 2) = 49\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 48,
+      "nums": [
+        13,
+        84,
+        49
+      ],
+      "completion": "(13 + 84) * (49 - 13) = 97 * 36 = 3492\n\n<answer>(13 + 84) * (49 - 13)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        83,
+        28,
+        29
+      ],
+      "completion": "(83 - 28) * (29 - 28) = 82\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 63,
+      "nums": [
+        21,
+        40,
+        2,
+        19
+      ],
+      "completion": "(21 + 40) * (2 - 19) / 19 = 63\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 27,
+      "nums": [
+        77,
+        68,
+        51,
+        78
+      ],
+      "completion": "(77 - 68) * (51 + 78) = 9 * 129 = 1161\n\n<answer>1161</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 80,
+      "nums": [
+        41,
+        25,
+        64
+      ],
+      "completion": "(41 + 25) * (64 / 41) = 80\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 49,
+      "nums": [
+        11,
+        69,
+        9
+      ],
+      "completion": "(11 + 69) * (9 / 1) = 80\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 18,
+      "nums": [
+        11,
+        3,
+        4
+      ],
+      "completion": "(11 - 3) * (4 / 1) = 18\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 84,
+      "nums": [
+        39,
+        86,
+        18,
+        75
+      ],
+      "completion": "(39 - 86) * (18 + 75) = -47 * 93 = -4371\n\n<answer>-4371</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 79,
+      "nums": [
+        25,
+        96,
+        42
+      ],
+      "completion": "(25 + 42) * (96 / 25) = 67 * 3.84 = 258.48\n\n<answer>(25 + 42) * (96 / 25)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 30,
+      "nums": [
+        94,
+        44,
+        20
+      ],
+      "completion": "(94 - 44) * (20 / 94) = 30\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        2,
+        90,
+        74
+      ],
+      "completion": "(90 - 2) * (74 + 2) = 82\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 45,
+      "nums": [
+        1,
+        96,
+        27,
+        57
+      ],
+      "completion": "(96 - 27) * (57 / 1) = 69\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 76,
+      "nums": [
+        77,
+        87,
+        90,
+        97
+      ],
+      "completion": "(97 - 77) * (90 / 87) = 76\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 76,
+      "nums": [
+        77,
+        75,
+        76
+      ],
+      "completion": "(77 - 75) * (76 / 76) = 2 * 1 = 2\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 92,
+      "nums": [
+        65,
+        13,
+        14
+      ],
+      "completion": "(65 - 13) * (14 / 65) = 92\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 11,
+      "nums": [
+        18,
+        66,
+        96,
+        55
+      ],
+      "completion": "(18 + 66) * (96 - 55) = 11\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 74,
+      "nums": [
+        3,
+        83,
+        27
+      ],
+      "completion": "(3 + 83) * (27 / 3) = 74\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 28,
+      "nums": [
+        12,
+        3,
+        19
+      ],
+      "completion": "(12 + 3) * (19 - 12) = 28\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 41,
+      "nums": [
+        70,
+        31,
+        98,
+        44
+      ],
+      "completion": "(70 + 31) * (98 - 44) = 101 * 54 = 5454\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 44,
+      "nums": [
+        88,
+        52,
+        39,
+        41
+      ],
+      "completion": "(88 - 52) * (39 + 41) = 44\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 61,
+      "nums": [
+        21,
+        84,
+        57
+      ],
+      "completion": "(21 + 84) * (57 - 21) = 105 * 36 = 3780\n\n<answer>3780</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 38,
+      "nums": [
+        74,
+        18,
+        7,
+        90
+      ],
+      "completion": "(74 - 18) * (7 + 90) = 38\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 93,
+      "nums": [
+        2,
+        69,
+        46,
+        2
+      ],
+      "completion": "(2 + 69) * (46 / 2) = 93\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 13,
+      "nums": [
+        35,
+        20,
+        68
+      ],
+      "completion": "(35 - 20) * (68 / 35) = 13\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 27,
+      "nums": [
+        13,
+        29,
+        26
+      ],
+      "completion": "(29 - 13) * (26 / 29) = 27\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 10,
+      "nums": [
+        6,
+        41,
+        54,
+        79
+      ],
+      "completion": "(6 + 41) * (54 - 79) / 6 = 10\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 89,
+      "nums": [
+        8,
+        41,
+        91,
+        37
+      ],
+      "completion": "(8 + 41) * (91 - 37) = 89\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 19,
+      "nums": [
+        25,
+        51,
+        70,
+        56
+      ],
+      "completion": "(25 + 51) * (70 - 56) = 19\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 72,
+      "nums": [
+        76,
+        9,
+        39,
+        45
+      ],
+      "completion": "(76 - 39) * (45 / 9) = 72\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 17,
+      "nums": [
+        76,
+        48,
+        32,
+        68
+      ],
+      "completion": "(76 - 48) * (32 + 68) = 17\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 28,
+      "nums": [
+        72,
+        55,
+        7,
+        18
+      ],
+      "completion": "(72 - 55) * (7 + 18) = 28\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 96,
+      "nums": [
+        11,
+        61,
+        24
+      ],
+      "completion": "(11 + 61) * (24 / 11) = 96\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 32,
+      "nums": [
+        15,
+        96,
+        45
+      ],
+      "completion": "(15 - 45) / 96 + 15 = -30 / 96 + 15 = -0.3125 + 15 = 14.6875\n\n<answer>14.6875</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 63,
+      "nums": [
+        63,
+        98,
+        99
+      ],
+      "completion": "(99 - 63) * (98 / 63) = 63\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 62,
+      "nums": [
+        52,
+        50,
+        68,
+        73
+      ],
+      "completion": "(52 + 50) * (68 - 73) = 102 * (-5) = -510\n\n<answer>-510</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 34,
+      "nums": [
+        58,
+        12,
+        2
+      ],
+      "completion": "(58 - 12) * 2 = 34\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 83,
+      "nums": [
+        21,
+        67,
+        37
+      ],
+      "completion": "(21 + 67) * (37 - 21) = 88\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 54,
+      "nums": [
+        47,
+        15,
+        66,
+        55
+      ],
+      "completion": "(47 - 15) * (66 - 55) = 32\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 43,
+      "nums": [
+        37,
+        2,
+        1,
+        15
+      ],
+      "completion": "(37 - 2) * (15 / 1) = 35\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        66,
+        57,
+        60
+      ],
+      "completion": "(66 + 57) * (60 / 66) = 69\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 77,
+      "nums": [
+        46,
+        70,
+        53
+      ],
+      "completion": "(46 + 70) * (53 / 46) = 77\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 85,
+      "nums": [
+        20,
+        84,
+        20
+      ],
+      "completion": "(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 +",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 73,
+      "nums": [
+        56,
+        66,
+        77,
+        28
+      ],
+      "completion": "(56 + 66) * (77 - 28) = 122 * 49 = 5978\n\n<answer>5978</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 19,
+      "nums": [
+        61,
+        30,
+        50
+      ],
+      "completion": "(61 + 30) * (50 - 61) = 19\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 57,
+      "nums": [
+        33,
+        39,
+        57,
+        33
+      ],
+      "completion": "(33 + 39) * (33 - 57) / 33 = 57\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        30,
+        83,
+        55,
+        27
+      ],
+      "completion": "(30 + 83) * (55 - 27) = 113\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 42,
+      "nums": [
+        87,
+        96,
+        77,
+        64
+      ],
+      "completion": "(87 - 64) * (96 - 77) = 23 * 19 = 427\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 20,
+      "nums": [
+        35,
+        63,
+        30,
+        34
+      ],
+      "completion": "(35 - 30) * (34 + 63) / 35 = 20\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 27,
+      "nums": [
+        29,
+        2,
+        4,
+        33
+      ],
+      "completion": "(29 - 2) * (33 + 4) / 27 = 27\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 99,
+      "nums": [
+        78,
+        97,
+        80
+      ],
+      "completion": "(78 + 97) * (80 - 78) = 175\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        28,
+        87,
+        3,
+        5
+      ],
+      "completion": "(28 - 3) * (87 + 5) = 25 * 92 = 2300\n\n<answer>2300</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 52,
+      "nums": [
+        75,
+        50,
+        78
+      ],
+      "completion": "(75 - 50) * (78 / 75) = 25 * 1.04 = 26\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 12,
+      "nums": [
+        11,
+        36,
+        33
+      ],
+      "completion": "(11 + 36) * (33 / 11) = 12\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 100,
+      "nums": [
+        4,
+        85,
+        60
+      ],
+      "completion": "(85 - 4) * (60 / 4) = 81 * 15 = 1215\n\n<answer>1215</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 35,
+      "nums": [
+        82,
+        46,
+        12,
+        80
+      ],
+      "completion": "(82 - 46) * (12 + 80) = 35\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 24,
+      "nums": [
+        9,
+        77,
+        44
+      ],
+      "completion": "(9 + 77) * (44 / 9) = 24\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 54,
+      "nums": [
+        13,
+        5,
+        7,
+        91
+      ],
+      "completion": "(91 - 5) * (13 + 7) = 54\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 36,
+      "nums": [
+        56,
+        74,
+        54
+      ],
+      "completion": "(56 - 74) * (54 / 56) = -18 * 0.9642857 \u2248 -17.357142857142856\n\n<answer>(56 - 74) * (54 / 56)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 70,
+      "nums": [
+        47,
+        3,
+        57,
+        98
+      ],
+      "completion": "(47 - 3) * (57 + 98) = 70\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 73,
+      "nums": [
+        7,
+        66,
+        49
+      ],
+      "completion": "(7 + 66) * (49 - 7) = 73\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 26,
+      "nums": [
+        56,
+        6,
+        14,
+        38
+      ],
+      "completion": "(56 - 6) * (14 + 38) = 26\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 17,
+      "nums": [
+        33,
+        91,
+        18,
+        94
+      ],
+      "completion": "(33 + 91) * (18 / 94) = 17\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 72,
+      "nums": [
+        83,
+        73,
+        3,
+        40
+      ],
+      "completion": "(83 - 73) * (3 + 40) = 72\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 76,
+      "nums": [
+        80,
+        88,
+        22
+      ],
+      "completion": "(80 + 88) * (22 / 80) = 76\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 15,
+      "nums": [
+        50,
+        1,
+        7,
+        6
+      ],
+      "completion": "(50 - 1) * (7 + 6) = 15\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 17,
+      "nums": [
+        24,
+        4,
+        68,
+        7
+      ],
+      "completion": "(24 - 68) / 7 + 4 = -17\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 95,
+      "nums": [
+        10,
+        79,
+        5,
+        90
+      ],
+      "completion": "(10 + 5) * (79 - 90) + 10 = 95\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 75,
+      "nums": [
+        66,
+        66,
+        75,
+        34
+      ],
+      "completion": "(66 + 75) / (34 - 66) = 141 / -32 = -4.40625\n\n<answer>(66 + 75) / (34 - 66)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 45,
+      "nums": [
+        10,
+        45,
+        3,
+        12
+      ],
+      "completion": "(10 + 45) * (3 - 12 / 10) = 45\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 21,
+      "nums": [
+        73,
+        77,
+        14,
+        45
+      ],
+      "completion": "(73 + 45) * (77 - 14) = 118 * 63 = 7454\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 84,
+      "nums": [
+        11,
+        24,
+        71
+      ],
+      "completion": "(11 + 24) * (71 - 11) = 84\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 20,
+      "nums": [
+        50,
+        73,
+        68,
+        71
+      ],
+      "completion": "(50 + 73) * (68 - 71) = 123\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 99,
+      "nums": [
+        78,
+        30,
+        63,
+        33
+      ],
+      "completion": "(78 - 30) * (63 + 33) = 99\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 35,
+      "nums": [
+        86,
+        84,
+        49,
+        92
+      ],
+      "completion": "(86 - 84) * (49 + 92) = 2 * 141 = 282\n\n<answer>282</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 46,
+      "nums": [
+        80,
+        47,
+        13
+      ],
+      "completion": "(80 - 47) * (13 / 80) = 46\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 65,
+      "nums": [
+        25,
+        5,
+        8
+      ],
+      "completion": "(25 - 5) * (8 / 25) = 65\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 31,
+      "nums": [
+        33,
+        30,
+        49,
+        44
+      ],
+      "completion": "(33 - 44) / (30 + 49) = -11 / 79 \u2248 -0.1382\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 29,
+      "nums": [
+        59,
+        44,
+        2
+      ],
+      "completion": "(59 - 44) * (2 / 59) = 15 * (2 / 59) = 30 / 59 \u2248 0.5084745762711864\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 22,
+      "nums": [
+        43,
+        23,
+        43
+      ],
+      "completion": "(43 - 23) * (43 / 43) = 20 * 1 = 20\n\n<answer>(43 - 23) * (43 / 43)</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 59,
+      "nums": [
+        40,
+        76,
+        4
+      ],
+      "completion": "(40 + 76) / (4 - 40) = 116 / -36 = -31/9 \u2248 -3.444...\n\nBut we need exactly 59. Let's try a different approach.\n\nWe can use the numbers 40, 76, and 4. Let's try:\n\n(40 + 76) * 4 / 40 = 116 * 4 / 40 = 464 / 40 = 11.6\n\nNot 59.\n\nWhat if we use negative numbers?\n\n(40 + 76) * 4 / 40 = 116 * 4 / 40 = 464 / 40 = 11.6\n\nNot 59.\n\nWhat if we use parentheses differently?\n\n(40 + 76) * 4 / 40 = 116 * 4 / 40 = 464 / 40 = 11.6\n\nNot 59.\n\nWhat if we use a different combination?\n\n(40 + 7",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 55,
+      "nums": [
+        6,
+        42,
+        19
+      ],
+      "completion": "(6 + 42) * (19 - 6) = 55\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 50,
+      "nums": [
+        19,
+        5,
+        6,
+        7
+      ],
+      "completion": "(19 - 5) * (6 + 7) = 14 * 13 = 182\n\n<answer>182</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 23,
+      "nums": [
+        42,
+        54,
+        35
+      ],
+      "completion": "(42 + 54) * (35 / 42) = 96 * 0.8333333333333333 = 80\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 86,
+      "nums": [
+        18,
+        23,
+        81
+      ],
+      "completion": "(18 + 23) * (81 / 18) = 86\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 75,
+      "nums": [
+        2,
+        62,
+        15,
+        11
+      ],
+      "completion": "(2 + 62) * (15 - 11) = 75\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 18,
+      "nums": [
+        27,
+        3,
+        27
+      ],
+      "completion": "(27 - 3) * (27 / 27) = 18\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 69,
+      "nums": [
+        53,
+        78,
+        18,
+        51
+      ],
+      "completion": "(53 + 78) * (18 - 51) / 53 = 69\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 62,
+      "nums": [
+        6,
+        48,
+        95,
+        87
+      ],
+      "completion": "(6 + 48) * (95 - 87) = 62\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 67,
+      "nums": [
+        80,
+        77,
+        14,
+        78
+      ],
+      "completion": "(80 - 77) * (14 + 78) = 3 * 92 = 276\n\n<answer>276</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 44,
+      "nums": [
+        33,
+        49,
+        7,
+        4
+      ],
+      "completion": "(33 + 49) * (7 - 4) = 82\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 33,
+      "nums": [
+        3,
+        55,
+        66,
+        60
+      ],
+      "completion": "(66 - 3) * (60 / 55) = 33\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 81,
+      "nums": [
+        30,
+        22,
+        19,
+        9
+      ],
+      "completion": "(30 - 22) * (19 + 9) = 8\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 60,
+      "nums": [
+        5,
+        25,
+        30
+      ],
+      "completion": "(5 + 25) * (30 / 5) = 60\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        9,
+        62,
+        81,
+        53
+      ],
+      "completion": "(9 + 62) * (81 - 53) = 82\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 97,
+      "nums": [
+        33,
+        30,
+        93,
+        66
+      ],
+      "completion": "(33 + 93) / (66 - 30) = 126 / 36 = 3.5\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 16,
+      "nums": [
+        95,
+        11,
+        8,
+        92
+      ],
+      "completion": "(95 - 11) * (8 + 92) / 95 = 16\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 65,
+      "nums": [
+        31,
+        59,
+        4,
+        1
+      ],
+      "completion": "(31 + 4) * (59 - 1) = 65\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        19,
+        17,
+        80
+      ],
+      "completion": "(19 - 17) * (80 / 19) = 2 * 4 = 8\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 25,
+      "nums": [
+        87,
+        43,
+        8,
+        77
+      ],
+      "completion": "(87 - 43) * (8 + 77) = 25\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 86,
+      "nums": [
+        36,
+        45,
+        5
+      ],
+      "completion": "(36 + 45) * (5 - 36 / 45) = 86\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 26,
+      "nums": [
+        38,
+        32,
+        20
+      ],
+      "completion": "(38 - 32) * (20 / 38) = 6 * (20 / 38) = 120 / 38 = 60 / 19 = 3.157894736842105\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 87,
+      "nums": [
+        16,
+        31,
+        2,
+        64
+      ],
+      "completion": "(16 + 2) * (31 - 64 / 16) = 18 * (31 - 4) = 18 * 27 = 486\n\n<answer>486</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 44,
+      "nums": [
+        99,
+        77,
+        2,
+        77
+      ],
+      "completion": "(99 - 77) * (2 + 77) = 44\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 63,
+      "nums": [
+        65,
+        77,
+        22,
+        47
+      ],
+      "completion": "(65 - 22) * (77 - 47) = 63\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 90,
+      "nums": [
+        12,
+        55,
+        47
+      ],
+      "completion": "(12 + 55) * (47 - 12) = 90\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 78,
+      "nums": [
+        27,
+        78,
+        64,
+        64
+      ],
+      "completion": "(27 + 64) * (64 / 78) = 78\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 38,
+      "nums": [
+        2,
+        61,
+        68,
+        8
+      ],
+      "completion": "(61 - 2) * (8 / 68) = 59 * 0.11764705882352941 = 6.959090909090909 \u2248 38\n\n<answer>(61 - 2) * (8 / 68)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 45,
+      "nums": [
+        19,
+        59,
+        51,
+        72
+      ],
+      "completion": "(59 - 19) * (72 / 51) = 40 * 1.411764705882353 = 56.47099622349142\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 48,
+      "nums": [
+        4,
+        60,
+        49,
+        42
+      ],
+      "completion": "(49 - 42) * (60 - 4) = 7 * 56 = 392\n\n<answer>(49 - 42) * (60 - 4)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 93,
+      "nums": [
+        8,
+        42,
+        84,
+        41
+      ],
+      "completion": "(84 - 41) * (8 - 42) + 8 = 93\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 15,
+      "nums": [
+        45,
+        23,
+        43,
+        17
+      ],
+      "completion": "(45 - 23) * (43 + 17) = 15\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 81,
+      "nums": [
+        63,
+        26,
+        44
+      ],
+      "completion": "(63 - 26) * (44 / 63) = 81\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 67,
+      "nums": [
+        99,
+        1,
+        9,
+        42
+      ],
+      "completion": "(99 - 42) * (1 + 9) = 57\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 27,
+      "nums": [
+        54,
+        32,
+        31,
+        3
+      ],
+      "completion": "(54 - 32) * (31 - 3) = 22 * 28 = 616\n\n<answer>(54 - 32) * (31 - 3)</answer>\n",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "target": 51,
+      "nums": [
+        62,
+        31,
+        53
+      ],
+      "completion": "(62 - 31) * (53 / 62) = 31 * 0.8548387096774193 = 26.5\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 80,
+      "nums": [
+        95,
+        9,
+        54,
+        3
+      ],
+      "completion": "(95 - 54) * (9 + 3) = 80\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 12,
+      "nums": [
+        48,
+        15,
+        19
+      ],
+      "completion": "(48 - 15) * (19 / 48) = 12\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 40,
+      "nums": [
+        92,
+        96,
+        10
+      ],
+      "completion": "(92 + 96) * (10 / 92) = 192 * (10 / 92) = 1920 / 92 = 40\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 74,
+      "nums": [
+        71,
+        51,
+        54
+      ],
+      "completion": "(71 + 51) * (54 / 71) = 122 * 0.7647 \u2248 93.5, which is not 74.\n\n(71 + 51) * (54 / 71) = 122 * 0.7647 \u2248 93.5, not 74.\n\n(71 + 51) * (54 / 71) = 122 * 0.7647 \u2248 93.5, not 74.\n\n(71 + 51) * (54 / 71) = 122 * 0.7647 \u2248 93.5, not 74.\n\n(71 + 51) * (54 / 71) = 122 * 0.7647 \u2248 93.5, not 74.\n\n(71 + 51) * (54 / 71) = 122 * 0.7647 \u2248 93.5, not ",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 98,
+      "nums": [
+        47,
+        32,
+        19
+      ],
+      "completion": "(47 - 32) * (19 + 47) = 98\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 33,
+      "nums": [
+        4,
+        61,
+        71
+      ],
+      "completion": "(4 + 61) * (71 - 4) = 65 * 67 = 4355\n\n<answer>(4 + 61) * (71 - 4) = 4355</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 37,
+      "nums": [
+        60,
+        62,
+        75,
+        1
+      ],
+      "completion": "(60 + 62) * (75 - 1) = 122 * 74 = 9028\n\n<answer>9028</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 17,
+      "nums": [
+        45,
+        57,
+        6
+      ],
+      "completion": "(45 + 57) / (6 - 45) = 17\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 49,
+      "nums": [
+        72,
+        41,
+        74,
+        65
+      ],
+      "completion": "(72 + 41) * (74 - 65) = 49\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 88,
+      "nums": [
+        7,
+        15,
+        11
+      ],
+      "completion": "(7 + 15) * (11 - 7) = 88\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 13,
+      "nums": [
+        52,
+        26,
+        1,
+        21
+      ],
+      "completion": "(52 - 26) * (1 + 21) = 13\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 11,
+      "nums": [
+        80,
+        54,
+        9,
+        28
+      ],
+      "completion": "(80 - 54) * (9 + 28) = 11\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 13,
+      "nums": [
+        52,
+        93,
+        54
+      ],
+      "completion": "(52 + 93) * (54 / 52) = 13\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 82,
+      "nums": [
+        99,
+        80,
+        97
+      ],
+      "completion": "(99 - 80) * (97 - 99) = 19 * (-2) = -38\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 54,
+      "nums": [
+        73,
+        43,
+        62
+      ],
+      "completion": "(73 - 43) * (62 / 73) = 30 * 0.8511627906976744 = 25.53498372093503\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 96,
+      "nums": [
+        59,
+        44,
+        20,
+        52
+      ],
+      "completion": "(59 - 44) * (20 + 52) = 15 * 72 = 1080\n\n<answer>1080</answer>\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 45,
+      "nums": [
+        18,
+        21,
+        15
+      ],
+      "completion": "(18 + 21) * (15 / 18) = 39 * 0.8333333333333333 = 32.5\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 72,
+      "nums": [
+        47,
+        79,
+        40
+      ],
+      "completion": "(47 - 40) * (79 + 47) = 72\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 92,
+      "nums": [
+        13,
+        68,
+        56,
+        8
+      ],
+      "completion": "(13 + 68) * (56 / 8) = 81 * 7 = 567\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 97,
+      "nums": [
+        13,
+        6,
+        4,
+        56
+      ],
+      "completion": "(13 + 6) * (4 - 56 / 13) = 97\n",
+      "valid": false,
+      "correct": false
+    },
+    {
+      "target": 88,
+      "nums": [
+        81,
+        16,
+        23
+      ],
+      "completion": "(81 - 16) * (23 / 81) = 88\n",
+      "valid": false,
+      "correct": false
+    }
+  ]
+}

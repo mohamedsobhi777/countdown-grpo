@@ -1,0 +1,18 @@
+{
+  "group": "countdown-20260914-01",
+  "seed": 42,
+  "evaluation_samples": 256,
+  "baseline_correct": 0,
+  "after_correct": 85,
+  "baseline_valid": 11,
+  "after_valid": 90,
+  "training_steps": 300,
+  "train_runtime_seconds": 5135.9127,
+  "peak_allocated_vram_gib": 2.7174434661865234,
+  "first_positive_reward_step": 31,
+  "last_30_steps_mean_reward": 0.296875,
+  "last_30_steps_mean_truncation_rate": 0.5989583333333334,
+  "wandb_baseline": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/qu1ovu2z",
+  "wandb_training": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/uv3hjjih",
+  "wandb_evaluation": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/1qrixzrf"
+}
