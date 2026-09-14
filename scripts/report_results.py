@@ -77,7 +77,9 @@ def main():
         ax.spines[["top", "right"]].set_visible(False)
         ax.grid(axis="y", alpha=0.15)
         ax.set_axisbelow(True)
-    fig.savefig(args.destination / "learning-curve.svg", metadata={"Date": None})
+    svg = args.destination / "learning-curve.svg"
+    fig.savefig(svg, metadata={"Date": None})
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
     fig.savefig(args.destination / "learning-curve.png", dpi=160)
     plt.close(fig)
     print(json.dumps(summary, indent=2))
