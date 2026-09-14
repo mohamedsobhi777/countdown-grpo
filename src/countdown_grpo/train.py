@@ -7,7 +7,7 @@ from .model import load_model
 from .reward import make_reward
 
 
-def train(config, resume=None):
+def train(config, resume=None, run=None):
     from datasets import Dataset
     from peft import LoraConfig
     import torch
@@ -31,6 +31,13 @@ def train(config, resume=None):
     output.mkdir(parents=True, exist_ok=True)
     manifest.write_text(json.dumps(config.to_dict(), indent=2) + "\n")
     (output / "holdout.json").write_text(json.dumps(eval_rows, indent=2) + "\n")
+    (output / "train-puzzles.json").write_text(json.dumps(train_rows) + "\n")
+    if run:
+        from .tracking import log_files
+        (output / "wandb-run.json").write_text(json.dumps({"id": run.id, "url": run.url,
+                                                         "entity": run.entity, "project": run.project}))
+        log_files(run, "puzzles", "dataset", files=[output / "train-puzzles.json", output / "holdout.json"],
+                  metadata={"dataset": config.dataset, "revision": config.dataset_revision})
 
     class Metrics(TrainerCallback):
         def on_train_begin(self, args, state, control, **kwargs):
@@ -47,6 +54,10 @@ def train(config, resume=None):
             record["peak_vram_gib"] = torch.cuda.max_memory_allocated() / 2**30
             with (output / "metrics.jsonl").open("a") as handle:
                 handle.write(json.dumps(record) + "\n")
+            if run:
+                run.log({f"runtime/{key}": value for key, value in record.items()
+                         if key in ("seconds_per_step", "estimated_remaining_seconds", "peak_vram_gib")}
+                        | {"train/global_step": state.global_step})
 
     args = GRPOConfig(
         output_dir=str(output), max_steps=config.max_steps,
@@ -60,7 +71,9 @@ def train(config, resume=None):
         beta=0.0, loss_type="grpo", use_vllm=False,
         temperature=1.0, top_p=1.0,
         logging_steps=1, save_steps=config.save_steps, save_total_limit=2,
-        report_to="none", push_to_hub=False,
+        report_to="wandb" if run else "none", push_to_hub=False,
+        run_name=run.name if run else None,
+        log_completions=bool(run), num_completions_to_print=2,
         seed=config.seed, data_seed=config.seed,
     )
     peft = LoraConfig(
@@ -77,3 +90,8 @@ def train(config, resume=None):
     trainer.save_model(str(output / "adapter"))
     tokenizer.save_pretrained(output / "adapter")
     trainer.save_state()
+    if run:
+        log_files(run, "adapter", "model", directory=output / "adapter",
+                  metadata={"base_model": config.model, "revision": config.model_revision})
+        log_files(run, "results", "results", files=[manifest, output / "metrics.jsonl", output / "trainer_state.json"])
+        log_files(run, "completions", "results", directory=output / "completions")

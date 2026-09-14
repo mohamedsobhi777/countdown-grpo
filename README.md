@@ -5,10 +5,10 @@ using [`Jiayi-Pan/Countdown-Tasks-3to4`](https://huggingface.co/datasets/Jiayi-P
 No supervised fine-tuning stage. Designed for one NVIDIA GPU with 16 GB VRAM,
 using BF16 LoRA and Hugging Face TRL's GRPO trainer.
 
-**Training has not been run.** CPU unit tests cover reward verification, data splits,
-and configuration. GPU memory fit, training throughput, checkpoint loading, and
-learning improvement must be validated on the first run. Earlier runtime estimates
-were planning estimates, not measurements; budget several hours and benchmark first.
+CPU unit tests cover reward verification, data splits, and configuration. Actual
+training metrics and evaluation results are recorded in the
+[W&B workspace](https://wandb.ai/mohamedsobhi777/countdown-grpo/workspace).
+Earlier runtime estimates were planning estimates, not measurements.
 
 ## Setup
 
@@ -35,6 +35,25 @@ PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 ## Run later
+
+Run the complete baseline → 300-step training → final evaluation sequence with
+W&B logging (requires a local `wandb login`):
+
+```bash
+uv run --locked --extra train python -u scripts/run_experiment.py
+```
+
+Each stage has its own run in one W&B group under `mohamedsobhi777/countdown-grpo`.
+Source code, Git commit, package versions, config, system metrics, reward/loss
+curves, generated completions, exact puzzle splits, checkpoint artifacts, final
+adapter, and evaluation JSON/Tables are logged. Outputs stay in a unique local
+`outputs/<group>/` directory. The sequence stops on a failed stage and records
+its status in `status.json`; it never silently restarts training.
+
+Individual `train` and `evaluate` commands accept `--wandb`, `--group`, and
+`--run-name`. Without `--wandb`, they log locally. A resumed checkpoint starts a
+new W&B run; use the same group to associate attempts. Model artifacts contain
+LoRA weights; the pinned base checkpoint is still needed to load them.
 
 Measure the pretrained model on a fixed held-out set:
 
@@ -134,5 +153,6 @@ not required by this minimal setup. vLLM is deliberately left out of the initial
 implementation. Consult the [Qwen3.5 documentation](https://huggingface.co/docs/transformers/model_doc/qwen3_5)
 and [TRL GRPO documentation](https://huggingface.co/docs/trl/grpo_trainer).
 
-All metrics are local. No experiment tracking service or Hub upload is enabled.
-Weights, outputs, and environment files are excluded from Git.
+W&B uploads are enabled only by `--wandb` or the complete experiment script.
+No Hugging Face Hub upload is enabled. Weights, outputs, W&B local state, and
+environment files are excluded from Git.
