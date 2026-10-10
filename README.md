@@ -11,8 +11,10 @@ generalization. See the [study ledger](docs/study-ledger.md),
 [Overleaf report](https://www.overleaf.com/project/6aca3d97baaac8402a980db8), and
 [compiled report](report/main.pdf). Results below describe the original pilot;
 unfinished comparisons are not included in its headline score.
-The [first audited controlled run](results/study/controlled-progress/README.md)
-is available as interim evidence (68/256 solved); the full six-run comparison
+The [first audited reward pair](results/study/controlled-progress/README.md)
+solved 68/256 with binary reward versus 26/256 with a validity bonus. The shaped
+checkpoint produced valid expressions on all 256 puzzles but lower correctness.
+This is one seed; the full six-run comparison
 is still in progress.
 
 ## Results

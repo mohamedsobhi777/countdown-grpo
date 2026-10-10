@@ -1,0 +1,65 @@
+{
+  "seed": 42,
+  "format_reward": 0.05,
+  "correct": 26,
+  "samples": 256,
+  "accuracy": 0.1015625,
+  "accuracy_wilson_95": [
+    0.07025498422463894,
+    0.14465090136472733
+  ],
+  "diagnostic_correct": 26,
+  "failures": {
+    "wrong_value": 230,
+    "correct": 26
+  },
+  "truncated": 0,
+  "train_runtime_seconds": 7050.5079,
+  "first_positive_reward_step": 2,
+  "last_30_steps_mean_reward": 0.12197916582226753,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/skfvvhnz",
+  "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/83tmr7i5",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/skfvvhnz-adapter:v0",
+  "environment": {
+    "git_commit": "1b97d4a38e463f964aee5386b83524ed37ca8f85",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "optional_kernel_packages": {
+      "einops": "0.8.1",
+      "fla-core": "0.5.2",
+      "causal-conv1d": null,
+      "flash-linear-attention": "0.5.2"
+    },
+    "python_version": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "requirements_sha256": "3f60677467ab0898de9b55477232bba191339bf148c0826961c8a34720d42272"
+  },
+  "hardware": {
+    "gpu": "NVIDIA L4",
+    "gpu_count": 1,
+    "cpu_count": 6,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.13.15",
+    "os": "Linux-6.6.122+-x86_64-with-glibc2.39"
+  },
+  "source_sha256": {
+    "evaluation.json": "3a53f7550b6965f8f1ebd989dbf1ff35c1bec78b14484f6e1f0c36f1ffa4b1bc",
+    "status.json": "eac737dde066c87e389db99db7910821c100a45a3d443ac9ccaa43f3fa894231",
+    "collection.json": "bdd6906fd25ad93c9d3f35dca73c1b3f4b60cf6e2fe7d7e22141dea978162890",
+    "training/config.json": "b359356375c15e2c005663a95b65d322215572742deca223e29cb430e4f2ec8e",
+    "training/metrics.jsonl": "b19ad45a0c47aa8fd7df25f5f83b5d59e7cec78ef41fee05d7016d8dde97ad24",
+    "training/wandb-run.json": "456ac130814224e9be57f86204c6ea8bd0c4b2a2605fe03c4a5d7c0a095ed2f6",
+    "training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "training/provenance.json": "c3f9dadc078bde9d38f709830690a2dd9afd3990e08c87a49eb18d4598d5ef27",
+    "training/requirements.txt": "cbf8c135c1104fc772fdf7d285f4e10b0da71ab7d61a38e16e42367ee1df0b8e"
+  },
+  "scope": "Interim seed-42 result. Remaining four controlled runs are pending; no seed-averaged conclusion."
+}

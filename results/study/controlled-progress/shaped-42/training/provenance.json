@@ -1,0 +1,35 @@
+{
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/skfvvhnz",
+  "state": "finished",
+  "group": "controlled-l4-fla-v1",
+  "captured_at": "2026-10-10T19:48:54.017174+00:00",
+  "config": {
+    "git_commit": "1b97d4a38e463f964aee5386b83524ed37ca8f85",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "optional_kernel_packages": {
+      "einops": "0.8.1",
+      "fla-core": "0.5.2",
+      "causal-conv1d": null,
+      "flash-linear-attention": "0.5.2"
+    },
+    "python_version": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "requirements_sha256": "3f60677467ab0898de9b55477232bba191339bf148c0826961c8a34720d42272"
+  },
+  "hardware": {
+    "gpu": "NVIDIA L4",
+    "gpu_count": 1,
+    "cpu_count": 6,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.13.15",
+    "os": "Linux-6.6.122+-x86_64-with-glibc2.39"
+  }
+}

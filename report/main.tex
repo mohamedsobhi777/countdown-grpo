@@ -125,7 +125,7 @@ illustrate the parser's coverage limitations.
 \section{Controlled study design and current status}
 The study keeps the original strict metric alongside the diagnostic. The matched
 budget grid and mixed-arity pilot generalization grid are complete. Two of three
-transfer seeds and one of six controlled reward runs are complete:
+transfer seeds and two of six controlled reward runs are complete:
 \begin{itemize}[nosep]
 \item Matched base/adapter output budgets of 256, 512, and 1024 tokens; record actual
       generated lengths, EOS status, truncation, and generation time.
@@ -171,9 +171,23 @@ are committed in W\&B. Diagnostic outcomes comprise 68 correct expressions,
 eight wrong values, and one ambiguous or incomplete answer. Truncation overlaps
 these categories. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/9xwjji2l}{Evaluation evidence}
 and raw outputs are archived under \texttt{results/study/controlled-progress}.
-Five runs remain pending; this is not a reward comparison or seed average.
+The matched shaped seed-42 run has also completed; four runs remain pending.
 The historical laptop/fallback pilot used a different runtime environment, so
 its 85/256 score cannot isolate a hardware or kernel effect relative to this run.
+
+The shaped seed-42 run completed 300 steps in 117.5 minutes and solves
+26/256 puzzles (10.2\%; Wilson 95\% 7.0--14.5). All 256 declared expressions
+are valid under the all-inputs-once rules, but 230 have wrong values. None are
+truncated, and strict and diagnostic correct counts agree. Both runs passed
+full per-answer audits and have identical ordered puzzle lists, clean source,
+Python, full normalized requirements, optional kernels, and hardware metadata.
+Shaped reward gains 11 solutions and loses 53 relative to binary reward, with
+15 jointly correct: a $-16.4$ percentage-point difference for this seed.
+This is improved expression validity alongside lower correctness, not a completed
+multi-seed conclusion. Raw training rewards differ in definition and cannot be
+compared directly. The remaining four controlled runs are pending.
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/83tmr7i5}{Shaped evaluation}
+and the repository's \texttt{seed-42-comparison.json} preserve the evidence.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256

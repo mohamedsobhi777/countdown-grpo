@@ -244,3 +244,19 @@ The source audit is `results/study/local-source-audit-seed44.json`; captured
 startup provenance and requirements are under `transfer-progress/seed-44-training`.
 This verifies startup provenance only: the run is still training and final
 training/evaluation checks remain pending. Refresh its exported state after completion.
+
+## First matched reward pair complete (2026-10-11)
+
+Shaped seed 42 finished 300 steps in 7050.5079 seconds (117.5 minutes), then
+scored 26/256 (10.2%; Wilson 95% 7.0–14.5%). All 256 expressions are valid;
+230 have wrong values, and none are truncated. Strict and diagnostic counts
+agree. The collector verified and secured its archive; both runs passed full
+step/configuration/data/score audits, with identical ordered puzzle lists and
+source/Python/full requirements/kernel/hardware provenance. Compared with
+binary seed 42 (68/256), shaped gains 11 and loses 53, a −16.4-point difference.
+This is a single-seed interim observation; the remaining four controlled runs
+are pending. Raw rewards differ in definition and are not directly comparable.
+Training `skfvvhnz`, evaluation `83tmr7i5`, final adapter `skfvvhnz-adapter:v0`,
+and resumable step-300 checkpoint `model-shaped-42-train:v6` are committed in
+W&B. Evidence is under `results/study/controlled-progress`. Binary seed 43
+started automatically in the same controlled queue.
