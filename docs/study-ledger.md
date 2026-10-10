@@ -182,6 +182,16 @@ not an environment-matched comparison for this run.
 
 ## Final figures and remaining work
 
+Seed 43's completed local training provenance was exported from W&B and checked.
+All 149 archived source files match its clean recorded commit `7c32957`.
+Hardware metadata, base package versions, and the full normalized requirements
+hash match seed 42; optional FLA/causal-convolution packages are absent. Every
+package module matches seed 42 except `tracking.py`, whose diff only adds Python
+and optional-kernel metadata. Seed 42's historical dirty flag and missing fields
+remain documented rather than overwritten. [Seed-43 source hashes and scope](../results/study/local-source-audit-seed43.json),
+[exported runtime provenance](../results/study/transfer-progress/seed-43-training/provenance.json).
+Seed 44 review and the completed seed-43 evaluation set remain pending.
+
 The final seed-comparison plotting command is ready for the completed audited
 aggregates. Run with system Python (Matplotlib installed there), after each
 analysis has produced its full `summary.json`:
