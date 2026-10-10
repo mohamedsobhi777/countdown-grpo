@@ -24,7 +24,13 @@
         "invalid_syntax": 2
       },
       "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao",
-      "suite_sha256": null
+      "suite_sha256": null,
+      "solve_by_truncation": {
+        "failed_truncated": 167,
+        "failed_ended": 10,
+        "solved_ended": 79
+      },
+      "no_declared_expression_and_truncated": 159
     },
     "id_three": {
       "samples": 256,
@@ -43,7 +49,12 @@
         "ambiguous_or_incomplete_answer": 1
       },
       "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/64lmacnd",
-      "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770"
+      "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770",
+      "solve_by_truncation": {
+        "solved_ended": 146,
+        "failed_truncated": 110
+      },
+      "no_declared_expression_and_truncated": 108
     },
     "id_four": {
       "samples": 256,
@@ -64,7 +75,13 @@
         "invalid_syntax": 2
       },
       "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bi91r7xw",
-      "suite_sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780"
+      "suite_sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780",
+      "solve_by_truncation": {
+        "failed_truncated": 211,
+        "failed_ended": 19,
+        "solved_ended": 26
+      },
+      "no_declared_expression_and_truncated": 198
     },
     "large_inputs": {
       "samples": 256,
@@ -85,7 +102,14 @@
         "ambiguous_or_incomplete_answer": 5
       },
       "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/wgqlwhq9",
-      "suite_sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19"
+      "suite_sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19",
+      "solve_by_truncation": {
+        "solved_ended": 62,
+        "failed_ended": 6,
+        "failed_truncated": 187,
+        "solved_truncated": 1
+      },
+      "no_declared_expression_and_truncated": 167
     },
     "large_targets": {
       "samples": 256,
@@ -105,7 +129,13 @@
         "wrong_value": 1
       },
       "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/0j118djm",
-      "suite_sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b"
+      "suite_sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b",
+      "solve_by_truncation": {
+        "solved_ended": 107,
+        "failed_truncated": 145,
+        "failed_ended": 4
+      },
+      "no_declared_expression_and_truncated": 140
     }
   },
   "paired_mixed_pilot_to_three_only": {
@@ -157,5 +187,6 @@
     "training/provenance.json": "12a2b57a65418c44e2a7ddbfb7ff8399f8afbc1349d91dd7b51290507d4f0be9",
     "training/requirements.txt": "d5db6fcbf863f7409e23576c3950a1e087ae9ec6d25d4be0327540f552093fa6"
   },
-  "interpretation": "All five evaluations for seed 42 are complete and audited. Seeds 43 and 44 remain pending. Comparisons against the single mixed-arity pilot are descriptive, not a balanced multi-seed training-distribution ablation. Constructed shifts are not difficulty-matched. No pooled observations or seed-averaged conclusion is reported."
+  "interpretation": "All five evaluations for seed 42 are complete and audited. Seeds 43 and 44 remain pending. Comparisons against the single mixed-arity pilot are descriptive, not a balanced multi-seed training-distribution ablation. Constructed shifts are not difficulty-matched. No pooled observations or seed-averaged conclusion is reported.",
+  "truncation_interpretation": "Post-hoc descriptive cross-tabulation, not a causal experiment. Transfer scores are conditional on the 256-token cap. All 110 three-number failures and 211 of 230 four-number failures are truncated. The pilot output-budget experiment does not establish the effect of larger budgets on this separately trained adapter."
 }

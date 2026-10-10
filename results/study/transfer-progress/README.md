@@ -17,3 +17,14 @@ All five evaluations for seed 42 are complete and audited. Seeds 43 and 44 remai
 [Full summary, uncertainty, failure categories, hashes, and descriptive paired comparisons](seed-42-summary.json). Raw completions are in the five `seed-42-*.json` evaluation files. Exported training configuration, metrics, requirements, and W&B provenance are in `seed-42-training/`. The initial dirty-checkout caveat is documented in [the source audit](../local-source-audit.json).
 
 [Training](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/liev6g5l) · [Final adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/liev6g5l-adapter/v0).
+
+## Output-budget limitation
+
+All 110 three-number failures and 211 of 230 four-number failures hit the
+256-token cap. Every four-number `no_declared_expression` outcome (198) is also
+truncated. These are overlapping observations, not evidence that truncation
+caused the errors or that longer outputs would solve them. Transfer scores are
+conditional on this budget. The completed longer-output experiment used the
+original mixed-arity pilot and cannot establish the budget effect for this
+separately trained adapter. The summary includes the full solve/truncation
+cross-tabulation, including one correct but truncated larger-input answer.

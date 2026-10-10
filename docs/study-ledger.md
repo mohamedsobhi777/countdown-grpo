@@ -156,6 +156,16 @@ Seed 42 is marked complete. Seed 43 is confirmed live (PID 685077), W&B
 Seeds 43/44 and the independent Colab six-run grid remain pending. This is one
 seed, not the completed transfer study.
 
+## Transfer failure interpretation
+
+A post-hoc cross-tabulation of the first seed's audited outputs shows that all
+110 three-number failures and 211 of 230 four-number failures are truncated.
+All 198 four-number no-declared-expression outcomes are truncated too. The
+interim summary records these overlaps separately from the exclusive diagnostic
+categories. The report now explicitly conditions transfer findings on the
+256-token cap; the pilot's output-budget finding is not extrapolated to this
+new adapter. These counts do not establish that truncation caused failure.
+
 ## Remaining
 
 Finish seed/reward and transfer runs; archive remote results; log analysis
