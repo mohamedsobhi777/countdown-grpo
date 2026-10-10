@@ -232,3 +232,15 @@ All 95 three-number failures and 197 of 218 four-number failures are truncated;
 this is descriptive overlap, not a causal budget result. Seed 44 started
 as queued, W&B run `mj074g8h`; its source/runtime audit and evaluations remain
 pending. No seed-averaged finding is claimed yet.
+
+### Third transfer seed startup provenance
+
+The running seed-44 job (`mj074g8h`) started from clean commit
+`41724757e60a4db869cb39d1bf78f910f96c85d5`. Its committed W&B source snapshot
+`source-countdown-grpo-None:v22` contains 180 files, all byte-identical to that
+commit. Every package Python module matches seed 43 exactly, as do the hardware,
+Python version, core/optional package metadata, and normalized full requirements.
+The source audit is `results/study/local-source-audit-seed44.json`; captured
+startup provenance and requirements are under `transfer-progress/seed-44-training`.
+This verifies startup provenance only: the run is still training and final
+training/evaluation checks remain pending. Refresh its exported state after completion.

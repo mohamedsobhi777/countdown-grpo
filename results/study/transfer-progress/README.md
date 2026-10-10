@@ -54,3 +54,7 @@ separately trained adapter. The summary includes the full solve/truncation
 cross-tabulation, including one correct but truncated larger-input answer.
 
 [Seed 43 audit run and evidence artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/pt489axi).
+
+[Seed 44 startup source audit](../local-source-audit-seed44.json) verifies its
+clean archived source and matching package code/runtime versus seed 43. This is
+startup evidence only; training and evaluation completion remain pending.

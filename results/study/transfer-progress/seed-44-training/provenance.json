@@ -1,0 +1,35 @@
+{
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/mj074g8h",
+  "state": "running",
+  "group": "three-only-local-v1",
+  "captured_at": "2026-10-10T18:13:30.972853+00:00",
+  "config": {
+    "git_commit": "41724757e60a4db869cb39d1bf78f910f96c85d5",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "optional_kernel_packages": {
+      "einops": null,
+      "fla-core": null,
+      "causal-conv1d": null,
+      "flash-linear-attention": null
+    }
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.12.3",
+    "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+  },
+  "requirements_sha256": "1fba1854417fe4dac69b0cab5042cdbdc728da71f8507fedd7600b02223dff3c"
+}
