@@ -311,6 +311,17 @@ interrupted, its complete partial evidence
 and its VM released. It is excluded from completed training comparisons. These
 few steps are a throughput trial, not a reliable general hardware benchmark.
 
+\paragraph{Local transfer source audit.}
+The first transfer run reports a dirty working tree at commit
+\texttt{a2a8e9e39abab513192b79a7f161aab271823efe}. All 108 files in its
+W\&B source snapshot match that recorded commit byte-for-byte; the artifact
+excludes untracked files, so the dirty flag is retained. Training and evaluation
+modules also match comparison commit \texttt{34faa55}. The only changed package
+module is the logging module, which adds Python and optional-kernel metadata.
+The first run predates those metadata fields; startup logs explicitly identify
+the fallback kernels. Hashes and audit scope are committed in
+\texttt{results/study/local-source-audit.json}. Later seeds still require review.
+
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates

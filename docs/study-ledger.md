@@ -121,6 +121,18 @@ has stopped. It then runs the aggregate analysis with W&B logging locally.
 Observation failures retain the VM and retry; training failures require inspection.
 Log: `outputs/launch/colab-collector.log`.
 
+## First transfer run: source provenance
+
+The first local run (`liev6g5l`) reports `git_dirty=true` at commit `a2a8e9e`.
+Its W&B source artifact `source-countdown-grpo-None:v15` was downloaded and
+compared byte-for-byte with that commit: all 108 archived tracked files match.
+Untracked files are excluded from that artifact, so the dirty flag is retained.
+All package modules match comparison commit `34faa55` except `tracking.py`, whose
+change adds Python/optional-kernel metadata only. No training or evaluation
+module changed. The first run predates those metadata fields; its startup log
+explicitly identifies the PyTorch fallback kernels. The later seeds still need
+comparison after completion. [Hashes and audit scope](../results/study/local-source-audit.json).
+
 ## Remaining
 
 Finish seed/reward and transfer runs; archive remote results; log analysis
