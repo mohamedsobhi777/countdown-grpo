@@ -24,6 +24,11 @@ completion gates: [research-plan.md](research-plan.md).
   recomputed scores. Reports each seed and sample standard deviations separately
   from puzzle-sampling uncertainty. Synthetic evidence tests exercise rejection of
   incomplete steps/runs and altered scores; total CPU coverage is 41 tests.
+- Pilot generalization aggregation implemented in `scripts/analyze_generalization.py`:
+  requires all eight cells, verifies frozen suite hashes/order and pilot training
+  separation, and recomputes scores. It explicitly excludes the still-pending
+  three-number-only training study. Tests reject changed hashes/order/settings;
+  total CPU suite now has 44 passing tests.
 - Local comparison demo implemented: all 256 archived pairs, outcome filters,
   conservative diagnostic feedback, custom exact-answer checker, optional live
   base/adapter generation. HTTP tests cover archival parity, validation, and
@@ -48,6 +53,11 @@ completion gates: [research-plan.md](research-plan.md).
   comparisons share hardware. [First run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/4anzz6c2).
   Observe with `colab exec -s countdown-study -f scripts/colab_status.py`.
   First five steps averaged 50.5 seconds each; monitor this slower L4 runtime.
+  An isolated FLA 0.5.2 kernel probe is running under `/content/countdown-kernel-probe`.
+  It does not modify the training environment. Its short concurrent GPU work can
+  affect observed wall time; it is not part of the controlled accuracy experiment.
+  Adoption requires numerical checks and an end-to-end training test; microkernel
+  speed alone is insufficient. Probe scripts are committed for reproducibility.
 - Colab A100 allocated as `countdown-fast-study`, group `controlled-a100-v1`;
   [first run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/i7dgueld).
   Intentionally stopped after three steps at 49.33 seconds/step versus 50.79 on
