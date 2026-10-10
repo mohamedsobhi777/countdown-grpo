@@ -10,8 +10,12 @@ print(subprocess.run(['nvidia-smi','--query-gpu=name,memory.used,utilization.gpu
 log=Path('/content/countdown-study.log')
 if log.exists():
     print('\n'.join(log.read_text(errors='replace').splitlines()[-12:]))
-for path in sorted(Path(state['root']).glob('outputs/controlled-l4-v1/*/status.json')):
+group_root = Path(state['root']) / 'outputs' / state['group']
+for path in sorted(group_root.glob('*/status.json')):
     print(path.parent.name,json.loads(path.read_text()))
-for path in sorted(Path(state['root']).glob('outputs/controlled-l4-v1/*/training/metrics.jsonl')):
-    row=json.loads(path.read_text().splitlines()[-1])
+for path in sorted(group_root.glob('*/training/metrics.jsonl')):
+    lines = path.read_text().splitlines()
+    if not lines:
+        continue
+    row=json.loads(lines[-1])
     print(path.parents[1].name,{k:row.get(k) for k in ('step','reward','seconds_per_step','estimated_remaining_seconds')})

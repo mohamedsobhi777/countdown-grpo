@@ -10,6 +10,16 @@ from countdown_grpo.diagnostics import analyze_completion
 from countdown_grpo.statistics import paired_outcomes, wilson_interval
 
 
+def comparable_config(config):
+    result = dict(config)
+    # These optional controls were added while the grid was running. Their
+    # missing historical values mean None: use the original seed and both arities.
+    result.setdefault('split_seed', None)
+    result.setdefault('train_num_count', None)
+    result.pop('max_completion_length')
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', type=Path, default=Path('outputs/study-budgets-20261010'))
@@ -46,11 +56,9 @@ def main():
             'wandb_url': report['wandb_url'], 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
         }
     # Only token budget and adapter may vary within this grid.
-    reference = dict(reports[expected[0]]['config'])
-    reference.pop('max_completion_length')
+    reference = comparable_config(reports[expected[0]]['config'])
     for name, report in reports.items():
-        settings = dict(report['config'])
-        settings.pop('max_completion_length')
+        settings = comparable_config(report['config'])
         if settings != reference:
             raise ValueError(f'{name}: evaluation config differs beyond token budget')
         if bool(report['adapter']) != name.startswith('adapter'):
@@ -61,12 +69,13 @@ def main():
     pairs += [(f'{m}-256', f'{m}-{b}') for m in ('base', 'adapter') for b in (512, 1024)]
     comparisons = {f'{a}_to_{b}': paired_outcomes(reports[a]['results'], reports[b]['results']) for a, b in pairs}
     summary = {'cells': summaries, 'paired_comparisons': comparisons,
+               'schema_note': 'The 256-token files predate optional split_seed/train_num_count fields. Missing values are normalized to None (original seed, both arities); all other settings and canonical puzzle sets must match.',
                'uncertainty_scope': 'Wilson intervals describe puzzle-sampling uncertainty for a fixed checkpoint; they do not measure training-seed variation. Exact paired p-values are exploratory and unadjusted for multiple comparisons.'}
     args.destination.mkdir(parents=True, exist_ok=False)
     for name in expected:
         shutil.copyfile(args.source / f'{name}.json', args.destination / f'{name}.json')
     (args.destination / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
-    lines = ['# Output-budget experiment', '', summary['uncertainty_scope'], '',
+    lines = ['# Output-budget experiment', '', summary['uncertainty_scope'], '', summary['schema_note'], '',
              '| Model / cap | Solved | Accuracy (95% Wilson) | Truncated | Mean tokens | Seconds |',
              '| --- | ---: | ---: | ---: | ---: | ---: |']
     for name, cell in summaries.items():

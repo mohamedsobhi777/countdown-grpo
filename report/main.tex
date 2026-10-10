@@ -154,14 +154,29 @@ puzzles. Synthetic manifest tests reject unfinished runs and altered scores;
 the complete CPU suite now contains 41 passing tests. Hardware/package equality
 must additionally be checked in the linked W\&B provenance before final claims.
 
-\paragraph{Partial output-budget result.} The trained adapter solved 86/256
-puzzles at 512 tokens, compared with 85/256 at 256 tokens: one gained solution
-and no lost solutions. At 512 tokens, 140/256 outputs (54.7\%) still hit the cap.
-Strict and diagnostic scores coincide. The
-\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/vnvj9eez}{512-token evaluation}
-therefore provides little evidence that doubling the output budget resolves the
-pilot's failures. The 1024-token cells are still pending; this is not the final
-budget comparison.
+\paragraph{Completed output-budget experiment.} The base model solved 0/256 at
+all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
+(33.6\%) at both 512 and 1024 tokens. Both longer caps gain the same single
+solution and lose none of the original successes. Strict and diagnostic scores
+coincide in every cell. The adapter's evaluation time increased from 184.6 to
+358.6 to 710.0 seconds, while cap-reaching outputs declined only from 145 to 140
+to 139 out of 256. Thus quadrupling the output cap costs approximately 3.85 times
+the evaluation time for one additional solution on this checkpoint and suite.
+These timings include batched generation and scoring, excluding model loading;
+they are not single-request latency. We do not infer that longer outputs never
+help other models or tasks.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/budget-comparison.png}
+\caption{Complete matched budget grid. Error bars are 95\% Wilson intervals over
+puzzles for one checkpoint, not training-seed variation.}
+\end{figure}
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ul7kozpl}{The analysis run}
+archives every completion and source hash. The earliest two reports predate the
+optional \texttt{split\_seed} and \texttt{train\_num\_count} fields; absent values
+were normalized to their unchanged \texttt{None} defaults. All other settings
+matched, canonical puzzle sets were identical, and scores were recomputed before
+aggregation.
 
 \section{Interactive comparison demo}
 A local browser interface exposes all 256 archived evaluation pairs, including

@@ -47,6 +47,19 @@ results can be inspected without W&B access. Model weights remain in W&B artifac
 The experiment used a clean working tree and pinned model/dataset revisions;
 configuration and package versions are recorded in the run.
 
+### Does a longer answer budget help?
+
+On the same 256 puzzles, the adapter solves **85, 86, and 86** with maximum output
+lengths of **256, 512, and 1024 tokens**, respectively. The longer caps gain the
+same single solution, while evaluation time increases from 185 to 710 seconds.
+The base scores zero at all three caps. This is a checkpoint-specific result,
+not a general claim about reasoning budgets.
+
+![Matched output-budget results](results/study/budgets/budget-comparison.png)
+
+[Full six-cell report, raw outputs, uncertainty, and paired comparisons](results/study/budgets/README.md)
+· [W&B analysis](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ul7kozpl).
+
 ### Example from the held-out set
 
 Numbers: `[67, 54, 98, 19]`; target: `66`. These are the actual model outputs:
@@ -79,8 +92,9 @@ improvement. Exact-solve scoring requires the specified answer format, so the
 improvement reflects both formatting and arithmetic task performance. The split
 excludes duplicate/permuted puzzles from training, but cannot rule out exposure
 during the base model's pretraining. About **59.9% of completions in the final 30
-training steps** hit the 256-token cap. A longer-output evaluation and additional
-training seeds are useful next experiments; neither has been run for this report.
+training steps** hit the 256-token cap. The completed longer-output evaluation
+finds only one additional solution at up to 1024 tokens. Additional training seeds
+and distribution-shift experiments remain in progress.
 
 CPU unit tests cover reward verification, data splits, and configuration. The
 archived reports have also been re-scored with the verifier, checked for identical

@@ -36,17 +36,23 @@ completion gates: [research-plan.md](research-plan.md).
 
 ## Running / queued
 
-- Local tmux `countdown-budget-study`: six model/budget combinations at
-  `outputs/study-budgets-20261010/`. Both 256-token evaluations reproduce the
-  pilot scores; base at 512 also scores 0/256. Adapter at 512 solves 86/256:
-  one gain and no losses versus 256 tokens, with 140/256 truncated outputs.
-  [512-token adapter run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/vnvj9eez).
-  The 1024-token cells remain pending.
+- **Budget grid completed:** base 0/256 at all caps; adapter 85, 86, 86 at
+  256/512/1024. The same one puzzle is gained by both longer caps; evaluation
+  time rises from 184.6 to 710.0 seconds. All six files passed score and pairing
+  checks. Two newly optional config fields required explicit historical-default
+  normalization (documented in the report and tested). CPU suite: 42 passing.
+  [Results](../results/study/budgets/README.md),
+  [W&B analysis](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ul7kozpl).
 - Colab session `countdown-study`, L4: six runs in `controlled-l4-v1`, binary/shaped
   rewards interleaved at seeds 42, 43, 44. Binary seed 42 is rerun so the six main
   comparisons share hardware. [First run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/4anzz6c2).
   Observe with `colab exec -s countdown-study -f scripts/colab_status.py`.
   First five steps averaged 50.5 seconds each; monitor this slower L4 runtime.
+- Colab A100 allocated as `countdown-fast-study`, group `controlled-a100-v1`;
+  [first run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/i7dgueld).
+  Initial step is about 49 seconds: no speedup is established yet. Both runtimes
+  remain live while throughput is checked; retain only the chosen controlled
+  grid, archive the other attempt as a runtime trial, and release its VM.
 - Local tmux `countdown-generalization`: waits for budget evaluation, then runs
   base/pilot on all frozen suites, followed by three-number-only training at
   seeds 42, 43, 44 with original-holdout and four-suite evaluations. Outputs:
@@ -63,8 +69,7 @@ when outputs are secured; idle compute should not be retained.
 
 ## Remaining
 
-Aggregate complete budget results with uncertainty and paired comparisons;
-finish seed/reward and transfer runs; archive remote results; log analysis
+Finish seed/reward and transfer runs; archive remote results; log analysis
 artifacts; finish browser/live validation of the interactive demo; complete and compile the
 Overleaf report; publish all evidence and audit every requirement. The study is
 not yet complete.

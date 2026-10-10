@@ -1,0 +1,6 @@
+{
+  "matplotlib": "3.6.3",
+  "source": "results/study/budgets/summary.json",
+  "script": "scripts/plot_budget_study.py",
+  "interval": "95% Wilson score, fixed checkpoint; not training-seed variation"
+}
