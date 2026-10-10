@@ -34,6 +34,18 @@ class DataTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             split_rows([], self.config)
 
+    def test_split_is_fixed_across_training_seeds(self):
+        a=split_rows(self.rows, replace(self.config, seed=42, split_seed=42))
+        b=split_rows(self.rows, replace(self.config, seed=43, split_seed=42))
+        self.assertEqual(a,b)
+
+    def test_training_arity_filter_does_not_change_evaluation(self):
+        rows=self.rows+[{'target':n,'nums':[1,2,3,4]} for n in range(100)]
+        a=split_rows(rows,self.config)
+        b=split_rows(rows,replace(self.config,train_num_count=3))
+        self.assertEqual(a[1],b[1])
+        self.assertTrue(all(len(r['nums'])==3 for r in b[0]))
+
     def test_template_requests_generation_prefix(self):
         class Tokenizer:
             def apply_chat_template(self, messages, tokenize, add_generation_prompt):

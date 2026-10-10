@@ -11,6 +11,8 @@ class Config:
     dataset_revision: str = "408f70d177020686d34a56bba5952feb45aaaee4"
     output_dir: str = "outputs/countdown"
     seed: int = 42
+    split_seed: int | None = None
+    train_num_count: int | None = None
     eval_fraction: float = 0.02
     eval_samples: int = 256
     train_samples: int = 20000
@@ -26,6 +28,10 @@ class Config:
     format_reward: float = 0.0
 
     def __post_init__(self):
+        if self.split_seed is not None and type(self.split_seed) is not int:
+            raise ValueError('split_seed must be an integer or None')
+        if self.train_num_count not in (None, 3, 4):
+            raise ValueError('train_num_count must be 3, 4, or None')
         for name in ("eval_samples", "train_samples", "max_steps", "max_completion_length",
                      "num_generations", "per_device_train_batch_size",
                      "gradient_accumulation_steps", "lora_rank", "lora_alpha", "save_steps"):

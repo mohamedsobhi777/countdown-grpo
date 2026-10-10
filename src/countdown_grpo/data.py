@@ -15,18 +15,21 @@ def held_out(key, seed, fraction):
 
 def split_rows(rows, config):
     train, evaluation, seen = [], [], set()
+    split_seed = config.seed if config.split_seed is None else config.split_seed
     for row in rows:
         key = puzzle_key(row)
         if key in seen:
             continue
         seen.add(key)
         normalized = {"target": key[0], "nums": [int(n) for n in row["nums"]]}
-        (evaluation if held_out(key, config.seed, config.eval_fraction) else train).append(normalized)
+        (evaluation if held_out(key, split_seed, config.eval_fraction) else train).append(normalized)
+    if config.train_num_count is not None:
+        train = [r for r in train if len(r['nums']) == config.train_num_count]
     # Sort before shuffling to make membership independent of upstream row order.
     train.sort(key=puzzle_key)
     evaluation.sort(key=puzzle_key)
-    random.Random(config.seed).shuffle(train)
-    random.Random(config.seed).shuffle(evaluation)
+    random.Random(split_seed).shuffle(train)
+    random.Random(split_seed).shuffle(evaluation)
     if not train or not evaluation:
         raise ValueError("Dataset must yield nonempty training and evaluation splits")
     return train[:config.train_samples], evaluation[:config.eval_samples]

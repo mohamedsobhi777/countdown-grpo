@@ -5,6 +5,7 @@ import time
 from .data import load_rows, render_prompt
 from .model import load_model
 from .reward import make_reward
+from .config import Config
 
 
 def train(config, resume=None, run=None):
@@ -20,7 +21,7 @@ def train(config, resume=None, run=None):
         checkpoint = Path(resume)
         if not (checkpoint / "trainer_state.json").is_file():
             raise ValueError("--resume must point to a Trainer checkpoint directory")
-        if not manifest.exists() or json.loads(manifest.read_text()) != config.to_dict():
+        if not manifest.exists() or Config(**json.loads(manifest.read_text())) != config:
             raise ValueError("Resume requires the same configuration and output directory")
     elif output.exists() and any(output.iterdir()):
         raise ValueError("Output directory is nonempty; use --resume or a fresh --output-dir")

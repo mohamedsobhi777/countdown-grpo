@@ -4,6 +4,9 @@ from countdown_grpo.reward import make_reward, score_completion
 
 
 class RewardTests(unittest.TestCase):
+    def test_larger_supplied_inputs(self):
+        self.assertTrue(score_completion('<answer>150-120+5</answer>',[150,120,5],35).correct)
+
     def test_exact_solution_with_scratchpad(self):
         score = score_completion("44 + 19 is 63.\n<answer>(44+19)+35</answer>", [44, 19, 35], 98)
         self.assertTrue(score.correct)

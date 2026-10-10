@@ -28,7 +28,7 @@ def score_completion(text, nums, target):
     used = []
 
     def visit(node):
-        if isinstance(node, ast.Constant) and type(node.value) is int and 0 < node.value <= 100:
+        if isinstance(node, ast.Constant) and type(node.value) is int and 0 < node.value <= max(100, *nums):
             used.append(node.value)
             return Fraction(node.value)
         if isinstance(node, ast.BinOp) and type(node.op) in (ast.Add, ast.Sub, ast.Mult, ast.Div):

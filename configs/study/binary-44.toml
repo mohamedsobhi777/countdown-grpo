@@ -1,0 +1,6 @@
+# Prespecified controlled study: binary, training seed 44.
+seed = 44
+split_seed = 42
+max_steps = 300
+max_completion_length = 256
+format_reward = 0.0

@@ -1,0 +1,7 @@
+# Prespecified controlled study: three-only, training seed 43.
+seed = 43
+split_seed = 42
+max_steps = 300
+max_completion_length = 256
+format_reward = 0.0
+train_num_count = 3

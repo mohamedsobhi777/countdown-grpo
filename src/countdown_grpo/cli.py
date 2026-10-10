@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--resume", help="Trainer checkpoint path (train only)")
     parser.add_argument("--adapter", help="Saved LoRA adapter path (evaluate only)")
     parser.add_argument("--result", default="outputs/evaluation.json")
+    parser.add_argument("--puzzles", help="Frozen evaluation input JSON; never include oracle witnesses")
     parser.add_argument("--wandb", action="store_true", help="Upload code, metrics, results and model artifacts to W&B")
     parser.add_argument("--run-name")
     parser.add_argument("--group", help="Group baseline, training and final evaluation in W&B")
@@ -44,7 +45,7 @@ def main():
                 train(config, args.resume, run=run)
             else:
                 from .evaluate import evaluate
-                evaluate(config, args.adapter, args.result, run=run)
+                evaluate(config, args.adapter, args.result, run=run, puzzles=args.puzzles)
 
 
 if __name__ == "__main__":

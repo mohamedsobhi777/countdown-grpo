@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import time
+import hashlib
 
 from .data import load_rows, render_prompt
 from .model import load_model
@@ -8,7 +9,7 @@ from .reward import score_completion
 from .diagnostics import analyze_completion
 
 
-def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=None):
+def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=None, puzzles=None):
     import torch
     from transformers import set_seed
 
@@ -27,7 +28,16 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
         from peft import PeftModel
         model = PeftModel.from_pretrained(model, adapter)
     model.eval()
-    _, rows = load_rows(config)
+    if puzzles:
+        rows = json.loads(Path(puzzles).read_text())
+        if not isinstance(rows, list) or not rows or any(set(r) != {'nums','target'} for r in rows):
+            raise ValueError('Evaluation inputs must contain only nums and target; omit witnesses')
+        if run:
+            from .tracking import log_files
+            run.config.update({'suite':puzzles,'suite_sha256':hashlib.sha256(Path(puzzles).read_bytes()).hexdigest()})
+            log_files(run,'evaluation-inputs','dataset',files=[puzzles])
+    else:
+        _, rows = load_rows(config)
     results = []
     started = time.monotonic()
     eos_ids = model.generation_config.eos_token_id
@@ -63,6 +73,8 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
         "generation_seconds": time.monotonic() - started,
         "diagnostic_policy": "declared-expression-v1",
         "wandb_url": run.url if run else None,
+        "suite": puzzles or "original-holdout",
+        "suite_sha256": hashlib.sha256(Path(puzzles).read_bytes()).hexdigest() if puzzles else None,
         "results": results,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
