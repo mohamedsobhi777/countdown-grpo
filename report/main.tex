@@ -358,6 +358,22 @@ budget. The completed longer-output experiment used the original mixed-arity
 pilot and does not establish the budget effect for this separately trained
 adapter.
 
+\paragraph{2026-10-11: first controlled result.}
+The first L4/FLA controlled run (binary reward, seed 42) completed 300 steps in
+192.9 minutes and solves 68/256 held-out puzzles (26.6\%; 95\% Wilson interval
+21.5--32.3\%). Strict and diagnostic scores agree; 174/256 outputs are truncated.
+The downloaded archive's hash, full step sequence, settings, puzzle order,
+training/holdout separation, per-answer scores, and clean source/pinned-kernel
+provenance passed the single-run audit. The final adapter and resumable checkpoint
+are committed in W\&B. Diagnostic outcomes comprise 68 correct expressions,
+141 invalid syntax, 28 number mismatches, 10 without a declared expression,
+eight wrong values, and one ambiguous or incomplete answer. Truncation overlaps
+these categories. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/9xwjji2l}{Evaluation evidence}
+and raw outputs are archived under \texttt{results/study/controlled-progress}.
+Five runs remain pending; this is not a reward comparison or seed average.
+The historical laptop/fallback pilot used a different runtime environment, so
+its 85/256 score cannot isolate a hardware or kernel effect relative to this run.
+
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates

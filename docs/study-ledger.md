@@ -166,7 +166,21 @@ categories. The report now explicitly conditions transfer findings on the
 256-token cap; the pilot's output-budget finding is not extrapolated to this
 new adapter. These counts do not establish that truncation caused failure.
 
-## Remaining
+## 2026-10-11: first controlled run collected and audited
+
+Binary reward, seed 42 (`fneh9kxb`) completed all 300 steps in 11,573.2 seconds
+(192.9 minutes), followed by evaluation `9xwjji2l`. The collector downloaded its
+SHA-256-verified archive and exported finished-run W&B provenance. The full
+single-run scientific checks passed: settings, steps, puzzle order, no overlap,
+unique keys, recomputed per-answer scores, and clean source/pinned FLA/single-L4
+environment. It solves 68/256 (26.6%; Wilson 95% 21.5–32.3%), with 174 truncated
+outputs and strict/diagnostic scores agreeing. The final adapter and resumable
+step-300 checkpoint are committed in W&B. [Raw interim evidence and links](../results/study/controlled-progress/README.md).
+The queue has started shaped-reward seed 42. Five runs remain; cross-run gates
+and the reward comparison are pending. The historical laptop/fallback pilot is
+not an environment-matched comparison for this run.
+
+## Final figures and remaining work
 
 The final seed-comparison plotting command is ready for the completed audited
 aggregates. Run with system Python (Matplotlib installed there), after each

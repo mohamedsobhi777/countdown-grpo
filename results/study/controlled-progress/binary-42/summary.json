@@ -1,0 +1,69 @@
+{
+  "seed": 42,
+  "format_reward": 0.0,
+  "correct": 68,
+  "samples": 256,
+  "accuracy": 0.265625,
+  "accuracy_wilson_95": [
+    0.2152766909427579,
+    0.32290324175686935
+  ],
+  "diagnostic_correct": 68,
+  "failures": {
+    "invalid_syntax": 141,
+    "number_mismatch": 28,
+    "correct": 68,
+    "no_declared_expression": 10,
+    "wrong_value": 8,
+    "ambiguous_or_incomplete_answer": 1
+  },
+  "truncated": 174,
+  "train_runtime_seconds": 11573.1792,
+  "first_positive_reward_step": 28,
+  "last_30_steps_mean_reward": 0.18541666666666667,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/fneh9kxb",
+  "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/9xwjji2l",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/fneh9kxb-adapter:v0",
+  "environment": {
+    "git_commit": "1b97d4a38e463f964aee5386b83524ed37ca8f85",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "optional_kernel_packages": {
+      "einops": "0.8.1",
+      "fla-core": "0.5.2",
+      "causal-conv1d": null,
+      "flash-linear-attention": "0.5.2"
+    },
+    "python_version": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "requirements_sha256": "3f60677467ab0898de9b55477232bba191339bf148c0826961c8a34720d42272"
+  },
+  "hardware": {
+    "gpu": "NVIDIA L4",
+    "gpu_count": 1,
+    "cpu_count": 6,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.13.15",
+    "os": "Linux-6.6.122+-x86_64-with-glibc2.39"
+  },
+  "interpretation": "Interim first run of the six-run controlled L4/FLA study. Not a reward comparison or seed average. Differences from the historical laptop/fallback pilot are confounded by runtime environment and cannot be attributed to kernels or hardware.",
+  "source_sha256": {
+    "status.json": "1907c82f18592ec79f5114ddfd52c127dbd78f3e5b6494290af2e14477034c76",
+    "evaluation.json": "8902457ac114545ddf82c1d0ab462e88d1530c5ba729454f7494feb81e0af291",
+    "collection.json": "b824f16c532af663733929a4092230536df7a2034f1367f18e7152f6b9bf6508",
+    "training/config.json": "353d3a66f94fd34a9e1c27c213005b0a3e1a87ba20a95af4a701cda933f7b44a",
+    "training/metrics.jsonl": "c4a68a14ad4cd510a3a8c51a67024ecdd93419bf006e34ea54e57e6eab07b98d",
+    "training/wandb-run.json": "0c2c0223ae0817d508b170bc40a9ec723497309f40da68fb8893c3ce5735236f",
+    "training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "training/provenance.json": "e623b6ac4cc18dd3189011ca157e732d1d0207e6bdedb8f0ec4b56a2e3bdcb33",
+    "training/requirements.txt": "cbf8c135c1104fc772fdf7d285f4e10b0da71ab7d61a38e16e42367ee1df0b8e"
+  }
+}
