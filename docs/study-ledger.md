@@ -168,6 +168,22 @@ new adapter. These counts do not establish that truncation caused failure.
 
 ## Remaining
 
+The final seed-comparison plotting command is ready for the completed audited
+aggregates. Run with system Python (Matplotlib installed there), after each
+analysis has produced its full `summary.json`:
+
+```bash
+python3 scripts/plot_seed_studies.py controlled
+python3 scripts/plot_seed_studies.py transfer
+```
+
+Each exports PNG/SVG/PDF and source-hash metadata. The plots separate individual
+checkpoint Wilson intervals from sample standard deviation across seeds, show
+all seeds, and reject incomplete grids or inconsistent count/aggregate values.
+Synthetic rendering and rejection checks passed, including 0/256 and 256/256
+endpoints; synthetic figures remain under ignored `outputs/` and are not study
+results. Actual final figures and their report/W&B publication remain pending.
+
 Finish seed/reward and transfer runs; archive remote results; log analysis
 artifacts; finish browser/live validation of the interactive demo; complete and compile the
 Overleaf report; publish all evidence and audit every requirement. The study is
