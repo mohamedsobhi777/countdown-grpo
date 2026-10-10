@@ -74,11 +74,19 @@ also reveal a substantial complexity gap for the original mixed-arity pilot:
 **57.0% on three-number puzzles versus 16.0% on four-number puzzles**. Scores are
 23.8% for larger inputs and 48.0% for larger targets. The shifted suites are
 constructed and not difficulty-matched; these scores do not establish general
-reasoning. The separate three-number-only training/transfer study is ongoing. Its first
-completed seed solves **146/256 three-number puzzles and 26/256 four-number
-puzzles**. [Audited evaluations for seeds 42 and 43](results/study/transfer-progress/README.md)
-are published as interim evidence. Seed 43 solved **161/256 three-number** and
-**38/256 four-number puzzles**; seed 44 remains pending.
+reasoning.
+
+The **three-seed transfer study is complete**: models trained only on three-number
+puzzles average **57.3% ± 5.5 pp** on held-out three-number puzzles versus
+**11.3% ± 3.1 pp** on four-number puzzles (mean ± sample SD across seeds).
+The gap appears in every seed under the 256-token output cap. Truncation is
+common; these results do not isolate its causal effect or the effect of training
+arity. Comparisons with the single mixed-arity pilot are descriptive.
+
+![Three-seed transfer results](results/study/transfer/transfer-seed-comparison.png)
+
+[All 15 evaluations, raw outputs, uncertainty, provenance, and comparisons](results/study/transfer/README.md)
+· [W&B analysis](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/0svwuwkr).
 
 ### Example from the held-out set
 
@@ -147,7 +155,11 @@ For another machine, download the [pilot adapter artifact](https://wandb.ai/moha
 and supply its local directory. The server binds to loopback and serializes live
 generation. Avoid sharing the GPU with training. Custom puzzles may be unsolvable;
 single-puzzle decoding can differ from archived batched evaluation. Live inference
-is implemented but its GPU smoke test remains pending in the study ledger.
+passed real CUDA HTTP and browser checks, including repeated outputs, verifier
+display, mobile layout, and no JavaScript errors.
+[Verification record](results/study/demo-live.json) ·
+[W&B outputs and screenshots](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/t3alv4y9).
+This single-puzzle check verifies integration, not benchmark accuracy.
 
 ## Setup
 

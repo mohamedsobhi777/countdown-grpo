@@ -1,3 +1,5 @@
+> Superseded by the [complete three-seed transfer study](../transfer/README.md). The records below preserve the historical interim audits.
+
 # Interim transfer-study evidence
 
 Seeds 42 and 43 have completed 300 steps of three-number-only training and all five evaluations. **Seed 44 is training.** These are interim checkpoint results, not the completed multi-seed study.

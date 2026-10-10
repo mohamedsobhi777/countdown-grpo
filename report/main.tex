@@ -18,10 +18,7 @@ parser recovers the same correct counts when the answer-tag requirement is
 relaxed. This supports investigating arithmetic task improvement, while not
 establishing general reasoning or fully identifying the role of formatting.
 Increasing the pilot's output cap from 256 to 1024 tokens gained one solution
-while costing 3.85 times the evaluation time. Two completed three-number-only
-training seeds show substantially lower four-number accuracy; the third seed is
-still running. A six-run reward comparison and live-demo validation remain
-incomplete. Results below are explicitly scoped to their checkpoints and suites.
+while costing 3.85 times the evaluation time. Three completed three-number-only training seeds average 57.3\% on three-number puzzles and 11.3\% on four-number puzzles, with sample standard deviations of 5.5 and 3.1 percentage points. The live demo passed real CUDA and browser checks; the six-run reward comparison remains incomplete. Results below are explicitly scoped to their checkpoints and suites.
 \end{abstract}
 
 \section{Question and experimental scope}
@@ -124,7 +121,7 @@ illustrate the parser's coverage limitations.
 
 \section{Controlled study design and current status}
 The study keeps the original strict metric alongside the diagnostic. The matched
-budget grid and mixed-arity pilot generalization grid are complete. Two of three
+budget grid and mixed-arity pilot generalization grid are complete. All three
 transfer seeds and two of six controlled reward runs are complete:
 \begin{itemize}[nosep]
 \item Matched base/adapter output budgets of 256, 512, and 1024 tokens; record actual
@@ -253,59 +250,63 @@ original dataset. In particular, the 48\% larger-target score does not establish
 superior out-of-distribution reasoning. Full per-answer evidence, hash validation,
 and paired model comparisons are in the
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/p33k249f}{generalization analysis}.
-Training only on three-number puzzles and testing transfer remains a separate,
-ongoing experiment.
-Its prepared aggregator requires all three training seeds and all 15 evaluations,
+Training only on three-number puzzles and testing transfer is a separate,
+completed experiment reported below.
+Its aggregator requires all three training seeds and all 15 evaluations,
 checks that every training puzzle contains exactly three numbers, verifies all
 300 steps and identical ordered splits, and re-scores every answer against the
 frozen suites. An end-to-end synthetic test rejects four-number training
 contamination before publishing output. Per-seed comparisons with the single
-mixed-arity pilot will be descriptive; they are not a balanced multi-seed ablation
+mixed-arity pilot are descriptive; they are not a balanced multi-seed ablation
 of the training distribution.
 
-\section{Three-number-only training: interim transfer results}
-Seeds 42 and 43 completed all 300 training steps in 98.7 and 91.1 minutes,
-respectively, followed by all five evaluations. Seed 44 is still training.
-The table reports completed checkpoints separately; no three-seed mean is
-reported before the full grid finishes.
+\section{Three-number-only training and transfer}
+All three seeds completed 300 training steps and five evaluations each.
+Training took 98.7, 91.1, and 100.3 minutes for seeds 42, 43, and 44.
+The table reports solved counts per checkpoint and the mean accuracy with sample
+standard deviation across seeds. This SD is not a confidence interval; the same
+puzzles recur across seeds and are not pooled as independent observations.
 \begin{center}
-\begin{tabular}{llrrr}
+\begin{tabular}{lrrrr}
 \toprule
-Suite & Seed & Solved & Accuracy (95\% Wilson) & Truncated\\
+Suite & Seed 42 & Seed 43 & Seed 44 & Mean $\pm$ SD\\
 \midrule
-Original holdout & 42 & 79/256 & 30.9\% (25.5--36.8) & 167/256\\
-Original holdout & 43 & 93/256 & 36.3\% (30.7--42.4) & 157/256\\
-Three-number & 42 & 146/256 & 57.0\% (50.9--62.9) & 110/256\\
-Three-number & 43 & 161/256 & 62.9\% (56.8--68.6) & 95/256\\
-Four-number & 42 & 26/256 & 10.2\% (7.0--14.5) & 211/256\\
-Four-number & 43 & 38/256 & 14.8\% (11.0--19.7) & 197/256\\
-Inputs 101--200 & 42 & 63/256 & 24.6\% (19.7--30.2) & 188/256\\
-Inputs 101--200 & 43 & 79/256 & 30.9\% (25.5--36.8) & 165/256\\
-Targets 101--200 & 42 & 107/256 & 41.8\% (35.9--47.9) & 145/256\\
-Targets 101--200 & 43 & 112/256 & 43.8\% (37.8--49.9) & 140/256\\
+Original holdout & 79/256 & 93/256 & 77/256 & 32.4\% $\pm$ 3.4 pp\\
+Three-number & 146/256 & 161/256 & 133/256 & 57.3\% $\pm$ 5.5 pp\\
+Four-number & 26/256 & 38/256 & 23/256 & 11.3\% $\pm$ 3.1 pp\\
+Inputs 101--200 & 63/256 & 79/256 & 69/256 & 27.5\% $\pm$ 3.2 pp\\
+Targets 101--200 & 107/256 & 112/256 & 108/256 & 42.6\% $\pm$ 1.0 pp\\
 \bottomrule
 \end{tabular}
 \end{center}
-Strict and diagnostic scores agree in every cell. Full step sequences,
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/transfer-seed-comparison.pdf}
+\caption{Completed transfer study. Individual checkpoint Wilson intervals and
+across-seed dispersion are shown separately. Shifted suites are constructed,
+not difficulty-matched.}
+\end{figure}
+Strict and diagnostic scores agree in all 15 cells. Full step sequences,
 configuration, 20,000 unique three-number training puzzles, identical ordered
 splits, frozen suite hashes, absence of training overlap, and all per-answer
 scores passed audit. Final adapters and resumable checkpoints are retained in
-W\&B. Raw completions, per-seed summaries, failure categories, source audits,
+W\&B. Raw completions, per-seed summaries, failure categories, provenance,
 and evaluation links are available in the
-\href{https://github.com/mohamedsobhi777/countdown-grpo/tree/main/results/study/transfer-progress}{interim evidence directory}.
+\href{https://github.com/mohamedsobhi777/countdown-grpo/tree/main/results/study/transfer}{complete evidence directory}
+and \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/0svwuwkr}{analysis run}.
 
-Both completed checkpoints have lower accuracy on four-number puzzles. This
-is an observed transfer limitation under a 256-token cap, not an isolated causal
-effect of training arity. Comparisons with the single mixed-arity pilot remain
-descriptive; they are not a balanced multi-seed training-distribution ablation.
-The larger-input and larger-target suites are constructed and not difficulty-matched.
+Every checkpoint has lower accuracy on four-number puzzles. This is an observed
+transfer limitation under a 256-token cap, not an isolated causal effect of
+training arity. Comparisons with the single mixed-arity pilot remain descriptive;
+they are not a balanced multi-seed training-distribution ablation. The larger-input
+and larger-target suites are constructed and not difficulty-matched.
 
-All 110/95 three-number failures for seeds 42/43, respectively, are truncated,
-as are 211 of 230 and 197 of 218 four-number failures. Truncation overlaps the
-failure categories and does not establish causation or show that a longer budget
-would solve the puzzles. The completed longer-output experiment used the
-mixed-arity pilot; its finding cannot establish the budget effect for these
-separately trained adapters.
+Three-number outputs hit the cap on 110, 95, and 119 of 256 puzzles for seeds
+42, 43, and 44; four-number outputs do so on 211, 197, and 219 puzzles.
+Truncation overlaps failure categories and does not establish causation or show
+that a longer budget would solve the puzzles. The completed longer-output
+experiment used the mixed-arity pilot; its finding cannot establish the budget
+effect for these separately trained adapters.
 
 \section{Kernel validation and controlled-study backend}
 An A100 hardware trial completed three steps at 49.33 seconds per step, compared
@@ -349,7 +350,8 @@ checker accepts user expressions and shows strict success, diagnostic success,
 the extracted expression, exact value, and missing or reused inputs. Archived
 mode uses only Python's standard library and requires no model download or GPU.
 An optional live mode loads the pilot LoRA adapter and compares greedy generation
-with the adapter enabled and disabled; its GPU smoke test remains pending.
+with the adapter enabled and disabled. Real CUDA generation passed HTTP and
+browser verification after the training queue finished.
 The server binds to loopback and serializes live inference requests.
 
 Chromium checks verified all 256 examples, 85-success/171-failure filtering,
@@ -357,7 +359,14 @@ interactive answer checking, disabled generation in archived mode, no JavaScript
 errors, and mobile layout without horizontal overflow at 390px width. HTTP tests
 also check invalid inputs and cross-origin request rejection. Browser checks are reproducible with
 \texttt{scripts/check\_demo\_browser.py}; these do not substitute for testing live
-model inference. Single-puzzle generation can differ from the historical batched
+model inference. A separate real-model check did verify repeated greedy
+base/adapter outputs, the browser generation button, rendered verifier details,
+mobile layout, and absence of JavaScript errors. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/t3alv4y9}{live verification run}
+archives screenshots and exact outputs. On its single test puzzle, the base
+expression evaluates to $1274/19$ rather than the requested 66; the adapter
+returns a valid expression equal to 66. This is an integration check, not a
+benchmark or additional accuracy evidence. Single-puzzle generation can differ from the historical batched
 evaluation, and custom puzzles are not guaranteed solvable.
 
 \section{Provenance and experiment ledger}
@@ -397,19 +406,22 @@ the fallback kernels. Hashes and audit scope are committed in
 Seed 43's 149 archived files match its clean recorded commit, and its hardware
 and normalized requirements match seed 42. Seed 44's 180 archived files match
 its clean startup commit; all package Python modules, hardware, Python version,
-and full normalized requirements match seed 43. The third-seed audit establishes
-startup provenance only; training and evaluation completion remain pending.
+and full normalized requirements match seed 43. The startup audit was followed by verification of finished training, the final
+adapter and resumable checkpoint, and all five evaluations. Finished runtime
+provenance is included with the complete transfer evidence.
 Per-seed source hashes and captured runtime evidence are retained in the
 repository's \texttt{local-source-audit-seed43.json} and
 \texttt{local-source-audit-seed44.json} files under \texttt{results/study}.
 
 \section{Limitations}
-The original pilot is one seed on a 256-puzzle holdout, and the multi-seed grids
-remain incomplete. These results do not establish robust generalization. Training-dataset
+The original pilot is one seed on a 256-puzzle holdout. The three-seed transfer
+grid is complete, but the six-run controlled reward grid remains incomplete. These results do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates
 arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful
 work but still fail due to truncation. The completed output-budget finding applies
-to this checkpoint and test set; cross-seed transfer findings remain pending.
+to this checkpoint and test set. Three transfer seeds quantify limited seed
+variation under one training budget and fixed evaluation suites; they do not
+establish robustness across arbitrary training distributions or tasks.
 
 \end{document}

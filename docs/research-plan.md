@@ -66,6 +66,6 @@ The existing 300-step run is a pilot, not the entire study.
 - [x] Create and compile initial Overleaf report.
 - [x] Run matched output-budget evaluations.
 - [ ] Run fixed-split, multi-seed reward comparisons.
-- [ ] Run three-to-four-number transfer and distribution-shift evaluations.
-- [ ] Build and verify the interactive comparison demo.
+- [x] Run three-to-four-number transfer and distribution-shift evaluations.
+- [x] Build and verify the interactive comparison demo.
 - [ ] Publish complete report and perform requirement-by-requirement audit.

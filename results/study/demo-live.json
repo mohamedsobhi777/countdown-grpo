@@ -1,0 +1,56 @@
+{
+  "state": "passed",
+  "adapter": "outputs/countdown-20260914-01/training/adapter",
+  "max_new_tokens": 256,
+  "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/t3alv4y9",
+  "comparison": {
+    "nums": [
+      67,
+      54,
+      98,
+      19
+    ],
+    "target": 66,
+    "base": {
+      "completion": "(67 - 54) * (98 / 19) = 66\n",
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(67 - 54) * (98 / 19)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "1274/19"
+      }
+    },
+    "adapter": {
+      "completion": "(98 - 67) = 31  \n31 + 54 = 85  \n85 - 19 = 66  \n\n<answer>(98-67)+54-19</answer>\n",
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(98-67)+54-19",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "66"
+      }
+    }
+  },
+  "checks": [
+    "HTTP generation",
+    "repeated greedy outputs",
+    "browser generation button",
+    "rendered completions and verifier details",
+    "mobile layout",
+    "no browser JavaScript errors"
+  ],
+  "scope": "Real base/adapter generation through HTTP and browser on one puzzle, not a benchmark or proof of arithmetic accuracy."
+}

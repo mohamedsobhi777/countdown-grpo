@@ -1,0 +1,13 @@
+{
+  "source": "results/study/transfer/summary.json",
+  "source_sha256": "e9c5f31cec0fc29eb268b63837d89b329645d47b36be71353850138467c46d43",
+  "script": "scripts/plot_seed_studies.py",
+  "matplotlib": "3.6.3",
+  "seeds": [
+    "42",
+    "43",
+    "44"
+  ],
+  "intervals": "Left: per-checkpoint Wilson 95%. Right: sample SD across three seeds, not CI.",
+  "scope": "Consumes complete audited analyzer output; count/aggregate checks do not replace raw-output audits."
+}

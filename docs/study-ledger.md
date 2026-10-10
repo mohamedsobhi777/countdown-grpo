@@ -282,3 +282,35 @@ ordered training/holdout lists versus seed 43, and absence of training overlap
 passed verification. Raw answers, training metrics/configuration, and the
 interim summary are published under `results/study/transfer-progress`. Four
 frozen suites remain pending; the complete transfer aggregate is not ready.
+
+## Three-seed transfer study complete (2026-10-11)
+
+All three training runs and all 15 evaluations finished. The aggregate validator
+checked every training configuration and step sequence, identical ordered train
+and holdout lists, frozen suite hashes, absence of training overlap, adapter
+lineage, and every archived score. Strict and diagnostic scores agree in all
+cells. Mean accuracy ± sample SD is 32.4% ± 3.4 pp on the original holdout,
+57.3% ± 5.5 pp on three-number puzzles, 11.3% ± 3.1 pp on four-number puzzles,
+27.5% ± 3.2 pp on larger inputs, and 42.6% ± 1.0 pp on larger targets.
+The same puzzles recur across seeds; no independent pooling is used. Shifted
+suites are constructed, not difficulty-matched. Comparisons to the single
+mixed-arity pilot remain descriptive.
+
+Evidence is in `results/study/transfer`; W&B analysis is `0svwuwkr`. The figure
+was generated from the complete audited summary and visually reviewed. Finished
+training provenance and requirements accompany each seed; the source audits
+retain the seed-42 historical dirty-tree caveat. The live demo GPU/browser
+verification started automatically as `t3alv4y9` after the local queue finished.
+
+### Live CUDA and browser demo verified
+
+Run `t3alv4y9` finished successfully after the local queue released the GPU.
+Real base/adapter HTTP requests produced nonempty, repeatable greedy outputs
+after adapter toggling. The actual browser generation button returned the same
+outputs, rendered completions and verifier details, passed mobile layout checks,
+and produced no JavaScript errors. W&B retains screenshot and output artifacts;
+`results/study/demo-live.json` records the passed checks. On the one integration
+puzzle, the base expression has exact value 1274/19 and the adapter answer is 66.
+This is not an additional benchmark. Archived-mode checks remain documented
+separately. The demo and all transfer evaluations are now complete; four
+controlled reward runs and the final consolidated audit remain outstanding.
