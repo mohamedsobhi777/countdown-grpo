@@ -62,6 +62,7 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
         "truncation_rate": sum(r['truncated'] for r in results) / len(results),
         "generation_seconds": time.monotonic() - started,
         "diagnostic_policy": "declared-expression-v1",
+        "wandb_url": run.url if run else None,
         "results": results,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
