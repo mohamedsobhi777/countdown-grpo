@@ -11,6 +11,7 @@ def main():
     parser.add_argument('--jobs', nargs='+', required=True,
                         help='Config stems, e.g. binary-43 shaped-42 three-only-42')
     parser.add_argument('--group',default='countdown-controlled-v1')
+    parser.add_argument('--generalization',action='store_true')
     args=parser.parse_args()
     root=Path('outputs')/args.group
     root.mkdir(parents=True,exist_ok=True)
@@ -20,10 +21,16 @@ def main():
             raise FileNotFoundError(config)
         work=root/name
         work.mkdir(exist_ok=False)
-        for stage,command in [
+        stages = [
             ('train',['train','--output-dir',str(work/'training')]),
             ('evaluate',['evaluate','--adapter',str(work/'training/adapter'),'--result',str(work/'evaluation.json')]),
-        ]:
+        ]
+        if args.generalization:
+            for suite in ('id_three','id_four','large_inputs','large_targets'):
+                stages.append((suite,['evaluate','--adapter',str(work/'training/adapter'),
+                                      '--puzzles',f'data/suites/v1/{suite}.json',
+                                      '--result',str(work/f'{suite}.json')]))
+        for stage,command in stages:
             status={'job':name,'stage':stage,'state':'running'}
             (work/'status.json').write_text(json.dumps(status)+'\n')
             result=subprocess.run([sys.executable,'-u','-m','countdown_grpo.cli',*command,
