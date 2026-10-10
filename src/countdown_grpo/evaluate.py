@@ -1,9 +1,11 @@
 import json
 from pathlib import Path
+import time
 
 from .data import load_rows, render_prompt
 from .model import load_model
 from .reward import score_completion
+from .diagnostics import analyze_completion
 
 
 def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=None):
@@ -27,6 +29,9 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
     model.eval()
     _, rows = load_rows(config)
     results = []
+    started = time.monotonic()
+    eos_ids = model.generation_config.eos_token_id
+    eos_ids = set(eos_ids if isinstance(eos_ids, list) else [eos_ids])
     for start in range(0, len(rows), 8):
         batch = rows[start:start + 8]
         inputs = tokenizer([render_prompt(tokenizer, row) for row in batch], padding=True,
@@ -36,9 +41,15 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
                                     do_sample=False, use_cache=True,
                                     pad_token_id=tokenizer.pad_token_id)
         completions = tokenizer.batch_decode(tokens[:, inputs.input_ids.shape[1]:], skip_special_tokens=True)
-        for row, completion in zip(batch, completions, strict=True):
+        for index, (row, completion) in enumerate(zip(batch, completions, strict=True)):
             score = score_completion(completion, row["nums"], row["target"])
-            results.append({**row, "completion": completion, "valid": score.valid, "correct": score.correct})
+            generated = tokens[index, inputs.input_ids.shape[1]:].tolist()
+            eos_position = next((i for i, token in enumerate(generated) if token in eos_ids), None)
+            generated_count = eos_position + 1 if eos_position is not None else len(generated)
+            truncated = eos_position is None and generated_count >= config.max_completion_length
+            results.append({**row, "completion": completion, "valid": score.valid, "correct": score.correct,
+                            "generated_tokens": generated_count, "truncated": truncated,
+                            "diagnostic": analyze_completion(completion, row['nums'], row['target'], truncated)})
         print(f"Evaluation {len(results)}/{len(rows)}; solved {sum(r['correct'] for r in results)}", flush=True)
         if run:
             run.log({"eval/completed": len(results), "eval/running_solve_rate": sum(r["correct"] for r in results) / len(results)})
@@ -47,6 +58,10 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
         "samples": len(results),
         "solve_rate": sum(r["correct"] for r in results) / len(results),
         "valid_rate": sum(r["valid"] for r in results) / len(results),
+        "diagnostic_solve_rate": sum(r['diagnostic']['diagnostic_correct'] for r in results) / len(results),
+        "truncation_rate": sum(r['truncated'] for r in results) / len(results),
+        "generation_seconds": time.monotonic() - started,
+        "diagnostic_policy": "declared-expression-v1",
         "results": results,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -54,7 +69,8 @@ def evaluate(config, adapter=None, destination="outputs/evaluation.json", run=No
     if run:
         import wandb
         from .tracking import log_files
-        run.summary.update({f"eval/{key}": report[key] for key in ("samples", "solve_rate", "valid_rate")})
+        run.summary.update({f"eval/{key}": report[key] for key in
+                            ("samples", "solve_rate", "valid_rate", "diagnostic_solve_rate", "truncation_rate", "generation_seconds")})
         table = wandb.Table(columns=["numbers", "target", "completion", "valid", "correct"],
                             data=[[r["nums"], r["target"], r["completion"], r["valid"], r["correct"]] for r in results])
         run.log({"eval/completions": table})

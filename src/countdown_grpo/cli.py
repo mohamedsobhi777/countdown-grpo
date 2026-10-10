@@ -11,6 +11,7 @@ def main():
     parser.add_argument("command", choices=["config", "train", "evaluate"])
     parser.add_argument("--config", default="configs/local.toml")
     parser.add_argument("--steps", type=int)
+    parser.add_argument("--completion-length", type=int, help="Override the maximum new tokens")
     parser.add_argument("--output-dir")
     parser.add_argument("--resume", help="Trainer checkpoint path (train only)")
     parser.add_argument("--adapter", help="Saved LoRA adapter path (evaluate only)")
@@ -25,6 +26,8 @@ def main():
         changes["max_steps"] = args.steps
     if args.output_dir:
         changes["output_dir"] = args.output_dir
+    if args.completion_length is not None:
+        changes["max_completion_length"] = args.completion_length
     config = replace(config, **changes)
     if args.resume and args.command != "train":
         parser.error("--resume is only supported for train")

@@ -1,0 +1,34 @@
+{
+  "baseline": {
+    "samples": 256,
+    "strict_correct": 0,
+    "diagnostic_correct": 0,
+    "format_only_misses": 0,
+    "failures": {
+      "wrong_value": 90,
+      "number_mismatch": 152,
+      "invalid_syntax": 10,
+      "no_declared_expression": 4
+    },
+    "source_sha256": "a891ff2e9a0dd15d20883596751dec237f48fc13de1946fc700e0d26a84e2d9f",
+    "diagnostic_policy": "declared-expression-v1",
+    "truncation_available": false
+  },
+  "after": {
+    "samples": 256,
+    "strict_correct": 85,
+    "diagnostic_correct": 85,
+    "format_only_misses": 0,
+    "failures": {
+      "number_mismatch": 121,
+      "correct": 85,
+      "no_declared_expression": 24,
+      "invalid_syntax": 19,
+      "wrong_value": 5,
+      "ambiguous_or_incomplete_answer": 2
+    },
+    "source_sha256": "833421977c8a870060437ebbbdc33191d3de98026af38a3ed9693a569dd84026",
+    "diagnostic_policy": "declared-expression-v1",
+    "truncation_available": false
+  }
+}

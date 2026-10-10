@@ -12,3 +12,9 @@ wandb/
 *.safetensors
 *.pt
 *.bin
+.olauth
+report/.olcli.json
+report/*.aux
+report/*.log
+report/*.out
+report/*.synctex.gz
