@@ -1,0 +1,8 @@
+{
+  "source": "results/study/generalization-pilot/summary.json",
+  "source_sha256": "e09535f9fd33edc1352a0e798021a7788a2791ad896f6828a724e1b07e7b98be",
+  "matplotlib": "3.6.3",
+  "script": "scripts/plot_generalization_pilot.py",
+  "interval": "95% Wilson intervals per checkpoint; not training-seed variation",
+  "outcomes": "Diagnostic categories include correct answers. Truncation is a separate overlapping flag."
+}

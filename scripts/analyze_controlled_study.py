@@ -1,5 +1,6 @@
 """Audit all six prespecified reward/seed runs before reporting their comparison."""
 import argparse
+from collections import Counter
 import hashlib
 import json
 from pathlib import Path
@@ -64,6 +65,7 @@ def checked_run(path, reward, seed):
     summary = {'seed': seed, 'format_reward': reward, 'correct': correct, 'samples': len(rows),
                'accuracy': correct / len(rows), 'accuracy_wilson_95': wilson_interval(correct, len(rows)),
                'diagnostic_correct': sum(r['diagnostic']['diagnostic_correct'] for r in rows),
+               'failures': dict(Counter(r['diagnostic']['failure'] for r in rows)),
                'truncated': sum(r['truncated'] for r in rows),
                'train_runtime_seconds': metrics[-1]['train_runtime'],
                'first_positive_reward_step': next((r['step'] for r in steps if r['reward'] > 0), None),

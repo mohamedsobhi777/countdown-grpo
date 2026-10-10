@@ -62,6 +62,8 @@ not a general claim about reasoning budgets.
 
 ### Generalization
 
+![Pilot generalization accuracy and diagnostic outcomes](results/study/generalization-pilot/generalization-comparison.png)
+
 The [frozen generalization suites](results/study/generalization-pilot/README.md)
 also reveal a substantial complexity gap for the original mixed-arity pilot:
 **57.0% on three-number puzzles versus 16.0% on four-number puzzles**. Scores are

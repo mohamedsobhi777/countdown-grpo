@@ -1,5 +1,11 @@
 # Pilot generalization
 
+![Accuracy and declared-expression outcomes](generalization-comparison.png)
+
+Reproduce this figure with `python3 scripts/plot_generalization_pilot.py` from
+the repository root (Matplotlib 3.6.3). Source hash and plotting details are in
+[plot-metadata.json](plot-metadata.json); SVG and PDF versions are included.
+
 Base versus original mixed-arity pilot only; three-number-only transfer training is a separate pending study.
 
 Each suite contains 256 puzzles. ID suites are arity-stratified held-out dataset samples; shifted suites are constructed, solver-verified distributions. Do not pool suites or claim general reasoning. Wilson intervals concern puzzle sampling for one checkpoint, not training-seed variation. Paired tests are exploratory and unadjusted.

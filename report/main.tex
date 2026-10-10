@@ -179,6 +179,13 @@ matched, canonical puzzle sets were identical, and scores were recomputed before
 aggregation.
 
 \section{Pilot generalization on frozen suites}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/generalization-comparison.pdf}
+\caption{Strict solve accuracy and diagnostic outcomes for the single mixed-arity
+pilot. Error bars describe per-checkpoint puzzle uncertainty, not seed variation.
+Truncation overlaps diagnostic categories and is reported separately in the table.}
+\end{figure}
 The original mixed-arity pilot was evaluated with 256-token greedy decoding on
 four solver-verified, frozen suites, each containing 256 puzzles and no overlap
 with its selected training puzzles. The base model scored zero strict solutions

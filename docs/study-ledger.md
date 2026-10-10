@@ -96,6 +96,15 @@ Each queue stops its study on failure. The independent local three-number study
 can still start if pilot generalization fails, so inspect both logs. Stop Colab
 when outputs are secured; idle compute should not be retained.
 
+## Generalization figure
+
+The completed pilot suite results now include a reproducible PNG/SVG/PDF figure
+of strict accuracy (95% Wilson intervals) and diagnostic outcomes. The plot
+records its source hash, treats truncation as an overlapping flag, and labels
+shifted suites as constructed rather than difficulty-matched. It is included
+in the repository README and Overleaf report. Controlled-run aggregation also
+exports per-seed diagnostic category counts for the final failure analysis.
+
 ## Automatic collection and provenance checks
 
 `scripts/collect_colab_study.py` collects each completed Colab job with a SHA-256

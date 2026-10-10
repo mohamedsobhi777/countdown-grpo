@@ -52,6 +52,7 @@ class ControlledAuditTests(unittest.TestCase):
             save('training/wandb-run.json', {'entity': 'test', 'project': 'test', 'id': 'synthetic'})
             summary, *_ = controlled.checked_run(root, 0, 42)
             self.assertEqual(summary['correct'], 1)
+            self.assertEqual(summary['failures'], {'wrong_value':255, 'correct':1})
             self.assertIsNone(summary['first_positive_reward_step'])
             write_metrics(metrics[1:])
             with self.assertRaisesRegex(ValueError, '300 steps'):
