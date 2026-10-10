@@ -1,0 +1,12 @@
+Using CPython 3.13.15 interpreter at: /usr/bin/python3
+Resolved 3 packages in 393ms
+Prepared 3 packages in 199ms
+Installed 3 packages in 8ms
+ + einops==0.8.1
+ + fla-core==0.5.2
+ + flash-linear-attention==0.5.2
+{"chunk_forward_backward": {"shape": [1, 256, 16, 128], "seconds": {"reference": 0.009936886333434813, "fla": 0.0038352323332825713}, "relative_output_l2_error": 0.004418668802827597, "max_absolute_output_error": 0.00048828125, "warm_speedup": 2.5909476844991666, "relative_gradient_l2_errors": [0.004771993029862642, 0.005072499625384808, 0.0052736056968569756, 0.002660105936229229, 0.003742762142792344]}}
+Traceback (most recent call last):
+  File "/content/benchmark_delta_kernels.py", line 45, in <module>
+    raise ValueError(f'{name}/{implementation}: nonfinite forward result')
+ValueError: recurrent_forward/fla: nonfinite forward result

@@ -60,6 +60,15 @@ not a general claim about reasoning budgets.
 [Full six-cell report, raw outputs, uncertainty, and paired comparisons](results/study/budgets/README.md)
 · [W&B analysis](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ul7kozpl).
 
+### Generalization
+
+The [frozen generalization suites](results/study/generalization-pilot/README.md)
+also reveal a substantial complexity gap for the original mixed-arity pilot:
+**57.0% on three-number puzzles versus 16.0% on four-number puzzles**. Scores are
+23.8% for larger inputs and 48.0% for larger targets. The shifted suites are
+constructed and not difficulty-matched; these scores do not establish general
+reasoning. The separate three-number-only training/transfer study is ongoing.
+
 ### Example from the held-out set
 
 Numbers: `[67, 54, 98, 19]`; target: `66`. These are the actual model outputs:

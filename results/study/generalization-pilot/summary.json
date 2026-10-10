@@ -1,0 +1,212 @@
+{
+  "scope": "Base versus original mixed-arity pilot only; three-number-only transfer training is a separate pending study.",
+  "cells": {
+    "base-id_three": {
+      "samples": 256,
+      "correct": 0,
+      "accuracy": 0.0,
+      "accuracy_wilson_95": [
+        0.0,
+        0.014783856425871423
+      ],
+      "diagnostic_correct": 0,
+      "truncated": 6,
+      "failures": {
+        "number_mismatch": 237,
+        "wrong_value": 3,
+        "invalid_syntax": 7,
+        "no_declared_expression": 9
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/orxpb70y",
+      "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770",
+      "source_sha256": "983b56189cff0515b9caac7c6d0a30e774086c94850e1791707c9231b0f59a60"
+    },
+    "pilot-id_three": {
+      "samples": 256,
+      "correct": 146,
+      "accuracy": 0.5703125,
+      "accuracy_wilson_95": [
+        0.5090737118284735,
+        0.6294723083616384
+      ],
+      "diagnostic_correct": 146,
+      "truncated": 91,
+      "failures": {
+        "correct": 146,
+        "number_mismatch": 60,
+        "no_declared_expression": 39,
+        "invalid_syntax": 6,
+        "wrong_value": 5
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/4y4ecf0x",
+      "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770",
+      "source_sha256": "95c35f6254d9c711197a8579563b8ee16bf6c51b8c238b03e2192a59bef361cf"
+    },
+    "base-id_four": {
+      "samples": 256,
+      "correct": 0,
+      "accuracy": 0.0,
+      "accuracy_wilson_95": [
+        0.0,
+        0.014783856425871423
+      ],
+      "diagnostic_correct": 0,
+      "truncated": 2,
+      "failures": {
+        "wrong_value": 174,
+        "number_mismatch": 69,
+        "invalid_syntax": 10,
+        "no_declared_expression": 3
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ngwnxemi",
+      "suite_sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780",
+      "source_sha256": "7657223dca8f3fa1f90c5ca90c33901ad063854d31052807ef8f7f9f1d94d55c"
+    },
+    "pilot-id_four": {
+      "samples": 256,
+      "correct": 41,
+      "accuracy": 0.16015625,
+      "accuracy_wilson_95": [
+        0.12030547683153675,
+        0.21005542558292273
+      ],
+      "diagnostic_correct": 41,
+      "truncated": 184,
+      "failures": {
+        "number_mismatch": 176,
+        "correct": 41,
+        "no_declared_expression": 8,
+        "invalid_syntax": 26,
+        "wrong_value": 3,
+        "ambiguous_or_incomplete_answer": 2
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/fgoiy67k",
+      "suite_sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780",
+      "source_sha256": "72f4c81b0afe83de77cbeaf7943f52b59bc3fa76ca8d95aca793e65074c123ea"
+    },
+    "base-large_inputs": {
+      "samples": 256,
+      "correct": 0,
+      "accuracy": 0.0,
+      "accuracy_wilson_95": [
+        0.0,
+        0.014783856425871423
+      ],
+      "diagnostic_correct": 1,
+      "truncated": 1,
+      "failures": {
+        "wrong_value": 64,
+        "no_declared_expression": 7,
+        "number_mismatch": 180,
+        "correct": 1,
+        "invalid_syntax": 4
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/286t5v93",
+      "suite_sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19",
+      "source_sha256": "7efc5874a02687ea798264467e9ff5c76147a25c92a9d0dea81d6a5ee2691f74"
+    },
+    "pilot-large_inputs": {
+      "samples": 256,
+      "correct": 61,
+      "accuracy": 0.23828125,
+      "accuracy_wilson_95": [
+        0.19020540036637051,
+        0.2940955244815466
+      ],
+      "diagnostic_correct": 61,
+      "truncated": 165,
+      "failures": {
+        "correct": 61,
+        "number_mismatch": 130,
+        "ambiguous_or_incomplete_answer": 4,
+        "invalid_syntax": 37,
+        "no_declared_expression": 10,
+        "wrong_value": 14
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/0oiyienw",
+      "suite_sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19",
+      "source_sha256": "bd6cc289d1d1e9a4dbb4319f1bf5aaee6288013060e616cb212e2c653c69870d"
+    },
+    "base-large_targets": {
+      "samples": 256,
+      "correct": 0,
+      "accuracy": 0.0,
+      "accuracy_wilson_95": [
+        0.0,
+        0.014783856425871423
+      ],
+      "diagnostic_correct": 1,
+      "truncated": 0,
+      "failures": {
+        "number_mismatch": 162,
+        "wrong_value": 87,
+        "invalid_syntax": 6,
+        "correct": 1
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/cdwtqy77",
+      "suite_sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b",
+      "source_sha256": "541783be68c2d7c5dffc4d3df6afc6cb7a5514ff29b5e1b991e5d329af0f939e"
+    },
+    "pilot-large_targets": {
+      "samples": 256,
+      "correct": 123,
+      "accuracy": 0.48046875,
+      "accuracy_wilson_95": [
+        0.4200087697380131,
+        0.5415062246536224
+      ],
+      "diagnostic_correct": 123,
+      "truncated": 122,
+      "failures": {
+        "correct": 123,
+        "number_mismatch": 115,
+        "invalid_syntax": 9,
+        "no_declared_expression": 6,
+        "wrong_value": 1,
+        "ambiguous_or_incomplete_answer": 2
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ou2kp5yu",
+      "suite_sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b",
+      "source_sha256": "eb79e0cb42ebd501087b5f8f295a5f904019f5f582ab17339bb3c41047a82e0f"
+    }
+  },
+  "paired_comparisons": {
+    "id_three": {
+      "samples": 256,
+      "gained": 146,
+      "lost": 0,
+      "both_correct": 0,
+      "both_incorrect": 110,
+      "accuracy_difference": 0.5703125,
+      "exact_mcnemar_p_unadjusted": 2.2420775429197073e-44
+    },
+    "id_four": {
+      "samples": 256,
+      "gained": 41,
+      "lost": 0,
+      "both_correct": 0,
+      "both_incorrect": 215,
+      "accuracy_difference": 0.16015625,
+      "exact_mcnemar_p_unadjusted": 9.094947017729282e-13
+    },
+    "large_inputs": {
+      "samples": 256,
+      "gained": 61,
+      "lost": 0,
+      "both_correct": 0,
+      "both_incorrect": 195,
+      "accuracy_difference": 0.23828125,
+      "exact_mcnemar_p_unadjusted": 8.673617379884035e-19
+    },
+    "large_targets": {
+      "samples": 256,
+      "gained": 123,
+      "lost": 0,
+      "both_correct": 0,
+      "both_incorrect": 133,
+      "accuracy_difference": 0.48046875,
+      "exact_mcnemar_p_unadjusted": 1.88079096131566e-37
+    }
+  },
+  "interpretation": "Each suite contains 256 puzzles. ID suites are arity-stratified held-out dataset samples; shifted suites are constructed, solver-verified distributions. Do not pool suites or claim general reasoning. Wilson intervals concern puzzle sampling for one checkpoint, not training-seed variation. Paired tests are exploratory and unadjusted."
+}

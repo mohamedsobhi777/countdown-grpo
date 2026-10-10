@@ -1,0 +1,7 @@
+{
+  "state": "interrupted_runtime_trial",
+  "reason": "Five-step FLA validation passed and warm steps were about 26% faster; restart all six comparison runs consistently in controlled-l4-fla-v1.",
+  "completed_optimizer_steps": 41,
+  "seconds_per_step": 57.41485610004878,
+  "included_in_controlled_results": false
+}

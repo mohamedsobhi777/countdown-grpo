@@ -178,6 +178,66 @@ were normalized to their unchanged \texttt{None} defaults. All other settings
 matched, canonical puzzle sets were identical, and scores were recomputed before
 aggregation.
 
+\section{Pilot generalization on frozen suites}
+The original mixed-arity pilot was evaluated with 256-token greedy decoding on
+four solver-verified, frozen suites, each containing 256 puzzles and no overlap
+with its selected training puzzles. The base model scored zero strict solutions
+on every suite. The trained checkpoint's results were:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Suite & Solved & Accuracy (95\% Wilson) & Truncated\\
+\midrule
+Three-number holdout & 146/256 & 57.0\% (50.9--62.9) & 91/256\\
+Four-number holdout & 41/256 & 16.0\% (12.0--21.0) & 184/256\\
+Inputs 101--200 & 61/256 & 23.8\% (19.0--29.4) & 165/256\\
+Targets 101--200 & 123/256 & 48.0\% (42.0--54.2) & 122/256\\
+\bottomrule
+\end{tabular}
+\end{center}
+Diagnostic scores equal strict scores for the trained checkpoint. For the base,
+diagnostic extraction recovers one solution in each shifted suite, versus zero
+strict solutions; it recovers none in the two arity holdouts.
+
+The 41-percentage-point three/four-number gap indicates strong sensitivity to
+task complexity under this evaluation. Number-multiset errors account for
+176/256 four-number outputs. This describes observed errors, not a causal
+explanation of the gap. The arity holdouts may overlap the original pilot
+evaluation, so they are not independent replications and should not be pooled
+with that test set. The shifted suites balance three/four-number inputs and
+sample targets uniformly from reachable integers within their designated ranges.
+They are constructed distributions, not difficulty-matched versions of the
+original dataset. In particular, the 48\% larger-target score does not establish
+superior out-of-distribution reasoning. Full per-answer evidence, hash validation,
+and paired model comparisons are in the
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/p33k249f}{generalization analysis}.
+Training only on three-number puzzles and testing transfer remains a separate,
+ongoing experiment.
+
+\section{Kernel validation and controlled-study backend}
+After the hardware trial, FLA 0.5.2 was installed in an isolated directory and
+compared with unwrapped Transformers reference kernels at representative model
+shapes. A probe-only positional-argument error initially passed \texttt{beta} as
+\texttt{gk} to the recurrent function; inspection of the actual signatures and
+Transformers calls identified and corrected it. This was not a training failure.
+The corrected probe found about 3.27$\times$ chunk-forward/backward and
+2.11$\times$ recurrent-forward microkernel speedups. Chunk output relative L2
+difference was 0.44\%, and gradient differences were 0.27--0.53\%; the single
+recurrent output matched exactly. Returned states were checked for finiteness,
+not long-horizon equivalence. Compilation is excluded and concurrent GPU work
+limits the precision of these microtimings.
+
+A separate five-step full-training trial completed in 203.3 seconds, with steps
+2--5 averaging 37.63 seconds versus the fallback's approximately 50.8 seconds.
+All five sparse rewards were zero, so the test establishes operational viability,
+not learning quality. The original training process resumed automatically after
+a recorded 266.62-second suspension. On this evidence, the fallback attempt was
+subsequently stopped after 41 steps and archived, and all six controlled reward
+runs were restarted consistently with the pinned FLA backend in
+\texttt{controlled-l4-fla-v1}. Neither short trial enters the completed reward
+comparison. Original pilot and local transfer runs retain their fallback backend;
+this distinction must be retained in interpretation and reproduction.
+
 \section{Interactive comparison demo}
 A local browser interface exposes all 256 archived evaluation pairs, including
 failures, with filters for outcomes and number-multiset errors. An exact answer

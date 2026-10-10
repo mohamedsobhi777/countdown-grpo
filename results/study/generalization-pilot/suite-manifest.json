@@ -1,0 +1,26 @@
+{
+  "version": "v1",
+  "seed": 20261010,
+  "split_seed": 42,
+  "count_per_suite": 256,
+  "dataset_revision": "408f70d177020686d34a56bba5952feb45aaaee4",
+  "suites": {
+    "id_three": {
+      "sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770",
+      "samples": 256
+    },
+    "id_four": {
+      "sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780",
+      "samples": 256
+    },
+    "large_inputs": {
+      "sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19",
+      "samples": 256
+    },
+    "large_targets": {
+      "sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b",
+      "samples": 256
+    }
+  },
+  "generation_rule": "For shifts: sample inputs uniformly, then choose uniformly among sorted reachable integer targets in range; balance 3/4 numbers."
+}

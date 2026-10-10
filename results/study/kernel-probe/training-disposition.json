@@ -1,0 +1,6 @@
+{
+  "reason": "Isolated five-step FLA end-to-end validation",
+  "pause_seconds": 266.62157744399974,
+  "trial_exit_code": 0,
+  "trial_directory": "/content/countdown-grpo/outputs/kernel-fast-validation"
+}

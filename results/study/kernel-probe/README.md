@@ -25,10 +25,18 @@ the probe bug; passing `g` and `beta` by keyword fixed it. This failure was **no
 a model-training failure or evidence that FLA itself is broken. Both probe logs
 are retained locally and will be included in the W&B investigation artifact.
 
-A bounded five-step end-to-end training trial is in progress. The main training
-process is temporarily suspended during that trial and automatically resumed on
-normal/handled exit; the exact pause duration is recorded. These trial outputs
-are excluded from the six-run reward comparison. Kernel speedups alone are not
-grounds to claim faster end-to-end training or to change the study backend.
+A bounded [five-step end-to-end training trial](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/oi2t5mfe)
+completed successfully in 203.3 seconds of trainer time. The first step took
+48.2 seconds; steps 2–5 averaged **37.63 seconds**, about 26% less than the prior
+50.8-second fallback steps. The main process resumed automatically after a
+recorded 266.62-second pause. This pause is retained in the archived fallback
+timing evidence and must not be confused with training compute.
+
+On this evidence, all six controlled reward runs were restarted consistently in
+`controlled-l4-fla-v1` using the pinned `fast` extra. The fallback attempt was
+intentionally interrupted after 41 steps, archived, and excluded from completed
+controlled results. The five-step trial is also excluded. Its all-zero sparse
+rewards do not establish learning quality; the full multi-seed study remains
+necessary. The original pilot and local transfer runs retain the fallback backend.
 
 Implementation reference: [FLA installation documentation](https://github.com/fla-org/flash-linear-attention/blob/main/INSTALL.md).

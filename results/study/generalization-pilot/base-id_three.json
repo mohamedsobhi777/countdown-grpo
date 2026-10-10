@@ -1,0 +1,6944 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3.5-0.8B-Base",
+    "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+    "dataset": "Jiayi-Pan/Countdown-Tasks-3to4",
+    "dataset_revision": "408f70d177020686d34a56bba5952feb45aaaee4",
+    "output_dir": "outputs/countdown",
+    "seed": 42,
+    "split_seed": null,
+    "train_num_count": null,
+    "eval_fraction": 0.02,
+    "eval_samples": 256,
+    "train_samples": 20000,
+    "max_steps": 300,
+    "max_completion_length": 256,
+    "num_generations": 8,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 32,
+    "learning_rate": 1e-05,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "save_steps": 50,
+    "format_reward": 0.0
+  },
+  "adapter": null,
+  "decoding": "greedy",
+  "samples": 256,
+  "solve_rate": 0.0,
+  "valid_rate": 0.0,
+  "diagnostic_solve_rate": 0.0,
+  "truncation_rate": 0.0234375,
+  "generation_seconds": 40.15626898827031,
+  "diagnostic_policy": "declared-expression-v1",
+  "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/orxpb70y",
+  "suite": "data/suites/v1/id_three.json",
+  "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770",
+  "results": [
+    {
+      "target": 45,
+      "nums": [
+        9,
+        31,
+        67
+      ],
+      "completion": "(9 + 31) * (67 / 9) = 45\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(9 + 31) * (67 / 9)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          9
+        ]
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        26,
+        96,
+        4
+      ],
+      "completion": "(26 + 4) * (96 / 26) = 50\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(26 + 4) * (96 / 26)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          26
+        ]
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        8,
+        8,
+        34
+      ],
+      "completion": "(8 + 8) * (34 - 8) = 50\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(8 + 8) * (34 - 8)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          8
+        ]
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        13,
+        88,
+        6
+      ],
+      "completion": "(13 - 88 / 6) * 1 = 10\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(13 - 88 / 6) * 1",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          1
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        67,
+        65,
+        41
+      ],
+      "completion": "(67 - 65) * (41 / 67) = 2 * 0.6132075471698113 = 1.2264150943396226\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(67 - 65) * (41 / 67)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          67
+        ]
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        92,
+        95,
+        99
+      ],
+      "completion": "(92 + 95) * (99 - 92) = 33\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(92 + 95) * (99 - 92)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          92
+        ]
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        10,
+        4,
+        16
+      ],
+      "completion": "(10 + 4) * (16 / 10) = 56\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(10 + 4) * (16 / 10)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          10
+        ]
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        25,
+        91,
+        90
+      ],
+      "completion": "(25 - 91) * 90 / 25 = -24\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 - 91) * 90 / 25",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          25
+        ]
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        43,
+        24,
+        61
+      ],
+      "completion": "(43 - 24) * (61 / 43) = 42\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(43 - 24) * (61 / 43)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          43
+        ]
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        26,
+        21,
+        20
+      ],
+      "completion": "(26 - 21) * (20 / 26) = 100\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 25,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(26 - 21) * (20 / 26)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          26
+        ]
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        14,
+        29,
+        36
+      ],
+      "completion": "(14 + 29) * (36 / 14) = 98\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(14 + 29) * (36 / 14)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          14
+        ]
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        69,
+        11,
+        26
+      ],
+      "completion": "(69 - 11) * (26 / 69) = 54\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(69 - 11) * (26 / 69)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          69
+        ]
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        19,
+        17,
+        76
+      ],
+      "completion": "(19 - 17) * (76 / 19) = 2 * 4 = 8\n\n<answer>(19 - 17) * (76 / 19)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 51,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(19 - 17) * (76 / 19)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          19
+        ]
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        65,
+        79,
+        49
+      ],
+      "completion": "(65 - 49) * (79 / 65) = 16 * 1.2153846153846154 = 19.446153846153846\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 64,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(65 - 49) * (79 / 65)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          65
+        ]
+      }
+    },
+    {
+      "target": 64,
+      "nums": [
+        10,
+        81,
+        7
+      ],
+      "completion": "(10 + 81) * (7 - 10 / 81) = 64\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(10 + 81) * (7 - 10 / 81)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          10,
+          81
+        ]
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        62,
+        87,
+        30
+      ],
+      "completion": "(62 + 87) * (30 / 62) = 149 * 0.4838709677419355 = 72.0\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 51,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(62 + 87) * (30 / 62)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          62
+        ]
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        26,
+        38,
+        37
+      ],
+      "completion": "(26 + 38) * (37 - 26) = 64 * 11 = 704\n\n<answer>704</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "704",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          26,
+          38,
+          37
+        ],
+        "extra_numbers": [
+          704
+        ]
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        48,
+        30,
+        60
+      ],
+      "completion": "(48 - 30) * (60 / 48) = 18 * 1.25 = 22.5\n\n<answer>(48 - 30) * (60 / 48)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 58,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(48 - 30) * (60 / 48)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          48
+        ]
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        15,
+        18,
+        99
+      ],
+      "completion": "(15 + 18) * (99 - 15) = 33\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(15 + 18) * (99 - 15)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          15
+        ]
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        2,
+        94,
+        27
+      ],
+      "completion": "(27 - 2) * (94 / 2) = 69\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27 - 2) * (94 / 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 57,
+      "nums": [
+        7,
+        46,
+        18
+      ],
+      "completion": "(7 + 46) * (18 / 7) = 53 * 2.5714285714285714 = 136.30612244897958\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 62,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(7 + 46) * (18 / 7)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          7
+        ]
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        64,
+        66,
+        64
+      ],
+      "completion": "(64 + 64) * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - 64 = 64\n\n64 + 64 * (66 - 64) = 128 - ",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 256,
+      "truncated": true,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "64 + 64 * (66 - 64)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": true,
+        "missing_numbers": [],
+        "extra_numbers": [
+          64
+        ]
+      }
+    },
+    {
+      "target": 41,
+      "nums": [
+        47,
+        48,
+        41
+      ],
+      "completion": "(47 - 48) * 41 = -1 * 41 = -41\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 26,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 - 48) * 41",
+        "answer_source": "last_arithmetic_line",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-41"
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        46,
+        67,
+        77
+      ],
+      "completion": "(46 + 67) * (77 - 46) = 113 * 31 = 3503, which is not 98.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (77 - 46) = 113 * 31 = 3503.\n\n(46 + 67) * (7",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 256,
+      "truncated": true,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(46 + 67) * (7",
+        "answer_source": "last_arithmetic_line",
+        "failure": "invalid_syntax",
+        "truncated": true,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 43,
+      "nums": [
+        56,
+        41,
+        28
+      ],
+      "completion": "(56 - 41) * (28 / 56) = 15 * 0.5 = 7.5\n\n<answer>(56 - 41) * (28 / 56)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 56,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(56 - 41) * (28 / 56)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          56
+        ]
+      }
+    },
+    {
+      "target": 61,
+      "nums": [
+        33,
+        52,
+        80
+      ],
+      "completion": "(33 + 52) * (80 / 33) = 61\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(33 + 52) * (80 / 33)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          33
+        ]
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        99,
+        33,
+        47
+      ],
+      "completion": "(99 - 33) * (47 / 99) = 85\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(99 - 33) * (47 / 99)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          99
+        ]
+      }
+    },
+    {
+      "target": 64,
+      "nums": [
+        16,
+        24,
+        72
+      ],
+      "completion": "(16 + 24) * (72 / 16) = 64\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(16 + 24) * (72 / 16)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          16
+        ]
+      }
+    },
+    {
+      "target": 23,
+      "nums": [
+        10,
+        82,
+        69
+      ],
+      "completion": "(10 + 82) * (69 / 10) = 92 * 6.9 = 638.8\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 36,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(10 + 82) * (69 / 10)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          10
+        ]
+      }
+    },
+    {
+      "target": 37,
+      "nums": [
+        15,
+        25,
+        3
+      ],
+      "completion": "(15 + 25) * (3 / 15) = 40 * 0.2 = 8\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 31,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(15 + 25) * (3 / 15)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          15
+        ]
+      }
+    },
+    {
+      "target": 30,
+      "nums": [
+        75,
+        47,
+        92
+      ],
+      "completion": "(75 - 47) * (92 / 75) = 30\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(75 - 47) * (92 / 75)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          75
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        5,
+        80,
+        7
+      ],
+      "completion": "(5 + 80) * (7 - 5) = 82\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(5 + 80) * (7 - 5)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          5
+        ]
+      }
+    },
+    {
+      "target": 90,
+      "nums": [
+        19,
+        99,
+        10
+      ],
+      "completion": "(19 + 99) * (10 / 19) = 90\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(19 + 99) * (10 / 19)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          19
+        ]
+      }
+    },
+    {
+      "target": 79,
+      "nums": [
+        69,
+        8,
+        80
+      ],
+      "completion": "(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 69) / (8 - 8) = 11 / 0 \u2192 undefined\n\n(80 - 6",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 256,
+      "truncated": true,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(80 - 6",
+        "answer_source": "last_arithmetic_line",
+        "failure": "invalid_syntax",
+        "truncated": true,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 91,
+      "nums": [
+        54,
+        3,
+        71
+      ],
+      "completion": "(54 + 3) * (71 - 54) = 91\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(54 + 3) * (71 - 54)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          54
+        ]
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        12,
+        16,
+        42
+      ],
+      "completion": "(12 + 16) * (42 / 12) = 56\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(12 + 16) * (42 / 12)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          12
+        ]
+      }
+    },
+    {
+      "target": 83,
+      "nums": [
+        80,
+        92,
+        95
+      ],
+      "completion": "(92 - 80) * (95 / 80) = 12 * 1.1875 = 14.25\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(92 - 80) * (95 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          80
+        ]
+      }
+    },
+    {
+      "target": 60,
+      "nums": [
+        12,
+        47,
+        25
+      ],
+      "completion": "(12 + 47) * (25 - 12) = 60\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(12 + 47) * (25 - 12)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          12
+        ]
+      }
+    },
+    {
+      "target": 15,
+      "nums": [
+        12,
+        36,
+        33
+      ],
+      "completion": "(12 + 36) / (33 - 12) = 48 / 21 = 16/7 \u2248 2.2857, which is not 15.\n\n(12 * 36) / (33 - 12) = 432 / 21 = 144/7 \u2248 20.5714, not 15.\n\n(12 + 36) * (33 - 12) = 48 * 21 = 1008, not 15.\n\n(12 * 36) / (33 - 12) = 432 / 21 = 144/7 \u2248 20.5714.\n\n(12 + 36) / (33 - 12) = 48 / 21 = 16/7 \u2248 2.2857.\n\n(12 * 36) / (33 - 12) = 432 / 21 = 144/7 \u2248 2",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 256,
+      "truncated": true,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": true,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 96,
+      "nums": [
+        9,
+        23,
+        82
+      ],
+      "completion": "(9 + 23) * (82 / 9) = 96\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(9 + 23) * (82 / 9)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          9
+        ]
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        57,
+        27,
+        69
+      ],
+      "completion": "(57 - 27) * (69 / 57) = 30 * 1.207047 = 36.21141\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(57 - 27) * (69 / 57)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          57
+        ]
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        52,
+        89,
+        93
+      ],
+      "completion": "(52 + 89) * (93 / 52) = 56\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(52 + 89) * (93 / 52)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          52
+        ]
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        76,
+        84,
+        34
+      ],
+      "completion": "(76 - 84) * 34 / 76 = -42\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(76 - 84) * 34 / 76",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          76
+        ]
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        24,
+        91,
+        35
+      ],
+      "completion": "(24 + 91) * (35 / 24) = 32\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(24 + 91) * (35 / 24)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          24
+        ]
+      }
+    },
+    {
+      "target": 46,
+      "nums": [
+        76,
+        87,
+        35
+      ],
+      "completion": "(76 + 87) * (35 / 76) = 163 * 0.4574468085106383 = 74.6\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 51,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(76 + 87) * (35 / 76)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          76
+        ]
+      }
+    },
+    {
+      "target": 43,
+      "nums": [
+        3,
+        62,
+        57
+      ],
+      "completion": "(3 + 62) * (57 - 3) = 43\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(3 + 62) * (57 - 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        49,
+        11,
+        49
+      ],
+      "completion": "(49 - 11) * (49 / 49) = 38\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(49 - 11) * (49 / 49)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          49
+        ]
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        81,
+        46,
+        22
+      ],
+      "completion": "(81 - 46) * (22 / 81) = 13\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(81 - 46) * (22 / 81)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          81
+        ]
+      }
+    },
+    {
+      "target": 70,
+      "nums": [
+        8,
+        26,
+        88
+      ],
+      "completion": "(88 - 26) * (8 - 8) = 70\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(88 - 26) * (8 - 8)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          8
+        ]
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        48,
+        40,
+        34
+      ],
+      "completion": "(48 - 34) * (40 / 48) = 14 * (0.8333333333333333) = 14 * (5/6) = 70/6 = 35/3 \u2248 11.666666666666666\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 87,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 61,
+      "nums": [
+        12,
+        97,
+        24
+      ],
+      "completion": "(12 + 97) * (24 / 12) = 61\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(12 + 97) * (24 / 12)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          12
+        ]
+      }
+    },
+    {
+      "target": 95,
+      "nums": [
+        8,
+        11,
+        76
+      ],
+      "completion": "(8 + 11) * (76 / 8) = 95\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(8 + 11) * (76 / 8)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          8
+        ]
+      }
+    },
+    {
+      "target": 22,
+      "nums": [
+        14,
+        11,
+        19
+      ],
+      "completion": "(14 + 11) * (19 - 14) = 22\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(14 + 11) * (19 - 14)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          14
+        ]
+      }
+    },
+    {
+      "target": 29,
+      "nums": [
+        22,
+        34,
+        41
+      ],
+      "completion": "(22 + 34) * (41 / 22) = 56 * 1.863636... = 104.363636...\n\n<answer>(22 + 34) * (41 / 22)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 70,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(22 + 34) * (41 / 22)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          22
+        ]
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        90,
+        99,
+        88
+      ],
+      "completion": "(90 - 88) * (99 / 90) = 2 * 1.1 = 2.2\n\n<answer>(90 - 88) * (99 / 90)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 55,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(90 - 88) * (99 / 90)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          90
+        ]
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        15,
+        67,
+        32
+      ],
+      "completion": "(15 + 67) * (32 / 15) = 82 * 2.1333... = 175\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 38,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(15 + 67) * (32 / 15)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          15
+        ]
+      }
+    },
+    {
+      "target": 34,
+      "nums": [
+        31,
+        6,
+        3
+      ],
+      "completion": "(31 + 6) * (3 / 1) = 34\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(31 + 6) * (3 / 1)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          1
+        ]
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        95,
+        41,
+        89
+      ],
+      "completion": "(95 - 41) * (89 / 95) = 35\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(95 - 41) * (89 / 95)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          95
+        ]
+      }
+    },
+    {
+      "target": 97,
+      "nums": [
+        30,
+        61,
+        66
+      ],
+      "completion": "(30 + 61) * (66 / 30) = 97\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(30 + 61) * (66 / 30)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          30
+        ]
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        58,
+        69,
+        67
+      ],
+      "completion": "(69 - 58) * (67 / 58) = 11 * 1.1585 = 12.74395\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 42,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(69 - 58) * (67 / 58)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          58
+        ]
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        49,
+        53,
+        75
+      ],
+      "completion": "(49 + 53) * (75 / 49) = 102 * 1.5306122448979592 = 156.00000000000002\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 65,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(49 + 53) * (75 / 49)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          49
+        ]
+      }
+    },
+    {
+      "target": 48,
+      "nums": [
+        13,
+        84,
+        49
+      ],
+      "completion": "(13 + 84) * (49 / 13) = 97 * 3.769230769230769 = 366.0\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 50,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(13 + 84) * (49 / 13)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          13
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        83,
+        28,
+        29
+      ],
+      "completion": "(83 - 28) * (29 - 28) = 82\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(83 - 28) * (29 - 28)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          28
+        ]
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        41,
+        25,
+        64
+      ],
+      "completion": "(41 + 25) * (64 / 41) = 80\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(41 + 25) * (64 / 41)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          41
+        ]
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        11,
+        69,
+        9
+      ],
+      "completion": "(11 + 69) / (9 - 11) = 80 / -2 = -40\n\n<answer>-40</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "-40",
+        "answer_source": "answer_block",
+        "failure": "invalid_syntax",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 18,
+      "nums": [
+        11,
+        3,
+        4
+      ],
+      "completion": "(11 + 3) * (4 - 11 / 3) = 18\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 25,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 3) * (4 - 11 / 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11,
+          3
+        ]
+      }
+    },
+    {
+      "target": 79,
+      "nums": [
+        25,
+        96,
+        42
+      ],
+      "completion": "(25 + 42) * (96 / 25) = 67 * 3.84 = 258.48\n\n<answer>(25 + 42) * (96 / 25)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 60,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 + 42) * (96 / 25)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          25
+        ]
+      }
+    },
+    {
+      "target": 30,
+      "nums": [
+        94,
+        44,
+        20
+      ],
+      "completion": "(94 - 44) * (20 / 94) = 30\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(94 - 44) * (20 / 94)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          94
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        2,
+        90,
+        74
+      ],
+      "completion": "(74 - 2) * 90 / 74 = 82\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(74 - 2) * 90 / 74",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          74
+        ]
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        77,
+        75,
+        76
+      ],
+      "completion": "(77 - 75) * (76 / 76) = 2 * 1 = 2\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 29,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(77 - 75) * (76 / 76)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          76
+        ]
+      }
+    },
+    {
+      "target": 92,
+      "nums": [
+        65,
+        13,
+        14
+      ],
+      "completion": "(65 - 13) * (14 / 65) = 92\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(65 - 13) * (14 / 65)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          65
+        ]
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        3,
+        83,
+        27
+      ],
+      "completion": "(3 + 83) * (27 / 3) = 74\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(3 + 83) * (27 / 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        12,
+        3,
+        19
+      ],
+      "completion": "(12 + 3) * (19 - 12) = 28\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(12 + 3) * (19 - 12)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          12
+        ]
+      }
+    },
+    {
+      "target": 61,
+      "nums": [
+        21,
+        84,
+        57
+      ],
+      "completion": "(21 + 84) * (57 - 21) = 105 * 36 = 3780\n\n<answer>3780</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "3780",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          21,
+          84,
+          57
+        ],
+        "extra_numbers": [
+          3780
+        ]
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        35,
+        20,
+        68
+      ],
+      "completion": "(35 - 20) * (68 / 35) = 13\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(35 - 20) * (68 / 35)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          35
+        ]
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        13,
+        29,
+        26
+      ],
+      "completion": "(29 - 13) * (26 / 29) = 27\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(29 - 13) * (26 / 29)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          29
+        ]
+      }
+    },
+    {
+      "target": 96,
+      "nums": [
+        11,
+        61,
+        24
+      ],
+      "completion": "(11 + 61) * (24 / 11) = 96\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 61) * (24 / 11)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11
+        ]
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        15,
+        96,
+        45
+      ],
+      "completion": "(15 - 45) / 96 + 15 = -30 / 96 + 15 = -0.3125 + 15 = 14.6875\n\n<answer>14.6875</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 66,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "14.6875",
+        "answer_source": "answer_block",
+        "failure": "invalid_syntax",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 63,
+      "nums": [
+        63,
+        98,
+        99
+      ],
+      "completion": "(99 - 63) * (98 / 63) = 63\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(99 - 63) * (98 / 63)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          63
+        ]
+      }
+    },
+    {
+      "target": 34,
+      "nums": [
+        58,
+        12,
+        2
+      ],
+      "completion": "(58 - 12) * (2 / 58) = 34\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(58 - 12) * (2 / 58)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          58
+        ]
+      }
+    },
+    {
+      "target": 83,
+      "nums": [
+        21,
+        67,
+        37
+      ],
+      "completion": "(21 + 67) * (37 - 21) = 88\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(21 + 67) * (37 - 21)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          21
+        ]
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        66,
+        57,
+        60
+      ],
+      "completion": "(66 - 57) * (60 / 66) = 69\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(66 - 57) * (60 / 66)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          66
+        ]
+      }
+    },
+    {
+      "target": 77,
+      "nums": [
+        46,
+        70,
+        53
+      ],
+      "completion": "(46 + 70) * (53 / 46) = 77\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(46 + 70) * (53 / 46)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          46
+        ]
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        20,
+        84,
+        20
+      ],
+      "completion": "(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 + 84) / (20 - 20) = 104 / 0 \u2192 Invalid\n\n(20 +",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 256,
+      "truncated": true,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(20 +",
+        "answer_source": "last_arithmetic_line",
+        "failure": "invalid_syntax",
+        "truncated": true,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 19,
+      "nums": [
+        61,
+        30,
+        50
+      ],
+      "completion": "(61 - 30) * (50 / 61) = 19\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(61 - 30) * (50 / 61)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          61
+        ]
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        78,
+        97,
+        80
+      ],
+      "completion": "(78 + 97) * (80 - 78) = 175\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 25,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(78 + 97) * (80 - 78)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          78
+        ]
+      }
+    },
+    {
+      "target": 52,
+      "nums": [
+        75,
+        50,
+        78
+      ],
+      "completion": "(75 - 50) * (78 / 75) = 25 * 1.04 = 26\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(75 - 50) * (78 / 75)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          75
+        ]
+      }
+    },
+    {
+      "target": 12,
+      "nums": [
+        11,
+        36,
+        33
+      ],
+      "completion": "(11 + 36) * (33 / 11) = 12\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 36) * (33 / 11)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11
+        ]
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        4,
+        85,
+        60
+      ],
+      "completion": "(85 - 4) * (60 + 4) = 81 * 64 = 5216\n\n<answer>(85 - 4) * (60 + 4)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 52,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(85 - 4) * (60 + 4)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          4
+        ]
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        9,
+        77,
+        44
+      ],
+      "completion": "(9 + 77) * (44 / 9) = 24\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(9 + 77) * (44 / 9)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          9
+        ]
+      }
+    },
+    {
+      "target": 36,
+      "nums": [
+        56,
+        74,
+        54
+      ],
+      "completion": "(56 - 74) * (54 / 56) = -18 * 0.9642857 \u2248 -17.357142857142856\n\n<answer>(56 - 74) * (54 / 56)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 77,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(56 - 74) * (54 / 56)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          56
+        ]
+      }
+    },
+    {
+      "target": 73,
+      "nums": [
+        7,
+        66,
+        49
+      ],
+      "completion": "(7 + 66) * (49 - 7) = 73\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(7 + 66) * (49 - 7)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          7
+        ]
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        80,
+        88,
+        22
+      ],
+      "completion": "(80 + 88) * (22 / 80) = 76\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(80 + 88) * (22 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          80
+        ]
+      }
+    },
+    {
+      "target": 84,
+      "nums": [
+        11,
+        24,
+        71
+      ],
+      "completion": "(11 + 24) * (71 - 11) = 84\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 24) * (71 - 11)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11
+        ]
+      }
+    },
+    {
+      "target": 46,
+      "nums": [
+        80,
+        47,
+        13
+      ],
+      "completion": "(80 - 47) * (13 / 80) = 46\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(80 - 47) * (13 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          80
+        ]
+      }
+    },
+    {
+      "target": 65,
+      "nums": [
+        25,
+        5,
+        8
+      ],
+      "completion": "(25 - 5) * (8 / 25) = 65\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 - 5) * (8 / 25)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          25
+        ]
+      }
+    },
+    {
+      "target": 29,
+      "nums": [
+        59,
+        44,
+        2
+      ],
+      "completion": "(59 - 44) * (2 / 59) = 15 * (2 / 59) = 30 / 59 \u2248 0.5084745762711864\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 59,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 22,
+      "nums": [
+        43,
+        23,
+        43
+      ],
+      "completion": "(43 - 23) * (43 / 43) = 20 * 1 = 20\n\n<answer>(43 - 23) * (43 / 43)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 53,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(43 - 23) * (43 / 43)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          43
+        ]
+      }
+    },
+    {
+      "target": 59,
+      "nums": [
+        40,
+        76,
+        4
+      ],
+      "completion": "(40 + 76) * (4 / 4) = 116 * 1 = 116\n\n<answer>116</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "116",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          40,
+          76,
+          4
+        ],
+        "extra_numbers": [
+          116
+        ]
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        6,
+        42,
+        19
+      ],
+      "completion": "(6 + 42) * (19 - 6) = 55\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(6 + 42) * (19 - 6)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          6
+        ]
+      }
+    },
+    {
+      "target": 23,
+      "nums": [
+        42,
+        54,
+        35
+      ],
+      "completion": "(42 + 54) * (35 / 42) = 96 * 0.8333333333333333 = 80\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 48,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(42 + 54) * (35 / 42)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          42
+        ]
+      }
+    },
+    {
+      "target": 86,
+      "nums": [
+        18,
+        23,
+        81
+      ],
+      "completion": "(18 + 23) * (81 / 18) = 86\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(18 + 23) * (81 / 18)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          18
+        ]
+      }
+    },
+    {
+      "target": 18,
+      "nums": [
+        27,
+        3,
+        27
+      ],
+      "completion": "(27 - 3) * (27 / 27) = 18\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27 - 3) * (27 / 27)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          27
+        ]
+      }
+    },
+    {
+      "target": 60,
+      "nums": [
+        5,
+        25,
+        30
+      ],
+      "completion": "(5 + 25) * (30 / 5) = 60\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(5 + 25) * (30 / 5)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          5
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        19,
+        17,
+        80
+      ],
+      "completion": "(19 - 17) * (80 / 19) = 2 * 4 = 8\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 29,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(19 - 17) * (80 / 19)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          19
+        ]
+      }
+    },
+    {
+      "target": 86,
+      "nums": [
+        36,
+        45,
+        5
+      ],
+      "completion": "(36 + 45) / (5 - 36) = 90 / -31 = -90/31 \u2248 -2.903225806451613\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 53,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        38,
+        32,
+        20
+      ],
+      "completion": "(38 - 32) * (20 / 38) = 6 * 0.5263157894736842 = 3.157894736842105\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 62,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(38 - 32) * (20 / 38)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          38
+        ]
+      }
+    },
+    {
+      "target": 90,
+      "nums": [
+        12,
+        55,
+        47
+      ],
+      "completion": "(12 + 55) * (47 - 12) = 90\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(12 + 55) * (47 - 12)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          12
+        ]
+      }
+    },
+    {
+      "target": 81,
+      "nums": [
+        63,
+        26,
+        44
+      ],
+      "completion": "(63 - 26) * (44 / 63) = 81\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(63 - 26) * (44 / 63)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          63
+        ]
+      }
+    },
+    {
+      "target": 51,
+      "nums": [
+        62,
+        31,
+        53
+      ],
+      "completion": "(62 - 31) * (53 / 62) = 31 * 0.8548387096774193 = 26.5\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 50,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(62 - 31) * (53 / 62)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          62
+        ]
+      }
+    },
+    {
+      "target": 12,
+      "nums": [
+        48,
+        15,
+        19
+      ],
+      "completion": "(48 - 15) * (19 / 48) = 12\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(48 - 15) * (19 / 48)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          48
+        ]
+      }
+    },
+    {
+      "target": 40,
+      "nums": [
+        92,
+        96,
+        10
+      ],
+      "completion": "(92 + 96) * (10 / 92) = 192 * 0.10869565217391304 = 20.869565217391304\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 66,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(92 + 96) * (10 / 92)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          92
+        ]
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        71,
+        51,
+        54
+      ],
+      "completion": "(71 + 51) * (54 / 71) = 122 * 0.7647058823529412 = 93.44705882352941\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 64,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(71 + 51) * (54 / 71)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          71
+        ]
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        47,
+        32,
+        19
+      ],
+      "completion": "(47 - 32) * (19 + 47) = 98\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(47 - 32) * (19 + 47)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          47
+        ]
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        4,
+        61,
+        71
+      ],
+      "completion": "(4 + 61) * (71 - 4) = 33\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(4 + 61) * (71 - 4)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          4
+        ]
+      }
+    },
+    {
+      "target": 17,
+      "nums": [
+        45,
+        57,
+        6
+      ],
+      "completion": "(45 - 57) / 6 + 1 = -12 / 6 + 1 = -2 + 1 = -1\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 36,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(45 - 57) / 6 + 1",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          1
+        ]
+      }
+    },
+    {
+      "target": 88,
+      "nums": [
+        7,
+        15,
+        11
+      ],
+      "completion": "(7 + 15) * (11 - 7) = 88\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(7 + 15) * (11 - 7)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          7
+        ]
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        52,
+        93,
+        54
+      ],
+      "completion": "(52 + 93) * (54 / 52) = 13\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(52 + 93) * (54 / 52)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          52
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        99,
+        80,
+        97
+      ],
+      "completion": "(99 - 80) * (97 - 99) = 19 * (-2) = -38\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(99 - 80) * (97 - 99)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          99
+        ]
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        73,
+        43,
+        62
+      ],
+      "completion": "(73 - 43) * (62 / 73) = 54\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(73 - 43) * (62 / 73)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          73
+        ]
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        18,
+        21,
+        15
+      ],
+      "completion": "(18 + 21) * (15 / 18) = 39 * 0.8333333333333333 = 32.5\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 50,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(18 + 21) * (15 / 18)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          18
+        ]
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        47,
+        79,
+        40
+      ],
+      "completion": "(47 - 40) * (79 + 47) = 72\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(47 - 40) * (79 + 47)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          47
+        ]
+      }
+    },
+    {
+      "target": 88,
+      "nums": [
+        81,
+        16,
+        23
+      ],
+      "completion": "(81 - 16) * (23 / 81) = 88\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(81 - 16) * (23 / 81)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          81
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        93,
+        30,
+        41
+      ],
+      "completion": "(93 - 30) * (41 / 93) = 82\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(93 - 30) * (41 / 93)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          93
+        ]
+      }
+    },
+    {
+      "target": 46,
+      "nums": [
+        12,
+        14,
+        92
+      ],
+      "completion": "(12 + 14) * (92 / 12) = 46\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(12 + 14) * (92 / 12)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          12
+        ]
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        44,
+        37,
+        17
+      ],
+      "completion": "(44 - 37) * (17 / 44) = 7 * 0.38636363636363636 = 27\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 48,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(44 - 37) * (17 / 44)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          44
+        ]
+      }
+    },
+    {
+      "target": 73,
+      "nums": [
+        50,
+        33,
+        56
+      ],
+      "completion": "(50 + 33) * (56 / 50) = 73\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(50 + 33) * (56 / 50)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          50
+        ]
+      }
+    },
+    {
+      "target": 93,
+      "nums": [
+        59,
+        65,
+        99
+      ],
+      "completion": "(59 + 65) * (99 / 59) = 124 * 1.680672268907563 = 208.0672268907563\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(59 + 65) * (99 / 59)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          59
+        ]
+      }
+    },
+    {
+      "target": 77,
+      "nums": [
+        98,
+        83,
+        62
+      ],
+      "completion": "(98 - 83) * (62 / 98) = 77\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(98 - 83) * (62 / 98)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          98
+        ]
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        49,
+        10,
+        92
+      ],
+      "completion": "(49 - 10) * (92 / 49) = 33\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(49 - 10) * (92 / 49)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          49
+        ]
+      }
+    },
+    {
+      "target": 70,
+      "nums": [
+        87,
+        88,
+        69
+      ],
+      "completion": "(87 + 88) * (69 - 87) = 70\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(87 + 88) * (69 - 87)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          87
+        ]
+      }
+    },
+    {
+      "target": 73,
+      "nums": [
+        75,
+        28,
+        56
+      ],
+      "completion": "(75 - 28) * (56 / 75) = 73\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(75 - 28) * (56 / 75)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          75
+        ]
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        77,
+        46,
+        91
+      ],
+      "completion": "(77 - 46) * (91 / 77) = 31 * 1.1888118881188118 = 36.83118881188118\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(77 - 46) * (91 / 77)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          77
+        ]
+      }
+    },
+    {
+      "target": 51,
+      "nums": [
+        3,
+        23,
+        71
+      ],
+      "completion": "(3 + 23) * (71 - 3) = 51\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(3 + 23) * (71 - 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        57,
+        93,
+        3
+      ],
+      "completion": "(57 - 93) * 3 / 57 = -74\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(57 - 93) * 3 / 57",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          57
+        ]
+      }
+    },
+    {
+      "target": 23,
+      "nums": [
+        34,
+        1,
+        12
+      ],
+      "completion": "(34 - 1) * (12 / 3) = 23\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(34 - 1) * (12 / 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        11,
+        14,
+        74
+      ],
+      "completion": "(11 + 14) * (74 - 11) = 99\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 14) * (74 - 11)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11
+        ]
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        57,
+        63,
+        63
+      ],
+      "completion": "(57 + 63) * (63 / 57) = 116 * 1.111... = 129.111...\n\n<answer>(57 + 63) * (63 / 57)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 65,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(57 + 63) * (63 / 57)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          57
+        ]
+      }
+    },
+    {
+      "target": 66,
+      "nums": [
+        75,
+        11,
+        99
+      ],
+      "completion": "(75 - 11) * (99 / 75) = 66\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(75 - 11) * (99 / 75)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          75
+        ]
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        87,
+        81,
+        88
+      ],
+      "completion": "(87 - 81) * (88 / 87) = 80\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(87 - 81) * (88 / 87)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          87
+        ]
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        19,
+        65,
+        72
+      ],
+      "completion": "(19 + 65) * (72 / 19) = 26\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(19 + 65) * (72 / 19)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          19
+        ]
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        56,
+        7,
+        4
+      ],
+      "completion": "(56 - 4) * (7 + 56 / 7) = 32\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 25,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(56 - 4) * (7 + 56 / 7)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          56,
+          7
+        ]
+      }
+    },
+    {
+      "target": 52,
+      "nums": [
+        42,
+        80,
+        14
+      ],
+      "completion": "(42 + 80) * (14 / 42) = 122\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 25,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(42 + 80) * (14 / 42)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          42
+        ]
+      }
+    },
+    {
+      "target": 36,
+      "nums": [
+        62,
+        27,
+        53
+      ],
+      "completion": "(62 - 27) * (53 / 62) = 35 * 0.851935... \u2248 30.025\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        89,
+        20,
+        4
+      ],
+      "completion": "(89 + 20) * (4 - 89 / 20) = 94\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(89 + 20) * (4 - 89 / 20)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          89,
+          20
+        ]
+      }
+    },
+    {
+      "target": 39,
+      "nums": [
+        23,
+        21,
+        83
+      ],
+      "completion": "(23 - 21) * (83 / 23) = 2 * 3.652173913043478 = 7.304347826086956\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 61,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(23 - 21) * (83 / 23)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          23
+        ]
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        72,
+        14,
+        70
+      ],
+      "completion": "(72 - 14) * (70 / 72) = 28\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(72 - 14) * (70 / 72)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          72
+        ]
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        28,
+        36,
+        97
+      ],
+      "completion": "(28 + 36) * (97 - 28) = 64 * 69 = 4416\n\n<answer>(28 + 36) * (97 - 28)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 56,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(28 + 36) * (97 - 28)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          28
+        ]
+      }
+    },
+    {
+      "target": 71,
+      "nums": [
+        27,
+        58,
+        40
+      ],
+      "completion": "(27 + 40) * (58 / 27) = 67 * (58 / 27) = 67 * 2.148148... = 144.00000000000001\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 68,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27 + 40) * (58 / 27)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          27
+        ]
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        33,
+        7,
+        23
+      ],
+      "completion": "(33 + 7) * (23 - 33) = 49\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(33 + 7) * (23 - 33)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          33
+        ]
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        75,
+        9,
+        19
+      ],
+      "completion": "(75 - 9) * (19 + 75) = 85\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(75 - 9) * (19 + 75)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          75
+        ]
+      }
+    },
+    {
+      "target": 21,
+      "nums": [
+        32,
+        31,
+        21
+      ],
+      "completion": "(32 - 31) * (21 / 32) = 1 * 0.65625 = 0.65625\n\n<answer>(32 - 31) * (21 / 32)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(32 - 31) * (21 / 32)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          32
+        ]
+      }
+    },
+    {
+      "target": 25,
+      "nums": [
+        72,
+        3,
+        49
+      ],
+      "completion": "(72 - 3) * (49 / 72) = 25\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(72 - 3) * (49 / 72)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          72
+        ]
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        6,
+        2,
+        82
+      ],
+      "completion": "(6 + 2) * (82 - 6) = 85\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(6 + 2) * (82 - 6)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          6
+        ]
+      }
+    },
+    {
+      "target": 88,
+      "nums": [
+        7,
+        58,
+        37
+      ],
+      "completion": "(7 + 58) * (37 - 7) = 88\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(7 + 58) * (37 - 7)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          7
+        ]
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        75,
+        51,
+        50
+      ],
+      "completion": "(75 - 51) * (50 / 50) = 24\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(75 - 51) * (50 / 50)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          50
+        ]
+      }
+    },
+    {
+      "target": 96,
+      "nums": [
+        83,
+        85,
+        98
+      ],
+      "completion": "(83 + 85) * (98 / 83) = 168 * 1.188775570226717 = 200.0\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 51,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(83 + 85) * (98 / 83)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          83
+        ]
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        44,
+        90,
+        53
+      ],
+      "completion": "(44 + 90) * (53 - 44) / 90 = 10\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 28,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(44 + 90) * (53 - 44) / 90",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          44,
+          90
+        ]
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        15,
+        23,
+        38
+      ],
+      "completion": "(15 + 23) * (38 / 15) = 76\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(15 + 23) * (38 / 15)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          15
+        ]
+      }
+    },
+    {
+      "target": 57,
+      "nums": [
+        97,
+        83,
+        43
+      ],
+      "completion": "(97 - 83) * (43 / 97) = 14 * 0.442 = 57\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(97 - 83) * (43 / 97)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          97
+        ]
+      }
+    },
+    {
+      "target": 48,
+      "nums": [
+        68,
+        37,
+        17
+      ],
+      "completion": "(68 - 37) * (17 / 68) = 48\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(68 - 37) * (17 / 68)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          68
+        ]
+      }
+    },
+    {
+      "target": 87,
+      "nums": [
+        10,
+        30,
+        29
+      ],
+      "completion": "(10 + 30) * (29 - 10) = 87\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(10 + 30) * (29 - 10)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          10
+        ]
+      }
+    },
+    {
+      "target": 77,
+      "nums": [
+        11,
+        14,
+        21
+      ],
+      "completion": "(11 + 14) * (21 / 11) = 77\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 14) * (21 / 11)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11
+        ]
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        83,
+        97,
+        86
+      ],
+      "completion": "(83 + 97) * (86 / 83) = 94\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(83 + 97) * (86 / 83)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          83
+        ]
+      }
+    },
+    {
+      "target": 81,
+      "nums": [
+        25,
+        3,
+        2
+      ],
+      "completion": "(25 - 3) * (25 - 2) = 81\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 - 3) * (25 - 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          25
+        ]
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        9,
+        22,
+        93
+      ],
+      "completion": "(93 - 22) * (9 - 9) + 9 = 80\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 25,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(93 - 22) * (9 - 9) + 9",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          9,
+          9
+        ]
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        33,
+        76,
+        83
+      ],
+      "completion": "(33 + 76) * (83 / 33) = 109 * 2.515151515151515 = 274.9999999999999 \u2248 26\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 67,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 81,
+      "nums": [
+        6,
+        7,
+        68
+      ],
+      "completion": "(68 - 6) * (7 + 6) = 81\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(68 - 6) * (7 + 6)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          6
+        ]
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        57,
+        21,
+        24
+      ],
+      "completion": "(57 - 21) * (24 / 57) = 54\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(57 - 21) * (24 / 57)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          57
+        ]
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        61,
+        31,
+        44
+      ],
+      "completion": "(61 + 44) * (31 - 61 / 44) = 105 * (31 - 1.3863636363636364) = 105 * 27.61363636363636 = 2909.5\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 86,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(61 + 44) * (31 - 61 / 44)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          61,
+          44
+        ]
+      }
+    },
+    {
+      "target": 57,
+      "nums": [
+        67,
+        90,
+        80
+      ],
+      "completion": "(67 + 80) / (90 - 67) = 147 / 23 = 6.391304347826087\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 48,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(67 + 80) / (90 - 67)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          67
+        ]
+      }
+    },
+    {
+      "target": 21,
+      "nums": [
+        9,
+        96,
+        5
+      ],
+      "completion": "(96 - 9) * (5 + 9) = 21\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(96 - 9) * (5 + 9)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          9
+        ]
+      }
+    },
+    {
+      "target": 95,
+      "nums": [
+        2,
+        67,
+        26
+      ],
+      "completion": "(26 + 2) * (67 - 2) = 95\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(26 + 2) * (67 - 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        74,
+        70,
+        72
+      ],
+      "completion": "(74 - 70) * (72 / 72) = 4 * 1 = 4\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 29,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(74 - 70) * (72 / 72)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          72
+        ]
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        36,
+        11,
+        27
+      ],
+      "completion": "(36 - 11) * (27 / 36) = 99\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(36 - 11) * (27 / 36)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          36
+        ]
+      }
+    },
+    {
+      "target": 97,
+      "nums": [
+        34,
+        80,
+        2
+      ],
+      "completion": "(34 + 80) * (2 - 34 / 80) = 97\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(34 + 80) * (2 - 34 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          34,
+          80
+        ]
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        89,
+        15,
+        75
+      ],
+      "completion": "(89 - 15) * (75 / 89) = 94\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(89 - 15) * (75 / 89)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          89
+        ]
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        11,
+        21,
+        13
+      ],
+      "completion": "(11 + 21) * (13 / 1) = 32\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 21) * (13 / 1)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          1
+        ]
+      }
+    },
+    {
+      "target": 25,
+      "nums": [
+        44,
+        20,
+        49
+      ],
+      "completion": "(44 + 20) * (49 - 44) = 25\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(44 + 20) * (49 - 44)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          44
+        ]
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        23,
+        47,
+        81
+      ],
+      "completion": "(23 + 47) * (81 / 23) = 11\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(23 + 47) * (81 / 23)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          23
+        ]
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        21,
+        84,
+        19
+      ],
+      "completion": "(21 + 84) * (19 - 21) = 105 * (-2) = -210\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(21 + 84) * (19 - 21)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          21
+        ]
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        5,
+        91,
+        1
+      ],
+      "completion": "(5 + 91) * (1 / 5) = 96\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 21,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(5 + 91) * (1 / 5)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          5
+        ]
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        29,
+        4,
+        16
+      ],
+      "completion": "(29 - 4) * (16 / 29) = 100\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(29 - 4) * (16 / 29)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          29
+        ]
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        7,
+        70,
+        79
+      ],
+      "completion": "(70 + 7) * (79 - 7) = 69\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(70 + 7) * (79 - 7)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          7
+        ]
+      }
+    },
+    {
+      "target": 95,
+      "nums": [
+        20,
+        57,
+        12
+      ],
+      "completion": "(20 + 57) * (12 / 20) = 77 * 0.6 = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57) * (12 / 20) = 46.2\n\n(20 + 57",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 256,
+      "truncated": true,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(20 + 57",
+        "answer_source": "last_arithmetic_line",
+        "failure": "invalid_syntax",
+        "truncated": true,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        59,
+        6,
+        33
+      ],
+      "completion": "(59 - 33) * (6 + 59) = 26 * 65 = 1690\n\n<answer>(59 - 33) * (6 + 59)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 54,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(59 - 33) * (6 + 59)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          59
+        ]
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        98,
+        31,
+        94
+      ],
+      "completion": "(98 - 31) * (94 / 31) = 35\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(98 - 31) * (94 / 31)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          31
+        ]
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        41,
+        48,
+        22
+      ],
+      "completion": "(41 + 22) * (48 / 41) = 63 * 1.1707317073170732 = 73.78409999999999 \u2248 67\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 67,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 58,
+      "nums": [
+        13,
+        22,
+        93
+      ],
+      "completion": "(13 + 22) * (93 / 13) = 58\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(13 + 22) * (93 / 13)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          13
+        ]
+      }
+    },
+    {
+      "target": 37,
+      "nums": [
+        86,
+        73,
+        50
+      ],
+      "completion": "(86 - 73) * (50 / 86) = 13 * 0.5814 = 7.5582 \u2248 37\n\n<answer>(86 - 73) * (50 / 86)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 66,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(86 - 73) * (50 / 86)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          86
+        ]
+      }
+    },
+    {
+      "target": 47,
+      "nums": [
+        6,
+        7,
+        48
+      ],
+      "completion": "(6 + 7) * (48 / 6) = 13 * 8 = 104\n\n<answer>(6 + 7) * (48 / 6)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 48,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(6 + 7) * (48 / 6)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          6
+        ]
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        88,
+        42,
+        7
+      ],
+      "completion": "(88 - 42) * (7 + 88 / 42) = 94\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(88 - 42) * (7 + 88 / 42)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          88,
+          42
+        ]
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        36,
+        47,
+        22
+      ],
+      "completion": "(36 + 47) * (22 / 36) = 11\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(36 + 47) * (22 / 36)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          36
+        ]
+      }
+    },
+    {
+      "target": 51,
+      "nums": [
+        27,
+        36,
+        42
+      ],
+      "completion": "(27 + 36) * (42 / 27) = 51\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27 + 36) * (42 / 27)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          27
+        ]
+      }
+    },
+    {
+      "target": 89,
+      "nums": [
+        17,
+        27,
+        99
+      ],
+      "completion": "(17 + 27) * (99 / 17) = 89\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(17 + 27) * (99 / 17)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          17
+        ]
+      }
+    },
+    {
+      "target": 47,
+      "nums": [
+        80,
+        51,
+        18
+      ],
+      "completion": "(80 - 51) * (18 / 80) = 47\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(80 - 51) * (18 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          80
+        ]
+      }
+    },
+    {
+      "target": 15,
+      "nums": [
+        5,
+        70,
+        11
+      ],
+      "completion": "(5 + 70) * (11 - 5) = 15\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(5 + 70) * (11 - 5)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          5
+        ]
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        71,
+        14,
+        74
+      ],
+      "completion": "(71 + 14) * (74 - 71) = 11\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(71 + 14) * (74 - 71)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          71
+        ]
+      }
+    },
+    {
+      "target": 17,
+      "nums": [
+        30,
+        5,
+        18
+      ],
+      "completion": "(30 - 18) * (5 + 30) = 17\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(30 - 18) * (5 + 30)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          30
+        ]
+      }
+    },
+    {
+      "target": 40,
+      "nums": [
+        53,
+        69,
+        82
+      ],
+      "completion": "(53 + 69) * (82 / 53) = 122 * 1.558139534883721 = 190.99999999999998 \u2248 191\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 69,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        90,
+        78,
+        4
+      ],
+      "completion": "(90 - 4) * (78 / 4) = 86\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(90 - 4) * (78 / 4)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          4
+        ]
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        50,
+        71,
+        93
+      ],
+      "completion": "(50 + 71) * (93 / 50) = 121 * 1.86 = 225.46\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(50 + 71) * (93 / 50)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          50
+        ]
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        18,
+        27,
+        54
+      ],
+      "completion": "(18 + 27) * (54 / 2) = 45\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(18 + 27) * (54 / 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 88,
+      "nums": [
+        45,
+        5,
+        48
+      ],
+      "completion": "(45 - 5) * (48 / 45) = 88\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(45 - 5) * (48 / 45)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          45
+        ]
+      }
+    },
+    {
+      "target": 70,
+      "nums": [
+        61,
+        35,
+        44
+      ],
+      "completion": "(61 + 35) * (44 / 61) = 70\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(61 + 35) * (44 / 61)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          61
+        ]
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        23,
+        21,
+        55
+      ],
+      "completion": "(23 - 21) * (55 / 23) = 2 * 2.3913 = 4.7826 \u2248 11\n\n<answer>(23 - 21) * (55 / 23) = 4.7826</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 74,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(23 - 21) * (55 / 23)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          23
+        ]
+      }
+    },
+    {
+      "target": 63,
+      "nums": [
+        72,
+        51,
+        42
+      ],
+      "completion": "(72 - 51) * (42 / 72) = 21 * 0.5833333333333333 = 12.25\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 51,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(72 - 51) * (42 / 72)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          72
+        ]
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        35,
+        26,
+        33
+      ],
+      "completion": "(35 - 26) * (33 / 35) = 42\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(35 - 26) * (33 / 35)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          35
+        ]
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        2,
+        36,
+        38
+      ],
+      "completion": "(36 - 2) * (38 / 2) = 34 * 19 = 646\n\n<answer>(36 - 2) * (38 / 2)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 51,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(36 - 2) * (38 / 2)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 15,
+      "nums": [
+        48,
+        8,
+        9
+      ],
+      "completion": "(48 - 8) * (9 / 48) = 15\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(48 - 8) * (9 / 48)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          48
+        ]
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        77,
+        28,
+        59
+      ],
+      "completion": "(77 - 28) * (59 / 77) = 49 * 0.7671 = 37.5879\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(77 - 28) * (59 / 77)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          77
+        ]
+      }
+    },
+    {
+      "target": 71,
+      "nums": [
+        55,
+        31,
+        15
+      ],
+      "completion": "(55 - 31) * (15 / 55) = 71\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(55 - 31) * (15 / 55)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          55
+        ]
+      }
+    },
+    {
+      "target": 14,
+      "nums": [
+        38,
+        66,
+        90
+      ],
+      "completion": "(38 + 66) * (90 / 38) = 14\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(38 + 66) * (90 / 38)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          38
+        ]
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        27,
+        80,
+        9
+      ],
+      "completion": "(27 + 80) * (9 - 27 / 80) = 98\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27 + 80) * (9 - 27 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          27,
+          80
+        ]
+      }
+    },
+    {
+      "target": 19,
+      "nums": [
+        14,
+        61,
+        66
+      ],
+      "completion": "(61 - 14) * (66 / 61) = 19\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(61 - 14) * (66 / 61)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          61
+        ]
+      }
+    },
+    {
+      "target": 40,
+      "nums": [
+        11,
+        52,
+        81
+      ],
+      "completion": "(11 + 52) * (81 / 11) = 63 * 7.363636... = 466.666666...\n\n<answer>(11 + 52) * (81 / 11)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 70,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(11 + 52) * (81 / 11)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          11
+        ]
+      }
+    },
+    {
+      "target": 63,
+      "nums": [
+        76,
+        97,
+        3
+      ],
+      "completion": "(76 + 97) * 3 / 76 = 63\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(76 + 97) * 3 / 76",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          76
+        ]
+      }
+    },
+    {
+      "target": 84,
+      "nums": [
+        54,
+        27,
+        3
+      ],
+      "completion": "(54 - 27) * 3 / 54 = 84\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(54 - 27) * 3 / 54",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          54
+        ]
+      }
+    },
+    {
+      "target": 39,
+      "nums": [
+        27,
+        52,
+        36
+      ],
+      "completion": "(27 + 36) * (52 - 27) = 63 * 25 = 1575\n\n<answer>1575</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "1575",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          27,
+          52,
+          36
+        ],
+        "extra_numbers": [
+          1575
+        ]
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        74,
+        81,
+        47
+      ],
+      "completion": "(74 + 81) * (47 - 74) = 155 * (-27) = -4185\n\n<answer>-4185</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 47,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "-4185",
+        "answer_source": "answer_block",
+        "failure": "invalid_syntax",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        25,
+        1,
+        44
+      ],
+      "completion": "(25 - 1) * (44 / 2) = 69\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 - 1) * (44 / 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 58,
+      "nums": [
+        22,
+        85,
+        5
+      ],
+      "completion": "(22 + 85) * (5 - 22 / 85) = 58\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(22 + 85) * (5 - 22 / 85)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          22,
+          85
+        ]
+      }
+    },
+    {
+      "target": 12,
+      "nums": [
+        58,
+        56,
+        6
+      ],
+      "completion": "(58 - 56) * (6 / 58) = 2 * 0.10344827586206897 = 2.0689655172413794\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(58 - 56) * (6 / 58)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          58
+        ]
+      }
+    },
+    {
+      "target": 59,
+      "nums": [
+        77,
+        11,
+        7
+      ],
+      "completion": "(77 - 11) * 7 = 59\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 18,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(77 - 11) * 7",
+        "answer_source": "last_arithmetic_line",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "462"
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        50,
+        46,
+        30
+      ],
+      "completion": "(50 - 46) * (30 / 50) = 26\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(50 - 46) * (30 / 50)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          50
+        ]
+      }
+    },
+    {
+      "target": 48,
+      "nums": [
+        2,
+        29,
+        21
+      ],
+      "completion": "(29 - 2) * (21 / 2) = 28 * 10.5 = 294\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 33,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(29 - 2) * (21 / 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 18,
+      "nums": [
+        80,
+        4,
+        38
+      ],
+      "completion": "(80 - 4) * (38 / 80) = 18\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(80 - 4) * (38 / 80)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          80
+        ]
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        17,
+        75,
+        25
+      ],
+      "completion": "(17 + 75) * (25 - 17) = 92\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(17 + 75) * (25 - 17)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          17
+        ]
+      }
+    },
+    {
+      "target": 83,
+      "nums": [
+        20,
+        63,
+        1
+      ],
+      "completion": "(20 + 63) * (1 - 20 / 63) = 83\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 27,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(20 + 63) * (1 - 20 / 63)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          20,
+          63
+        ]
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        42,
+        79,
+        93
+      ],
+      "completion": "(42 + 79) * (93 / 42) = 28\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(42 + 79) * (93 / 42)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          42
+        ]
+      }
+    },
+    {
+      "target": 41,
+      "nums": [
+        88,
+        38,
+        85
+      ],
+      "completion": "(88 - 38) * (85 / 88) = 50 * 0.9659090909090909 = 48.29545454545454\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(88 - 38) * (85 / 88)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          88
+        ]
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        36,
+        3,
+        88
+      ],
+      "completion": "(36 - 3) * (88 / 3) = 55\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(36 - 3) * (88 / 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 21,
+      "nums": [
+        69,
+        21,
+        70
+      ],
+      "completion": "(69 - 21) * (70 / 69) = 21\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(69 - 21) * (70 / 69)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          69
+        ]
+      }
+    },
+    {
+      "target": 34,
+      "nums": [
+        3,
+        57,
+        69
+      ],
+      "completion": "(3 + 57) * (69 / 3) = 34\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(3 + 57) * (69 / 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        35,
+        49,
+        10
+      ],
+      "completion": "(35 + 49) * (10 - 35 / 49) = 84 * (10 - 0.7142857142857143) = 84 * 9.285714285714286 = 781.9999999999999 \u2248 782\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 100,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": null,
+        "answer_source": "none",
+        "failure": "no_declared_expression",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        38,
+        90,
+        9
+      ],
+      "completion": "(90 - 38) * (9 / 3) = 28\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(90 - 38) * (9 / 3)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          3
+        ]
+      }
+    },
+    {
+      "target": 36,
+      "nums": [
+        53,
+        37,
+        54
+      ],
+      "completion": "(53 - 37) * (54 / 53) = 16 * 1.0188679245283018 = 16.29188679245283\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(53 - 37) * (54 / 53)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          53
+        ]
+      }
+    },
+    {
+      "target": 47,
+      "nums": [
+        95,
+        92,
+        50
+      ],
+      "completion": "(95 - 50) * (92 / 95) = 47\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(95 - 50) * (92 / 95)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          95
+        ]
+      }
+    },
+    {
+      "target": 70,
+      "nums": [
+        25,
+        5,
+        3
+      ],
+      "completion": "(25 - 5) * (3 + 25) = 70\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 - 5) * (3 + 25)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          25
+        ]
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        9,
+        37,
+        48
+      ],
+      "completion": "(9 + 37) * (48 / 9) = 94\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(9 + 37) * (48 / 9)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          9
+        ]
+      }
+    },
+    {
+      "target": 90,
+      "nums": [
+        53,
+        23,
+        60
+      ],
+      "completion": "(53 + 23) * (60 / 53) = 90\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(53 + 23) * (60 / 53)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          53
+        ]
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        28,
+        99,
+        1
+      ],
+      "completion": "(28 - 99) * 1 = -71\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 18,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(28 - 99) * 1",
+        "answer_source": "last_arithmetic_line",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-71"
+      }
+    },
+    {
+      "target": 87,
+      "nums": [
+        34,
+        83,
+        30
+      ],
+      "completion": "(34 + 83) * (30 / 34) = 117 * (30 / 34) = 117 * (15 / 17) = 117 * 15 / 17 = 1755 / 17 = 103.23529411764706\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 91,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(34 + 83) * (30 / 34)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          34
+        ]
+      }
+    },
+    {
+      "target": 41,
+      "nums": [
+        52,
+        83,
+        72
+      ],
+      "completion": "(52 + 83) * (72 / 52) = 135 * 1.3846153846153846 = 187.5\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 52,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(52 + 83) * (72 / 52)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          52
+        ]
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        27,
+        85,
+        84
+      ],
+      "completion": "(27 - 85) / 84 + 26 = -58 / 84 + 26 = -14.7619 + 26 = 11.2381\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 53,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27 - 85) / 84 + 26",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          26
+        ]
+      }
+    },
+    {
+      "target": 52,
+      "nums": [
+        54,
+        50,
+        48
+      ],
+      "completion": "(54 - 50) * (48 / 54) = 4 * (48/54) = 19.2\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(54 - 50) * (48 / 54)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          54
+        ]
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        81,
+        6,
+        40
+      ],
+      "completion": "(81 - 40) * (6 + 40) = 41 * 46 = 1886\n\n<answer>(81 - 40) * (6 + 40)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 54,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(81 - 40) * (6 + 40)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          40
+        ]
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        32,
+        92,
+        4
+      ],
+      "completion": "(32 + 92) * (4 / 32) = 100\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(32 + 92) * (4 / 32)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          32
+        ]
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        2,
+        31,
+        53
+      ],
+      "completion": "(2 + 31) * (53 / 2) = 11\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 22,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(2 + 31) * (53 / 2)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          2
+        ]
+      }
+    },
+    {
+      "target": 52,
+      "nums": [
+        39,
+        3,
+        88
+      ],
+      "completion": "(39 - 3) * (88 / 39) = 52\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(39 - 3) * (88 / 39)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          39
+        ]
+      }
+    },
+    {
+      "target": 89,
+      "nums": [
+        52,
+        4,
+        76
+      ],
+      "completion": "(52 + 4) * (76 - 52) = 89\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(52 + 4) * (76 - 52)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          52
+        ]
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        50,
+        63,
+        37
+      ],
+      "completion": "(50 - 37) * (63 / 50) = 13 * 1.26 = 16.38\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(50 - 37) * (63 / 50)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          50
+        ]
+      }
+    },
+    {
+      "target": 79,
+      "nums": [
+        62,
+        75,
+        66
+      ],
+      "completion": "(62 + 75) * (66 - 62) = 79\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(62 + 75) * (66 - 62)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          62
+        ]
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        43,
+        22,
+        54
+      ],
+      "completion": "(43 - 22) * (54 / 43) = 33\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 24,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(43 - 22) * (54 / 43)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          43
+        ]
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        25,
+        55,
+        55
+      ],
+      "completion": "(25 + 55) / (55 - 25) = 80 / 30 = 8/3 \u2248 2.666...\n\n<answer>(25 + 55) / (55 - 25)</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 63,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(25 + 55) / (55 - 25)",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          25
+        ]
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        32,
+        8,
+        14
+      ],
+      "completion": "(32 - 8) * (14 / 32) = 80\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 23,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(32 - 8) * (14 / 32)",
+        "answer_source": "last_arithmetic_line",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [
+          32
+        ]
+      }
+    }
+  ]
+}

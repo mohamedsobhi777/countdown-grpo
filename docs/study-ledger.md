@@ -48,25 +48,30 @@ completion gates: [research-plan.md](research-plan.md).
   normalization (documented in the report and tested). CPU suite: 42 passing.
   [Results](../results/study/budgets/README.md),
   [W&B analysis](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ul7kozpl).
-- Colab session `countdown-study`, L4: six runs in `controlled-l4-v1`, binary/shaped
-  rewards interleaved at seeds 42, 43, 44. Binary seed 42 is rerun so the six main
-  comparisons share hardware. [First run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/4anzz6c2).
+- Colab session `countdown-study`, L4: six runs in **`controlled-l4-fla-v1`**,
+  binary/shaped rewards interleaved at seeds 42, 43, 44, all with the pinned FLA
+  0.5.2 backend. The fresh queue is verified live (PID 14915); its first step took
+  about 39 seconds. [First FLA run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/fneh9kxb).
+  The prior fallback run (`4anzz6c2`) was stopped after 41 steps
+  and archived as an excluded runtime trial.
   Observe with `colab exec -s countdown-study -f scripts/colab_status.py`.
-  First five steps averaged 50.5 seconds each; monitor this slower L4 runtime.
-  An isolated FLA 0.5.2 kernel probe is running under `/content/countdown-kernel-probe`.
-  It does not modify the training environment. Its short concurrent GPU work can
-  affect observed wall time; it is not part of the controlled accuracy experiment.
-  Adoption requires numerical checks and an end-to-end training test; microkernel
-  speed alone is insufficient. Probe scripts are committed for reproducibility.
+  [Kernel investigation](../results/study/kernel-probe/README.md): numerical
+  microchecks passed after correcting a probe-only positional-argument bug.
+  The five-step full-training validation completed; warm steps averaged 37.63s
+  versus about 50.8s for fallback. The original run's 266.62-second suspension
+  and concurrent microprobe are explicitly recorded in its archived evidence.
 - Colab A100 allocated as `countdown-fast-study`, group `controlled-a100-v1`;
   [first run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/i7dgueld).
   Intentionally stopped after three steps at 49.33 seconds/step versus 50.79 on
   L4 (about 3% faster, insufficient to justify switching this grid). Complete
   trial logs/manifests were downloaded and [archived in W&B](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rat7r34m).
-  **A100 VM termination confirmed.** The L4 grid remains the chosen comparison;
+  **A100 VM termination confirmed.** The L4 FLA grid is the chosen comparison;
   the A100 trial is tagged and excluded from completed training results.
-- Local tmux `countdown-generalization`: waits for budget evaluation, then runs
-  base/pilot on all frozen suites, followed by three-number-only training at
+- **Pilot generalization completed and audited:** base/pilot on four frozen
+  suites; pilot solves 146/256 three-number, 41/256 four-number, 61/256 larger-input,
+  and 123/256 larger-target puzzles. [Results](../results/study/generalization-pilot/README.md),
+  [W&B analysis](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/p33k249f).
+- Local tmux `countdown-generalization`: now runs three-number-only training at
   seeds 42, 43, 44 with original-holdout and four-suite evaluations. Outputs:
   `outputs/generalization-pilot-v1/` and `outputs/three-only-local-v1/`.
 - Live-demo smoke test is queued after the two local GPU queues finish, in tmux
