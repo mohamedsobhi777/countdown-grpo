@@ -81,8 +81,11 @@ completion gates: [research-plan.md](research-plan.md).
   seeds 42, 43, 44 with original-holdout and four-suite evaluations. Outputs:
   `outputs/generalization-pilot-v1/` and `outputs/three-only-local-v1/`.
 - Live-demo smoke test is queued after the two local GPU queues finish, in tmux
-  `countdown-demo-live-check`. It performs actual base/adapter generation twice
-  and verifies repeatability, then logs the output to W&B. This remains pending
+  `countdown-demo-live-check`. It performs actual base/adapter generation twice through HTTP, then generates
+  again through the browser button and checks rendered outputs, verifier details,
+  repeatability, mobile layout, and JavaScript errors. Outputs and screenshots
+  are logged to W&B. The extended browser path passed a synthetic transport check;
+  that check did not run a model and is not evidence of CUDA success. This remains pending
   until `results/study/demo-live.json` exists with a successful recorded result.
 - Transfer aggregation is queued in tmux `countdown-transfer-analysis` after
   `countdown-generalization` exits. Incomplete/failed studies are rejected; it
