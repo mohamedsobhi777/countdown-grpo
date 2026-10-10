@@ -1,0 +1,3214 @@
+{
+  "summary": {
+    "samples": 256,
+    "solvable": 256,
+    "model_correct": 85
+  },
+  "results": [
+    {
+      "index": 0,
+      "nums": [
+        2,
+        4,
+        55,
+        25
+      ],
+      "target": 81,
+      "solvable": true,
+      "witness": "(((2*55)-4)-25)",
+      "model_correct": false
+    },
+    {
+      "index": 1,
+      "nums": [
+        22,
+        2,
+        78,
+        57
+      ],
+      "target": 58,
+      "solvable": true,
+      "witness": "((22-78)+(2*57))",
+      "model_correct": false
+    },
+    {
+      "index": 2,
+      "nums": [
+        67,
+        54,
+        98,
+        19
+      ],
+      "target": 66,
+      "solvable": true,
+      "witness": "((98-(67-54))-19)",
+      "model_correct": true
+    },
+    {
+      "index": 3,
+      "nums": [
+        1,
+        26,
+        51,
+        17
+      ],
+      "target": 75,
+      "solvable": true,
+      "witness": "(((26-1)*51)/17)",
+      "model_correct": false
+    },
+    {
+      "index": 4,
+      "nums": [
+        9,
+        31,
+        67
+      ],
+      "target": 45,
+      "solvable": true,
+      "witness": "((9-31)+67)",
+      "model_correct": true
+    },
+    {
+      "index": 5,
+      "nums": [
+        1,
+        30,
+        79,
+        60
+      ],
+      "target": 77,
+      "solvable": true,
+      "witness": "((1*79)-(60/30))",
+      "model_correct": false
+    },
+    {
+      "index": 6,
+      "nums": [
+        27,
+        83,
+        5,
+        5
+      ],
+      "target": 55,
+      "solvable": true,
+      "witness": "((83-27)-(5/5))",
+      "model_correct": false
+    },
+    {
+      "index": 7,
+      "nums": [
+        65,
+        20,
+        41,
+        42
+      ],
+      "target": 46,
+      "solvable": true,
+      "witness": "(((65-20)-41)+42)",
+      "model_correct": true
+    },
+    {
+      "index": 8,
+      "nums": [
+        42,
+        40,
+        12,
+        29
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((42-40)*(12+29))",
+      "model_correct": false
+    },
+    {
+      "index": 9,
+      "nums": [
+        65,
+        9,
+        53,
+        11
+      ],
+      "target": 59,
+      "solvable": true,
+      "witness": "((65+53)/(11-9))",
+      "model_correct": false
+    },
+    {
+      "index": 10,
+      "nums": [
+        70,
+        40,
+        20,
+        17
+      ],
+      "target": 89,
+      "solvable": true,
+      "witness": "((70+(40/20))+17)",
+      "model_correct": false
+    },
+    {
+      "index": 11,
+      "nums": [
+        26,
+        96,
+        4
+      ],
+      "target": 50,
+      "solvable": true,
+      "witness": "(26+(96/4))",
+      "model_correct": false
+    },
+    {
+      "index": 12,
+      "nums": [
+        8,
+        8,
+        34
+      ],
+      "target": 50,
+      "solvable": true,
+      "witness": "((8+8)+34)",
+      "model_correct": true
+    },
+    {
+      "index": 13,
+      "nums": [
+        13,
+        88,
+        6
+      ],
+      "target": 10,
+      "solvable": true,
+      "witness": "(88-(13*6))",
+      "model_correct": false
+    },
+    {
+      "index": 14,
+      "nums": [
+        67,
+        65,
+        41
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((67-65)*41)",
+      "model_correct": false
+    },
+    {
+      "index": 15,
+      "nums": [
+        92,
+        95,
+        99
+      ],
+      "target": 33,
+      "solvable": true,
+      "witness": "(99/(95-92))",
+      "model_correct": false
+    },
+    {
+      "index": 16,
+      "nums": [
+        92,
+        28,
+        43,
+        53
+      ],
+      "target": 32,
+      "solvable": true,
+      "witness": "(53-((92-28)-43))",
+      "model_correct": false
+    },
+    {
+      "index": 17,
+      "nums": [
+        10,
+        4,
+        16
+      ],
+      "target": 56,
+      "solvable": true,
+      "witness": "((10*4)+16)",
+      "model_correct": false
+    },
+    {
+      "index": 18,
+      "nums": [
+        55,
+        75,
+        46,
+        16
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "(((55-46)*16)-75)",
+      "model_correct": false
+    },
+    {
+      "index": 19,
+      "nums": [
+        47,
+        16,
+        4,
+        14
+      ],
+      "target": 98,
+      "solvable": true,
+      "witness": "(4+(47*(16-14)))",
+      "model_correct": false
+    },
+    {
+      "index": 20,
+      "nums": [
+        73,
+        19,
+        47,
+        15
+      ],
+      "target": 22,
+      "solvable": true,
+      "witness": "(((73-19)-47)+15)",
+      "model_correct": true
+    },
+    {
+      "index": 21,
+      "nums": [
+        25,
+        91,
+        90
+      ],
+      "target": 24,
+      "solvable": true,
+      "witness": "((25-91)+90)",
+      "model_correct": false
+    },
+    {
+      "index": 22,
+      "nums": [
+        43,
+        24,
+        61
+      ],
+      "target": 42,
+      "solvable": true,
+      "witness": "(61-(43-24))",
+      "model_correct": true
+    },
+    {
+      "index": 23,
+      "nums": [
+        26,
+        21,
+        20
+      ],
+      "target": 100,
+      "solvable": true,
+      "witness": "((26-21)*20)",
+      "model_correct": false
+    },
+    {
+      "index": 24,
+      "nums": [
+        14,
+        29,
+        36
+      ],
+      "target": 98,
+      "solvable": true,
+      "witness": "(14*(36-29))",
+      "model_correct": false
+    },
+    {
+      "index": 25,
+      "nums": [
+        69,
+        11,
+        26
+      ],
+      "target": 54,
+      "solvable": true,
+      "witness": "((69+11)-26)",
+      "model_correct": true
+    },
+    {
+      "index": 26,
+      "nums": [
+        46,
+        29,
+        10,
+        47
+      ],
+      "target": 40,
+      "solvable": true,
+      "witness": "(47-((46-29)-10))",
+      "model_correct": false
+    },
+    {
+      "index": 27,
+      "nums": [
+        19,
+        17,
+        76
+      ],
+      "target": 74,
+      "solvable": true,
+      "witness": "(76-(19-17))",
+      "model_correct": true
+    },
+    {
+      "index": 28,
+      "nums": [
+        65,
+        79,
+        49
+      ],
+      "target": 35,
+      "solvable": true,
+      "witness": "((65-79)+49)",
+      "model_correct": false
+    },
+    {
+      "index": 29,
+      "nums": [
+        10,
+        81,
+        7
+      ],
+      "target": 64,
+      "solvable": true,
+      "witness": "((81-10)-7)",
+      "model_correct": true
+    },
+    {
+      "index": 30,
+      "nums": [
+        60,
+        58,
+        14,
+        48
+      ],
+      "target": 29,
+      "solvable": true,
+      "witness": "(58/(48-(60-14)))",
+      "model_correct": false
+    },
+    {
+      "index": 31,
+      "nums": [
+        13,
+        25,
+        44,
+        11
+      ],
+      "target": 66,
+      "solvable": true,
+      "witness": "((44-(13+25))*11)",
+      "model_correct": false
+    },
+    {
+      "index": 32,
+      "nums": [
+        96,
+        7,
+        44,
+        56
+      ],
+      "target": 36,
+      "solvable": true,
+      "witness": "(56-((96+44)/7))",
+      "model_correct": false
+    },
+    {
+      "index": 33,
+      "nums": [
+        62,
+        87,
+        30
+      ],
+      "target": 55,
+      "solvable": true,
+      "witness": "(30-(62-87))",
+      "model_correct": true
+    },
+    {
+      "index": 34,
+      "nums": [
+        26,
+        38,
+        37
+      ],
+      "target": 49,
+      "solvable": true,
+      "witness": "(37-(26-38))",
+      "model_correct": true
+    },
+    {
+      "index": 35,
+      "nums": [
+        48,
+        30,
+        60
+      ],
+      "target": 42,
+      "solvable": true,
+      "witness": "(60-(48-30))",
+      "model_correct": true
+    },
+    {
+      "index": 36,
+      "nums": [
+        15,
+        18,
+        99
+      ],
+      "target": 33,
+      "solvable": true,
+      "witness": "(99/(18-15))",
+      "model_correct": false
+    },
+    {
+      "index": 37,
+      "nums": [
+        2,
+        78,
+        86,
+        81
+      ],
+      "target": 16,
+      "solvable": true,
+      "witness": "((2+78)/(86-81))",
+      "model_correct": false
+    },
+    {
+      "index": 38,
+      "nums": [
+        75,
+        10,
+        63,
+        23
+      ],
+      "target": 79,
+      "solvable": true,
+      "witness": "(75+((63-23)/10))",
+      "model_correct": false
+    },
+    {
+      "index": 39,
+      "nums": [
+        2,
+        94,
+        27
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "((2+94)-27)",
+      "model_correct": true
+    },
+    {
+      "index": 40,
+      "nums": [
+        32,
+        86,
+        60,
+        77
+      ],
+      "target": 83,
+      "solvable": true,
+      "witness": "(((32-86)+60)+77)",
+      "model_correct": false
+    },
+    {
+      "index": 41,
+      "nums": [
+        7,
+        46,
+        18
+      ],
+      "target": 57,
+      "solvable": true,
+      "witness": "(18-(7-46))",
+      "model_correct": true
+    },
+    {
+      "index": 42,
+      "nums": [
+        64,
+        66,
+        64
+      ],
+      "target": 67,
+      "solvable": true,
+      "witness": "(66+(64/64))",
+      "model_correct": false
+    },
+    {
+      "index": 43,
+      "nums": [
+        11,
+        23,
+        29,
+        35
+      ],
+      "target": 28,
+      "solvable": true,
+      "witness": "(((11+23)+29)-35)",
+      "model_correct": false
+    },
+    {
+      "index": 44,
+      "nums": [
+        90,
+        22,
+        69,
+        59
+      ],
+      "target": 31,
+      "solvable": true,
+      "witness": "(22+(90/(69-59)))",
+      "model_correct": false
+    },
+    {
+      "index": 45,
+      "nums": [
+        37,
+        98,
+        71,
+        11
+      ],
+      "target": 75,
+      "solvable": true,
+      "witness": "(((37+98)-71)+11)",
+      "model_correct": true
+    },
+    {
+      "index": 46,
+      "nums": [
+        47,
+        48,
+        41
+      ],
+      "target": 41,
+      "solvable": true,
+      "witness": "((48-47)*41)",
+      "model_correct": false
+    },
+    {
+      "index": 47,
+      "nums": [
+        46,
+        67,
+        77
+      ],
+      "target": 98,
+      "solvable": true,
+      "witness": "(77-(46-67))",
+      "model_correct": true
+    },
+    {
+      "index": 48,
+      "nums": [
+        56,
+        41,
+        28
+      ],
+      "target": 43,
+      "solvable": true,
+      "witness": "((56-41)+28)",
+      "model_correct": true
+    },
+    {
+      "index": 49,
+      "nums": [
+        23,
+        38,
+        88,
+        46
+      ],
+      "target": 48,
+      "solvable": true,
+      "witness": "((88-38)-(46/23))",
+      "model_correct": false
+    },
+    {
+      "index": 50,
+      "nums": [
+        33,
+        52,
+        80
+      ],
+      "target": 61,
+      "solvable": true,
+      "witness": "((33-52)+80)",
+      "model_correct": true
+    },
+    {
+      "index": 51,
+      "nums": [
+        85,
+        43,
+        26,
+        36
+      ],
+      "target": 97,
+      "solvable": true,
+      "witness": "((26*(43-36))-85)",
+      "model_correct": false
+    },
+    {
+      "index": 52,
+      "nums": [
+        99,
+        33,
+        47
+      ],
+      "target": 85,
+      "solvable": true,
+      "witness": "((99+33)-47)",
+      "model_correct": true
+    },
+    {
+      "index": 53,
+      "nums": [
+        16,
+        24,
+        72
+      ],
+      "target": 64,
+      "solvable": true,
+      "witness": "((16-24)+72)",
+      "model_correct": true
+    },
+    {
+      "index": 54,
+      "nums": [
+        10,
+        82,
+        69
+      ],
+      "target": 23,
+      "solvable": true,
+      "witness": "((10+82)-69)",
+      "model_correct": true
+    },
+    {
+      "index": 55,
+      "nums": [
+        12,
+        94,
+        71,
+        98
+      ],
+      "target": 87,
+      "solvable": true,
+      "witness": "(((12-94)+71)+98)",
+      "model_correct": false
+    },
+    {
+      "index": 56,
+      "nums": [
+        17,
+        96,
+        91,
+        17
+      ],
+      "target": 28,
+      "solvable": true,
+      "witness": "(((96+91)/17)+17)",
+      "model_correct": false
+    },
+    {
+      "index": 57,
+      "nums": [
+        41,
+        91,
+        88,
+        44
+      ],
+      "target": 100,
+      "solvable": true,
+      "witness": "(((91-41)*88)/44)",
+      "model_correct": false
+    },
+    {
+      "index": 58,
+      "nums": [
+        7,
+        40,
+        63,
+        22
+      ],
+      "target": 38,
+      "solvable": true,
+      "witness": "(22-((7+40)-63))",
+      "model_correct": false
+    },
+    {
+      "index": 59,
+      "nums": [
+        15,
+        25,
+        3
+      ],
+      "target": 37,
+      "solvable": true,
+      "witness": "((15+25)-3)",
+      "model_correct": true
+    },
+    {
+      "index": 60,
+      "nums": [
+        75,
+        47,
+        92
+      ],
+      "target": 30,
+      "solvable": true,
+      "witness": "((75+47)-92)",
+      "model_correct": false
+    },
+    {
+      "index": 61,
+      "nums": [
+        57,
+        49,
+        36,
+        52
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "(57-(36/(49-52)))",
+      "model_correct": false
+    },
+    {
+      "index": 62,
+      "nums": [
+        5,
+        80,
+        7
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "(7-(5-80))",
+      "model_correct": true
+    },
+    {
+      "index": 63,
+      "nums": [
+        19,
+        99,
+        10
+      ],
+      "target": 90,
+      "solvable": true,
+      "witness": "(10-(19-99))",
+      "model_correct": false
+    },
+    {
+      "index": 64,
+      "nums": [
+        33,
+        19,
+        38,
+        62
+      ],
+      "target": 38,
+      "solvable": true,
+      "witness": "(((33-19)-38)+62)",
+      "model_correct": false
+    },
+    {
+      "index": 65,
+      "nums": [
+        35,
+        85,
+        19,
+        69
+      ],
+      "target": 100,
+      "solvable": true,
+      "witness": "(69-((35-85)+19))",
+      "model_correct": true
+    },
+    {
+      "index": 66,
+      "nums": [
+        69,
+        8,
+        80
+      ],
+      "target": 79,
+      "solvable": true,
+      "witness": "(69+(80/8))",
+      "model_correct": false
+    },
+    {
+      "index": 67,
+      "nums": [
+        54,
+        3,
+        71
+      ],
+      "target": 91,
+      "solvable": true,
+      "witness": "((54*3)-71)",
+      "model_correct": false
+    },
+    {
+      "index": 68,
+      "nums": [
+        12,
+        16,
+        42
+      ],
+      "target": 56,
+      "solvable": true,
+      "witness": "(42/(12/16))",
+      "model_correct": false
+    },
+    {
+      "index": 69,
+      "nums": [
+        80,
+        92,
+        95
+      ],
+      "target": 83,
+      "solvable": true,
+      "witness": "((80-92)+95)",
+      "model_correct": true
+    },
+    {
+      "index": 70,
+      "nums": [
+        12,
+        47,
+        25
+      ],
+      "target": 60,
+      "solvable": true,
+      "witness": "(25-(12-47))",
+      "model_correct": true
+    },
+    {
+      "index": 71,
+      "nums": [
+        91,
+        4,
+        29,
+        92
+      ],
+      "target": 24,
+      "solvable": true,
+      "witness": "(((91-4)+29)-92)",
+      "model_correct": false
+    },
+    {
+      "index": 72,
+      "nums": [
+        8,
+        82,
+        15,
+        50
+      ],
+      "target": 94,
+      "solvable": true,
+      "witness": "((15*50)-(8*82))",
+      "model_correct": false
+    },
+    {
+      "index": 73,
+      "nums": [
+        12,
+        36,
+        33
+      ],
+      "target": 15,
+      "solvable": true,
+      "witness": "((12+36)-33)",
+      "model_correct": true
+    },
+    {
+      "index": 74,
+      "nums": [
+        9,
+        23,
+        82
+      ],
+      "target": 96,
+      "solvable": true,
+      "witness": "(82-(9-23))",
+      "model_correct": true
+    },
+    {
+      "index": 75,
+      "nums": [
+        57,
+        27,
+        69
+      ],
+      "target": 99,
+      "solvable": true,
+      "witness": "((57-27)+69)",
+      "model_correct": true
+    },
+    {
+      "index": 76,
+      "nums": [
+        28,
+        4,
+        6,
+        79
+      ],
+      "target": 39,
+      "solvable": true,
+      "witness": "(((28*4)+6)-79)",
+      "model_correct": false
+    },
+    {
+      "index": 77,
+      "nums": [
+        5,
+        71,
+        22,
+        89
+      ],
+      "target": 10,
+      "solvable": true,
+      "witness": "(((71+89)/5)-22)",
+      "model_correct": false
+    },
+    {
+      "index": 78,
+      "nums": [
+        52,
+        89,
+        93
+      ],
+      "target": 56,
+      "solvable": true,
+      "witness": "((52-89)+93)",
+      "model_correct": true
+    },
+    {
+      "index": 79,
+      "nums": [
+        76,
+        84,
+        34
+      ],
+      "target": 42,
+      "solvable": true,
+      "witness": "(34-(76-84))",
+      "model_correct": true
+    },
+    {
+      "index": 80,
+      "nums": [
+        24,
+        91,
+        35
+      ],
+      "target": 32,
+      "solvable": true,
+      "witness": "((91-24)-35)",
+      "model_correct": true
+    },
+    {
+      "index": 81,
+      "nums": [
+        76,
+        87,
+        35
+      ],
+      "target": 46,
+      "solvable": true,
+      "witness": "(35-(76-87))",
+      "model_correct": true
+    },
+    {
+      "index": 82,
+      "nums": [
+        87,
+        12,
+        78,
+        9
+      ],
+      "target": 89,
+      "solvable": true,
+      "witness": "(78+((87+12)/9))",
+      "model_correct": false
+    },
+    {
+      "index": 83,
+      "nums": [
+        20,
+        31,
+        11,
+        70
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "(((20-31)/11)+70)",
+      "model_correct": false
+    },
+    {
+      "index": 84,
+      "nums": [
+        3,
+        62,
+        57
+      ],
+      "target": 43,
+      "solvable": true,
+      "witness": "(62-(57/3))",
+      "model_correct": false
+    },
+    {
+      "index": 85,
+      "nums": [
+        49,
+        11,
+        49
+      ],
+      "target": 10,
+      "solvable": true,
+      "witness": "(11-(49/49))",
+      "model_correct": false
+    },
+    {
+      "index": 86,
+      "nums": [
+        81,
+        46,
+        22
+      ],
+      "target": 13,
+      "solvable": true,
+      "witness": "((81-46)-22)",
+      "model_correct": true
+    },
+    {
+      "index": 87,
+      "nums": [
+        17,
+        46,
+        11,
+        14
+      ],
+      "target": 32,
+      "solvable": true,
+      "witness": "(14-((17-46)+11))",
+      "model_correct": false
+    },
+    {
+      "index": 88,
+      "nums": [
+        8,
+        26,
+        88
+      ],
+      "target": 70,
+      "solvable": true,
+      "witness": "((8-26)+88)",
+      "model_correct": true
+    },
+    {
+      "index": 89,
+      "nums": [
+        48,
+        40,
+        34
+      ],
+      "target": 26,
+      "solvable": true,
+      "witness": "(34-(48-40))",
+      "model_correct": false
+    },
+    {
+      "index": 90,
+      "nums": [
+        61,
+        48,
+        21,
+        29
+      ],
+      "target": 67,
+      "solvable": true,
+      "witness": "(61-(48/(21-29)))",
+      "model_correct": false
+    },
+    {
+      "index": 91,
+      "nums": [
+        12,
+        97,
+        24
+      ],
+      "target": 61,
+      "solvable": true,
+      "witness": "((97-12)-24)",
+      "model_correct": true
+    },
+    {
+      "index": 92,
+      "nums": [
+        68,
+        64,
+        80,
+        27
+      ],
+      "target": 57,
+      "solvable": true,
+      "witness": "(((68-64)+80)-27)",
+      "model_correct": false
+    },
+    {
+      "index": 93,
+      "nums": [
+        49,
+        46,
+        69,
+        48
+      ],
+      "target": 89,
+      "solvable": true,
+      "witness": "((69*(48-46))-49)",
+      "model_correct": false
+    },
+    {
+      "index": 94,
+      "nums": [
+        10,
+        93,
+        98,
+        86
+      ],
+      "target": 36,
+      "solvable": true,
+      "witness": "((10*(93-98))+86)",
+      "model_correct": false
+    },
+    {
+      "index": 95,
+      "nums": [
+        94,
+        36,
+        5,
+        60
+      ],
+      "target": 75,
+      "solvable": true,
+      "witness": "(((94+36)+5)-60)",
+      "model_correct": true
+    },
+    {
+      "index": 96,
+      "nums": [
+        97,
+        24,
+        1,
+        18
+      ],
+      "target": 91,
+      "solvable": true,
+      "witness": "(((97-24)*1)+18)",
+      "model_correct": false
+    },
+    {
+      "index": 97,
+      "nums": [
+        8,
+        11,
+        76
+      ],
+      "target": 95,
+      "solvable": true,
+      "witness": "((8+11)+76)",
+      "model_correct": true
+    },
+    {
+      "index": 98,
+      "nums": [
+        14,
+        11,
+        19
+      ],
+      "target": 22,
+      "solvable": true,
+      "witness": "((14-11)+19)",
+      "model_correct": true
+    },
+    {
+      "index": 99,
+      "nums": [
+        9,
+        43,
+        1,
+        56
+      ],
+      "target": 23,
+      "solvable": true,
+      "witness": "(((9-43)+1)+56)",
+      "model_correct": true
+    },
+    {
+      "index": 100,
+      "nums": [
+        73,
+        58,
+        87,
+        59
+      ],
+      "target": 29,
+      "solvable": true,
+      "witness": "((73*58)/(87+59))",
+      "model_correct": false
+    },
+    {
+      "index": 101,
+      "nums": [
+        50,
+        2,
+        18,
+        49
+      ],
+      "target": 19,
+      "solvable": true,
+      "witness": "(49-((50-2)-18))",
+      "model_correct": false
+    },
+    {
+      "index": 102,
+      "nums": [
+        54,
+        16,
+        58,
+        35
+      ],
+      "target": 76,
+      "solvable": true,
+      "witness": "((54-58)*(16-35))",
+      "model_correct": false
+    },
+    {
+      "index": 103,
+      "nums": [
+        61,
+        20,
+        68,
+        2
+      ],
+      "target": 75,
+      "solvable": true,
+      "witness": "((61-20)+(68/2))",
+      "model_correct": false
+    },
+    {
+      "index": 104,
+      "nums": [
+        22,
+        34,
+        41
+      ],
+      "target": 29,
+      "solvable": true,
+      "witness": "((22-34)+41)",
+      "model_correct": true
+    },
+    {
+      "index": 105,
+      "nums": [
+        90,
+        99,
+        88
+      ],
+      "target": 80,
+      "solvable": true,
+      "witness": "((90/99)*88)",
+      "model_correct": false
+    },
+    {
+      "index": 106,
+      "nums": [
+        15,
+        67,
+        32
+      ],
+      "target": 50,
+      "solvable": true,
+      "witness": "((15+67)-32)",
+      "model_correct": true
+    },
+    {
+      "index": 107,
+      "nums": [
+        31,
+        6,
+        3
+      ],
+      "target": 34,
+      "solvable": true,
+      "witness": "((31+6)-3)",
+      "model_correct": true
+    },
+    {
+      "index": 108,
+      "nums": [
+        34,
+        73,
+        82,
+        3
+      ],
+      "target": 53,
+      "solvable": true,
+      "witness": "((73+82)-(34*3))",
+      "model_correct": false
+    },
+    {
+      "index": 109,
+      "nums": [
+        13,
+        30,
+        43,
+        54
+      ],
+      "target": 54,
+      "solvable": true,
+      "witness": "(((13+30)-43)+54)",
+      "model_correct": true
+    },
+    {
+      "index": 110,
+      "nums": [
+        70,
+        97,
+        5,
+        7
+      ],
+      "target": 39,
+      "solvable": true,
+      "witness": "(7-((70-97)-5))",
+      "model_correct": false
+    },
+    {
+      "index": 111,
+      "nums": [
+        95,
+        41,
+        89
+      ],
+      "target": 35,
+      "solvable": true,
+      "witness": "(89-(95-41))",
+      "model_correct": false
+    },
+    {
+      "index": 112,
+      "nums": [
+        70,
+        38,
+        37,
+        3
+      ],
+      "target": 81,
+      "solvable": true,
+      "witness": "((38*3)-(70-37))",
+      "model_correct": false
+    },
+    {
+      "index": 113,
+      "nums": [
+        81,
+        70,
+        20,
+        76
+      ],
+      "target": 45,
+      "solvable": true,
+      "witness": "(76-((81-70)+20))",
+      "model_correct": false
+    },
+    {
+      "index": 114,
+      "nums": [
+        71,
+        18,
+        77,
+        57
+      ],
+      "target": 73,
+      "solvable": true,
+      "witness": "(((71-18)+77)-57)",
+      "model_correct": true
+    },
+    {
+      "index": 115,
+      "nums": [
+        30,
+        61,
+        66
+      ],
+      "target": 97,
+      "solvable": true,
+      "witness": "(66-(30-61))",
+      "model_correct": true
+    },
+    {
+      "index": 116,
+      "nums": [
+        58,
+        69,
+        67
+      ],
+      "target": 56,
+      "solvable": true,
+      "witness": "((58-69)+67)",
+      "model_correct": false
+    },
+    {
+      "index": 117,
+      "nums": [
+        49,
+        53,
+        75
+      ],
+      "target": 27,
+      "solvable": true,
+      "witness": "((49+53)-75)",
+      "model_correct": false
+    },
+    {
+      "index": 118,
+      "nums": [
+        18,
+        81,
+        68,
+        65
+      ],
+      "target": 27,
+      "solvable": true,
+      "witness": "(81-(18*(68-65)))",
+      "model_correct": false
+    },
+    {
+      "index": 119,
+      "nums": [
+        47,
+        40,
+        54,
+        2
+      ],
+      "target": 49,
+      "solvable": true,
+      "witness": "(2-((47-40)-54))",
+      "model_correct": true
+    },
+    {
+      "index": 120,
+      "nums": [
+        13,
+        84,
+        49
+      ],
+      "target": 48,
+      "solvable": true,
+      "witness": "((13+84)-49)",
+      "model_correct": true
+    },
+    {
+      "index": 121,
+      "nums": [
+        83,
+        28,
+        29
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((83+28)-29)",
+      "model_correct": true
+    },
+    {
+      "index": 122,
+      "nums": [
+        21,
+        40,
+        2,
+        19
+      ],
+      "target": 63,
+      "solvable": true,
+      "witness": "((40+(21*2))-19)",
+      "model_correct": false
+    },
+    {
+      "index": 123,
+      "nums": [
+        77,
+        68,
+        51,
+        78
+      ],
+      "target": 27,
+      "solvable": true,
+      "witness": "(((68/51)*78)-77)",
+      "model_correct": false
+    },
+    {
+      "index": 124,
+      "nums": [
+        41,
+        25,
+        64
+      ],
+      "target": 80,
+      "solvable": true,
+      "witness": "((41-25)+64)",
+      "model_correct": true
+    },
+    {
+      "index": 125,
+      "nums": [
+        11,
+        69,
+        9
+      ],
+      "target": 49,
+      "solvable": true,
+      "witness": "((69-11)-9)",
+      "model_correct": true
+    },
+    {
+      "index": 126,
+      "nums": [
+        11,
+        3,
+        4
+      ],
+      "target": 18,
+      "solvable": true,
+      "witness": "((11+3)+4)",
+      "model_correct": true
+    },
+    {
+      "index": 127,
+      "nums": [
+        39,
+        86,
+        18,
+        75
+      ],
+      "target": 84,
+      "solvable": true,
+      "witness": "(86+((39-75)/18))",
+      "model_correct": false
+    },
+    {
+      "index": 128,
+      "nums": [
+        25,
+        96,
+        42
+      ],
+      "target": 79,
+      "solvable": true,
+      "witness": "((25+96)-42)",
+      "model_correct": true
+    },
+    {
+      "index": 129,
+      "nums": [
+        94,
+        44,
+        20
+      ],
+      "target": 30,
+      "solvable": true,
+      "witness": "((94-44)-20)",
+      "model_correct": true
+    },
+    {
+      "index": 130,
+      "nums": [
+        2,
+        90,
+        74
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((90+74)/2)",
+      "model_correct": false
+    },
+    {
+      "index": 131,
+      "nums": [
+        1,
+        96,
+        27,
+        57
+      ],
+      "target": 45,
+      "solvable": true,
+      "witness": "(((96-1)*27)/57)",
+      "model_correct": false
+    },
+    {
+      "index": 132,
+      "nums": [
+        77,
+        87,
+        90,
+        97
+      ],
+      "target": 76,
+      "solvable": true,
+      "witness": "(87+(77/(90-97)))",
+      "model_correct": false
+    },
+    {
+      "index": 133,
+      "nums": [
+        77,
+        75,
+        76
+      ],
+      "target": 76,
+      "solvable": true,
+      "witness": "((77+75)-76)",
+      "model_correct": true
+    },
+    {
+      "index": 134,
+      "nums": [
+        65,
+        13,
+        14
+      ],
+      "target": 92,
+      "solvable": true,
+      "witness": "((65+13)+14)",
+      "model_correct": true
+    },
+    {
+      "index": 135,
+      "nums": [
+        18,
+        66,
+        96,
+        55
+      ],
+      "target": 11,
+      "solvable": true,
+      "witness": "((66+(18*55))/96)",
+      "model_correct": false
+    },
+    {
+      "index": 136,
+      "nums": [
+        3,
+        83,
+        27
+      ],
+      "target": 74,
+      "solvable": true,
+      "witness": "(83-(27/3))",
+      "model_correct": false
+    },
+    {
+      "index": 137,
+      "nums": [
+        12,
+        3,
+        19
+      ],
+      "target": 28,
+      "solvable": true,
+      "witness": "((12-3)+19)",
+      "model_correct": true
+    },
+    {
+      "index": 138,
+      "nums": [
+        70,
+        31,
+        98,
+        44
+      ],
+      "target": 41,
+      "solvable": true,
+      "witness": "(44-((70+31)-98))",
+      "model_correct": true
+    },
+    {
+      "index": 139,
+      "nums": [
+        88,
+        52,
+        39,
+        41
+      ],
+      "target": 44,
+      "solvable": true,
+      "witness": "(41-((88-52)-39))",
+      "model_correct": false
+    },
+    {
+      "index": 140,
+      "nums": [
+        21,
+        84,
+        57
+      ],
+      "target": 61,
+      "solvable": true,
+      "witness": "((84/21)+57)",
+      "model_correct": false
+    },
+    {
+      "index": 141,
+      "nums": [
+        74,
+        18,
+        7,
+        90
+      ],
+      "target": 38,
+      "solvable": true,
+      "witness": "((74-(18*7))+90)",
+      "model_correct": false
+    },
+    {
+      "index": 142,
+      "nums": [
+        2,
+        69,
+        46,
+        2
+      ],
+      "target": 93,
+      "solvable": true,
+      "witness": "(69+((2+46)/2))",
+      "model_correct": false
+    },
+    {
+      "index": 143,
+      "nums": [
+        35,
+        20,
+        68
+      ],
+      "target": 13,
+      "solvable": true,
+      "witness": "(68-(35+20))",
+      "model_correct": true
+    },
+    {
+      "index": 144,
+      "nums": [
+        13,
+        29,
+        26
+      ],
+      "target": 27,
+      "solvable": true,
+      "witness": "(29-(26/13))",
+      "model_correct": false
+    },
+    {
+      "index": 145,
+      "nums": [
+        6,
+        41,
+        54,
+        79
+      ],
+      "target": 10,
+      "solvable": true,
+      "witness": "((54-(6-41))-79)",
+      "model_correct": false
+    },
+    {
+      "index": 146,
+      "nums": [
+        8,
+        41,
+        91,
+        37
+      ],
+      "target": 89,
+      "solvable": true,
+      "witness": "(91-(8/(41-37)))",
+      "model_correct": false
+    },
+    {
+      "index": 147,
+      "nums": [
+        25,
+        51,
+        70,
+        56
+      ],
+      "target": 19,
+      "solvable": true,
+      "witness": "((25+70)/(56-51))",
+      "model_correct": false
+    },
+    {
+      "index": 148,
+      "nums": [
+        76,
+        9,
+        39,
+        45
+      ],
+      "target": 72,
+      "solvable": true,
+      "witness": "(9*(45-(76-39)))",
+      "model_correct": false
+    },
+    {
+      "index": 149,
+      "nums": [
+        76,
+        48,
+        32,
+        68
+      ],
+      "target": 17,
+      "solvable": true,
+      "witness": "(68/(32-(76-48)))",
+      "model_correct": false
+    },
+    {
+      "index": 150,
+      "nums": [
+        72,
+        55,
+        7,
+        18
+      ],
+      "target": 28,
+      "solvable": true,
+      "witness": "(((72-55)-7)+18)",
+      "model_correct": false
+    },
+    {
+      "index": 151,
+      "nums": [
+        11,
+        61,
+        24
+      ],
+      "target": 96,
+      "solvable": true,
+      "witness": "((11+61)+24)",
+      "model_correct": true
+    },
+    {
+      "index": 152,
+      "nums": [
+        15,
+        96,
+        45
+      ],
+      "target": 32,
+      "solvable": true,
+      "witness": "((15*96)/45)",
+      "model_correct": false
+    },
+    {
+      "index": 153,
+      "nums": [
+        63,
+        98,
+        99
+      ],
+      "target": 63,
+      "solvable": true,
+      "witness": "(63*(99-98))",
+      "model_correct": false
+    },
+    {
+      "index": 154,
+      "nums": [
+        52,
+        50,
+        68,
+        73
+      ],
+      "target": 62,
+      "solvable": true,
+      "witness": "(52-(50/(68-73)))",
+      "model_correct": false
+    },
+    {
+      "index": 155,
+      "nums": [
+        58,
+        12,
+        2
+      ],
+      "target": 34,
+      "solvable": true,
+      "witness": "(58-(12*2))",
+      "model_correct": false
+    },
+    {
+      "index": 156,
+      "nums": [
+        21,
+        67,
+        37
+      ],
+      "target": 83,
+      "solvable": true,
+      "witness": "(37-(21-67))",
+      "model_correct": true
+    },
+    {
+      "index": 157,
+      "nums": [
+        47,
+        15,
+        66,
+        55
+      ],
+      "target": 54,
+      "solvable": true,
+      "witness": "((15*(55-47))-66)",
+      "model_correct": false
+    },
+    {
+      "index": 158,
+      "nums": [
+        37,
+        2,
+        1,
+        15
+      ],
+      "target": 43,
+      "solvable": true,
+      "witness": "((2*(37-15))-1)",
+      "model_correct": false
+    },
+    {
+      "index": 159,
+      "nums": [
+        66,
+        57,
+        60
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "((66-57)+60)",
+      "model_correct": true
+    },
+    {
+      "index": 160,
+      "nums": [
+        46,
+        70,
+        53
+      ],
+      "target": 77,
+      "solvable": true,
+      "witness": "(53-(46-70))",
+      "model_correct": true
+    },
+    {
+      "index": 161,
+      "nums": [
+        20,
+        84,
+        20
+      ],
+      "target": 85,
+      "solvable": true,
+      "witness": "(84+(20/20))",
+      "model_correct": false
+    },
+    {
+      "index": 162,
+      "nums": [
+        56,
+        66,
+        77,
+        28
+      ],
+      "target": 73,
+      "solvable": true,
+      "witness": "(((56+66)-77)+28)",
+      "model_correct": false
+    },
+    {
+      "index": 163,
+      "nums": [
+        61,
+        30,
+        50
+      ],
+      "target": 19,
+      "solvable": true,
+      "witness": "(50-(61-30))",
+      "model_correct": false
+    },
+    {
+      "index": 164,
+      "nums": [
+        33,
+        39,
+        57,
+        33
+      ],
+      "target": 57,
+      "solvable": true,
+      "witness": "(57+(39*(33-33)))",
+      "model_correct": false
+    },
+    {
+      "index": 165,
+      "nums": [
+        30,
+        83,
+        55,
+        27
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((55*(30-27))-83)",
+      "model_correct": false
+    },
+    {
+      "index": 166,
+      "nums": [
+        87,
+        96,
+        77,
+        64
+      ],
+      "target": 42,
+      "solvable": true,
+      "witness": "(((87+96)-77)-64)",
+      "model_correct": false
+    },
+    {
+      "index": 167,
+      "nums": [
+        35,
+        63,
+        30,
+        34
+      ],
+      "target": 20,
+      "solvable": true,
+      "witness": "((30/(35/63))-34)",
+      "model_correct": false
+    },
+    {
+      "index": 168,
+      "nums": [
+        29,
+        2,
+        4,
+        33
+      ],
+      "target": 27,
+      "solvable": true,
+      "witness": "(((29+33)/2)-4)",
+      "model_correct": false
+    },
+    {
+      "index": 169,
+      "nums": [
+        78,
+        97,
+        80
+      ],
+      "target": 99,
+      "solvable": true,
+      "witness": "(80-(78-97))",
+      "model_correct": true
+    },
+    {
+      "index": 170,
+      "nums": [
+        28,
+        87,
+        3,
+        5
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "(((28+87)*3)/5)",
+      "model_correct": false
+    },
+    {
+      "index": 171,
+      "nums": [
+        75,
+        50,
+        78
+      ],
+      "target": 52,
+      "solvable": true,
+      "witness": "(78/(75/50))",
+      "model_correct": false
+    },
+    {
+      "index": 172,
+      "nums": [
+        11,
+        36,
+        33
+      ],
+      "target": 12,
+      "solvable": true,
+      "witness": "((11*36)/33)",
+      "model_correct": false
+    },
+    {
+      "index": 173,
+      "nums": [
+        4,
+        85,
+        60
+      ],
+      "target": 100,
+      "solvable": true,
+      "witness": "(85+(60/4))",
+      "model_correct": false
+    },
+    {
+      "index": 174,
+      "nums": [
+        82,
+        46,
+        12,
+        80
+      ],
+      "target": 35,
+      "solvable": true,
+      "witness": "(12+(46/(82-80)))",
+      "model_correct": false
+    },
+    {
+      "index": 175,
+      "nums": [
+        9,
+        77,
+        44
+      ],
+      "target": 24,
+      "solvable": true,
+      "witness": "((77-9)-44)",
+      "model_correct": false
+    },
+    {
+      "index": 176,
+      "nums": [
+        13,
+        5,
+        7,
+        91
+      ],
+      "target": 54,
+      "solvable": true,
+      "witness": "(5+(91/(13/7)))",
+      "model_correct": false
+    },
+    {
+      "index": 177,
+      "nums": [
+        56,
+        74,
+        54
+      ],
+      "target": 36,
+      "solvable": true,
+      "witness": "((56-74)+54)",
+      "model_correct": false
+    },
+    {
+      "index": 178,
+      "nums": [
+        47,
+        3,
+        57,
+        98
+      ],
+      "target": 70,
+      "solvable": true,
+      "witness": "(98-(47-(57/3)))",
+      "model_correct": false
+    },
+    {
+      "index": 179,
+      "nums": [
+        7,
+        66,
+        49
+      ],
+      "target": 73,
+      "solvable": true,
+      "witness": "(66+(49/7))",
+      "model_correct": false
+    },
+    {
+      "index": 180,
+      "nums": [
+        56,
+        6,
+        14,
+        38
+      ],
+      "target": 26,
+      "solvable": true,
+      "witness": "(((56-6)+14)-38)",
+      "model_correct": false
+    },
+    {
+      "index": 181,
+      "nums": [
+        33,
+        91,
+        18,
+        94
+      ],
+      "target": 17,
+      "solvable": true,
+      "witness": "((33+18)/(94-91))",
+      "model_correct": false
+    },
+    {
+      "index": 182,
+      "nums": [
+        83,
+        73,
+        3,
+        40
+      ],
+      "target": 72,
+      "solvable": true,
+      "witness": "(83-((73-40)/3))",
+      "model_correct": false
+    },
+    {
+      "index": 183,
+      "nums": [
+        80,
+        88,
+        22
+      ],
+      "target": 76,
+      "solvable": true,
+      "witness": "(80-(88/22))",
+      "model_correct": false
+    },
+    {
+      "index": 184,
+      "nums": [
+        50,
+        1,
+        7,
+        6
+      ],
+      "target": 15,
+      "solvable": true,
+      "witness": "(50+(7*(1-6)))",
+      "model_correct": false
+    },
+    {
+      "index": 185,
+      "nums": [
+        24,
+        4,
+        68,
+        7
+      ],
+      "target": 17,
+      "solvable": true,
+      "witness": "(7/((24+4)/68))",
+      "model_correct": false
+    },
+    {
+      "index": 186,
+      "nums": [
+        10,
+        79,
+        5,
+        90
+      ],
+      "target": 95,
+      "solvable": true,
+      "witness": "(79-((10-90)/5))",
+      "model_correct": false
+    },
+    {
+      "index": 187,
+      "nums": [
+        66,
+        66,
+        75,
+        34
+      ],
+      "target": 75,
+      "solvable": true,
+      "witness": "(75+((66-66)*34))",
+      "model_correct": false
+    },
+    {
+      "index": 188,
+      "nums": [
+        10,
+        45,
+        3,
+        12
+      ],
+      "target": 45,
+      "solvable": true,
+      "witness": "(45*((10+3)-12))",
+      "model_correct": false
+    },
+    {
+      "index": 189,
+      "nums": [
+        73,
+        77,
+        14,
+        45
+      ],
+      "target": 21,
+      "solvable": true,
+      "witness": "(((73*14)-77)/45)",
+      "model_correct": false
+    },
+    {
+      "index": 190,
+      "nums": [
+        11,
+        24,
+        71
+      ],
+      "target": 84,
+      "solvable": true,
+      "witness": "(71-(11-24))",
+      "model_correct": true
+    },
+    {
+      "index": 191,
+      "nums": [
+        50,
+        73,
+        68,
+        71
+      ],
+      "target": 20,
+      "solvable": true,
+      "witness": "((68-(50-73))-71)",
+      "model_correct": true
+    },
+    {
+      "index": 192,
+      "nums": [
+        78,
+        30,
+        63,
+        33
+      ],
+      "target": 99,
+      "solvable": true,
+      "witness": "(78-(63/(30-33)))",
+      "model_correct": false
+    },
+    {
+      "index": 193,
+      "nums": [
+        86,
+        84,
+        49,
+        92
+      ],
+      "target": 35,
+      "solvable": true,
+      "witness": "(49+(84/(86-92)))",
+      "model_correct": false
+    },
+    {
+      "index": 194,
+      "nums": [
+        80,
+        47,
+        13
+      ],
+      "target": 46,
+      "solvable": true,
+      "witness": "((80-47)+13)",
+      "model_correct": true
+    },
+    {
+      "index": 195,
+      "nums": [
+        25,
+        5,
+        8
+      ],
+      "target": 65,
+      "solvable": true,
+      "witness": "(25+(5*8))",
+      "model_correct": false
+    },
+    {
+      "index": 196,
+      "nums": [
+        33,
+        30,
+        49,
+        44
+      ],
+      "target": 31,
+      "solvable": true,
+      "witness": "((49+44)/(33-30))",
+      "model_correct": false
+    },
+    {
+      "index": 197,
+      "nums": [
+        59,
+        44,
+        2
+      ],
+      "target": 29,
+      "solvable": true,
+      "witness": "((44*2)-59)",
+      "model_correct": false
+    },
+    {
+      "index": 198,
+      "nums": [
+        43,
+        23,
+        43
+      ],
+      "target": 22,
+      "solvable": true,
+      "witness": "(23-(43/43))",
+      "model_correct": false
+    },
+    {
+      "index": 199,
+      "nums": [
+        40,
+        76,
+        4
+      ],
+      "target": 59,
+      "solvable": true,
+      "witness": "(40+(76/4))",
+      "model_correct": false
+    },
+    {
+      "index": 200,
+      "nums": [
+        6,
+        42,
+        19
+      ],
+      "target": 55,
+      "solvable": true,
+      "witness": "(19-(6-42))",
+      "model_correct": true
+    },
+    {
+      "index": 201,
+      "nums": [
+        19,
+        5,
+        6,
+        7
+      ],
+      "target": 50,
+      "solvable": true,
+      "witness": "((19+6)*(7-5))",
+      "model_correct": false
+    },
+    {
+      "index": 202,
+      "nums": [
+        42,
+        54,
+        35
+      ],
+      "target": 23,
+      "solvable": true,
+      "witness": "((42-54)+35)",
+      "model_correct": true
+    },
+    {
+      "index": 203,
+      "nums": [
+        18,
+        23,
+        81
+      ],
+      "target": 86,
+      "solvable": true,
+      "witness": "(81-(18-23))",
+      "model_correct": true
+    },
+    {
+      "index": 204,
+      "nums": [
+        2,
+        62,
+        15,
+        11
+      ],
+      "target": 75,
+      "solvable": true,
+      "witness": "(62+((15+11)/2))",
+      "model_correct": false
+    },
+    {
+      "index": 205,
+      "nums": [
+        27,
+        3,
+        27
+      ],
+      "target": 18,
+      "solvable": true,
+      "witness": "(27-(27/3))",
+      "model_correct": false
+    },
+    {
+      "index": 206,
+      "nums": [
+        53,
+        78,
+        18,
+        51
+      ],
+      "target": 69,
+      "solvable": true,
+      "witness": "(78-(18/(53-51)))",
+      "model_correct": false
+    },
+    {
+      "index": 207,
+      "nums": [
+        6,
+        48,
+        95,
+        87
+      ],
+      "target": 62,
+      "solvable": true,
+      "witness": "(((6+48)+95)-87)",
+      "model_correct": false
+    },
+    {
+      "index": 208,
+      "nums": [
+        80,
+        77,
+        14,
+        78
+      ],
+      "target": 67,
+      "solvable": true,
+      "witness": "(((80-77)-14)+78)",
+      "model_correct": true
+    },
+    {
+      "index": 209,
+      "nums": [
+        33,
+        49,
+        7,
+        4
+      ],
+      "target": 44,
+      "solvable": true,
+      "witness": "((33+(49/7))+4)",
+      "model_correct": false
+    },
+    {
+      "index": 210,
+      "nums": [
+        3,
+        55,
+        66,
+        60
+      ],
+      "target": 33,
+      "solvable": true,
+      "witness": "(66/(60-(3+55)))",
+      "model_correct": false
+    },
+    {
+      "index": 211,
+      "nums": [
+        30,
+        22,
+        19,
+        9
+      ],
+      "target": 81,
+      "solvable": true,
+      "witness": "((30*(22-19))-9)",
+      "model_correct": false
+    },
+    {
+      "index": 212,
+      "nums": [
+        5,
+        25,
+        30
+      ],
+      "target": 60,
+      "solvable": true,
+      "witness": "((5+25)+30)",
+      "model_correct": true
+    },
+    {
+      "index": 213,
+      "nums": [
+        9,
+        62,
+        81,
+        53
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "(81-((9-62)/53))",
+      "model_correct": false
+    },
+    {
+      "index": 214,
+      "nums": [
+        33,
+        30,
+        93,
+        66
+      ],
+      "target": 97,
+      "solvable": true,
+      "witness": "((93/(33-30))+66)",
+      "model_correct": false
+    },
+    {
+      "index": 215,
+      "nums": [
+        95,
+        11,
+        8,
+        92
+      ],
+      "target": 16,
+      "solvable": true,
+      "witness": "(92-((95-11)-8))",
+      "model_correct": false
+    },
+    {
+      "index": 216,
+      "nums": [
+        31,
+        59,
+        4,
+        1
+      ],
+      "target": 65,
+      "solvable": true,
+      "witness": "(((31*4)-59)*1)",
+      "model_correct": false
+    },
+    {
+      "index": 217,
+      "nums": [
+        19,
+        17,
+        80
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((19-17)+80)",
+      "model_correct": true
+    },
+    {
+      "index": 218,
+      "nums": [
+        87,
+        43,
+        8,
+        77
+      ],
+      "target": 25,
+      "solvable": true,
+      "witness": "(77-((87-43)+8))",
+      "model_correct": false
+    },
+    {
+      "index": 219,
+      "nums": [
+        36,
+        45,
+        5
+      ],
+      "target": 86,
+      "solvable": true,
+      "witness": "((36+45)+5)",
+      "model_correct": true
+    },
+    {
+      "index": 220,
+      "nums": [
+        38,
+        32,
+        20
+      ],
+      "target": 26,
+      "solvable": true,
+      "witness": "((38-32)+20)",
+      "model_correct": true
+    },
+    {
+      "index": 221,
+      "nums": [
+        16,
+        31,
+        2,
+        64
+      ],
+      "target": 87,
+      "solvable": true,
+      "witness": "((31-(16/2))+64)",
+      "model_correct": false
+    },
+    {
+      "index": 222,
+      "nums": [
+        99,
+        77,
+        2,
+        77
+      ],
+      "target": 44,
+      "solvable": true,
+      "witness": "(((99*2)-77)-77)",
+      "model_correct": false
+    },
+    {
+      "index": 223,
+      "nums": [
+        65,
+        77,
+        22,
+        47
+      ],
+      "target": 63,
+      "solvable": true,
+      "witness": "((77/22)*(65-47))",
+      "model_correct": false
+    },
+    {
+      "index": 224,
+      "nums": [
+        12,
+        55,
+        47
+      ],
+      "target": 90,
+      "solvable": true,
+      "witness": "(47-(12-55))",
+      "model_correct": true
+    },
+    {
+      "index": 225,
+      "nums": [
+        27,
+        78,
+        64,
+        64
+      ],
+      "target": 78,
+      "solvable": true,
+      "witness": "(78+(27*(64-64)))",
+      "model_correct": false
+    },
+    {
+      "index": 226,
+      "nums": [
+        2,
+        61,
+        68,
+        8
+      ],
+      "target": 38,
+      "solvable": true,
+      "witness": "((2*(61-8))-68)",
+      "model_correct": false
+    },
+    {
+      "index": 227,
+      "nums": [
+        19,
+        59,
+        51,
+        72
+      ],
+      "target": 45,
+      "solvable": true,
+      "witness": "(72-((19+59)-51))",
+      "model_correct": false
+    },
+    {
+      "index": 228,
+      "nums": [
+        4,
+        60,
+        49,
+        42
+      ],
+      "target": 48,
+      "solvable": true,
+      "witness": "(((60-4)/49)*42)",
+      "model_correct": false
+    },
+    {
+      "index": 229,
+      "nums": [
+        8,
+        42,
+        84,
+        41
+      ],
+      "target": 93,
+      "solvable": true,
+      "witness": "(((8+42)+84)-41)",
+      "model_correct": true
+    },
+    {
+      "index": 230,
+      "nums": [
+        45,
+        23,
+        43,
+        17
+      ],
+      "target": 15,
+      "solvable": true,
+      "witness": "(45/((43-23)-17))",
+      "model_correct": false
+    },
+    {
+      "index": 231,
+      "nums": [
+        63,
+        26,
+        44
+      ],
+      "target": 81,
+      "solvable": true,
+      "witness": "((63-26)+44)",
+      "model_correct": true
+    },
+    {
+      "index": 232,
+      "nums": [
+        99,
+        1,
+        9,
+        42
+      ],
+      "target": 67,
+      "solvable": true,
+      "witness": "(((99+1)+9)-42)",
+      "model_correct": true
+    },
+    {
+      "index": 233,
+      "nums": [
+        54,
+        32,
+        31,
+        3
+      ],
+      "target": 27,
+      "solvable": true,
+      "witness": "((31-(54-32))*3)",
+      "model_correct": false
+    },
+    {
+      "index": 234,
+      "nums": [
+        62,
+        31,
+        53
+      ],
+      "target": 51,
+      "solvable": true,
+      "witness": "(53-(62/31))",
+      "model_correct": false
+    },
+    {
+      "index": 235,
+      "nums": [
+        95,
+        9,
+        54,
+        3
+      ],
+      "target": 80,
+      "solvable": true,
+      "witness": "(95+((9-54)/3))",
+      "model_correct": false
+    },
+    {
+      "index": 236,
+      "nums": [
+        48,
+        15,
+        19
+      ],
+      "target": 12,
+      "solvable": true,
+      "witness": "(48/(19-15))",
+      "model_correct": false
+    },
+    {
+      "index": 237,
+      "nums": [
+        92,
+        96,
+        10
+      ],
+      "target": 40,
+      "solvable": true,
+      "witness": "((96-92)*10)",
+      "model_correct": false
+    },
+    {
+      "index": 238,
+      "nums": [
+        71,
+        51,
+        54
+      ],
+      "target": 74,
+      "solvable": true,
+      "witness": "((71-51)+54)",
+      "model_correct": true
+    },
+    {
+      "index": 239,
+      "nums": [
+        47,
+        32,
+        19
+      ],
+      "target": 98,
+      "solvable": true,
+      "witness": "((47+32)+19)",
+      "model_correct": true
+    },
+    {
+      "index": 240,
+      "nums": [
+        4,
+        61,
+        71
+      ],
+      "target": 33,
+      "solvable": true,
+      "witness": "((61+71)/4)",
+      "model_correct": false
+    },
+    {
+      "index": 241,
+      "nums": [
+        60,
+        62,
+        75,
+        1
+      ],
+      "target": 37,
+      "solvable": true,
+      "witness": "((1-75)/(60-62))",
+      "model_correct": false
+    },
+    {
+      "index": 242,
+      "nums": [
+        45,
+        57,
+        6
+      ],
+      "target": 17,
+      "solvable": true,
+      "witness": "((45+57)/6)",
+      "model_correct": false
+    },
+    {
+      "index": 243,
+      "nums": [
+        72,
+        41,
+        74,
+        65
+      ],
+      "target": 49,
+      "solvable": true,
+      "witness": "(41+(72/(74-65)))",
+      "model_correct": false
+    },
+    {
+      "index": 244,
+      "nums": [
+        7,
+        15,
+        11
+      ],
+      "target": 88,
+      "solvable": true,
+      "witness": "((15-7)*11)",
+      "model_correct": false
+    },
+    {
+      "index": 245,
+      "nums": [
+        52,
+        26,
+        1,
+        21
+      ],
+      "target": 13,
+      "solvable": true,
+      "witness": "(52/((26-1)-21))",
+      "model_correct": false
+    },
+    {
+      "index": 246,
+      "nums": [
+        80,
+        54,
+        9,
+        28
+      ],
+      "target": 11,
+      "solvable": true,
+      "witness": "(28-((80-54)-9))",
+      "model_correct": false
+    },
+    {
+      "index": 247,
+      "nums": [
+        52,
+        93,
+        54
+      ],
+      "target": 13,
+      "solvable": true,
+      "witness": "((52-93)+54)",
+      "model_correct": false
+    },
+    {
+      "index": 248,
+      "nums": [
+        99,
+        80,
+        97
+      ],
+      "target": 82,
+      "solvable": true,
+      "witness": "((99+80)-97)",
+      "model_correct": true
+    },
+    {
+      "index": 249,
+      "nums": [
+        73,
+        43,
+        62
+      ],
+      "target": 54,
+      "solvable": true,
+      "witness": "((73+43)-62)",
+      "model_correct": true
+    },
+    {
+      "index": 250,
+      "nums": [
+        59,
+        44,
+        20,
+        52
+      ],
+      "target": 96,
+      "solvable": true,
+      "witness": "((20*(59-52))-44)",
+      "model_correct": false
+    },
+    {
+      "index": 251,
+      "nums": [
+        18,
+        21,
+        15
+      ],
+      "target": 45,
+      "solvable": true,
+      "witness": "((21-18)*15)",
+      "model_correct": false
+    },
+    {
+      "index": 252,
+      "nums": [
+        47,
+        79,
+        40
+      ],
+      "target": 72,
+      "solvable": true,
+      "witness": "(40-(47-79))",
+      "model_correct": true
+    },
+    {
+      "index": 253,
+      "nums": [
+        13,
+        68,
+        56,
+        8
+      ],
+      "target": 92,
+      "solvable": true,
+      "witness": "((13*8)-(68-56))",
+      "model_correct": false
+    },
+    {
+      "index": 254,
+      "nums": [
+        13,
+        6,
+        4,
+        56
+      ],
+      "target": 97,
+      "solvable": true,
+      "witness": "(13+((6/4)*56))",
+      "model_correct": false
+    },
+    {
+      "index": 255,
+      "nums": [
+        81,
+        16,
+        23
+      ],
+      "target": 88,
+      "solvable": true,
+      "witness": "((81-16)+23)",
+      "model_correct": true
+    }
+  ]
+}

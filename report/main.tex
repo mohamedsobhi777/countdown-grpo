@@ -104,6 +104,13 @@ are retained per answer; truncation is a separate flag when token metadata exist
 All 512 historical outputs were re-scored, and strict scores matched their
 original records. The same unique holdout puzzles were verified in both reports,
 with no intersection with the selected training subset.
+An independent exact subset-dynamic-programming solver found a valid witness for
+all 256 puzzles under the all-inputs-once rules. Unsolvable holdout items therefore
+do not explain the errors. Witnesses are archived separately and never included
+in model prompts. An agent review of the first two records per observed outcome
+category (20 records total) found agreement with the specified extraction rule;
+this is not a blinded human annotation study. Prose-heavy and incomplete outputs
+illustrate the parser's coverage limitations.
 
 \section{Controlled study design and current status}
 The study keeps the original strict metric alongside the diagnostic. Planned
@@ -131,13 +138,16 @@ configs, package versions, puzzle splits, checkpoints, and generation tables:
 \item \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/1qrixzrf}{Pilot final evaluation}
 \item \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/uv3hjjih-adapter/v0}{Final pilot adapter artifact}
 \item \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/workspace}{Study workspace}
+\item \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/jyyk55pq}{Archived-output diagnostic audit}
 \end{itemize}
 \paragraph{2026-10-10.} Inspected the current repository, pilot artifacts, local GPU,
 and Overleaf access. Recorded the approved research plan. Implemented and tested
 the declared-expression diagnostic, re-scored archived outputs, and added token
 termination metadata and output-budget overrides to evaluation. Twenty-five CPU
-tests pass. Created this Overleaf report. The longer-budget and training comparisons
-remain pending at this revision.
+tests initially passed; solver coverage increased this to 29 tests. Created and
+compiled this Overleaf report, verified all holdout puzzles are solvable, and
+reviewed a deterministic diagnostic sample. The matched output-budget grid is
+running. Training comparisons remain pending at this revision.
 
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset

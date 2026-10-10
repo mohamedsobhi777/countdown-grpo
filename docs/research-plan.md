@@ -62,8 +62,8 @@ The existing 300-step run is a pilot, not the entire study.
 
 - [x] Inspect repository, pilot outputs, GPU, GitHub and Overleaf access.
 - [x] Record user-approved design and implementation sequence.
-- [ ] Audit scores and failure categories; log evidence to W&B.
-- [ ] Create and compile initial Overleaf report.
+- [x] Audit scores and failure categories; log evidence to W&B.
+- [x] Create and compile initial Overleaf report.
 - [ ] Run matched output-budget evaluations.
 - [ ] Run fixed-split, multi-seed reward comparisons.
 - [ ] Run three-to-four-number transfer and distribution-shift evaluations.
