@@ -2,6 +2,17 @@
 
 Seed 42 completed 300 steps of three-number-only training in 98.7 minutes and all five evaluations. **Seeds 43 and 44 are still pending.** This is one checkpoint, not the completed multi-seed study.
 
+Seed 43 has now completed training in **91.1 minutes** and its original-holdout
+evaluation: **93/256 solved (36.3%; 95% Wilson 30.7–42.4%)**, with strict and
+diagnostic scores agreeing and 157/256 truncated outputs. The full step sequence,
+configuration, identical training/holdout order versus seed 42, absence of overlap,
+and every answer's scores passed audit. Its four frozen-suite evaluations and
+seed 44 remain pending. [Evaluation run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3jlajmcr),
+[raw completions](seed-43-evaluation.json), [audited summary](seed-43-holdout.json),
+[source audit](../local-source-audit-seed43.json).
+
+The table below covers **seed 42 only**.
+
 | Evaluation | Solved | Accuracy (95% Wilson) | Truncated |
 | --- | ---: | ---: | ---: |
 | [Original holdout](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao) | 79/256 | 30.9% (25.5–36.8) | 167/256 |

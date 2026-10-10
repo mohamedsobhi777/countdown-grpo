@@ -374,6 +374,18 @@ Five runs remain pending; this is not a reward comparison or seed average.
 The historical laptop/fallback pilot used a different runtime environment, so
 its 85/256 score cannot isolate a hardware or kernel effect relative to this run.
 
+\paragraph{Second transfer seed: original holdout.}
+Seed 43 completed all 300 training steps in 91.1 minutes and solves 93/256
+original-holdout puzzles (36.3\%; 95\% Wilson interval 30.7--42.4\%). Strict and
+diagnostic scores agree; 157 outputs are truncated. Configuration, step sequence,
+identical ordered training/holdout lists versus seed 42, absence of overlap, and
+per-answer scores passed audit. All 149 archived source files match the clean
+recorded commit; hardware and normalized package requirements match seed 42.
+The only package-code difference adds logging metadata. Seed 42's historical
+dirty flag remains documented. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3jlajmcr}{Evaluation evidence}
+is archived in the interim transfer directory. The four frozen-suite evaluations
+and seed 44 remain pending; no seed-averaged conclusion is reported.
+
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates

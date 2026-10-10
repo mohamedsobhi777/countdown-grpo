@@ -191,6 +191,13 @@ and optional-kernel metadata. Seed 42's historical dirty flag and missing fields
 remain documented rather than overwritten. [Seed-43 source hashes and scope](../results/study/local-source-audit-seed43.json),
 [exported runtime provenance](../results/study/transfer-progress/seed-43-training/provenance.json).
 Seed 44 review and the completed seed-43 evaluation set remain pending.
+Seed 43's original-holdout evaluation (`3jlajmcr`) subsequently passed the full
+single-evaluation audit: 93/256 solved (36.3%; Wilson 95% 30.7–42.4%), strict and
+diagnostic scores agreeing, 157 truncated outputs. Training took 5463.0 seconds
+(91.1 minutes). Its training and holdout puzzle lists match seed 42 exactly.
+Raw completions, metrics, configuration, and the audited summary are published
+under `results/study/transfer-progress`; the four frozen-suite evaluations remain
+pending. This is not a completed seed grid or seed average.
 
 The final seed-comparison plotting command is ready for the completed audited
 aggregates. Run with system Python (Matplotlib installed there), after each
