@@ -61,6 +61,13 @@ Declared-expression diagnostic correct & 0 (0.0\%) & 85 (33.2\%)\\
 \bottomrule
 \end{tabular}
 \end{center}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/pilot.png}
+\caption{Pilot stochastic training reward and separate greedy held-out accuracy.
+These use different puzzles and decoding protocols; validation was not measured
+at every training step.}
+\end{figure}
 The first positive training reward occurred at step 31. Peak PyTorch-allocated
 memory was 2.72 GiB, which excludes reserved memory and other GPU allocations.
 In the final 30 training steps, 59.9\% of sampled completions reached the output

@@ -5,6 +5,13 @@ using [`Jiayi-Pan/Countdown-Tasks-3to4`](https://huggingface.co/datasets/Jiayi-P
 No supervised fine-tuning stage. Designed for one NVIDIA GPU with 16 GB VRAM,
 using BF16 LoRA and Hugging Face TRL's GRPO trainer.
 
+**Expanded study in progress:** separating arithmetic success from formatting,
+testing output budgets, comparing rewards across three seeds, and measuring
+generalization. See the [study ledger](docs/study-ledger.md),
+[Overleaf report](https://www.overleaf.com/project/6aca3d97baaac8402a980db8), and
+[compiled report](report/main.pdf). Results below describe the original pilot;
+unfinished comparisons are not included in its headline score.
+
 ## Results
 
 One 300-step run improved greedy exact-solve accuracy from **0/256 to 85/256
