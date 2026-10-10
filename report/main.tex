@@ -322,6 +322,18 @@ The first run predates those metadata fields; startup logs explicitly identify
 the fallback kernels. Hashes and audit scope are committed in
 \texttt{results/study/local-source-audit.json}. Later seeds still require review.
 
+\paragraph{2026-10-11: interim transfer result.}
+The first three-number-only run (seed 42) completed all 300 steps in 98.7 minutes.
+Its final adapter and resumable checkpoint are committed in W\&B. On the original
+holdout it solves 79/256 puzzles (30.9\%; 95\% Wilson interval 25.5--36.8\%),
+with strict and diagnostic scores agreeing; 167/256 outputs are truncated.
+The configuration, full step sequence, 20,000 unique three-number training
+puzzles, held-out order, lack of overlap, and all per-answer scores were checked.
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao}{Evaluation evidence}
+and raw completions are available in the repository's explicitly interim
+\texttt{results/study/transfer-progress} directory. Four suite evaluations and
+seeds 43/44 are pending. This is not a completed transfer study or seed average.
+
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates

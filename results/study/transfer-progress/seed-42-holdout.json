@@ -1,0 +1,47 @@
+{
+  "status": "interim_single_seed_original_holdout_only",
+  "seed": 42,
+  "training_num_count": 3,
+  "training_steps": 300,
+  "training_seconds": 5924.0128,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/liev6g5l",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/liev6g5l-adapter:v0",
+  "evaluation": {
+    "samples": 256,
+    "correct": 79,
+    "accuracy": 0.30859375,
+    "accuracy_wilson_95": [
+      0.2551887425019035,
+      0.36765820253612547
+    ],
+    "diagnostic_correct": 79,
+    "truncated": 167,
+    "failures": {
+      "no_declared_expression": 159,
+      "number_mismatch": 12,
+      "correct": 79,
+      "wrong_value": 3,
+      "ambiguous_or_incomplete_answer": 1,
+      "invalid_syntax": 2
+    },
+    "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao",
+    "suite_sha256": null
+  },
+  "source_sha256": {
+    "evaluation.json": "917e38f0053b6f041f92ab6b2088fbcbd73b25d3251591514af1e2433672ec8e",
+    "training/config.json": "092c3aa15867b6fa7df60382a0451a0c40ad79520f62bd9dcc9872bec7e0121a",
+    "training/train-puzzles.json": "173001e2712533a014880aa8c4d60f2c7d183d8c8bab8aaad03945b5b0d7480a",
+    "training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "training/metrics.jsonl": "f4d0fb67a4ac27a5b89d2896ac9ed650b3ca7664be9d41dc10a0c10b3c17646a"
+  },
+  "checks": [
+    "exact prescribed configuration",
+    "300 complete optimizer steps",
+    "20000 unique three-number training puzzles",
+    "no training/holdout overlap",
+    "exact ordered holdout",
+    "greedy decoding with prescribed adapter",
+    "all per-answer scores and diagnostics recomputed"
+  ],
+  "limitations": "One seed on the original 256-puzzle holdout. Four frozen-suite evaluations and two further training seeds are pending. This is not the completed transfer study or a seed-averaged result."
+}

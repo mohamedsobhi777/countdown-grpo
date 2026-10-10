@@ -133,6 +133,18 @@ module changed. The first run predates those metadata fields; its startup log
 explicitly identifies the PyTorch fallback kernels. The later seeds still need
 comparison after completion. [Hashes and audit scope](../results/study/local-source-audit.json).
 
+## 2026-10-11: first transfer training and original-holdout evaluation
+
+Seed 42 completed all 300 steps in 5924.0 seconds (98.7 minutes). The final
+adapter and resumable step-300 checkpoint are committed in W&B. Its original
+holdout evaluation solves 79/256 (30.9%; Wilson 95% interval 25.5–36.8%), with
+strict and diagnostic scores agreeing. 167/256 outputs are truncated. The
+configuration, complete step sequence, 20,000 unique three-number training
+puzzles, held-out order, lack of overlap, and every answer's scores were checked.
+[Raw interim evidence and links](../results/study/transfer-progress/README.md).
+This is one seed, not the completed transfer study. Four suite evaluations and
+seeds 43/44 remain pending; the independent Colab six-run grid continues.
+
 ## Remaining
 
 Finish seed/reward and transfer runs; archive remote results; log analysis
