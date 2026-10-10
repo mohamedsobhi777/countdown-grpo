@@ -18,6 +18,14 @@ completion gates: [research-plan.md](research-plan.md).
 - Budget analysis implemented in `scripts/analyze_budget_study.py`: requires all
   six cells, re-verifies scores/configs, archives raw outputs, and reports Wilson
   intervals plus paired gains/losses and exploratory unadjusted exact tests.
+- Local comparison demo implemented: all 256 archived pairs, outcome filters,
+  conservative diagnostic feedback, custom exact-answer checker, optional live
+  base/adapter generation. HTTP tests cover archival parity, validation, and
+  disabled inference. Total CPU test count is now 40. Chromium smoke checks pass:
+  all 256 examples, 85 successes/171 failures, exact-answer checking, disabled
+  inference in archive mode, no JavaScript errors, and no horizontal overflow at
+  390px width. Reproduce with `scripts/check_demo_browser.py`; screenshots are
+  saved under `outputs/demo-{desktop,mobile}.png`. Live CUDA validation is pending.
 
 ## Running / queued
 
@@ -46,6 +54,6 @@ when outputs are secured; idle compute should not be retained.
 
 Aggregate complete budget results with uncertainty and paired comparisons;
 finish seed/reward and transfer runs; archive remote results; log analysis
-artifacts; build and verify the interactive demo; complete and compile the
+artifacts; finish browser/live validation of the interactive demo; complete and compile the
 Overleaf report; publish all evidence and audit every requirement. The study is
 not yet complete.

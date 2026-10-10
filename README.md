@@ -86,6 +86,35 @@ CPU unit tests cover reward verification, data splits, and configuration. The
 archived reports have also been re-scored with the verifier, checked for identical
 evaluation puzzles, and checked for overlap with the selected training puzzles.
 
+## Interactive demo
+
+Browse **all 256 archived held-out examples**, filter successes and failures,
+compare base/GRPO outputs, and inspect exact verifier feedback. This mode needs
+only Python 3.12; it does not download a model or use the GPU:
+
+```bash
+PYTHONPATH=src python3 -m countdown_grpo.demo
+```
+
+Open <http://127.0.0.1:8765>. The answer checker also works without a GPU. It
+distinguishes strict answer-format compliance from the conservative diagnostic
+score and reports missing/reused numbers and exact rational values. Historical
+outputs have no token-level truncation metadata; the UI labels this unknown.
+
+Enable optional live base/adapter generation with a local adapter and the training
+dependencies (first request loads the model):
+
+```bash
+PYTHONPATH=src .venv/bin/python -m countdown_grpo.demo \
+  --adapter outputs/countdown-20260914-01/training/adapter
+```
+
+For another machine, download the [pilot adapter artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/uv3hjjih-adapter/v0)
+and supply its local directory. The server binds to loopback and serializes live
+generation. Avoid sharing the GPU with training. Custom puzzles may be unsolvable;
+single-puzzle decoding can differ from archived batched evaluation. Live inference
+is implemented but its GPU smoke test remains pending in the study ledger.
+
 ## Setup
 
 Python 3.12 and [uv](https://docs.astral.sh/uv/) are required. Install a CUDA-enabled

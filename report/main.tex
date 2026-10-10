@@ -154,6 +154,25 @@ therefore provides little evidence that doubling the output budget resolves the
 pilot's failures. The 1024-token cells are still pending; this is not the final
 budget comparison.
 
+\section{Interactive comparison demo}
+A local browser interface exposes all 256 archived evaluation pairs, including
+failures, with filters for outcomes and number-multiset errors. An exact answer
+checker accepts user expressions and shows strict success, diagnostic success,
+the extracted expression, exact value, and missing or reused inputs. Archived
+mode uses only Python's standard library and requires no model download or GPU.
+An optional live mode loads the pilot LoRA adapter and compares greedy generation
+with the adapter enabled and disabled; its GPU smoke test remains pending.
+The server binds to loopback and serializes live inference requests.
+
+Chromium checks verified all 256 examples, 85-success/171-failure filtering,
+interactive answer checking, disabled generation in archived mode, no JavaScript
+errors, and mobile layout without horizontal overflow at 390px width. HTTP tests
+also check invalid inputs and cross-origin request rejection. All 40 CPU tests
+pass. Browser checks are reproducible with
+\texttt{scripts/check\_demo\_browser.py}; these do not substitute for testing live
+model inference. Single-puzzle generation can differ from the historical batched
+evaluation, and custom puzzles are not guaranteed solvable.
+
 \section{Provenance and experiment ledger}
 The pilot used clean source commit
 \texttt{0a432a272591f7683b711a9c867c01e7d939fca1}. W\&B contains source snapshots,
