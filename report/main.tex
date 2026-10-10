@@ -132,8 +132,27 @@ comparisons are not presented as completed results:
       inputs and out-of-range targets; solutions are never included in prompts.
 \item A comparison demo with exact verifier feedback and archived examples.
 \end{itemize}
-Per-seed results and held-out uncertainty will be reported separately. The
-distribution-shift suites will be frozen before querying trained models.
+Per-seed results and held-out uncertainty will be reported separately. Four
+distribution-shift/arity suites have been frozen before querying trained models.
+
+\paragraph{Uncertainty and paired analysis.} Individual checkpoint accuracies use
+95\% Wilson score intervals, following the
+\href{https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm}{NIST formulation}.
+For the pilot's 85/256 score this interval is 27.7--39.2\%. It describes
+puzzle-sampling uncertainty under a binomial model, not training-seed variability
+or uncertainty about arbitrary out-of-distribution tasks. Comparisons match
+canonical puzzles and report gained, lost, jointly correct, and jointly incorrect
+answers. Exact two-sided McNemar tests are exploratory, with unadjusted p-values;
+we do not use the grid to claim a confirmatory significance result.
+
+\paragraph{Partial output-budget result.} The trained adapter solved 86/256
+puzzles at 512 tokens, compared with 85/256 at 256 tokens: one gained solution
+and no lost solutions. At 512 tokens, 140/256 outputs (54.7\%) still hit the cap.
+Strict and diagnostic scores coincide. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/vnvj9eez}{512-token evaluation}
+therefore provides little evidence that doubling the output budget resolves the
+pilot's failures. The 1024-token cells are still pending; this is not the final
+budget comparison.
 
 \section{Provenance and experiment ledger}
 The pilot used clean source commit
@@ -154,7 +173,11 @@ termination metadata and output-budget overrides to evaluation. Twenty-five CPU
 tests initially passed; solver coverage increased this to 29 tests. Created and
 compiled this Overleaf report, verified all holdout puzzles are solvable, and
 reviewed a deterministic diagnostic sample. The matched output-budget grid is
-running. Training comparisons remain pending at this revision.
+running. Six controlled training runs are queued on a Colab L4; the first is
+live. Its initial five steps averaged approximately 50.5 seconds per step using
+the reference PyTorch attention implementation. These are preliminary throughput
+measurements, not a completed training runtime. Statistical analysis and pairing
+validation bring CPU coverage to 36 passing tests.
 
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset

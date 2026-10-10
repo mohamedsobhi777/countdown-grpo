@@ -12,18 +12,26 @@ completion gates: [research-plan.md](research-plan.md).
 - Four generalization suites (256 examples each), frozen before model evaluation;
   input hashes and separate witnesses: [data/suites/v1](../data/suites/v1/README.md).
 - Overleaf report created and compiled: [editor](https://www.overleaf.com/project/6aca3d97baaac8402a980db8), [LaTeX](../report/main.tex), [PDF](../report/main.pdf).
-- 33 CPU tests pass, covering solver witnesses, safety, duplicate handling,
-  fixed-split independence from training seed, and benchmark determinism.
+- 36 CPU tests pass, covering solver witnesses, safety, duplicate handling,
+  fixed-split independence from training seed, benchmark determinism, Wilson
+  interval reference values, and canonical-puzzle pairing validation.
+- Budget analysis implemented in `scripts/analyze_budget_study.py`: requires all
+  six cells, re-verifies scores/configs, archives raw outputs, and reports Wilson
+  intervals plus paired gains/losses and exploratory unadjusted exact tests.
 
 ## Running / queued
 
 - Local tmux `countdown-budget-study`: six model/budget combinations at
   `outputs/study-budgets-20261010/`. Both 256-token evaluations reproduce the
-  pilot scores; base at 512 also scores 0/256. Later budgets pending.
+  pilot scores; base at 512 also scores 0/256. Adapter at 512 solves 86/256:
+  one gain and no losses versus 256 tokens, with 140/256 truncated outputs.
+  [512-token adapter run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/vnvj9eez).
+  The 1024-token cells remain pending.
 - Colab session `countdown-study`, L4: six runs in `controlled-l4-v1`, binary/shaped
   rewards interleaved at seeds 42, 43, 44. Binary seed 42 is rerun so the six main
   comparisons share hardware. [First run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/4anzz6c2).
   Observe with `colab exec -s countdown-study -f scripts/colab_status.py`.
+  First five steps averaged 50.5 seconds each; monitor this slower L4 runtime.
 - Local tmux `countdown-generalization`: waits for budget evaluation, then runs
   base/pilot on all frozen suites, followed by three-number-only training at
   seeds 42, 43, 44 with original-holdout and four-suite evaluations. Outputs:
