@@ -17,8 +17,11 @@ planned experiments. A post-hoc audit using a conservative declared-expression
 parser recovers the same correct counts when the answer-tag requirement is
 relaxed. This supports investigating arithmetic task improvement, while not
 establishing general reasoning or fully identifying the role of formatting.
-Output-budget, multi-seed, reward-ablation, and distribution-shift experiments
-are tracked below as they are completed.
+Increasing the pilot's output cap from 256 to 1024 tokens gained one solution
+while costing 3.85 times the evaluation time. Two completed three-number-only
+training seeds show substantially lower four-number accuracy; the third seed is
+still running. A six-run reward comparison and live-demo validation remain
+incomplete. Results below are explicitly scoped to their checkpoints and suites.
 \end{abstract}
 
 \section{Question and experimental scope}
@@ -120,8 +123,9 @@ this is not a blinded human annotation study. Prose-heavy and incomplete outputs
 illustrate the parser's coverage limitations.
 
 \section{Controlled study design and current status}
-The study keeps the original strict metric alongside the diagnostic. The budget
-grid is complete; remaining comparisons are not presented as completed results:
+The study keeps the original strict metric alongside the diagnostic. The matched
+budget grid and mixed-arity pilot generalization grid are complete. Two of three
+transfer seeds and one of six controlled reward runs are complete:
 \begin{itemize}[nosep]
 \item Matched base/adapter output budgets of 256, 512, and 1024 tokens; record actual
       generated lengths, EOS status, truncation, and generation time.
@@ -151,10 +155,27 @@ adapter paths, and recomputed evaluation scores. It reports per-seed accuracies
 and sample standard deviations, together with paired reward differences for each
 seed. Repeated evaluation of the same holdout is not pooled into 768 independent
 puzzles. Synthetic manifest tests reject unfinished runs and altered scores.
-Hardware/package equality
-must additionally be checked in the linked W\&B provenance before final claims.
+The controlled aggregator additionally requires identical clean source, hardware,
+Python, normalized full package requirements, and pinned FLA versions across
+all six runs. The local transfer source/runtime audits are reported separately.
 
-\paragraph{Completed output-budget experiment.} The base model solved 0/256 at
+\paragraph{Interim controlled reward result.}
+The first L4/FLA controlled run (binary reward, seed 42) completed 300 steps in
+192.9 minutes and solves 68/256 held-out puzzles (26.6\%; 95\% Wilson interval
+21.5--32.3\%). Strict and diagnostic scores agree; 174/256 outputs are truncated.
+The downloaded archive's hash, full step sequence, settings, puzzle order,
+training/holdout separation, per-answer scores, and clean source/pinned-kernel
+provenance passed the single-run audit. The final adapter and resumable checkpoint
+are committed in W\&B. Diagnostic outcomes comprise 68 correct expressions,
+141 invalid syntax, 28 number mismatches, 10 without a declared expression,
+eight wrong values, and one ambiguous or incomplete answer. Truncation overlaps
+these categories. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/9xwjji2l}{Evaluation evidence}
+and raw outputs are archived under \texttt{results/study/controlled-progress}.
+Five runs remain pending; this is not a reward comparison or seed average.
+The historical laptop/fallback pilot used a different runtime environment, so
+its 85/256 score cannot isolate a hardware or kernel effect relative to this run.
+
+\section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
 (33.6\%) at both 512 and 1024 tokens. Both longer caps gain the same single
 solution and lose none of the original successes. Strict and diagnostic scores
@@ -228,7 +249,60 @@ contamination before publishing output. Per-seed comparisons with the single
 mixed-arity pilot will be descriptive; they are not a balanced multi-seed ablation
 of the training distribution.
 
+\section{Three-number-only training: interim transfer results}
+Seeds 42 and 43 completed all 300 training steps in 98.7 and 91.1 minutes,
+respectively, followed by all five evaluations. Seed 44 is still training.
+The table reports completed checkpoints separately; no three-seed mean is
+reported before the full grid finishes.
+\begin{center}
+\begin{tabular}{llrrr}
+\toprule
+Suite & Seed & Solved & Accuracy (95\% Wilson) & Truncated\\
+\midrule
+Original holdout & 42 & 79/256 & 30.9\% (25.5--36.8) & 167/256\\
+Original holdout & 43 & 93/256 & 36.3\% (30.7--42.4) & 157/256\\
+Three-number & 42 & 146/256 & 57.0\% (50.9--62.9) & 110/256\\
+Three-number & 43 & 161/256 & 62.9\% (56.8--68.6) & 95/256\\
+Four-number & 42 & 26/256 & 10.2\% (7.0--14.5) & 211/256\\
+Four-number & 43 & 38/256 & 14.8\% (11.0--19.7) & 197/256\\
+Inputs 101--200 & 42 & 63/256 & 24.6\% (19.7--30.2) & 188/256\\
+Inputs 101--200 & 43 & 79/256 & 30.9\% (25.5--36.8) & 165/256\\
+Targets 101--200 & 42 & 107/256 & 41.8\% (35.9--47.9) & 145/256\\
+Targets 101--200 & 43 & 112/256 & 43.8\% (37.8--49.9) & 140/256\\
+\bottomrule
+\end{tabular}
+\end{center}
+Strict and diagnostic scores agree in every cell. Full step sequences,
+configuration, 20,000 unique three-number training puzzles, identical ordered
+splits, frozen suite hashes, absence of training overlap, and all per-answer
+scores passed audit. Final adapters and resumable checkpoints are retained in
+W\&B. Raw completions, per-seed summaries, failure categories, source audits,
+and evaluation links are available in the
+\href{https://github.com/mohamedsobhi777/countdown-grpo/tree/main/results/study/transfer-progress}{interim evidence directory}.
+
+Both completed checkpoints have lower accuracy on four-number puzzles. This
+is an observed transfer limitation under a 256-token cap, not an isolated causal
+effect of training arity. Comparisons with the single mixed-arity pilot remain
+descriptive; they are not a balanced multi-seed training-distribution ablation.
+The larger-input and larger-target suites are constructed and not difficulty-matched.
+
+All 110/95 three-number failures for seeds 42/43, respectively, are truncated,
+as are 211 of 230 and 197 of 218 four-number failures. Truncation overlaps the
+failure categories and does not establish causation or show that a longer budget
+would solve the puzzles. The completed longer-output experiment used the
+mixed-arity pilot; its finding cannot establish the budget effect for these
+separately trained adapters.
+
 \section{Kernel validation and controlled-study backend}
+An A100 hardware trial completed three steps at 49.33 seconds per step, compared
+with the L4's then-current 50.79 seconds per step. This approximately 3\% gain
+did not justify switching the controlled grid. The A100 run was intentionally
+interrupted, its complete partial evidence
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rat7r34m}{archived},
+and its VM released. It is excluded from completed training comparisons. These
+few steps are a throughput trial, not a reliable general hardware benchmark.
+
+
 The \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/jk9p648k}{kernel investigation}
 archives the probes, successful five-step trial, and interrupted fallback evidence.
 After the hardware trial, FLA 0.5.2 was installed in an isolated directory and
@@ -284,32 +358,17 @@ configs, package versions, puzzle splits, checkpoints, and generation tables:
 \item \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/workspace}{Study workspace}
 \item \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/jyyk55pq}{Archived-output diagnostic audit}
 \end{itemize}
-\paragraph{2026-10-10.} Inspected the current repository, pilot artifacts, local GPU,
-and Overleaf access. Recorded the approved research plan. Implemented and tested
-the declared-expression diagnostic, re-scored archived outputs, and added token
-termination metadata and output-budget overrides to evaluation. Twenty-five CPU
-tests initially passed; solver coverage increased this to 29 tests. Created and
-compiled this Overleaf report, verified all holdout puzzles are solvable, and
-reviewed a deterministic diagnostic sample. The matched output-budget grid is
-complete, as is the pilot generalization grid. The initial L4 fallback attempt
-averaged approximately 50.5 seconds per step over its first five steps; the
-subsequent kernel validation and consistent FLA restart are described above.
-These are preliminary throughput measurements, not completed study runtimes.
-Statistical analysis, demo checks, and schema compatibility validation bring
-current CPU coverage to 48 passing tests, including archive-integrity checks.
+The repository ledger records implementation and execution milestones. Current
+CPU coverage is 48 passing tests, including diagnostic extraction, exact reward
+validation, statistical analysis, demo HTTP behavior, schema compatibility,
+and remote archive-integrity checks. These tests do not substitute for the
+unfinished training grid or live model/browser validation.
+
 An automatic collector preserves each completed remote job and exports W\&B
-hardware and software provenance. Analysis requires matching clean source,
-Python and package environments, and the pinned FLA backend on a single L4.
-The dedicated VM is released only after all six completed jobs are downloaded
-and validated; aggregate analysis then runs locally. These checks do not imply
-that the pending experiments have completed.
-An A100 hardware trial completed three steps at 49.33 seconds per step, compared
-with the L4's then-current 50.79 seconds per step. This approximately 3\% gain
-did not justify switching the controlled grid. The A100 run was intentionally
-interrupted, its complete partial evidence
-\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rat7r34m}{archived},
-and its VM released. It is excluded from completed training comparisons. These
-few steps are a throughput trial, not a reliable general hardware benchmark.
+hardware and software provenance. The dedicated L4 VM is released only after
+all six completed jobs are downloaded and validated; aggregate analysis then
+runs locally. These safeguards do not imply that pending experiments have
+completed.
 
 \paragraph{Local transfer source audit.}
 The first transfer run reports a dirty working tree at commit
@@ -320,92 +379,23 @@ modules also match comparison commit \texttt{34faa55}. The only changed package
 module is the logging module, which adds Python and optional-kernel metadata.
 The first run predates those metadata fields; startup logs explicitly identify
 the fallback kernels. Hashes and audit scope are committed in
-\texttt{results/study/local-source-audit.json}. Later seeds still require review.
-
-\paragraph{2026-10-11: interim transfer result.}
-The first three-number-only run (seed 42) completed all 300 steps in 98.7 minutes.
-Its final adapter and resumable checkpoint are committed in W\&B. On the original
-holdout it solves 79/256 puzzles (30.9\%; 95\% Wilson interval 25.5--36.8\%),
-with strict and diagnostic scores agreeing; 167/256 outputs are truncated.
-The configuration, full step sequence, 20,000 unique three-number training
-puzzles, held-out order, lack of overlap, and all per-answer scores were checked.
-\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao}{Evaluation evidence}
-and raw completions are available in the repository's explicitly interim
-\texttt{results/study/transfer-progress} directory. Its four frozen-suite evaluations
-subsequently completed and passed the same audits:
-\begin{center}
-\begin{tabular}{lrrr}
-\toprule
-Suite & Solved & Accuracy (95\% Wilson) & Truncated\\
-\midrule
-Three-number holdout & 146/256 & 57.0\% (50.9--62.9) & 110/256\\
-Four-number holdout & 26/256 & 10.2\% (7.0--14.5) & 211/256\\
-Inputs 101--200 & 63/256 & 24.6\% (19.7--30.2) & 188/256\\
-Targets 101--200 & 107/256 & 41.8\% (35.9--47.9) & 145/256\\
-\bottomrule
-\end{tabular}
-\end{center}
-Strict and diagnostic scores agree in every suite. This single checkpoint shows
-limited four-number transfer; comparisons with the single mixed-arity pilot are
-descriptive, not a balanced multi-seed training-distribution ablation. The shifted
-suites are constructed and not difficulty-matched. Seed 43 has started; seeds
-43/44 remain pending. This is not a completed transfer study or seed average.
-All 110 three-number failures and 211 of 230 four-number failures hit the
-256-token cap; all 198 four-number no-declared-expression outcomes are truncated.
-This descriptive overlap does not establish causation or show that longer
-outputs would solve the puzzles. Transfer scores are conditional on the output
-budget. The completed longer-output experiment used the original mixed-arity
-pilot and does not establish the budget effect for this separately trained
-adapter.
-
-\paragraph{2026-10-11: first controlled result.}
-The first L4/FLA controlled run (binary reward, seed 42) completed 300 steps in
-192.9 minutes and solves 68/256 held-out puzzles (26.6\%; 95\% Wilson interval
-21.5--32.3\%). Strict and diagnostic scores agree; 174/256 outputs are truncated.
-The downloaded archive's hash, full step sequence, settings, puzzle order,
-training/holdout separation, per-answer scores, and clean source/pinned-kernel
-provenance passed the single-run audit. The final adapter and resumable checkpoint
-are committed in W\&B. Diagnostic outcomes comprise 68 correct expressions,
-141 invalid syntax, 28 number mismatches, 10 without a declared expression,
-eight wrong values, and one ambiguous or incomplete answer. Truncation overlaps
-these categories. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/9xwjji2l}{Evaluation evidence}
-and raw outputs are archived under \texttt{results/study/controlled-progress}.
-Five runs remain pending; this is not a reward comparison or seed average.
-The historical laptop/fallback pilot used a different runtime environment, so
-its 85/256 score cannot isolate a hardware or kernel effect relative to this run.
-
-\paragraph{Second transfer seed: original holdout.}
-Seed 43 completed all 300 training steps in 91.1 minutes and solves 93/256
-original-holdout puzzles (36.3\%; 95\% Wilson interval 30.7--42.4\%). Strict and
-diagnostic scores agree; 157 outputs are truncated. Configuration, step sequence,
-identical ordered training/holdout lists versus seed 42, absence of overlap, and
-per-answer scores passed audit. All 149 archived source files match the clean
-recorded commit; hardware and normalized package requirements match seed 42.
-The only package-code difference adds logging metadata. Seed 42's historical
-dirty flag remains documented. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3jlajmcr}{Evaluation evidence}
-is archived in the interim transfer directory. The four frozen-suite evaluations
-and seed 44 remain pending; no seed-averaged conclusion is reported.
+\texttt{results/study/local-source-audit.json}.
+Seed 43's 149 archived files match its clean recorded commit, and its hardware
+and normalized requirements match seed 42. Seed 44's 180 archived files match
+its clean startup commit; all package Python modules, hardware, Python version,
+and full normalized requirements match seed 43. The third-seed audit establishes
+startup provenance only; training and evaluation completion remain pending.
+Per-seed source hashes and captured runtime evidence are retained in the
+repository's \texttt{local-source-audit-seed43.json} and
+\texttt{local-source-audit-seed44.json} files under \texttt{results/study}.
 
 \section{Limitations}
-One seed and 256 puzzles do not establish robust generalization. Training-dataset
+The original pilot is one seed on a 256-puzzle holdout, and the multi-seed grids
+remain incomplete. These results do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates
 arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful
 work but still fail due to truncation. The completed output-budget finding applies
 to this checkpoint and test set; cross-seed transfer findings remain pending.
-
-\paragraph{Second transfer seed: complete evaluation set.}
-Seed 43 subsequently completed all five evaluations. Alongside 93/256 on the
-original holdout, it solves 161/256 three-number puzzles (62.9\%; Wilson 95\%
-56.8--68.6), 38/256 four-number puzzles (14.8\%; 11.0--19.7), 79/256 larger-input
-puzzles (30.9\%; 25.5--36.8), and 112/256 larger-target puzzles (43.8\%;
-37.8--49.9). Every answer, ordered puzzle list, suite hash, configuration, and
-training-overlap check passed audit; strict and diagnostic scores agree.
-All 95 three-number failures and 197 of 218 four-number failures are truncated.
-This overlap does not identify a causal output-budget effect. Constructed shifts
-are not difficulty-matched. Raw completions, W\&B links, uncertainty, and
-cross-tabulations are archived in
-\texttt{results/study/transfer-progress/seed-43-summary.json} and adjacent files.
-Seed 44 is now training; the three-seed aggregate remains pending.
 
 \end{document}
