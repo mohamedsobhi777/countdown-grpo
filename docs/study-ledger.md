@@ -26,6 +26,7 @@ completion gates: [research-plan.md](research-plan.md).
   inference in archive mode, no JavaScript errors, and no horizontal overflow at
   390px width. Reproduce with `scripts/check_demo_browser.py`; screenshots are
   saved under `outputs/demo-{desktop,mobile}.png`. Live CUDA validation is pending.
+  [Demo source, verification status, and screenshots in W&B](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/fbfflcpn).
 
 ## Running / queued
 
