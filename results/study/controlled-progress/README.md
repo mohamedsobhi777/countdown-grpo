@@ -29,6 +29,7 @@ outcome. These categories do not establish why the model failed.
 - [Audited summary, intervals, provenance, and source hashes](binary-42/summary.json)
 - [Raw evaluation](binary-42/evaluation.json)
 - [Training metrics](binary-42/training/metrics.jsonl)
+- [W&B audited evidence artifact run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/zwu499xh)
 
 The original laptop/fallback pilot scored 85/256. Its runtime environment differs
 from this L4/FLA study; this comparison cannot isolate an effect of hardware or
