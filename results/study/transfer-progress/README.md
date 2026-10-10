@@ -52,3 +52,5 @@ conditional on this budget. The completed longer-output experiment used the
 original mixed-arity pilot and cannot establish the budget effect for this
 separately trained adapter. The summary includes the full solve/truncation
 cross-tabulation, including one correct but truncated larger-input answer.
+
+[Seed 43 audit run and evidence artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/pt489axi).
