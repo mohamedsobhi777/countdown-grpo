@@ -144,6 +144,15 @@ or uncertainty about arbitrary out-of-distribution tasks. Comparisons match
 canonical puzzles and report gained, lost, jointly correct, and jointly incorrect
 answers. Exact two-sided McNemar tests are exploratory, with unadjusted p-values;
 we do not use the grid to claim a confirmatory significance result.
+The controlled-study aggregator requires all six runs to finish and checks
+their full training configuration, all 300 optimizer-step records, 20,000 unique
+training puzzles, identical ordered train/holdout lists, absence of overlap,
+adapter paths, and recomputed evaluation scores. It reports per-seed accuracies
+and sample standard deviations, together with paired reward differences for each
+seed. Repeated evaluation of the same holdout is not pooled into 768 independent
+puzzles. Synthetic manifest tests reject unfinished runs and altered scores;
+the complete CPU suite now contains 41 passing tests. Hardware/package equality
+must additionally be checked in the linked W\&B provenance before final claims.
 
 \paragraph{Partial output-budget result.} The trained adapter solved 86/256
 puzzles at 512 tokens, compared with 85/256 at 256 tokens: one gained solution

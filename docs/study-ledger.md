@@ -18,6 +18,12 @@ completion gates: [research-plan.md](research-plan.md).
 - Budget analysis implemented in `scripts/analyze_budget_study.py`: requires all
   six cells, re-verifies scores/configs, archives raw outputs, and reports Wilson
   intervals plus paired gains/losses and exploratory unadjusted exact tests.
+- Controlled-study analysis implemented in `scripts/analyze_controlled_study.py`:
+  requires all six completed runs; checks exact settings, all 300 optimizer steps,
+  20,000 training puzzles, identical ordered splits, no duplicate/overlap, and
+  recomputed scores. Reports each seed and sample standard deviations separately
+  from puzzle-sampling uncertainty. Synthetic evidence tests exercise rejection of
+  incomplete steps/runs and altered scores; total CPU coverage is 41 tests.
 - Local comparison demo implemented: all 256 archived pairs, outcome filters,
   conservative diagnostic feedback, custom exact-answer checker, optional live
   base/adapter generation. HTTP tests cover archival parity, validation, and
@@ -45,6 +51,10 @@ completion gates: [research-plan.md](research-plan.md).
   base/pilot on all frozen suites, followed by three-number-only training at
   seeds 42, 43, 44 with original-holdout and four-suite evaluations. Outputs:
   `outputs/generalization-pilot-v1/` and `outputs/three-only-local-v1/`.
+- Live-demo smoke test is queued after the two local GPU queues finish, in tmux
+  `countdown-demo-live-check`. It performs actual base/adapter generation twice
+  and verifies repeatability, then logs the output to W&B. This remains pending
+  until `results/study/demo-live.json` exists with a successful recorded result.
 
 Do not restart based only on old status files: inspect live tmux or remote PID.
 Each queue stops its study on failure. The independent local three-number study
