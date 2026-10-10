@@ -1,5 +1,6 @@
 """Synthetic manifests test rejection gates, not model performance."""
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -21,6 +22,15 @@ class ControlledAuditTests(unittest.TestCase):
             def save(name, value):
                 (root / name).write_text(json.dumps(value))
             config = Config(split_seed=42).to_dict()
+            provenance = {'state':'finished','group':'controlled-l4-fla-v1',
+                          'config':{'git_dirty':False,'git_commit':'synthetic','python_version':'synthetic',
+                                    'packages':{},'optional_kernel_packages':{'flash-linear-attention':'0.5.2',
+                                    'fla-core':'0.5.2','einops':'0.8.1','causal-conv1d':None}},
+                          'hardware':{'gpu':'NVIDIA L4','gpu_count':1}}
+            requirements = 'synthetic-fixture==1\n'
+            (root/'training/requirements.txt').write_text(requirements)
+            provenance['config']['requirements_sha256'] = hashlib.sha256(requirements.strip().encode()).hexdigest()
+            save('training/provenance.json', provenance)
             save('training/config.json', config)
             save('status.json', {'state': 'complete'})
             save('training/train-puzzles.json', [{'nums': [1, 2, 3], 'target': i} for i in range(1001, 21001)])
@@ -55,4 +65,9 @@ class ControlledAuditTests(unittest.TestCase):
             save('evaluation.json', evaluation)
             save('status.json', {'state': 'running'})
             with self.assertRaisesRegex(ValueError, 'incomplete'):
+                controlled.checked_run(root, 0, 42)
+            save('status.json', {'state':'complete'})
+            provenance['config']['optional_kernel_packages']['fla-core'] = None
+            save('training/provenance.json', provenance)
+            with self.assertRaisesRegex(ValueError, 'provenance'):
                 controlled.checked_run(root, 0, 42)

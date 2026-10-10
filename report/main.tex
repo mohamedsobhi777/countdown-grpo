@@ -289,7 +289,13 @@ averaged approximately 50.5 seconds per step over its first five steps; the
 subsequent kernel validation and consistent FLA restart are described above.
 These are preliminary throughput measurements, not completed study runtimes.
 Statistical analysis, demo checks, and schema compatibility validation bring
-current CPU coverage to 46 passing tests.
+current CPU coverage to 48 passing tests, including archive-integrity checks.
+An automatic collector preserves each completed remote job and exports W\&B
+hardware and software provenance. Analysis requires matching clean source,
+Python and package environments, and the pinned FLA backend on a single L4.
+The dedicated VM is released only after all six completed jobs are downloaded
+and validated; aggregate analysis then runs locally. These checks do not imply
+that the pending experiments have completed.
 An A100 hardware trial completed three steps at 49.33 seconds per step, compared
 with the L4's then-current 50.79 seconds per step. This approximately 3\% gain
 did not justify switching the controlled grid. The A100 run was intentionally

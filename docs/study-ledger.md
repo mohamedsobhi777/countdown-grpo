@@ -93,6 +93,22 @@ Each queue stops its study on failure. The independent local three-number study
 can still start if pilot generalization fails, so inspect both logs. Stop Colab
 when outputs are secured; idle compute should not be retained.
 
+## Automatic collection and provenance checks
+
+`scripts/collect_colab_study.py` collects each completed Colab job with a SHA-256
+verified archive, retaining final adapters, manifests, metrics, and raw evaluations.
+It exports W&B source, hardware, Python, package, and pinned-kernel metadata.
+The controlled analysis rejects inconsistent environments and recomputes scores.
+All 48 CPU tests pass, including rejection of corrupt and unfinished archives.
+A live observation confirmed the existing queue; collection never restarts it.
+
+The `countdown-colab-collector` tmux session polls every five minutes. With
+`--release-when-complete`, it releases the dedicated Colab VM only after all six
+jobs are complete, downloaded, and individually validated, and the remote queue
+has stopped. It then runs the aggregate analysis with W&B logging locally.
+Observation failures retain the VM and retry; training failures require inspection.
+Log: `outputs/launch/colab-collector.log`.
+
 ## Remaining
 
 Finish seed/reward and transfer runs; archive remote results; log analysis
