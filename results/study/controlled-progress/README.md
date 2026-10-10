@@ -59,3 +59,5 @@ The shaped output claims `2 + 4 - 55 + 25 = 81` and declares that expression
 in its answer block. The exact verifier computes −24 and rejects it as wrong.
 This example illustrates the recorded failure category; it is not a separate
 estimate of its prevalence.
+
+[Audited seed-42 reward-pair evidence artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/h8l3bwko).
