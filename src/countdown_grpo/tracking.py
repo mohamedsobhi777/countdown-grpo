@@ -5,6 +5,14 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
+
+
+def optional_version(name):
+    try:
+        return importlib.metadata.version(name)
+    except importlib.metadata.PackageNotFoundError:
+        return None
 
 
 def log_files(run, name, kind, files=(), directory=None, metadata=None):
@@ -39,6 +47,9 @@ def session(config, job_type, name=None, group=None):
             "git_dirty": bool(subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()),
             "packages": {name: importlib.metadata.version(name) for name in
                          ("torch", "transformers", "trl", "peft", "datasets", "accelerate", "wandb")},
+            "python_version": sys.version,
+            "optional_kernel_packages": {name: optional_version(name) for name in
+                                         ("flash-linear-attention", "fla-core", "einops", "causal-conv1d")},
         })
         Path(run.dir, "experiment-config.json").write_text(json.dumps(config.to_dict(), indent=2))
         run.save(str(Path(run.dir, "experiment-config.json")), base_path=run.dir)

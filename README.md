@@ -265,10 +265,15 @@ the effective completion batch must remain divisible by `num_generations`.
 Gradient accumulation also determines the rollout batch size in this configuration.
 Shorter completions can truncate useful answers and change the experiment.
 
-Qwen3.5 uses hybrid linear attention. Optional `causal-conv1d` and Flash Linear
-Attention kernels can improve performance; without them Transformers uses its
-PyTorch fallback. They require their own CUDA/build compatibility checks and are
-not required by this minimal setup. vLLM is deliberately left out of the initial
+Qwen3.5 uses hybrid linear attention. The optional, pinned FLA backend is enabled
+with `uv sync --locked --extra train --extra fast`. On the study's L4, a five-step
+validation measured about 37.6 seconds per warm step versus 50.8 with the PyTorch
+fallback. These short-run timings are preliminary; kernel numerical differences
+and all trial evidence are documented in [the investigation](results/study/kernel-probe/README.md).
+The six controlled reward runs use FLA consistently; the original pilot and
+local transfer runs retain their fallback backend. Do not silently mix backends
+within a comparison. Optional `causal-conv1d` remains uninstalled, and vLLM is
+left out of the initial
 implementation. Consult the [Qwen3.5 documentation](https://huggingface.co/docs/transformers/model_doc/qwen3_5)
 and [TRL GRPO documentation](https://huggingface.co/docs/trl/grpo_trainer).
 
