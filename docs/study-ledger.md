@@ -260,3 +260,15 @@ Training `skfvvhnz`, evaluation `83tmr7i5`, final adapter `skfvvhnz-adapter:v0`,
 and resumable step-300 checkpoint `model-shaped-42-train:v6` are committed in
 W&B. Evidence is under `results/study/controlled-progress`. Binary seed 43
 started automatically in the same controlled queue.
+
+## Third transfer seed training complete (2026-10-11)
+
+Seed 44 (`mj074g8h`) completed all 300 steps in 6017.4405 seconds (100.3 minutes),
+with peak allocated GPU memory 2.711 GiB. W&B reports the training run finished
+in `three-only-local-v1`; its configuration matches the local manifest, and its
+final hardware and normalized requirements match the audited startup record.
+The final adapter `mj074g8h-adapter:v0` and step-300 checkpoint
+`model-three-only-44-train:v6` are committed. The checkpoint manifest includes
+optimizer, scheduler, RNG, trainer state, adapter weights, and adapter config.
+The exported provenance has been refreshed to finished state. Evaluation is
+running; its five suites and the three-seed aggregate are not yet complete.

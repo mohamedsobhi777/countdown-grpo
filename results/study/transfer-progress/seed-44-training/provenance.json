@@ -1,8 +1,8 @@
 {
   "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/mj074g8h",
-  "state": "running",
+  "state": "finished",
   "group": "three-only-local-v1",
-  "captured_at": "2026-10-10T18:13:30.972853+00:00",
+  "captured_at": "2026-10-10T19:53:36.225154+00:00",
   "config": {
     "git_commit": "41724757e60a4db869cb39d1bf78f910f96c85d5",
     "git_dirty": false,
@@ -31,5 +31,9 @@
     "python": "CPython 3.12.3",
     "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
   },
-  "requirements_sha256": "1fba1854417fe4dac69b0cab5042cdbdc728da71f8507fedd7600b02223dff3c"
+  "requirements_sha256": "1fba1854417fe4dac69b0cab5042cdbdc728da71f8507fedd7600b02223dff3c",
+  "final_artifacts_verified": {
+    "adapter": "mohamedsobhi777/countdown-grpo/mj074g8h-adapter:v0",
+    "resumable_checkpoint": "mohamedsobhi777/countdown-grpo/model-three-only-44-train:v6"
+  }
 }

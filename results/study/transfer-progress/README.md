@@ -57,4 +57,7 @@ cross-tabulation, including one correct but truncated larger-input answer.
 
 [Seed 44 startup source audit](../local-source-audit-seed44.json) verifies its
 clean archived source and matching package code/runtime versus seed 43. This is
-startup evidence only; training and evaluation completion remain pending.
+startup evidence. Training has now finished all 300 steps in 6017.4405 seconds
+(100.3 minutes). [Finished W&B provenance](seed-44-training/provenance.json)
+verifies the final adapter and resumable checkpoint are committed; all five
+evaluations remain pending. No three-seed aggregate is reported yet.
