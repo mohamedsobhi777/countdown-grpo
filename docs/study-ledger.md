@@ -142,8 +142,19 @@ strict and diagnostic scores agreeing. 167/256 outputs are truncated. The
 configuration, complete step sequence, 20,000 unique three-number training
 puzzles, held-out order, lack of overlap, and every answer's scores were checked.
 [Raw interim evidence and links](../results/study/transfer-progress/README.md).
-This is one seed, not the completed transfer study. Four suite evaluations and
-seeds 43/44 remain pending; the independent Colab six-run grid continues.
+All four frozen-suite evaluations subsequently finished and passed audits:
+146/256 three-number, 26/256 four-number, 63/256 larger-input, and 107/256
+larger-target puzzles. Strict and diagnostic scores agree throughout. The
+20,000-puzzle training list, complete step sequence, configuration, frozen hashes,
+ordered evaluation lists, lack of overlap, and all per-answer scores were checked
+again before publishing the full single-seed table. Raw outputs, training metrics,
+configuration, and exported W&B hardware/requirements records are archived in the
+interim directory. Comparisons with the single mixed-arity pilot are descriptive.
+
+Seed 42 is marked complete. Seed 43 is confirmed live (PID 685077), W&B
+[3ifuj2rg](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3ifuj2rg).
+Seeds 43/44 and the independent Colab six-run grid remain pending. This is one
+seed, not the completed transfer study.
 
 ## Remaining
 

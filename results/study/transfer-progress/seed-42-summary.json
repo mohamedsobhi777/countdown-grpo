@@ -1,0 +1,161 @@
+{
+  "state": "one_complete_seed_of_three",
+  "seed": 42,
+  "training_seconds": 5924.0128,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/liev6g5l",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/liev6g5l-adapter:v0",
+  "scores": {
+    "original_holdout": {
+      "samples": 256,
+      "correct": 79,
+      "accuracy": 0.30859375,
+      "accuracy_wilson_95": [
+        0.2551887425019035,
+        0.36765820253612547
+      ],
+      "diagnostic_correct": 79,
+      "truncated": 167,
+      "failures": {
+        "no_declared_expression": 159,
+        "number_mismatch": 12,
+        "correct": 79,
+        "wrong_value": 3,
+        "ambiguous_or_incomplete_answer": 1,
+        "invalid_syntax": 2
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao",
+      "suite_sha256": null
+    },
+    "id_three": {
+      "samples": 256,
+      "correct": 146,
+      "accuracy": 0.5703125,
+      "accuracy_wilson_95": [
+        0.5090737118284735,
+        0.6294723083616384
+      ],
+      "diagnostic_correct": 146,
+      "truncated": 110,
+      "failures": {
+        "correct": 146,
+        "no_declared_expression": 108,
+        "number_mismatch": 1,
+        "ambiguous_or_incomplete_answer": 1
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/64lmacnd",
+      "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770"
+    },
+    "id_four": {
+      "samples": 256,
+      "correct": 26,
+      "accuracy": 0.1015625,
+      "accuracy_wilson_95": [
+        0.07025498422463894,
+        0.14465090136472733
+      ],
+      "diagnostic_correct": 26,
+      "truncated": 211,
+      "failures": {
+        "no_declared_expression": 198,
+        "number_mismatch": 23,
+        "correct": 26,
+        "wrong_value": 6,
+        "ambiguous_or_incomplete_answer": 1,
+        "invalid_syntax": 2
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bi91r7xw",
+      "suite_sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780"
+    },
+    "large_inputs": {
+      "samples": 256,
+      "correct": 63,
+      "accuracy": 0.24609375,
+      "accuracy_wilson_95": [
+        0.19734067215723067,
+        0.3023542549340322
+      ],
+      "diagnostic_correct": 63,
+      "truncated": 188,
+      "failures": {
+        "correct": 63,
+        "wrong_value": 3,
+        "no_declared_expression": 167,
+        "number_mismatch": 15,
+        "invalid_syntax": 3,
+        "ambiguous_or_incomplete_answer": 5
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/wgqlwhq9",
+      "suite_sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19"
+    },
+    "large_targets": {
+      "samples": 256,
+      "correct": 107,
+      "accuracy": 0.41796875,
+      "accuracy_wilson_95": [
+        0.35919855391479266,
+        0.4791644225300769
+      ],
+      "diagnostic_correct": 107,
+      "truncated": 145,
+      "failures": {
+        "correct": 107,
+        "no_declared_expression": 140,
+        "number_mismatch": 7,
+        "ambiguous_or_incomplete_answer": 1,
+        "wrong_value": 1
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/0j118djm",
+      "suite_sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b"
+    }
+  },
+  "paired_mixed_pilot_to_three_only": {
+    "id_three": {
+      "samples": 256,
+      "gained": 13,
+      "lost": 13,
+      "both_correct": 133,
+      "both_incorrect": 97,
+      "accuracy_difference": 0.0,
+      "exact_mcnemar_p_unadjusted": 1.0
+    },
+    "id_four": {
+      "samples": 256,
+      "gained": 10,
+      "lost": 25,
+      "both_correct": 16,
+      "both_incorrect": 205,
+      "accuracy_difference": -0.05859375,
+      "exact_mcnemar_p_unadjusted": 0.01667384780012071
+    },
+    "large_inputs": {
+      "samples": 256,
+      "gained": 28,
+      "lost": 26,
+      "both_correct": 35,
+      "both_incorrect": 167,
+      "accuracy_difference": 0.0078125,
+      "exact_mcnemar_p_unadjusted": 0.8919231511047494
+    },
+    "large_targets": {
+      "samples": 256,
+      "gained": 14,
+      "lost": 30,
+      "both_correct": 93,
+      "both_incorrect": 119,
+      "accuracy_difference": -0.0625,
+      "exact_mcnemar_p_unadjusted": 0.022628841205914796
+    }
+  },
+  "source_sha256": {
+    "evaluation.json": "917e38f0053b6f041f92ab6b2088fbcbd73b25d3251591514af1e2433672ec8e",
+    "id_three.json": "e3a1506902b96393280aa3d0018d2133e93943b3fc89fbc29f8c5d3e9b3000fc",
+    "id_four.json": "904f80ba57d9020a610f4c62ae76fb10ce30065a8b789da3bb0d56ef7c08d53c",
+    "large_inputs.json": "f43e872d9500503367043a42f7bdd85a2c8072753c2da93d58c41a07a2e765e0",
+    "large_targets.json": "9c8f223126bc3ed788fd72de486fa739eab7964a7d8f71f03629990a146c5097",
+    "training/config.json": "092c3aa15867b6fa7df60382a0451a0c40ad79520f62bd9dcc9872bec7e0121a",
+    "training/metrics.jsonl": "f4d0fb67a4ac27a5b89d2896ac9ed650b3ca7664be9d41dc10a0c10b3c17646a",
+    "training/provenance.json": "12a2b57a65418c44e2a7ddbfb7ff8399f8afbc1349d91dd7b51290507d4f0be9",
+    "training/requirements.txt": "d5db6fcbf863f7409e23576c3950a1e087ae9ec6d25d4be0327540f552093fa6"
+  },
+  "interpretation": "All five evaluations for seed 42 are complete and audited. Seeds 43 and 44 remain pending. Comparisons against the single mixed-arity pilot are descriptive, not a balanced multi-seed training-distribution ablation. Constructed shifts are not difficulty-matched. No pooled observations or seed-averaged conclusion is reported."
+}

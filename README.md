@@ -69,7 +69,10 @@ also reveal a substantial complexity gap for the original mixed-arity pilot:
 **57.0% on three-number puzzles versus 16.0% on four-number puzzles**. Scores are
 23.8% for larger inputs and 48.0% for larger targets. The shifted suites are
 constructed and not difficulty-matched; these scores do not establish general
-reasoning. The separate three-number-only training/transfer study is ongoing.
+reasoning. The separate three-number-only training/transfer study is ongoing. Its first
+completed seed solves **146/256 three-number puzzles and 26/256 four-number
+puzzles**. [All five audited seed-42 evaluations](results/study/transfer-progress/README.md)
+are published as interim evidence; seeds 43 and 44 are still pending.
 
 ### Example from the held-out set
 

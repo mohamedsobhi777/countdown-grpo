@@ -331,8 +331,25 @@ The configuration, full step sequence, 20,000 unique three-number training
 puzzles, held-out order, lack of overlap, and all per-answer scores were checked.
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/bpz8xxao}{Evaluation evidence}
 and raw completions are available in the repository's explicitly interim
-\texttt{results/study/transfer-progress} directory. Four suite evaluations and
-seeds 43/44 are pending. This is not a completed transfer study or seed average.
+\texttt{results/study/transfer-progress} directory. Its four frozen-suite evaluations
+subsequently completed and passed the same audits:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Suite & Solved & Accuracy (95\% Wilson) & Truncated\\
+\midrule
+Three-number holdout & 146/256 & 57.0\% (50.9--62.9) & 110/256\\
+Four-number holdout & 26/256 & 10.2\% (7.0--14.5) & 211/256\\
+Inputs 101--200 & 63/256 & 24.6\% (19.7--30.2) & 188/256\\
+Targets 101--200 & 107/256 & 41.8\% (35.9--47.9) & 145/256\\
+\bottomrule
+\end{tabular}
+\end{center}
+Strict and diagnostic scores agree in every suite. This single checkpoint shows
+limited four-number transfer; comparisons with the single mixed-arity pilot are
+descriptive, not a balanced multi-seed training-distribution ablation. The shifted
+suites are constructed and not difficulty-matched. Seed 43 has started; seeds
+43/44 remain pending. This is not a completed transfer study or seed average.
 
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset
@@ -340,5 +357,5 @@ deduplication cannot rule out exposure in pretraining. Strict success conflates
 arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful
 work but still fail due to truncation. The completed output-budget finding applies
-to this checkpoint and test set; cross-seed and OOD findings remain pending.
+to this checkpoint and test set; cross-seed transfer findings remain pending.
 \end{document}

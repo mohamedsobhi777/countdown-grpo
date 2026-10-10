@@ -43,5 +43,5 @@
     "greedy decoding with prescribed adapter",
     "all per-answer scores and diagnostics recomputed"
   ],
-  "limitations": "One seed on the original 256-puzzle holdout. Four frozen-suite evaluations and two further training seeds are pending. This is not the completed transfer study or a seed-averaged result."
+  "limitations": "Original-holdout-only audit; see seed-42-summary.json for all five completed evaluations. Seeds 43 and 44 remain pending."
 }
