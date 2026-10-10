@@ -1,0 +1,7 @@
+{
+  "state": "interrupted_runtime_trial",
+  "reason": "Initial A100 throughput was only about 3% faster than L4 with the current backend. Retain the established L4 grid and release the A100.",
+  "completed_optimizer_steps": 3,
+  "seconds_per_step": 49.33088189833334,
+  "included_in_controlled_results": false
+}

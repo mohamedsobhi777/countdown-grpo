@@ -50,9 +50,11 @@ completion gates: [research-plan.md](research-plan.md).
   First five steps averaged 50.5 seconds each; monitor this slower L4 runtime.
 - Colab A100 allocated as `countdown-fast-study`, group `controlled-a100-v1`;
   [first run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/i7dgueld).
-  Initial step is about 49 seconds: no speedup is established yet. Both runtimes
-  remain live while throughput is checked; retain only the chosen controlled
-  grid, archive the other attempt as a runtime trial, and release its VM.
+  Intentionally stopped after three steps at 49.33 seconds/step versus 50.79 on
+  L4 (about 3% faster, insufficient to justify switching this grid). Complete
+  trial logs/manifests were downloaded and [archived in W&B](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rat7r34m).
+  **A100 VM termination confirmed.** The L4 grid remains the chosen comparison;
+  the A100 trial is tagged and excluded from completed training results.
 - Local tmux `countdown-generalization`: waits for budget evaluation, then runs
   base/pilot on all frozen suites, followed by three-number-only training at
   seeds 42, 43, 44 with original-holdout and four-suite evaluations. Outputs:

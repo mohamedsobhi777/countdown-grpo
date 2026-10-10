@@ -120,8 +120,8 @@ this is not a blinded human annotation study. Prose-heavy and incomplete outputs
 illustrate the parser's coverage limitations.
 
 \section{Controlled study design and current status}
-The study keeps the original strict metric alongside the diagnostic. Planned
-comparisons are not presented as completed results:
+The study keeps the original strict metric alongside the diagnostic. The budget
+grid is complete; remaining comparisons are not presented as completed results:
 \begin{itemize}[nosep]
 \item Matched base/adapter output budgets of 256, 512, and 1024 tokens; record actual
       generated lengths, EOS status, truncation, and generation time.
@@ -216,17 +216,24 @@ termination metadata and output-budget overrides to evaluation. Twenty-five CPU
 tests initially passed; solver coverage increased this to 29 tests. Created and
 compiled this Overleaf report, verified all holdout puzzles are solvable, and
 reviewed a deterministic diagnostic sample. The matched output-budget grid is
-running. Six controlled training runs are queued on a Colab L4; the first is
+complete. Six controlled training runs are queued on a Colab L4; the first is
 live. Its initial five steps averaged approximately 50.5 seconds per step using
 the reference PyTorch attention implementation. These are preliminary throughput
-measurements, not a completed training runtime. Statistical analysis and pairing
-validation bring CPU coverage to 36 passing tests.
+measurements, not a completed training runtime. Statistical analysis, demo checks,
+and schema compatibility validation bring CPU coverage to 42 passing tests.
+An A100 hardware trial completed three steps at 49.33 seconds per step, compared
+with the L4's then-current 50.79 seconds per step. This approximately 3\% gain
+did not justify switching the controlled grid. The A100 run was intentionally
+interrupted, its complete partial evidence
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rat7r34m}{archived},
+and its VM released. It is excluded from completed training comparisons. These
+few steps are a throughput trial, not a reliable general hardware benchmark.
 
 \section{Limitations}
 One seed and 256 puzzles do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates
 arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful
-work but still fail due to truncation. No cross-seed, longer-output, or OOD claims
-are made until the corresponding experiments finish.
+work but still fail due to truncation. The completed output-budget finding applies
+to this checkpoint and test set; cross-seed and OOD findings remain pending.
 \end{document}
