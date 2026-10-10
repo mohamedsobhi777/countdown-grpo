@@ -213,6 +213,13 @@ and paired model comparisons are in the
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/p33k249f}{generalization analysis}.
 Training only on three-number puzzles and testing transfer remains a separate,
 ongoing experiment.
+Its prepared aggregator requires all three training seeds and all 15 evaluations,
+checks that every training puzzle contains exactly three numbers, verifies all
+300 steps and identical ordered splits, and re-scores every answer against the
+frozen suites. An end-to-end synthetic test rejects four-number training
+contamination before publishing output. Per-seed comparisons with the single
+mixed-arity pilot will be descriptive; they are not a balanced multi-seed ablation
+of the training distribution.
 
 \section{Kernel validation and controlled-study backend}
 The \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/jk9p648k}{kernel investigation}
@@ -282,7 +289,7 @@ averaged approximately 50.5 seconds per step over its first five steps; the
 subsequent kernel validation and consistent FLA restart are described above.
 These are preliminary throughput measurements, not completed study runtimes.
 Statistical analysis, demo checks, and schema compatibility validation bring
-current CPU coverage to 44 passing tests.
+current CPU coverage to 46 passing tests.
 An A100 hardware trial completed three steps at 49.33 seconds per step, compared
 with the L4's then-current 50.79 seconds per step. This approximately 3\% gain
 did not justify switching the controlled grid. The A100 run was intentionally

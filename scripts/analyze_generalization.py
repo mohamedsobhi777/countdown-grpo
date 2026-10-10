@@ -12,7 +12,7 @@ from countdown_grpo.diagnostics import analyze_completion
 from countdown_grpo.statistics import paired_outcomes, wilson_interval
 
 
-def validate_report(report, puzzles, checksum, adapter):
+def validate_report(report, puzzles, checksum, adapter, expected_config=Config()):
     if report['suite_sha256'] != checksum:
         raise ValueError('Evaluation suite hash differs from frozen manifest')
     rows = report['results']
@@ -22,8 +22,8 @@ def validate_report(report, puzzles, checksum, adapter):
         raise ValueError('Evaluation puzzles differ from the frozen ordered suite')
     if report['adapter'] != adapter or report['decoding'] != 'greedy':
         raise ValueError('Unexpected model adapter or decoding method')
-    if Config(**report['config']) != Config():
-        raise ValueError('Pilot generalization settings differ from the prespecified defaults')
+    if Config(**report['config']) != expected_config:
+        raise ValueError('Evaluation settings differ from the expected configuration')
     for row in rows:
         diagnostic = analyze_completion(row['completion'], row['nums'], row['target'], row['truncated'])
         if diagnostic != row['diagnostic'] or diagnostic['strict_correct'] != row['correct']:

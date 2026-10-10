@@ -34,3 +34,10 @@ class GeneralizationAuditTests(unittest.TestCase):
         self.report['config']['max_completion_length'] = 1024
         with self.assertRaisesRegex(ValueError, 'settings'):
             generalization.validate_report(self.report, self.puzzles, 'frozen', None)
+
+    def test_transfer_configuration_must_be_explicit(self):
+        expected = Config(seed=43, split_seed=42, train_num_count=3)
+        self.report['config'] = expected.to_dict()
+        with self.assertRaisesRegex(ValueError, 'settings'):
+            generalization.validate_report(self.report, self.puzzles, 'frozen', None)
+        self.assertEqual(generalization.validate_report(self.report, self.puzzles, 'frozen', None, expected)['correct'], 1)

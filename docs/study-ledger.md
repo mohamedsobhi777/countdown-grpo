@@ -29,6 +29,12 @@ completion gates: [research-plan.md](research-plan.md).
   separation, and recomputes scores. It explicitly excludes the still-pending
   three-number-only training study. Tests reject changed hashes/order/settings;
   total CPU suite now has 44 passing tests.
+- Transfer-study aggregation implemented in `scripts/analyze_transfer_study.py`:
+  requires all three complete training runs and all 15 evaluations, enforces
+  three-number-only training, frozen suites, identical split/order, all 300 steps,
+  and per-answer score recomputation. A synthetic end-to-end test verifies the
+  successful archive and rejects four-number training contamination before any
+  result is published. The complete CPU suite now has **46 passing tests**.
 - Local comparison demo implemented: all 256 archived pairs, outcome filters,
   conservative diagnostic feedback, custom exact-answer checker, optional live
   base/adapter generation. HTTP tests cover archival parity, validation, and
@@ -78,6 +84,9 @@ completion gates: [research-plan.md](research-plan.md).
   `countdown-demo-live-check`. It performs actual base/adapter generation twice
   and verifies repeatability, then logs the output to W&B. This remains pending
   until `results/study/demo-live.json` exists with a successful recorded result.
+- Transfer aggregation is queued in tmux `countdown-transfer-analysis` after
+  `countdown-generalization` exits. Incomplete/failed studies are rejected; it
+  never silently publishes a partial seed grid. Log: `outputs/launch/transfer-analysis.log`.
 
 Do not restart based only on old status files: inspect live tmux or remote PID.
 Each queue stops its study on failure. The independent local three-number study
