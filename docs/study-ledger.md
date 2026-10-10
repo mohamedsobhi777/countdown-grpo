@@ -219,3 +219,16 @@ Finish seed/reward and transfer runs; archive remote results; log analysis
 artifacts; finish browser/live validation of the interactive demo; complete and compile the
 Overleaf report; publish all evidence and audit every requirement. The study is
 not yet complete.
+
+## Second transfer seed complete (2026-10-11)
+
+Seed 43 completed all five evaluations: original holdout 93/256, three-number
+161/256, four-number 38/256, larger inputs 79/256, and larger targets 112/256.
+All scores, ordered frozen puzzles, hashes, configuration, all 300 training steps,
+and training overlap were audited again before publication. Strict and diagnostic
+scores agree in every suite. Raw completions and cross-tabulations are in
+`results/study/transfer-progress/seed-43-summary.json` and adjacent evaluation files.
+All 95 three-number failures and 197 of 218 four-number failures are truncated;
+this is descriptive overlap, not a causal budget result. Seed 44 started
+as queued, W&B run `mj074g8h`; its source/runtime audit and evaluations remain
+pending. No seed-averaged finding is claimed yet.

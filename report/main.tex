@@ -393,4 +393,19 @@ arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful
 work but still fail due to truncation. The completed output-budget finding applies
 to this checkpoint and test set; cross-seed transfer findings remain pending.
+
+\paragraph{Second transfer seed: complete evaluation set.}
+Seed 43 subsequently completed all five evaluations. Alongside 93/256 on the
+original holdout, it solves 161/256 three-number puzzles (62.9\%; Wilson 95\%
+56.8--68.6), 38/256 four-number puzzles (14.8\%; 11.0--19.7), 79/256 larger-input
+puzzles (30.9\%; 25.5--36.8), and 112/256 larger-target puzzles (43.8\%;
+37.8--49.9). Every answer, ordered puzzle list, suite hash, configuration, and
+training-overlap check passed audit; strict and diagnostic scores agree.
+All 95 three-number failures and 197 of 218 four-number failures are truncated.
+This overlap does not identify a causal output-budget effect. Constructed shifts
+are not difficulty-matched. Raw completions, W\&B links, uncertainty, and
+cross-tabulations are archived in
+\texttt{results/study/transfer-progress/seed-43-summary.json} and adjacent files.
+Seed 44 is now training; the three-seed aggregate remains pending.
+
 \end{document}

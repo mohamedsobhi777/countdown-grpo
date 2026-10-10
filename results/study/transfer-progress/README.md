@@ -1,15 +1,28 @@
 # Interim transfer-study evidence
 
-Seed 42 completed 300 steps of three-number-only training in 98.7 minutes and all five evaluations. **Seeds 43 and 44 are still pending.** This is one checkpoint, not the completed multi-seed study.
+Seeds 42 and 43 have completed 300 steps of three-number-only training and all five evaluations. **Seed 44 is training.** These are interim checkpoint results, not the completed multi-seed study.
 
-Seed 43 has now completed training in **91.1 minutes** and its original-holdout
-evaluation: **93/256 solved (36.3%; 95% Wilson 30.7–42.4%)**, with strict and
-diagnostic scores agreeing and 157/256 truncated outputs. The full step sequence,
-configuration, identical training/holdout order versus seed 42, absence of overlap,
-and every answer's scores passed audit. Its four frozen-suite evaluations and
-seed 44 remain pending. [Evaluation run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3jlajmcr),
-[raw completions](seed-43-evaluation.json), [audited summary](seed-43-holdout.json),
-[source audit](../local-source-audit-seed43.json).
+Seed 43 trained in **91.1 minutes**. Its full step sequence, configuration,
+identical training/holdout order versus seed 42, absence of training overlap,
+frozen-suite hashes, and every answer's scores passed audit. Strict and diagnostic
+scores agree on all five evaluations.
+
+| Seed 43 evaluation | Solved | Accuracy (95% Wilson) | Truncated |
+| --- | ---: | ---: | ---: |
+| [original holdout](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3jlajmcr) | 93/256 | 36.3% (30.7–42.4) | 157/256 |
+| [id three](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/hwra03jw) | 161/256 | 62.9% (56.8–68.6) | 95/256 |
+| [id four](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/iczg0p5h) | 38/256 | 14.8% (11.0–19.7) | 197/256 |
+| [large inputs](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ldpv43a3) | 79/256 | 30.9% (25.5–36.8) | 165/256 |
+| [large targets](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/hakxhfxf) | 112/256 | 43.8% (37.8–49.9) | 140/256 |
+
+The larger-input and larger-target suites are constructed and not difficulty-matched.
+[Seed 43 summary and paired comparisons](seed-43-summary.json) ·
+[source audit](../local-source-audit-seed43.json) ·
+[training run](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3ifuj2rg) ·
+[final adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/3ifuj2rg-adapter/v0).
+Raw completions are in the five `seed-43-*.json` evaluation files. All 95
+three-number failures and 197 of 218 four-number failures are truncated;
+this overlap does not establish causation or the benefit of a larger token budget.
 
 The table below covers **seed 42 only**.
 
@@ -23,7 +36,7 @@ The table below covers **seed 42 only**.
 
 Strict and conservative diagnostic scores agree in all five evaluations. Each file passed configuration, ordered-puzzle, suite-hash (where applicable), training-overlap, and per-answer score checks. Training used 20,000 unique three-number puzzles and completed all 300 steps.
 
-All five evaluations for seed 42 are complete and audited. Seeds 43 and 44 remain pending. Comparisons against the single mixed-arity pilot are descriptive, not a balanced multi-seed training-distribution ablation. Constructed shifts are not difficulty-matched. No pooled observations or seed-averaged conclusion is reported.
+All five evaluations for seeds 42 and 43 are complete and audited. Seed 44 remains pending. Comparisons against the single mixed-arity pilot are descriptive, not a balanced multi-seed training-distribution ablation. Constructed shifts are not difficulty-matched. No pooled observations or seed-averaged conclusion is reported.
 
 [Full summary, uncertainty, failure categories, hashes, and descriptive paired comparisons](seed-42-summary.json). Raw completions are in the five `seed-42-*.json` evaluation files. Exported training configuration, metrics, requirements, and W&B provenance are in `seed-42-training/`. The initial dirty-checkout caveat is documented in [the source audit](../local-source-audit.json).
 

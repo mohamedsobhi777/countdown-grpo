@@ -1,0 +1,183 @@
+{
+  "state": "seed_complete_two_of_three_completed",
+  "seed": 43,
+  "training_seconds": 5463.0069,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3ifuj2rg",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/3ifuj2rg-adapter:v0",
+  "scores": {
+    "original_holdout": {
+      "samples": 256,
+      "correct": 93,
+      "accuracy": 0.36328125,
+      "accuracy_wilson_95": [
+        0.3067900082905613,
+        0.4238149524508879
+      ],
+      "diagnostic_correct": 93,
+      "truncated": 157,
+      "failures": {
+        "no_declared_expression": 154,
+        "number_mismatch": 5,
+        "correct": 93,
+        "ambiguous_or_incomplete_answer": 3,
+        "wrong_value": 1
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3jlajmcr",
+      "suite_sha256": null,
+      "solve_by_truncation": {
+        "failed_truncated": 157,
+        "failed_ended": 6,
+        "solved_ended": 93
+      },
+      "no_declared_expression_and_truncated": 154
+    },
+    "id_three": {
+      "samples": 256,
+      "correct": 161,
+      "accuracy": 0.62890625,
+      "accuracy_wilson_95": [
+        0.5682303286253407,
+        0.6857707083898643
+      ],
+      "diagnostic_correct": 161,
+      "truncated": 95,
+      "failures": {
+        "correct": 161,
+        "no_declared_expression": 94,
+        "ambiguous_or_incomplete_answer": 1
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/hwra03jw",
+      "suite_sha256": "b3fd7d8f06631544274faff7b6490192f96237544f7741d42cfcb7c8d33dc770",
+      "solve_by_truncation": {
+        "solved_ended": 161,
+        "failed_truncated": 95
+      },
+      "no_declared_expression_and_truncated": 94
+    },
+    "id_four": {
+      "samples": 256,
+      "correct": 38,
+      "accuracy": 0.1484375,
+      "accuracy_wilson_95": [
+        0.11009474695863963,
+        0.19717515209080122
+      ],
+      "diagnostic_correct": 38,
+      "truncated": 197,
+      "failures": {
+        "no_declared_expression": 194,
+        "number_mismatch": 18,
+        "correct": 38,
+        "wrong_value": 3,
+        "ambiguous_or_incomplete_answer": 3
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/iczg0p5h",
+      "suite_sha256": "b27693f583a5ccc8c59f279143fc1de24bba257182a8f279348bdfdb33e29780",
+      "solve_by_truncation": {
+        "failed_truncated": 197,
+        "failed_ended": 21,
+        "solved_ended": 38
+      },
+      "no_declared_expression_and_truncated": 194
+    },
+    "large_inputs": {
+      "samples": 256,
+      "correct": 79,
+      "accuracy": 0.30859375,
+      "accuracy_wilson_95": [
+        0.2551887425019035,
+        0.36765820253612547
+      ],
+      "diagnostic_correct": 79,
+      "truncated": 165,
+      "failures": {
+        "correct": 79,
+        "no_declared_expression": 75,
+        "invalid_syntax": 14,
+        "number_mismatch": 82,
+        "ambiguous_or_incomplete_answer": 5,
+        "wrong_value": 1
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ldpv43a3",
+      "suite_sha256": "92ab0e9b069755ef32ed747da6588bab7f7bd367ef497cfa4e0581b22de1db19",
+      "solve_by_truncation": {
+        "solved_ended": 79,
+        "failed_truncated": 165,
+        "failed_ended": 12
+      },
+      "no_declared_expression_and_truncated": 75
+    },
+    "large_targets": {
+      "samples": 256,
+      "correct": 112,
+      "accuracy": 0.4375,
+      "accuracy_wilson_95": [
+        0.37809929934301556,
+        0.4987486827102183
+      ],
+      "diagnostic_correct": 112,
+      "truncated": 140,
+      "failures": {
+        "correct": 112,
+        "no_declared_expression": 138,
+        "number_mismatch": 4,
+        "wrong_value": 2
+      },
+      "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/hakxhfxf",
+      "suite_sha256": "d9a2678c3279523633921951c94db5030bb994743437d866e73a65e6b0b4d42b",
+      "solve_by_truncation": {
+        "solved_ended": 112,
+        "failed_truncated": 140,
+        "failed_ended": 4
+      },
+      "no_declared_expression_and_truncated": 138
+    }
+  },
+  "paired_mixed_pilot_to_three_only": {
+    "id_three": {
+      "samples": 256,
+      "gained": 17,
+      "lost": 2,
+      "both_correct": 144,
+      "both_incorrect": 93,
+      "accuracy_difference": 0.05859375,
+      "exact_mcnemar_p_unadjusted": 0.000728607177734375
+    },
+    "id_four": {
+      "samples": 256,
+      "gained": 13,
+      "lost": 16,
+      "both_correct": 25,
+      "both_incorrect": 202,
+      "accuracy_difference": -0.01171875,
+      "exact_mcnemar_p_unadjusted": 0.711071103811264
+    },
+    "large_inputs": {
+      "samples": 256,
+      "gained": 45,
+      "lost": 27,
+      "both_correct": 34,
+      "both_incorrect": 150,
+      "accuracy_difference": 0.0703125,
+      "exact_mcnemar_p_unadjusted": 0.04437092000802569
+    },
+    "large_targets": {
+      "samples": 256,
+      "gained": 13,
+      "lost": 24,
+      "both_correct": 99,
+      "both_incorrect": 120,
+      "accuracy_difference": -0.04296875,
+      "exact_mcnemar_p_unadjusted": 0.09887174959294498
+    }
+  },
+  "source_sha256": {
+    "seed-43-evaluation.json": "7c08dae44471b97acb55df094238c8cc6f5d5cc51c037d86d9bc96149ae85e50",
+    "seed-43-id_three.json": "dda6f875ca678cd4f66033708658dcf51cd8789f984204ef65a5f22f2bdcd53c",
+    "seed-43-id_four.json": "adab78c657744e277e89bce3872a0f8e9dc1d760ee1f6d505aecab18f7fafbd4",
+    "seed-43-large_inputs.json": "3c40657cde99369d921e3770354ebf4611b1faf8364b732a07f44a17cbd08fff",
+    "seed-43-large_targets.json": "ee0890bbc36da3acf635954251505fc78b55937b8d95f859412dba8ade6d9b6a"
+  },
+  "interpretation": "All five evaluations for seed 43 are complete and audited. Seed 44 remains pending. Comparisons against the single mixed-arity pilot are descriptive, not a balanced multi-seed training-distribution ablation. Constructed shifts are not difficulty-matched. No pooled observations or seed-averaged conclusion is reported.",
+  "truncation_interpretation": "Post-hoc descriptive cross-tabulation, not a causal experiment. Transfer scores are conditional on the 256-token cap. The pilot output-budget experiment does not establish the effect of larger budgets on this separately trained adapter."
+}

@@ -74,8 +74,9 @@ also reveal a substantial complexity gap for the original mixed-arity pilot:
 constructed and not difficulty-matched; these scores do not establish general
 reasoning. The separate three-number-only training/transfer study is ongoing. Its first
 completed seed solves **146/256 three-number puzzles and 26/256 four-number
-puzzles**. [All five audited seed-42 evaluations](results/study/transfer-progress/README.md)
-are published as interim evidence; seeds 43 and 44 are still pending.
+puzzles**. [Audited evaluations for seeds 42 and 43](results/study/transfer-progress/README.md)
+are published as interim evidence. Seed 43 solved **161/256 three-number** and
+**38/256 four-number puzzles**; seed 44 remains pending.
 
 ### Example from the held-out set
 
