@@ -272,3 +272,13 @@ The final adapter `mj074g8h-adapter:v0` and step-300 checkpoint
 optimizer, scheduler, RNG, trainer state, adapter weights, and adapter config.
 The exported provenance has been refreshed to finished state. Evaluation is
 running; its five suites and the three-seed aggregate are not yet complete.
+
+### Third transfer seed original holdout audited
+
+The finished holdout evaluation (`p7nctb9i`) scores 77/256 (30.1%; Wilson 95%
+24.8–36.0%), with matching strict/diagnostic counts and 172 truncated outputs.
+All 256 answers were re-scored. Training settings, all 300 steps, the exact
+ordered training/holdout lists versus seed 43, and absence of training overlap
+passed verification. Raw answers, training metrics/configuration, and the
+interim summary are published under `results/study/transfer-progress`. Four
+frozen suites remain pending; the complete transfer aggregate is not ready.

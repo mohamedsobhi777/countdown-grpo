@@ -59,5 +59,10 @@ cross-tabulation, including one correct but truncated larger-input answer.
 clean archived source and matching package code/runtime versus seed 43. This is
 startup evidence. Training has now finished all 300 steps in 6017.4405 seconds
 (100.3 minutes). [Finished W&B provenance](seed-44-training/provenance.json)
-verifies the final adapter and resumable checkpoint are committed; all five
-evaluations remain pending. No three-seed aggregate is reported yet.
+verifies the final adapter and resumable checkpoint are committed; the original holdout
+evaluation is now audited at **77/256 (30.1%; Wilson 95% 24.8–36.0%)**.
+Strict and diagnostic scores agree; 172 outputs are truncated.
+[Raw answers](seed-44-evaluation.json), [audit summary](seed-44-holdout.json),
+and [W&B evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/p7nctb9i)
+are available. Four frozen-suite evaluations remain pending. No complete
+three-seed transfer aggregate is reported yet.

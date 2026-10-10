@@ -1,0 +1,22 @@
+{
+  "samples": 256,
+  "correct": 77,
+  "accuracy": 0.30078125,
+  "accuracy_wilson_95": [
+    0.24788835618653265,
+    0.35956458660815055
+  ],
+  "diagnostic_correct": 77,
+  "truncated": 172,
+  "failures": {
+    "no_declared_expression": 164,
+    "number_mismatch": 9,
+    "correct": 77,
+    "wrong_value": 6
+  },
+  "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/p7nctb9i",
+  "suite_sha256": null,
+  "train_runtime_seconds": 6017.4405,
+  "source_sha256": "d8f45fe5a9dfea946c85d7a5ce47a407f73519d744e300e66361ba17a111cc6d",
+  "scope": "Interim seed-44 original holdout only. Four frozen-suite evaluations remain pending; not a complete transfer study."
+}
