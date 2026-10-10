@@ -23,7 +23,8 @@ function, where the fifth positional argument is `gk`. It produced nonfinite
 values. Inspection of both signatures and Transformers' actual call identified
 the probe bug; passing `g` and `beta` by keyword fixed it. This failure was **not**
 a model-training failure or evidence that FLA itself is broken. Both probe logs
-are retained locally and will be included in the W&B investigation artifact.
+and the full fallback archive are preserved in the
+[W&B investigation artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/jk9p648k).
 
 A bounded [five-step end-to-end training trial](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/oi2t5mfe)
 completed successfully in 203.3 seconds of trainer time. The first step took

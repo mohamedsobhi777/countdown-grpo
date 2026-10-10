@@ -150,8 +150,8 @@ training puzzles, identical ordered train/holdout lists, absence of overlap,
 adapter paths, and recomputed evaluation scores. It reports per-seed accuracies
 and sample standard deviations, together with paired reward differences for each
 seed. Repeated evaluation of the same holdout is not pooled into 768 independent
-puzzles. Synthetic manifest tests reject unfinished runs and altered scores;
-the complete CPU suite now contains 41 passing tests. Hardware/package equality
+puzzles. Synthetic manifest tests reject unfinished runs and altered scores.
+Hardware/package equality
 must additionally be checked in the linked W\&B provenance before final claims.
 
 \paragraph{Completed output-budget experiment.} The base model solved 0/256 at
@@ -215,6 +215,8 @@ Training only on three-number puzzles and testing transfer remains a separate,
 ongoing experiment.
 
 \section{Kernel validation and controlled-study backend}
+The \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/jk9p648k}{kernel investigation}
+archives the probes, successful five-step trial, and interrupted fallback evidence.
 After the hardware trial, FLA 0.5.2 was installed in an isolated directory and
 compared with unwrapped Transformers reference kernels at representative model
 shapes. A probe-only positional-argument error initially passed \texttt{beta} as
@@ -251,8 +253,7 @@ The server binds to loopback and serializes live inference requests.
 Chromium checks verified all 256 examples, 85-success/171-failure filtering,
 interactive answer checking, disabled generation in archived mode, no JavaScript
 errors, and mobile layout without horizontal overflow at 390px width. HTTP tests
-also check invalid inputs and cross-origin request rejection. All 40 CPU tests
-pass. Browser checks are reproducible with
+also check invalid inputs and cross-origin request rejection. Browser checks are reproducible with
 \texttt{scripts/check\_demo\_browser.py}; these do not substitute for testing live
 model inference. Single-puzzle generation can differ from the historical batched
 evaluation, and custom puzzles are not guaranteed solvable.
@@ -276,11 +277,12 @@ termination metadata and output-budget overrides to evaluation. Twenty-five CPU
 tests initially passed; solver coverage increased this to 29 tests. Created and
 compiled this Overleaf report, verified all holdout puzzles are solvable, and
 reviewed a deterministic diagnostic sample. The matched output-budget grid is
-complete. Six controlled training runs are queued on a Colab L4; the first is
-live. Its initial five steps averaged approximately 50.5 seconds per step using
-the reference PyTorch attention implementation. These are preliminary throughput
-measurements, not a completed training runtime. Statistical analysis, demo checks,
-and schema compatibility validation bring CPU coverage to 42 passing tests.
+complete, as is the pilot generalization grid. The initial L4 fallback attempt
+averaged approximately 50.5 seconds per step over its first five steps; the
+subsequent kernel validation and consistent FLA restart are described above.
+These are preliminary throughput measurements, not completed study runtimes.
+Statistical analysis, demo checks, and schema compatibility validation bring
+current CPU coverage to 44 passing tests.
 An A100 hardware trial completed three steps at 49.33 seconds per step, compared
 with the L4's then-current 50.79 seconds per step. This approximately 3\% gain
 did not justify switching the controlled grid. The A100 run was intentionally
