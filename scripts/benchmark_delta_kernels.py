@@ -35,7 +35,9 @@ for name, length, reference, optimized in [
         def invoke():
             for tensor in tensors:
                 tensor.grad = None
-            output, state = function(*tensors, **kwargs)
+            # Recurrent FLA has extra positional gk/gv arguments before beta;
+            # use the model's actual keyword contract for both implementations.
+            output, state = function(*tensors[:3], g=tensors[3], beta=tensors[4], **kwargs)
             if length > 1:
                 output.float().square().mean().backward()
             return output, state
