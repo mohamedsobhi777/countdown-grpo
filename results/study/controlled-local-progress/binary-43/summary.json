@@ -1,0 +1,68 @@
+{
+  "seed": 43,
+  "format_reward": 0.0,
+  "correct": 13,
+  "samples": 256,
+  "accuracy": 0.05078125,
+  "accuracy_wilson_95": [
+    0.02991381138655353,
+    0.08493105962106531
+  ],
+  "diagnostic_correct": 16,
+  "failures": {
+    "wrong_value": 38,
+    "number_mismatch": 66,
+    "invalid_syntax": 99,
+    "no_declared_expression": 37,
+    "correct": 16
+  },
+  "truncated": 219,
+  "train_runtime_seconds": 5127.7501,
+  "first_positive_reward_step": 77,
+  "last_30_steps_mean_reward": 0.007291666666666667,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/d9it45u2",
+  "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/dmxcq1wh",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/d9it45u2-adapter:v0",
+  "environment": {
+    "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "optional_kernel_packages": {
+      "einops": null,
+      "fla-core": null,
+      "causal-conv1d": null,
+      "flash-linear-attention": null
+    },
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.12.3",
+    "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+  },
+  "source_sha256": {
+    "evaluation.json": "d372b75bae6d6905603128041436768530a8a2e59c6b6d240569234fe2547177",
+    "status.json": "7530a297350a077d33d9172621976ed22439fe27d3111aad6457f1a8557e0341",
+    "collection.json": "5717314ea588a2efcd671d9be8a50280e7c0a6244a658ba05bc27b70bc08522a",
+    "training/config.json": "f1812d37d0aeb405ad27e7e93126843ef866a79584b688859a755e1587562fe1",
+    "training/metrics.jsonl": "fb80914e765b8fa80df1bf694d4d50532c4de444a6f5923d58a4e9ae2db12bda",
+    "training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "training/wandb-run.json": "0f41621423aca740dfd1663712326a3c35356294a2a7cb24bf5dba58abf4612c",
+    "training/provenance.json": "ef61dd7f8b90e5fd483d5d45b72a7fa871421573bb5989ec53f33733258bea4c",
+    "training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc"
+  },
+  "resumable_checkpoint_artifact": "mohamedsobhi777/countdown-grpo/model-binary-43-train:v13"
+}

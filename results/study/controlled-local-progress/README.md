@@ -1,7 +1,7 @@
 # Laptop controlled reward study: interim evidence
 
-Binary and shaped seed 42 are complete in `controlled-local-v2`. **Four runs remain**;
-this single matched seed is not the final reward comparison or a seed average.
+Binary seeds 42 and 43 and shaped seed 42 are complete in `controlled-local-v2`.
+**Three runs remain**; the final multi-seed reward comparison is pending.
 Colab results are archived separately and are never pooled with this grid.
 
 The checkpoint solves **80/256 (31.25%)** held-out puzzles under greedy decoding
@@ -60,3 +60,27 @@ bonus; raw training rewards are not directly comparable between objectives.
 - [Shaped evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/8694c6tk)
 - [Shaped adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/ofj5pru1-adapter/v0)
 - [Shaped resumable checkpoint](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/model-shaped-42-train/v13)
+
+## Binary seed 43 completed
+
+Binary seed 43 solves **13/256 (5.08%; Wilson 95% 2.99–8.49%)** after
+300 steps in 85.5 minutes. The conservative diagnostic metric recovers three
+additional answers (**16/256, 6.25%**); all three are truncated outputs whose
+last standalone arithmetic line is correct. Their raw text and extracted
+expressions are preserved in [diagnostic recoveries](binary-43/diagnostic-recoveries.json).
+There are 219 truncated outputs. Diagnostic categories are 16 correct,
+38 wrong values, 66 number mismatches, 99 invalid expressions, and 37 without
+a declared expression. Truncation overlaps these categories.
+
+The full run audit passed, and ordered training/holdout puzzles, source,
+environment, and hardware match binary seed 42. The difference from seed 42
+shows substantial variation between these two training seeds; the final
+three-seed statistics and reward comparison remain pending. Shaped seed 43
+is now training.
+
+- [Audited summary](binary-43/summary.json)
+- [Raw evaluation](binary-43/evaluation.json)
+- [Training](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/d9it45u2)
+- [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/dmxcq1wh)
+- [Adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/d9it45u2-adapter/v0)
+- [Resumable checkpoint](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/model-binary-43-train/v13)

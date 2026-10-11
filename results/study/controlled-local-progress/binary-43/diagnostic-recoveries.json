@@ -1,0 +1,80 @@
+[
+  {
+    "target": 61,
+    "nums": [
+      33,
+      52,
+      80
+    ],
+    "completion": "I can't use the numbers 33, 52, and 80 to make 61 with only +, -, *, /, parentheses, and fractions. Let me think about this more carefully.\n\nThe numbers are 33, 52, and 80. I need to use each exactly once.\n\nLet me try some combinations:\n\n33 + 52 + 80 = 165\n33 + 52 - 80 = 5\n33 - 52 + 80 = 61\n33 - 52 - 80 = -61\n\nOh! I found it. 33 - 52 - 80 = -61, but I need 61.\n\nLet me try another combination:\n33 + 52 + 80 = 165\n33 + 52 - 80 = 5\n33 - 52 + 80 = 61\n\nYes! 33 - 52 + 80 = 61\n\nI can use parentheses to make it clear: (33 - 52) + ",
+    "valid": false,
+    "correct": false,
+    "generated_tokens": 256,
+    "truncated": true,
+    "diagnostic": {
+      "strict_correct": false,
+      "strict_valid": false,
+      "diagnostic_correct": true,
+      "diagnostic_valid": true,
+      "expression": "33 - 52 + 80",
+      "answer_source": "last_arithmetic_line",
+      "failure": "correct",
+      "truncated": true,
+      "missing_numbers": [],
+      "extra_numbers": [],
+      "value": "61"
+    }
+  },
+  {
+    "target": 79,
+    "nums": [
+      25,
+      96,
+      42
+    ],
+    "completion": "I can't use the numbers 25, 96, and 42 to make 79 with the given operations. Let me think about this...\n\n25 + 96 + 42 = 163\n25 - 96 + 42 = -29\n25 * 96 + 42 = 2400 + 42 = 2442\n25 * 96 - 42 = 2400 - 42 = 2358\n25 / 96 + 42 = 0.2604 + 42 = 42.2604\n25 / 96 - 42 = 0.2604 - 42 = -41.7396\n\nNone of these give 79.\n\nI need to use the numbers 25, 96, and 42 exactly once each with the allowed operations. Let me try some combinations:\n\n25 + 96 + 42 = 163\n25 + 96 - 42 = 79",
+    "valid": false,
+    "correct": false,
+    "generated_tokens": 256,
+    "truncated": true,
+    "diagnostic": {
+      "strict_correct": false,
+      "strict_valid": false,
+      "diagnostic_correct": true,
+      "diagnostic_valid": true,
+      "expression": "25 + 96 - 42",
+      "answer_source": "last_arithmetic_line",
+      "failure": "correct",
+      "truncated": true,
+      "missing_numbers": [],
+      "extra_numbers": [],
+      "value": "79"
+    }
+  },
+  {
+    "target": 77,
+    "nums": [
+      46,
+      70,
+      53
+    ],
+    "completion": "I can't use the numbers 46, 70, and 53 to make 77 with the given operations. Let me think about this...\n\n46 + 70 = 116\n116 - 53 = 63\n63 + 46 = 109\n109 - 70 = 39\n39 + 53 = 92\n92 - 46 = 46\n46 + 70 = 116\n116 - 53 = 63\n63 + 46 = 109\n109 - 70 = 39\n39 + 53 = 92\n92 - 46 = 46\n\nHmm, I'm getting 46, not 77. Let me try a different approach.\n\nWhat if I use subtraction first? 70 - 46 = 24\nThen 24 + 53 = 77!\n\nYes! That works perfectly:\n70 - 46 + 53 = 77\n\nI'll use the",
+    "valid": false,
+    "correct": false,
+    "generated_tokens": 256,
+    "truncated": true,
+    "diagnostic": {
+      "strict_correct": false,
+      "strict_valid": false,
+      "diagnostic_correct": true,
+      "diagnostic_valid": true,
+      "expression": "70 - 46 + 53",
+      "answer_source": "last_arithmetic_line",
+      "failure": "correct",
+      "truncated": true,
+      "missing_numbers": [],
+      "extra_numbers": [],
+      "value": "77"
+    }
+  }
+]
