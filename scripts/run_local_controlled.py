@@ -52,7 +52,7 @@ def main():
     if {k: optional_version(k) for k in PROFILES['local']['kernels']} != PROFILES['local']['kernels']:
         raise RuntimeError('The local study requires the unchanged fallback kernel environment')
     root = Path('outputs')/GROUP
-    root.mkdir(exist_ok=False)
+    root.mkdir(parents=True, exist_ok=False)
     state = {'group': GROUP, 'pid': os.getpid(), 'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(), 'state': 'running'}
     def save(**changes):
         state.update(changes)
