@@ -1,0 +1,10 @@
+{
+  "method": "local output; no remote archive",
+  "source_sha256": {
+    "evaluation.json": "600923986d1ab6e070e60cd79548f5703245e1405d6202d0076ad20669822937",
+    "training/config.json": "c0450fb5ef8a3ed1f4fcc105acf26f32c8e666807564e113d621ceacfab63c21",
+    "training/metrics.jsonl": "6682cf8cf7b8d175d6d2784ca78f62a2aef66c3a6d0034c5914f12173e70402f",
+    "training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f"
+  }
+}

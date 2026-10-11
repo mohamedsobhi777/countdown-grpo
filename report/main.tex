@@ -18,7 +18,7 @@ parser recovers the same correct counts when the answer-tag requirement is
 relaxed. This supports investigating arithmetic task improvement, while not
 establishing general reasoning or fully identifying the role of formatting.
 Increasing the pilot's output cap from 256 to 1024 tokens gained one solution
-while costing 3.85 times the evaluation time. Three completed three-number-only training seeds average 57.3\% on three-number puzzles and 11.3\% on four-number puzzles, with sample standard deviations of 5.5 and 3.1 percentage points. The live demo passed real CUDA and browser checks; the six-run reward comparison remains incomplete. Results below are explicitly scoped to their checkpoints and suites.
+while costing 3.85 times the evaluation time. Three completed three-number-only training seeds average 57.3\% on three-number puzzles and 11.3\% on four-number puzzles, with sample standard deviations of 5.5 and 3.1 percentage points. A completed six-run controlled comparison finds that adding a small bonus for valid but incorrect expressions lowered mean accuracy from 23.0\% to 5.7\% across three seeds: shaped checkpoints learned to emit valid, untruncated, mostly wrong expressions. Binary-reward accuracy itself varied from 5.1\% to 32.8\% across seeds. The live demo passed real CUDA and browser checks. Results below are explicitly scoped to their checkpoints and suites.
 \end{abstract}
 
 \section{Question and experimental scope}
@@ -122,7 +122,7 @@ illustrate the parser's coverage limitations.
 \section{Controlled study design and current status}
 The study keeps the original strict metric alongside the diagnostic. The matched
 budget grid and mixed-arity pilot generalization grid are complete. All three
-transfer seeds and three of six controlled reward runs are complete:
+transfer seeds and all six laptop controlled reward runs are complete:
 \begin{itemize}[nosep]
 \item Matched base/adapter output budgets of 256, 512, and 1024 tokens; record actual
       generated lengths, EOS status, truncation, and generation time.
@@ -184,7 +184,7 @@ Shaped reward gains 11 solutions and loses 53 relative to binary reward, with
 15 jointly correct: a $-16.4$ percentage-point difference for this seed.
 This is improved expression validity alongside lower correctness, not a completed
 multi-seed conclusion. Raw training rewards differ in definition and cannot be
-compared directly. Three controlled runs remain incomplete.
+compared directly. At that point three Colab controlled runs remained incomplete.
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/83tmr7i5}{Shaped evaluation}
 and the repository's \texttt{seed-42-comparison.json} preserve the evidence.
 
@@ -263,7 +263,56 @@ declared expression, 28 wrong values, 22 invalid expressions, and 14 number
 mismatches. The full audit passed. The three binary seeds therefore score 80,
 13, and 84 out of 256; seed 43 is far below the other two. The
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/80qr8909}{seed-44 evaluation}
-preserves the raw outputs. Shaped seed 44, the final run, is now training.
+preserves the raw outputs.
+
+\section{Controlled reward comparison: final laptop result}
+Shaped seed 44 completed 300 steps in 52.4 minutes and solves 24/256
+(9.38\%; Wilson 95\% 6.38--13.57\%), with strict/diagnostic agreement,
+231 wrong values, one number mismatch, and no truncation. Relative to binary
+seed 44 it gains 5 solutions and loses 65 ($-23.44$ percentage points;
+exact McNemar $p=2.2\times10^{-14}$, exploratory and unadjusted). This completes
+the grid. The aggregate step re-audited all six runs for identical hardware,
+clean source, packages, and ordered puzzle lists.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrrr}
+\toprule
+Reward & Seed 42 & Seed 43 & Seed 44 & Mean & SD (pp)\\
+\midrule
+Binary correctness & 80 & 13 & 84 & 23.0\% & 15.6\\
++0.05 validity bonus & 1 & 19 & 24 & 5.7\% & 4.7\\
+\midrule
+Paired difference (pp) & $-30.9$ & $+2.3$ & $-23.4$ & $-17.3$ & 17.4\\
+\bottomrule
+\end{tabular}
+\caption{Laptop controlled grid: correct answers out of 256 held-out puzzles
+(greedy, 256-token cap, 300 steps). Seeds share one puzzle set; observations
+are not pooled, and the seed SD is not a confidence interval.}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/controlled-local-seed-comparison.pdf}
+\caption{Per-checkpoint accuracy with Wilson intervals (left) and seed mean
+$\pm$ sample SD (right) for the laptop controlled grid.}
+\end{figure}
+
+Three findings follow. First, in this setup the validity bonus lowered
+correctness: shaping was worse on two of three seeds by more than 20 points and
+slightly better only on seed 43, where binary training largely failed. Three
+seeds support the direction rather than a precise effect size. Second, every
+shaped checkpoint produced short, never-truncated expressions that almost always used all
+inputs, yet 231--255 of 256 had wrong values. The bonus is reliably reachable,
+and the policy appears to settle on it instead of solving; the outcomes suggest
+this mechanism without establishing it causally. Third, binary reward is itself
+high-variance: seeds 42 and 44 reach 31--33\%, consistent with the 33.2\% pilot,
+while seed 43 reaches 5.1\% with mostly invalid or number-mismatched expressions.
+The archived Colab grid is not pooled with these runs; its only completed pair
+(seed 42: 68 versus 26) points the same way. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/iph1agef}{aggregate analysis}
+and \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/k74cqm73}{seed-44 pair archive}
+preserve the evidence.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
@@ -464,7 +513,7 @@ The repository ledger records implementation and execution milestones. Current
 CPU coverage is 48 passing tests, including diagnostic extraction, exact reward
 validation, statistical analysis, demo HTTP behavior, schema compatibility,
 and remote archive-integrity checks. These tests do not substitute for the
-unfinished training grid or live model/browser validation.
+training runs themselves or live model/browser validation.
 
 An automatic collector preserves each completed remote job and exports W\&B
 hardware and software provenance. The dedicated L4 VM is released only after
@@ -494,7 +543,7 @@ repository's \texttt{local-source-audit-seed43.json} and
 
 \section{Limitations}
 The original pilot is one seed on a 256-puzzle holdout. The three-seed transfer
-grid is complete, but the six-run controlled reward grid remains incomplete. These results do not establish robust generalization. Training-dataset
+grid and the six-run laptop controlled reward grid are complete, but three seeds per reward describe direction and spread rather than a precise effect size; the shaping result concerns one bonus value (0.05) and one training budget. These results do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates
 arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful

@@ -1,0 +1,66 @@
+{
+  "seed": 44,
+  "format_reward": 0.05,
+  "correct": 24,
+  "samples": 256,
+  "accuracy": 0.09375,
+  "accuracy_wilson_95": [
+    0.0638098481830768,
+    0.1357020351629437
+  ],
+  "diagnostic_correct": 24,
+  "failures": {
+    "wrong_value": 231,
+    "correct": 24,
+    "number_mismatch": 1
+  },
+  "truncated": 0,
+  "train_runtime_seconds": 3146.9353,
+  "first_positive_reward_step": 2,
+  "last_30_steps_mean_reward": 0.19536458452542624,
+  "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/11lnsy6c",
+  "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/d9qh2ahk",
+  "adapter_artifact": "mohamedsobhi777/countdown-grpo/11lnsy6c-adapter:v0",
+  "environment": {
+    "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "optional_kernel_packages": {
+      "einops": null,
+      "fla-core": null,
+      "causal-conv1d": null,
+      "flash-linear-attention": null
+    },
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.12.3",
+    "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+  },
+  "source_sha256": {
+    "evaluation.json": "4f58bd924864515251f92269351c92533a1a4a1a8964c00dc005938995385a67",
+    "status.json": "314e83468cb2950438a30245ecad60a0f1b5dc68f662bb6d8c43d6c522e34f96",
+    "collection.json": "a17e025c98b5448253990cabc5cd8c32067045f78958d1bc1801e2cc74ec24ee",
+    "training/config.json": "04f2ff675fe6fd31b975469dac3355c16323e187f7988faeb3d3e5c83901de7d",
+    "training/metrics.jsonl": "0be38090757cad8b3a808ece960cfa5c69ab4b5892e41a97346a40d66cbb7e22",
+    "training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "training/wandb-run.json": "b5c9274810c9bcf03220820e08c606dc17d71f049dc3e01a58c278076f9beef4",
+    "training/provenance.json": "fa64789986872b79e2a3ce6235cccbf113878406c9acdd845bb75808e7a09439",
+    "training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc"
+  },
+  "resumable_checkpoint_artifact": "mohamedsobhi777/countdown-grpo/model-shaped-44-train:v6"
+}

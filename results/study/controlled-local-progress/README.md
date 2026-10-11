@@ -1,8 +1,8 @@
 # Laptop controlled reward study: interim evidence
 
-Both rewards for seeds 42 and 43, and binary seed 44, are complete in
-`controlled-local-v2`. **Shaped seed 44 remains**; the final multi-seed reward
-comparison is pending.
+All six runs in `controlled-local-v2` are complete. This page keeps the
+per-run interim records; the **final six-run analysis is in
+[controlled-local](../controlled-local/README.md)**.
 Colab results are archived separately and are never pooled with this grid.
 
 The checkpoint solves **80/256 (31.25%)** held-out puzzles under greedy decoding
@@ -118,7 +118,6 @@ reward appeared at step 2.
 The full local audit passed, with identical ordered puzzles, source,
 environment, and hardware relative to the other local runs. The three binary
 seeds now score 80, 13, and 84 out of 256: seed 43 is far below the other two.
-Shaped seed 44 is now training.
 
 - [Audited summary](binary-44/summary.json)
 - [Raw evaluation](binary-44/evaluation.json)
@@ -126,3 +125,21 @@ Shaped seed 44 is now training.
 - [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/80qr8909)
 - [Final adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/rgyusdcc-adapter/v0)
 - [Resumable step-300 checkpoint](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/model-binary-44-train/v6)
+
+## Matched seed-44 comparison (grid complete)
+
+Shaped seed 44 solves **24/256 (9.38%; Wilson 95% 6.38–13.57%)** after
+300 steps in 52.4 minutes. Strict and diagnostic scores agree; 231 expressions
+have wrong values, one has a number mismatch, and none are truncated. Relative
+to binary seed 44 (84/256), shaping gains 5 solutions and loses 65, with 19
+jointly correct: **−23.44 percentage points** (exact paired McNemar
+p=2.2e−14, exploratory and unadjusted). Both runs pass the full local audit.
+
+- [Paired counts and provenance](seed-44-comparison.json)
+- [W&B matched-pair evidence archive](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/k74cqm73)
+- [Shaped audited summary](shaped-44/summary.json)
+- [Shaped raw evaluation](shaped-44/evaluation.json)
+- [Shaped training](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/11lnsy6c)
+- [Shaped evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/d9qh2ahk)
+- [Shaped adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/11lnsy6c-adapter/v0)
+- [Shaped resumable step-300 checkpoint](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/model-shaped-44-train/v6)

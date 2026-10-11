@@ -5,17 +5,20 @@ using [`Jiayi-Pan/Countdown-Tasks-3to4`](https://huggingface.co/datasets/Jiayi-P
 No supervised fine-tuning stage. Designed for one NVIDIA GPU with 16 GB VRAM,
 using BF16 LoRA and Hugging Face TRL's GRPO trainer.
 
-**Expanded study in progress:** separating arithmetic success from formatting,
+**Expanded study:** separating arithmetic success from formatting,
 testing output budgets, comparing rewards across three seeds, and measuring
 generalization. See the [study ledger](docs/study-ledger.md),
 [Overleaf report](https://www.overleaf.com/project/6aca3d97baaac8402a980db8), and
-[compiled report](report/main.pdf). Results below describe the original pilot;
-unfinished comparisons are not included in its headline score.
-The [first audited reward pair](results/study/controlled-progress/README.md)
-solved 68/256 with binary reward versus 26/256 with a validity bonus. The shaped
-checkpoint produced valid expressions on all 256 puzzles but lower correctness.
-This is one seed; the full six-run comparison
-is still in progress.
+[compiled report](report/main.pdf). The section below describes the original pilot.
+
+**Controlled reward comparison (complete, six laptop runs):** binary correctness
+reward averaged **23.0%** held-out accuracy across seeds 42/43/44 (80, 13, 84 of 256),
+while adding a 0.05 bonus for valid-but-wrong expressions averaged **5.7%**
+(1, 19, 24 of 256). Shaping was worse on two of three seeds (−30.9 and −23.4
+points) and slightly better on the seed where binary training largely failed
+(+2.3). Every shaped checkpoint learned short, untruncated, almost always valid
+expressions that were mostly wrong — the bonus became the easier target.
+[Final results and figure](results/study/controlled-local/README.md).
 
 ## Results
 
@@ -121,8 +124,8 @@ improvement reflects both formatting and arithmetic task performance. The split
 excludes duplicate/permuted puzzles from training, but cannot rule out exposure
 during the base model's pretraining. About **59.9% of completions in the final 30
 training steps** hit the 256-token cap. The completed longer-output evaluation
-finds only one additional solution at up to 1024 tokens. Additional training seeds
-and distribution-shift experiments remain in progress.
+finds only one additional solution at up to 1024 tokens. The later multi-seed
+controlled study shows large seed variation for this exact recipe (5.1–32.8%).
 
 CPU unit tests cover reward verification, data splits, and configuration. The
 archived reports have also been re-scored with the verifier, checked for identical
@@ -328,8 +331,8 @@ reward. Binary seed 43 subsequently scored 13/256 strict correct (5.1%) and
 16/256 diagnostic correct (6.25%). Shaped seed 43 scored **19/256 (7.42%)**,
 with all expressions valid and no truncation: +2.34 percentage points versus
 binary for this seed. Binary seed 44 scored **84/256 (32.81%)**, so the three
-binary seeds score 80, 13, and 84. Shaped seed 44 remains; the multi-seed
-comparison is pending.
+binary seeds score 80, 13, and 84. Shaped seed 44 scored **24/256 (9.38%)**,
+completing the grid. [Final six-run analysis](results/study/controlled-local/README.md).
 [Audited interim evidence and W&B links](results/study/controlled-local-progress/README.md).
 
 ```bash

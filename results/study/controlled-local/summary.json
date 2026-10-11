@@ -1,0 +1,441 @@
+{
+  "profile": "local",
+  "runs": {
+    "binary-42": {
+      "seed": 42,
+      "format_reward": 0.0,
+      "correct": 80,
+      "samples": 256,
+      "accuracy": 0.3125,
+      "accuracy_wilson_95": [
+        0.25884588878587184,
+        0.37169805737382994
+      ],
+      "diagnostic_correct": 80,
+      "failures": {
+        "no_declared_expression": 136,
+        "correct": 80,
+        "number_mismatch": 31,
+        "wrong_value": 5,
+        "invalid_syntax": 4
+      },
+      "truncated": 162,
+      "train_runtime_seconds": 5368.2092,
+      "first_positive_reward_step": 31,
+      "last_30_steps_mean_reward": 0.265625,
+      "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/eudebo7g",
+      "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/17gdgf7i",
+      "adapter_artifact": "mohamedsobhi777/countdown-grpo/eudebo7g-adapter:latest",
+      "environment": {
+        "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+        "git_dirty": false,
+        "packages": {
+          "trl": "1.13.0",
+          "peft": "0.20.0",
+          "torch": "2.8.0",
+          "wandb": "0.30.0",
+          "datasets": "5.0.1",
+          "accelerate": "1.15.0",
+          "transformers": "5.17.0"
+        },
+        "optional_kernel_packages": {
+          "einops": null,
+          "fla-core": null,
+          "causal-conv1d": null,
+          "flash-linear-attention": null
+        },
+        "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+      },
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "gpu_count": 1,
+        "cpu_count": 24,
+        "cudaVersion": "13.0",
+        "python": "CPython 3.12.3",
+        "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      }
+    },
+    "binary-43": {
+      "seed": 43,
+      "format_reward": 0.0,
+      "correct": 13,
+      "samples": 256,
+      "accuracy": 0.05078125,
+      "accuracy_wilson_95": [
+        0.02991381138655353,
+        0.08493105962106531
+      ],
+      "diagnostic_correct": 16,
+      "failures": {
+        "wrong_value": 38,
+        "number_mismatch": 66,
+        "invalid_syntax": 99,
+        "no_declared_expression": 37,
+        "correct": 16
+      },
+      "truncated": 219,
+      "train_runtime_seconds": 5127.7501,
+      "first_positive_reward_step": 77,
+      "last_30_steps_mean_reward": 0.007291666666666667,
+      "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/d9it45u2",
+      "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/dmxcq1wh",
+      "adapter_artifact": "mohamedsobhi777/countdown-grpo/d9it45u2-adapter:latest",
+      "environment": {
+        "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+        "git_dirty": false,
+        "packages": {
+          "trl": "1.13.0",
+          "peft": "0.20.0",
+          "torch": "2.8.0",
+          "wandb": "0.30.0",
+          "datasets": "5.0.1",
+          "accelerate": "1.15.0",
+          "transformers": "5.17.0"
+        },
+        "optional_kernel_packages": {
+          "einops": null,
+          "fla-core": null,
+          "causal-conv1d": null,
+          "flash-linear-attention": null
+        },
+        "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+      },
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "gpu_count": 1,
+        "cpu_count": 24,
+        "cudaVersion": "13.0",
+        "python": "CPython 3.12.3",
+        "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      }
+    },
+    "binary-44": {
+      "seed": 44,
+      "format_reward": 0.0,
+      "correct": 84,
+      "samples": 256,
+      "accuracy": 0.328125,
+      "accuracy_wilson_95": [
+        0.2735197547273731,
+        0.38781219591902016
+      ],
+      "diagnostic_correct": 84,
+      "failures": {
+        "no_declared_expression": 108,
+        "number_mismatch": 14,
+        "correct": 84,
+        "wrong_value": 28,
+        "invalid_syntax": 22
+      },
+      "truncated": 167,
+      "train_runtime_seconds": 5391.7859,
+      "first_positive_reward_step": 2,
+      "last_30_steps_mean_reward": 0.45208333333333334,
+      "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rgyusdcc",
+      "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/80qr8909",
+      "adapter_artifact": "mohamedsobhi777/countdown-grpo/rgyusdcc-adapter:latest",
+      "environment": {
+        "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+        "git_dirty": false,
+        "packages": {
+          "trl": "1.13.0",
+          "peft": "0.20.0",
+          "torch": "2.8.0",
+          "wandb": "0.30.0",
+          "datasets": "5.0.1",
+          "accelerate": "1.15.0",
+          "transformers": "5.17.0"
+        },
+        "optional_kernel_packages": {
+          "einops": null,
+          "fla-core": null,
+          "causal-conv1d": null,
+          "flash-linear-attention": null
+        },
+        "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+      },
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "gpu_count": 1,
+        "cpu_count": 24,
+        "cudaVersion": "13.0",
+        "python": "CPython 3.12.3",
+        "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      }
+    },
+    "shaped-42": {
+      "seed": 42,
+      "format_reward": 0.05,
+      "correct": 1,
+      "samples": 256,
+      "accuracy": 0.00390625,
+      "accuracy_wilson_95": [
+        0.0006898821669617927,
+        0.021790975380582507
+      ],
+      "diagnostic_correct": 1,
+      "failures": {
+        "wrong_value": 255,
+        "correct": 1
+      },
+      "truncated": 0,
+      "train_runtime_seconds": 3206.8835,
+      "first_positive_reward_step": 22,
+      "last_30_steps_mean_reward": 0.057812500496705374,
+      "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/ofj5pru1",
+      "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/8694c6tk",
+      "adapter_artifact": "mohamedsobhi777/countdown-grpo/ofj5pru1-adapter:latest",
+      "environment": {
+        "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+        "git_dirty": false,
+        "packages": {
+          "trl": "1.13.0",
+          "peft": "0.20.0",
+          "torch": "2.8.0",
+          "wandb": "0.30.0",
+          "datasets": "5.0.1",
+          "accelerate": "1.15.0",
+          "transformers": "5.17.0"
+        },
+        "optional_kernel_packages": {
+          "einops": null,
+          "fla-core": null,
+          "causal-conv1d": null,
+          "flash-linear-attention": null
+        },
+        "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+      },
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "gpu_count": 1,
+        "cpu_count": 24,
+        "cudaVersion": "13.0",
+        "python": "CPython 3.12.3",
+        "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      }
+    },
+    "shaped-43": {
+      "seed": 43,
+      "format_reward": 0.05,
+      "correct": 19,
+      "samples": 256,
+      "accuracy": 0.07421875,
+      "accuracy_wilson_95": [
+        0.0480261071918112,
+        0.11300077054584493
+      ],
+      "diagnostic_correct": 19,
+      "failures": {
+        "wrong_value": 237,
+        "correct": 19
+      },
+      "truncated": 0,
+      "train_runtime_seconds": 2797.8899,
+      "first_positive_reward_step": 7,
+      "last_30_steps_mean_reward": 0.18541666368643442,
+      "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/s6q8yswn",
+      "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/f4jnc8d5",
+      "adapter_artifact": "mohamedsobhi777/countdown-grpo/s6q8yswn-adapter:latest",
+      "environment": {
+        "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+        "git_dirty": false,
+        "packages": {
+          "trl": "1.13.0",
+          "peft": "0.20.0",
+          "torch": "2.8.0",
+          "wandb": "0.30.0",
+          "datasets": "5.0.1",
+          "accelerate": "1.15.0",
+          "transformers": "5.17.0"
+        },
+        "optional_kernel_packages": {
+          "einops": null,
+          "fla-core": null,
+          "causal-conv1d": null,
+          "flash-linear-attention": null
+        },
+        "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+      },
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "gpu_count": 1,
+        "cpu_count": 24,
+        "cudaVersion": "13.0",
+        "python": "CPython 3.12.3",
+        "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      }
+    },
+    "shaped-44": {
+      "seed": 44,
+      "format_reward": 0.05,
+      "correct": 24,
+      "samples": 256,
+      "accuracy": 0.09375,
+      "accuracy_wilson_95": [
+        0.0638098481830768,
+        0.1357020351629437
+      ],
+      "diagnostic_correct": 24,
+      "failures": {
+        "wrong_value": 231,
+        "correct": 24,
+        "number_mismatch": 1
+      },
+      "truncated": 0,
+      "train_runtime_seconds": 3146.9353,
+      "first_positive_reward_step": 2,
+      "last_30_steps_mean_reward": 0.19536458452542624,
+      "training_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/11lnsy6c",
+      "evaluation_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/d9qh2ahk",
+      "adapter_artifact": "mohamedsobhi777/countdown-grpo/11lnsy6c-adapter:latest",
+      "environment": {
+        "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+        "git_dirty": false,
+        "packages": {
+          "trl": "1.13.0",
+          "peft": "0.20.0",
+          "torch": "2.8.0",
+          "wandb": "0.30.0",
+          "datasets": "5.0.1",
+          "accelerate": "1.15.0",
+          "transformers": "5.17.0"
+        },
+        "optional_kernel_packages": {
+          "einops": null,
+          "fla-core": null,
+          "causal-conv1d": null,
+          "flash-linear-attention": null
+        },
+        "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+      },
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "gpu_count": 1,
+        "cpu_count": 24,
+        "cudaVersion": "13.0",
+        "python": "CPython 3.12.3",
+        "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      }
+    }
+  },
+  "reward_groups": {
+    "binary": {
+      "mean_accuracy": 0.23046875,
+      "sample_std_across_seeds": 0.15580992714983696,
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "shaped": {
+      "mean_accuracy": 0.057291666666666664,
+      "sample_std_across_seeds": 0.04725324820735431,
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    }
+  },
+  "paired_by_seed": {
+    "42": {
+      "samples": 256,
+      "gained": 1,
+      "lost": 80,
+      "both_correct": 0,
+      "both_incorrect": 175,
+      "accuracy_difference": -0.30859375,
+      "exact_mcnemar_p_unadjusted": 6.782881022934827e-23
+    },
+    "43": {
+      "samples": 256,
+      "gained": 16,
+      "lost": 10,
+      "both_correct": 3,
+      "both_incorrect": 227,
+      "accuracy_difference": 0.0234375,
+      "exact_mcnemar_p_unadjusted": 0.32693958282470703
+    },
+    "44": {
+      "samples": 256,
+      "gained": 5,
+      "lost": 65,
+      "both_correct": 19,
+      "both_incorrect": 167,
+      "accuracy_difference": -0.234375,
+      "exact_mcnemar_p_unadjusted": 2.215352840138473e-14
+    }
+  },
+  "mean_paired_accuracy_difference": -0.17317708333333334,
+  "sample_std_paired_accuracy_difference": 0.1742701250857296,
+  "interpretation": "Three training seeds share one held-out puzzle set. Do not pool 768 observations as independent puzzles. Seed standard deviations and per-checkpoint Wilson intervals describe different uncertainty. Paired exact p-values are exploratory and unadjusted. Shaped reward values are not directly comparable to binary reward values.",
+  "source_sha256": {
+    "binary-42/evaluation.json": "3e738a8e484b7bc1e4a113de94980a2b0e8a0da4fc8019d99bb946c0def34d68",
+    "binary-42/status.json": "1907c82f18592ec79f5114ddfd52c127dbd78f3e5b6494290af2e14477034c76",
+    "binary-42/collection.json": "433cca28d34abe09fa2aff34528f0d23d9d9d5191c30c1599082a2cf38566b03",
+    "binary-42/training/config.json": "2de81bd3c5de97ea973cd286c65336fbd1e73e1b55da7b624ada1a64d7bab095",
+    "binary-42/training/metrics.jsonl": "bec1b2c334f251141f70aba6e8acd1efc365cb9e19987fda064bbc61c23b4546",
+    "binary-42/training/wandb-run.json": "c60e4b461eedc7613544a8f68c873c9a491b5b3bd557fa934994be4e6df1d8f7",
+    "binary-42/training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "binary-42/training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "binary-42/training/provenance.json": "3c3dd32113f06b26e80651fe41cff42874f0e206d770771f0f91683fd7e9cc48",
+    "binary-42/training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc",
+    "binary-43/evaluation.json": "d372b75bae6d6905603128041436768530a8a2e59c6b6d240569234fe2547177",
+    "binary-43/status.json": "7530a297350a077d33d9172621976ed22439fe27d3111aad6457f1a8557e0341",
+    "binary-43/collection.json": "5717314ea588a2efcd671d9be8a50280e7c0a6244a658ba05bc27b70bc08522a",
+    "binary-43/training/config.json": "f1812d37d0aeb405ad27e7e93126843ef866a79584b688859a755e1587562fe1",
+    "binary-43/training/metrics.jsonl": "fb80914e765b8fa80df1bf694d4d50532c4de444a6f5923d58a4e9ae2db12bda",
+    "binary-43/training/wandb-run.json": "0f41621423aca740dfd1663712326a3c35356294a2a7cb24bf5dba58abf4612c",
+    "binary-43/training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "binary-43/training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "binary-43/training/provenance.json": "ef61dd7f8b90e5fd483d5d45b72a7fa871421573bb5989ec53f33733258bea4c",
+    "binary-43/training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc",
+    "binary-44/evaluation.json": "ed39086b9d66138a83c249c2499deee9f798c4606ed8a35ae1e133b8e74a5f20",
+    "binary-44/status.json": "2df40f0eac91566cffb47999ab5012aac9854546a90dfe4f25141b1df9c21597",
+    "binary-44/collection.json": "a249497ea13896afa24ed0d224fd72c492acd5f3c3fe1d684ed0eeae6c8acf81",
+    "binary-44/training/config.json": "ae0ba05a9e7343249e2b7a26e657e1056c8ba2cbb9a51fabf09a81a315b27bf3",
+    "binary-44/training/metrics.jsonl": "824dd76915f5a6684471470a0de6790029978c48668a60836eb195574383f2fb",
+    "binary-44/training/wandb-run.json": "3f67f787287a442f8cec5a3c74d1e634f8d3bffd41aba3d1c89d5c3766412e34",
+    "binary-44/training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "binary-44/training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "binary-44/training/provenance.json": "0c2c5340e64c918f974a60fc27c52c7893b26032544623bbd021f319ca5e1fcc",
+    "binary-44/training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc",
+    "shaped-42/evaluation.json": "3e855667feff78c5b0b0e839550dce7cb20706ecb54a90de2bd41373b87d21fb",
+    "shaped-42/status.json": "eac737dde066c87e389db99db7910821c100a45a3d443ac9ccaa43f3fa894231",
+    "shaped-42/collection.json": "8fece5b90a69dd9ac13f8eca34e51195b66ce50749a6373b1d7b2b37ae3f740a",
+    "shaped-42/training/config.json": "3610cc0db933c91767cf467712ac05de45df16ef7ecc261ba1598e200b5900b3",
+    "shaped-42/training/metrics.jsonl": "3e5aa92bd5074065e4fbf0da736f3978155eaec07451a53e48bedfb4eccc9889",
+    "shaped-42/training/wandb-run.json": "2f0c9e90d1913a77bb12cb9b73799585b19dfb7fb1e92a00bbe32bc41b743612",
+    "shaped-42/training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "shaped-42/training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "shaped-42/training/provenance.json": "8efed6a1951506724fac7ad15c8feeb24d2899395df0c14c8820ddf063e2c008",
+    "shaped-42/training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc",
+    "shaped-43/evaluation.json": "600923986d1ab6e070e60cd79548f5703245e1405d6202d0076ad20669822937",
+    "shaped-43/status.json": "a31509bf14e2dc3f5f5cdbc8be2c6ec6a9b6776b30a01c8bb5af222e0d54099f",
+    "shaped-43/collection.json": "7b2bc83fe4e2a7fa41b96c65ea1bf1eb2105a20d0a7ec6eb1b9af9f8606eea5d",
+    "shaped-43/training/config.json": "c0450fb5ef8a3ed1f4fcc105acf26f32c8e666807564e113d621ceacfab63c21",
+    "shaped-43/training/metrics.jsonl": "6682cf8cf7b8d175d6d2784ca78f62a2aef66c3a6d0034c5914f12173e70402f",
+    "shaped-43/training/wandb-run.json": "0c814ac0dbacf1f8e75406f03076f362ffe1687e3bfcfb98707c694cb26ef144",
+    "shaped-43/training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "shaped-43/training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "shaped-43/training/provenance.json": "a8283a3be89a30cfa9796fc2c8f1d9f2887c763d2cba1c9cce59c868033ded85",
+    "shaped-43/training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc",
+    "shaped-44/evaluation.json": "4f58bd924864515251f92269351c92533a1a4a1a8964c00dc005938995385a67",
+    "shaped-44/status.json": "314e83468cb2950438a30245ecad60a0f1b5dc68f662bb6d8c43d6c522e34f96",
+    "shaped-44/collection.json": "a17e025c98b5448253990cabc5cd8c32067045f78958d1bc1801e2cc74ec24ee",
+    "shaped-44/training/config.json": "04f2ff675fe6fd31b975469dac3355c16323e187f7988faeb3d3e5c83901de7d",
+    "shaped-44/training/metrics.jsonl": "0be38090757cad8b3a808ece960cfa5c69ab4b5892e41a97346a40d66cbb7e22",
+    "shaped-44/training/wandb-run.json": "b5c9274810c9bcf03220820e08c606dc17d71f049dc3e01a58c278076f9beef4",
+    "shaped-44/training/train-puzzles.json": "2475a6eb30db50a6bd20ab48b57fec6bdd16f2fea6dffb328b3b5d6f945eabc0",
+    "shaped-44/training/holdout.json": "eeef2885de70d47e1b078aec7900b55820511bce52b3b190d247255fa0e45f9f",
+    "shaped-44/training/provenance.json": "fa64789986872b79e2a3ce6235cccbf113878406c9acdd845bb75808e7a09439",
+    "shaped-44/training/requirements.txt": "aa5f9c0e361bab83cf9f54cc4b200ce92f8de39eabdb54281f5db3fa08395ffc"
+  }
+}

@@ -419,3 +419,21 @@ audit passed. Adapter `rgyusdcc-adapter:v0`, resumable step-300 checkpoint
 `model-binary-44-train:v6` (v7 is the final model without trainer state),
 results, and evaluation are committed to W&B. Shaped seed 44 started
 automatically; it is the last run in the grid.
+
+### Laptop controlled grid complete
+
+Shaped seed 44 (`11lnsy6c`) completed 300 steps in 3146.9353 seconds
+(52.4 minutes). Evaluation `d9qh2ahk` scored 24/256 (9.38%; Wilson 95%
+6.38–13.57%), strict/diagnostic agreement, 231 wrong values, one number
+mismatch, zero truncation. Versus binary seed 44: gains 5, loses 65, 19 jointly
+correct, −23.44 pp, exact McNemar p=2.2e−14 (exploratory/unadjusted). Pair
+archive: W&B run `k74cqm73`. Adapter `11lnsy6c-adapter:v0`, resumable
+checkpoint `model-shaped-44-train:v6`.
+
+The queue's aggregate step (`scripts/analyze_controlled_study.py --profile local`)
+re-audited all six runs (identical hardware, clean source `f0dbd20`, packages,
+ordered puzzles) and logged the analysis to W&B. Binary mean accuracy 23.05%
+(SD 15.58 pp; 80/13/84), shaped 5.73% (SD 4.73 pp; 1/19/24); mean paired
+difference −17.32 pp (SD 17.43 pp). Final results, figure, and findings are in
+`results/study/controlled-local`. The figure was produced with
+`python3 scripts/plot_seed_studies.py controlled --source results/study/controlled-local/summary.json`.
