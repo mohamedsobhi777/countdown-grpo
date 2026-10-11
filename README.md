@@ -312,3 +312,17 @@ and [TRL GRPO documentation](https://huggingface.co/docs/trl/grpo_trainer).
 W&B uploads are enabled only by `--wandb` or the complete experiment script.
 No Hugging Face Hub upload is enabled. Weights, outputs, W&B local state, and
 environment files are excluded from Git.
+
+### Laptop controlled-study recovery
+
+Following Colab runtime loss, the full six-run reward comparison is being rerun
+on this laptop under `controlled-local-v2`. Earlier Colab results remain separate.
+The existing local environment and scientific settings are preserved.
+[Approved design and execution instructions](docs/local-controlled-recovery.md).
+
+```bash
+PYTHONPATH=src .venv/bin/python -u scripts/run_local_controlled.py
+```
+
+Use a clean frozen checkout and an unused output group. The queue refuses to
+overwrite a prior run; inspect saved state before any explicit recovery.

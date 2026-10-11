@@ -13,16 +13,25 @@ from countdown_grpo.diagnostics import analyze_completion
 from countdown_grpo.statistics import paired_outcomes, wilson_interval
 
 
-def checked_run(path, reward, seed):
+PROFILES = {
+    'colab': {'group': 'controlled-l4-fla-v1', 'gpu': 'NVIDIA L4',
+              'kernels': {'flash-linear-attention':'0.5.2', 'fla-core':'0.5.2', 'einops':'0.8.1', 'causal-conv1d':None}},
+    'local': {'group': 'controlled-local-v2', 'gpu': 'NVIDIA GeForce RTX 4090 Laptop GPU',
+              'kernels': dict.fromkeys(('flash-linear-attention', 'fla-core', 'einops', 'causal-conv1d'))},
+}
+
+
+def checked_run(path, reward, seed, profile='colab'):
     provenance = json.loads((path / 'training/provenance.json').read_text())
-    kernels = {'flash-linear-attention':'0.5.2', 'fla-core':'0.5.2', 'einops':'0.8.1', 'causal-conv1d':None}
+    policy = PROFILES[profile]
+    kernels = policy['kernels']
     environment = provenance['config']
     requirements = (path/'training/requirements.txt').read_text()
     if environment['requirements_sha256'] != hashlib.sha256('\n'.join(sorted(requirements.splitlines())).encode()).hexdigest():
         raise ValueError(f'{path}: archived requirements differ from provenance')
-    if (provenance['state'] != 'finished' or provenance['group'] != 'controlled-l4-fla-v1'
+    if (provenance['state'] != 'finished' or provenance['group'] != policy['group']
             or environment['optional_kernel_packages'] != kernels or environment['git_dirty'] is not False
-            or provenance['hardware']['gpu'] != 'NVIDIA L4' or provenance['hardware']['gpu_count'] != 1):
+            or provenance['hardware']['gpu'] != policy['gpu'] or provenance['hardware']['gpu_count'] != 1):
         raise ValueError(f'{path}: backend, hardware, or source provenance differs from the controlled study')
     config = json.loads((path / 'training/config.json').read_text())
     expected = Config(seed=seed, split_seed=42, format_reward=reward).to_dict()
@@ -83,15 +92,20 @@ def main():
     parser.add_argument('source', type=Path)
     parser.add_argument('--destination', type=Path, default=Path('results/study/controlled'))
     parser.add_argument('--wandb', action='store_true')
+    parser.add_argument('--profile', choices=PROFILES, default='colab')
     args = parser.parse_args()
     summaries, records = {}, {}
     reference_train = reference_holdout = None
-    reference_environment = None
+    reference_environment = reference_hardware = None
     for reward_name, reward in [('binary', 0.0), ('shaped', 0.05)]:
         for seed in (42, 43, 44):
             name = f'{reward_name}-{seed}'
-            summary, rows, train, holdout = checked_run(args.source / name, reward, seed)
+            summary, rows, train, holdout = checked_run(args.source / name, reward, seed, args.profile)
             environment = summary['environment']
+            if reference_hardware is None:
+                reference_hardware = summary['hardware']
+            elif summary['hardware'] != reference_hardware:
+                raise ValueError(f'{name}: hardware differs between runs')
             if reference_environment is None:
                 reference_environment = environment
             elif environment != reference_environment:
@@ -107,7 +121,7 @@ def main():
         values = [summaries[f'{name}-{s}']['accuracy'] for s in (42, 43, 44)]
         grouped[name] = {'mean_accuracy': mean(values), 'sample_std_across_seeds': stdev(values), 'seeds': [42, 43, 44]}
     differences = [r['accuracy_difference'] for r in comparisons.values()]
-    summary = {'runs': summaries, 'reward_groups': grouped, 'paired_by_seed': comparisons,
+    summary = {'profile': args.profile, 'runs': summaries, 'reward_groups': grouped, 'paired_by_seed': comparisons,
                'mean_paired_accuracy_difference': mean(differences),
                'sample_std_paired_accuracy_difference': stdev(differences),
                'interpretation': 'Three training seeds share one held-out puzzle set. Do not pool 768 observations as independent puzzles. Seed standard deviations and per-checkpoint Wilson intervals describe different uncertainty. Paired exact p-values are exploratory and unadjusted. Shaped reward values are not directly comparable to binary reward values.'}
@@ -131,7 +145,7 @@ def main():
     for name, row in summaries.items():
         lines.append(f"| [{name}]({row['training_url']}) | {row['correct']}/256 | {100*row['accuracy']:.1f}% | {row['train_runtime_seconds']/60:.1f} |")
     lines += ['', 'Reward-group means, sample standard deviations, per-seed paired comparisons, checkpoint links, and source hashes: [summary.json](summary.json).', '',
-              'All six runs passed configuration, 300-step completion, score recomputation, duplicate/overlap, identical ordered puzzle-list, single-L4 hardware, pinned FLA backend, and identical clean source/Python/package checks. Exported W&B provenance is archived with each run.']
+              'All six runs passed configuration, 300-step completion, score recomputation, duplicate/overlap, identical ordered puzzle-list, the selected hardware/kernel profile, and identical hardware/clean source/Python/package checks. Exported W&B provenance is archived with each run.']
     (args.destination / 'README.md').write_text('\n'.join(lines) + '\n')
     if args.wandb:
         from countdown_grpo.tracking import session, log_files

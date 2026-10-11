@@ -331,3 +331,12 @@ active sessions; a replacement L4 request was rejected for quota/entitlement.
 The collector was stopped after confirming the session is gone. The user was
 asked to restore L4 access or choose a complete, consistently configured local
 rerun. Recovery is pending; the study remains incomplete.
+
+## Laptop recovery approved
+
+The user selected a fresh six-run laptop controlled comparison. Group
+`controlled-local-v2` uses the existing Python environment and fallback kernels
+on the RTX 4090 Laptop GPU, with all original scientific settings unchanged.
+A frozen detached checkout isolates training from ongoing documentation updates.
+The runner captures finished provenance and audits every completed job before
+aggregating the complete grid. Colab evidence remains separate.

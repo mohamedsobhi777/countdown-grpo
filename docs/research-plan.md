@@ -69,3 +69,11 @@ The existing 300-step run is a pilot, not the entire study.
 - [x] Run three-to-four-number transfer and distribution-shift evaluations.
 - [x] Build and verify the interactive comparison demo.
 - [ ] Publish complete report and perform requirement-by-requirement audit.
+
+## Approved compute recovery
+
+After runtime loss and rejected L4 access, the user approved rerunning the full
+six-run controlled comparison on the laptop. See
+[the local recovery design](local-controlled-recovery.md). The completed local
+budget, transfer, and demo results remain retained. The new controlled grid uses
+a distinct group and is never pooled with Colab evidence.

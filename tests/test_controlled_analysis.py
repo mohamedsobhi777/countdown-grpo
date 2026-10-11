@@ -68,6 +68,17 @@ class ControlledAuditTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'incomplete'):
                 controlled.checked_run(root, 0, 42)
             save('status.json', {'state':'complete'})
+            provenance['group'] = 'controlled-local-v2'
+            provenance['hardware']['gpu'] = 'NVIDIA GeForce RTX 4090 Laptop GPU'
+            provenance['config']['optional_kernel_packages'] = controlled.PROFILES['local']['kernels'].copy()
+            save('training/provenance.json', provenance)
+            self.assertEqual(controlled.checked_run(root, 0, 42, 'local')[0]['correct'], 1)
+            with self.assertRaisesRegex(ValueError, 'provenance'):
+                controlled.checked_run(root, 0, 42, 'colab')
+            provenance['config']['optional_kernel_packages']['fla-core'] = '0.5.2'
+            save('training/provenance.json', provenance)
+            with self.assertRaisesRegex(ValueError, 'provenance'):
+                controlled.checked_run(root, 0, 42, 'local')
             provenance['config']['optional_kernel_packages']['fla-core'] = None
             save('training/provenance.json', provenance)
             with self.assertRaisesRegex(ValueError, 'provenance'):
