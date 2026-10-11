@@ -380,3 +380,16 @@ The adapter `ofj5pru1-adapter:v0`, resume checkpoint
 `model-shaped-42-train:v13`, results, completion logs, and evaluation artifact
 are committed to W&B. Published evidence and paired counts are under
 `results/study/controlled-local-progress`. Binary seed 43 started automatically.
+
+### Third laptop controlled run completed
+
+Binary seed 43 (`d9it45u2`) completed 300 steps in 5127.7501 seconds
+(85.5 minutes). Evaluation `dmxcq1wh` scored 13/256 strict correct
+(5.08%; Wilson 95% 2.99–8.49%) and 16/256 diagnostic correct (6.25%).
+The three diagnostic recoveries are preserved separately with raw outputs;
+all are truncated and use the last standalone arithmetic line. Total
+truncation is 219/256. The full local audit passed, including matching ordered
+puzzles, source, environment, and hardware with binary seed 42.
+Adapter `d9it45u2-adapter:v0`, resumable checkpoint
+`model-binary-43-train:v13`, results, and all 300 completion logs are committed
+to W&B. Shaped seed 43 (`s6q8yswn`) started automatically; three runs remain.

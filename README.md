@@ -324,7 +324,9 @@ The first local controlled run (binary seed 42) completed all 300 steps and scor
 **80/256 (31.25%; Wilson 95% 25.9–37.2%)**, with strict/diagnostic agreement.
 The matched shaped seed-42 run scored **1/256 (0.39%)**, despite all 256
 expressions being valid. It gained one solution and lost 80 relative to binary
-reward. Four runs remain; this is not a final multi-seed reward comparison.
+reward. Binary seed 43 subsequently scored 13/256 strict correct (5.1%) and
+16/256 diagnostic correct (6.25%). Three runs remain; this is not a final
+multi-seed reward comparison.
 [Audited interim evidence and W&B links](results/study/controlled-local-progress/README.md).
 
 ```bash

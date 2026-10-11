@@ -226,10 +226,24 @@ are truncated, and strict and diagnostic scores agree. It gains one solution
 and loses 80 relative to binary reward, with no jointly correct puzzles:
 a $-30.86$ percentage-point difference. Both runs pass full audits and match
 in ordered puzzle lists, source, environment, and hardware. This seed shows
-improved validity alongside markedly lower correctness. Four runs remain;
+improved validity alongside markedly lower correctness. At that point four runs remained;
 the paired result is not a multi-seed conclusion. The
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/8694c6tk}{shaped evaluation}
-preserves the raw evidence. Binary seed 43 is now training.
+preserves the raw evidence.
+
+Binary seed 43 subsequently completed 300 steps in 85.5 minutes and solves
+13/256 strictly (5.08\%; Wilson 95\% 2.99--8.49\%). The conservative diagnostic
+metric recovers three additional answers, reaching 16/256 (6.25\%). Each
+recovery uses the last standalone arithmetic line in a truncated output;
+raw examples and extracted expressions are preserved in the repository.
+There are 219 truncated outputs. Diagnostic categories comprise 16 correct,
+38 wrong values, 66 number mismatches, 99 invalid expressions, and 37 without
+a declared expression. The full audit passed, with identical ordered puzzles,
+source, environment, and hardware relative to binary seed 42. These two binary
+runs show substantial seed variation; three runs remain before the planned
+multi-seed comparison. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/dmxcq1wh}{seed-43 evaluation}
+preserves the raw outputs. Shaped seed 43 is now training.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
