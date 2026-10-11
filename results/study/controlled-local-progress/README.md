@@ -1,7 +1,7 @@
 # Laptop controlled reward study: interim evidence
 
-Binary seeds 42 and 43 and shaped seed 42 are complete in `controlled-local-v2`.
-**Three runs remain**; the final multi-seed reward comparison is pending.
+Both rewards for seeds 42 and 43 are complete in `controlled-local-v2`.
+**Both seed-44 runs remain**; the final multi-seed reward comparison is pending.
 Colab results are archived separately and are never pooled with this grid.
 
 The checkpoint solves **80/256 (31.25%)** held-out puzzles under greedy decoding
@@ -84,3 +84,24 @@ is now training.
 - [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/dmxcq1wh)
 - [Adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/d9it45u2-adapter/v0)
 - [Resumable checkpoint](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/model-binary-43-train/v13)
+
+## Matched seed-43 comparison
+
+Shaped seed 43 solves **19/256 (7.42%; Wilson 95% 4.80–11.30%)** after
+300 steps in 46.6 minutes. Strict and diagnostic scores agree; all 256
+expressions are valid, 237 have wrong values, and none are truncated.
+Relative to binary seed 43 (13/256 strict), shaping gains 16 solutions and
+loses 10, with three jointly correct: **+2.34 percentage points**. The exact
+paired McNemar p-value is 0.327 (exploratory, unadjusted); this fixed-checkpoint
+comparison does not measure uncertainty across training seeds.
+
+Both runs pass the full local audit and have identical ordered puzzles,
+source, environment, and hardware. The direction differs from seed 42;
+finish both seed-44 runs before interpreting the full reward comparison.
+Binary seed 44 is now training.
+
+- [Paired counts and provenance](seed-43-comparison.json)
+- [Shaped audited summary](shaped-43/summary.json)
+- [Raw evaluation](shaped-43/evaluation.json)
+- [Training](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/s6q8yswn)
+- [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/f4jnc8d5)

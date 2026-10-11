@@ -1,0 +1,46 @@
+{
+  "scope": "second matched local seed; both seed-44 runs remain; not a final multi-seed conclusion",
+  "group": "controlled-local-v2",
+  "seed": 43,
+  "binary_correct": 13,
+  "shaped_correct": 19,
+  "paired": {
+    "samples": 256,
+    "gained": 16,
+    "lost": 10,
+    "both_correct": 3,
+    "both_incorrect": 227,
+    "accuracy_difference": 0.0234375,
+    "exact_mcnemar_p_unadjusted": 0.32693958282470703
+  },
+  "identical_ordered_train_and_holdout": true,
+  "environment": {
+    "git_commit": "f0dbd20170a8c1ed02e06577702d53dba17d261b",
+    "git_dirty": false,
+    "packages": {
+      "trl": "1.13.0",
+      "peft": "0.20.0",
+      "torch": "2.8.0",
+      "wandb": "0.30.0",
+      "datasets": "5.0.1",
+      "accelerate": "1.15.0",
+      "transformers": "5.17.0"
+    },
+    "optional_kernel_packages": {
+      "einops": null,
+      "fla-core": null,
+      "causal-conv1d": null,
+      "flash-linear-attention": null
+    },
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "requirements_sha256": "142e3abe24cd9e47ff11724096b91e9a5659c3dcc3bfc856f53f81c207aa98c5"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cudaVersion": "13.0",
+    "python": "CPython 3.12.3",
+    "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+  }
+}
