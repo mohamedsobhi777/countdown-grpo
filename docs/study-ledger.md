@@ -366,3 +366,17 @@ Final adapter `eudebo7g-adapter:v0`, resume checkpoint
 `model-binary-42-train:v13`, results, and completion logs are committed to W&B.
 The queue advanced automatically to shaped seed 42. Five runs remain; no
 multi-seed or reward-comparison conclusion is available from this first run.
+
+### First matched laptop seed completed
+
+Shaped seed 42 (`ofj5pru1`) completed all 300 steps in 3206.8835 seconds
+(53.4 minutes). Evaluation `8694c6tk` scored 1/256 (0.39%; Wilson 95%
+0.07–2.18%), with strict/diagnostic agreement, all 256 expressions valid,
+255 wrong values, and no truncated outputs. The full local-profile audit passed.
+Ordered puzzle lists, source, environment, and hardware match binary seed 42.
+Shaped reward gains one solution and loses 80, a −30.86 percentage-point
+difference for this seed; four runs remain before multi-seed conclusions.
+The adapter `ofj5pru1-adapter:v0`, resume checkpoint
+`model-shaped-42-train:v13`, results, completion logs, and evaluation artifact
+are committed to W&B. Published evidence and paired counts are under
+`results/study/controlled-local-progress`. Binary seed 43 started automatically.

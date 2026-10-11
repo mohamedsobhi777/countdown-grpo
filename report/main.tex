@@ -219,8 +219,17 @@ five wrong values, and four invalid expressions. Truncation is an overlapping
 flag, not an established cause of failure. Raw-score, configuration, data, step,
 and runtime-provenance audits passed; the
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/judanvdy}{audited evidence}
-is archived. Shaped seed 42 is running. Five runs remain, so this is a single
-checkpoint result, not a multi-seed reward comparison.
+is archived. The matched shaped seed-42 run has also completed 300 steps in
+53.4 minutes. It solves only 1/256 (0.39\%; Wilson 95\% 0.07--2.18\%), despite
+all 256 expressions being valid. The remaining 255 have wrong values, none
+are truncated, and strict and diagnostic scores agree. It gains one solution
+and loses 80 relative to binary reward, with no jointly correct puzzles:
+a $-30.86$ percentage-point difference. Both runs pass full audits and match
+in ordered puzzle lists, source, environment, and hardware. This seed shows
+improved validity alongside markedly lower correctness. Four runs remain;
+the paired result is not a multi-seed conclusion. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/8694c6tk}{shaped evaluation}
+preserves the raw evidence. Binary seed 43 is now training.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
