@@ -254,7 +254,16 @@ Both runs pass the full audit with identical ordered puzzles, source,
 environment, and hardware. This pair reverses the direction observed for
 seed 42; both seed-44 runs remain before the final multi-seed comparison.
 The \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/f4jnc8d5}{shaped seed-43 evaluation}
-archives the raw evidence. Binary seed 44 is now training.
+archives the raw evidence.
+
+Binary seed 44 completed 300 steps in 89.9 minutes and solves 84/256
+(32.81\%; Wilson 95\% 27.35--38.78\%), with strict/diagnostic agreement and
+167 truncated outputs. Diagnostic categories comprise 84 correct, 108 without a
+declared expression, 28 wrong values, 22 invalid expressions, and 14 number
+mismatches. The full audit passed. The three binary seeds therefore score 80,
+13, and 84 out of 256; seed 43 is far below the other two. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/80qr8909}{seed-44 evaluation}
+preserves the raw outputs. Shaped seed 44, the final run, is now training.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256

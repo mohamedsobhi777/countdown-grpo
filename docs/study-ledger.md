@@ -407,3 +407,15 @@ This reverses seed 42's direction; both seed-44 runs remain.
 Adapter `s6q8yswn-adapter:v0`, resumable checkpoint
 `model-shaped-43-train:v9`, results, all 300 completion logs, and evaluation
 are committed to W&B. Binary seed 44 (`rgyusdcc`) started automatically.
+
+### Binary seed 44 completed
+
+Binary seed 44 (`rgyusdcc`) completed 300 steps in 5391.7859 seconds
+(89.9 minutes). Evaluation `80qr8909` scored 84/256 (32.81%; Wilson 95%
+27.35–38.78%) with strict/diagnostic agreement and 167 truncated outputs.
+Diagnostic categories: 84 correct, 108 without a declared expression,
+28 wrong values, 22 invalid expressions, 14 number mismatches. The full local
+audit passed. Adapter `rgyusdcc-adapter:v0`, resumable step-300 checkpoint
+`model-binary-44-train:v6` (v7 is the final model without trainer state),
+results, and evaluation are committed to W&B. Shaped seed 44 started
+automatically; it is the last run in the grid.

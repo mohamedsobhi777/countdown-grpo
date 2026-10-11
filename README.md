@@ -327,7 +327,9 @@ expressions being valid. It gained one solution and lost 80 relative to binary
 reward. Binary seed 43 subsequently scored 13/256 strict correct (5.1%) and
 16/256 diagnostic correct (6.25%). Shaped seed 43 scored **19/256 (7.42%)**,
 with all expressions valid and no truncation: +2.34 percentage points versus
-binary for this seed. Both seed-44 runs remain; the multi-seed comparison is pending.
+binary for this seed. Binary seed 44 scored **84/256 (32.81%)**, so the three
+binary seeds score 80, 13, and 84. Shaped seed 44 remains; the multi-seed
+comparison is pending.
 [Audited interim evidence and W&B links](results/study/controlled-local-progress/README.md).
 
 ```bash

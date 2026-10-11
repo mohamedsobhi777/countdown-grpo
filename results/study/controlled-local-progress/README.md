@@ -1,7 +1,8 @@
 # Laptop controlled reward study: interim evidence
 
-Both rewards for seeds 42 and 43 are complete in `controlled-local-v2`.
-**Both seed-44 runs remain**; the final multi-seed reward comparison is pending.
+Both rewards for seeds 42 and 43, and binary seed 44, are complete in
+`controlled-local-v2`. **Shaped seed 44 remains**; the final multi-seed reward
+comparison is pending.
 Colab results are archived separately and are never pooled with this grid.
 
 The checkpoint solves **80/256 (31.25%)** held-out puzzles under greedy decoding
@@ -98,10 +99,30 @@ comparison does not measure uncertainty across training seeds.
 Both runs pass the full local audit and have identical ordered puzzles,
 source, environment, and hardware. The direction differs from seed 42;
 finish both seed-44 runs before interpreting the full reward comparison.
-Binary seed 44 is now training.
 
 - [Paired counts and provenance](seed-43-comparison.json)
 - [Shaped audited summary](shaped-43/summary.json)
 - [Raw evaluation](shaped-43/evaluation.json)
 - [Training](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/s6q8yswn)
 - [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/f4jnc8d5)
+
+## Binary seed 44 completed
+
+Binary seed 44 solves **84/256 (32.81%; Wilson 95% 27.35–38.78%)** after
+300 steps in 89.9 minutes. Strict and diagnostic scores agree. There are
+167 truncated outputs. Diagnostic categories are 84 correct, 108 without a
+declared expression, 28 wrong values, 22 invalid expressions, and 14 number
+mismatches; truncation overlaps these categories. The first positive training
+reward appeared at step 2.
+
+The full local audit passed, with identical ordered puzzles, source,
+environment, and hardware relative to the other local runs. The three binary
+seeds now score 80, 13, and 84 out of 256: seed 43 is far below the other two.
+Shaped seed 44 is now training.
+
+- [Audited summary](binary-44/summary.json)
+- [Raw evaluation](binary-44/evaluation.json)
+- [Training](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/rgyusdcc)
+- [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/80qr8909)
+- [Final adapter](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/rgyusdcc-adapter/v0)
+- [Resumable step-300 checkpoint](https://wandb.ai/mohamedsobhi777/countdown-grpo/artifacts/model/model-binary-44-train/v6)
