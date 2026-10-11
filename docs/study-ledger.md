@@ -353,3 +353,16 @@ checkout uses the existing main `.venv` with its own source on PYTHONPATH.
 No packages were installed or upgraded. Aggregate results will first appear in
 the isolated checkout's `results/study/controlled-local` and will be audited,
 plotted, and published to the main checkout after completion.
+
+### First laptop controlled run completed
+
+Binary seed 42 (`eudebo7g`) completed all 300 steps in 5368.2092 seconds
+(89.5 minutes). Evaluation `17gdgf7i` scored 80/256 (31.25%; Wilson 95%
+25.9–37.2%), with strict/diagnostic agreement and 162 truncated outputs.
+The complete local-profile audit passed, including raw-score recomputation,
+configuration, data separation/order, all training steps, and runtime provenance.
+Evidence is in `results/study/controlled-local-progress/binary-42`.
+Final adapter `eudebo7g-adapter:v0`, resume checkpoint
+`model-binary-42-train:v13`, results, and completion logs are committed to W&B.
+The queue advanced automatically to shaped seed 42. Five runs remain; no
+multi-seed or reward-comparison conclusion is available from this first run.
