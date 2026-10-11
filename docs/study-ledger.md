@@ -393,3 +393,17 @@ puzzles, source, environment, and hardware with binary seed 42.
 Adapter `d9it45u2-adapter:v0`, resumable checkpoint
 `model-binary-43-train:v13`, results, and all 300 completion logs are committed
 to W&B. Shaped seed 43 (`s6q8yswn`) started automatically; three runs remain.
+
+### Second matched laptop pair completed
+
+Shaped seed 43 (`s6q8yswn`) completed 300 steps in 2797.8899 seconds
+(46.6 minutes). Evaluation `f4jnc8d5` scored 19/256 (7.42%; Wilson 95%
+4.80–11.30%), with strict/diagnostic agreement, all expressions valid,
+237 wrong values, and zero truncation. The full local audit passed, including
+matching ordered puzzles, source, environment, and hardware with binary seed 43.
+Shaping gains 16 solutions and loses 10 (three jointly correct), a +2.34
+percentage-point difference; exact McNemar p=0.327 is exploratory/unadjusted.
+This reverses seed 42's direction; both seed-44 runs remain.
+Adapter `s6q8yswn-adapter:v0`, resumable checkpoint
+`model-shaped-43-train:v9`, results, all 300 completion logs, and evaluation
+are committed to W&B. Binary seed 44 (`rgyusdcc`) started automatically.

@@ -240,10 +240,21 @@ There are 219 truncated outputs. Diagnostic categories comprise 16 correct,
 38 wrong values, 66 number mismatches, 99 invalid expressions, and 37 without
 a declared expression. The full audit passed, with identical ordered puzzles,
 source, environment, and hardware relative to binary seed 42. These two binary
-runs show substantial seed variation; three runs remain before the planned
-multi-seed comparison. The
+runs show substantial seed variation. The
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/dmxcq1wh}{seed-43 evaluation}
-preserves the raw outputs. Shaped seed 43 is now training.
+preserves the raw outputs.
+
+Shaped seed 43 completed 300 steps in 46.6 minutes and solves 19/256
+(7.42\%; Wilson 95\% 4.80--11.30\%), with strict/diagnostic agreement,
+all 256 expressions valid, 237 wrong values, and no truncation. Compared with
+binary seed 43, it gains 16 solutions and loses 10, with three jointly correct:
+a $+2.34$ percentage-point difference. The exact paired McNemar $p=0.327$
+is exploratory and unadjusted, and does not measure training-seed uncertainty.
+Both runs pass the full audit with identical ordered puzzles, source,
+environment, and hardware. This pair reverses the direction observed for
+seed 42; both seed-44 runs remain before the final multi-seed comparison.
+The \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/f4jnc8d5}{shaped seed-43 evaluation}
+archives the raw evidence. Binary seed 44 is now training.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
