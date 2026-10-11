@@ -208,9 +208,19 @@ one clean detached source checkout, the existing Python 3.12 environment, and
 reference kernels. The earlier Colab results remain separate and are not pooled
 with this grid. The queue audits each completed job and requires all six local
 runs before reporting reward-group means. Training logs and checkpoints are
-streamed to W\&B; the
-\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/eudebo7g}{first laptop run}
-has started. No new laptop-controlled accuracy result is claimed yet.
+streamed to W\&B. The
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/eudebo7g}{binary seed-42 run}
+completed 300 steps in 89.5 minutes and solved 80/256 (31.25\%; Wilson 95\%
+25.9--37.2\%) in its
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/17gdgf7i}{held-out evaluation}.
+Strict and diagnostic scores agree; 162 outputs reach the token cap. Diagnostic
+outcomes are 80 correct, 136 without a declared expression, 31 number mismatches,
+five wrong values, and four invalid expressions. Truncation is an overlapping
+flag, not an established cause of failure. Raw-score, configuration, data, step,
+and runtime-provenance audits passed; the
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/judanvdy}{audited evidence}
+is archived. Shaped seed 42 is running. Five runs remain, so this is a single
+checkpoint result, not a multi-seed reward comparison.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256

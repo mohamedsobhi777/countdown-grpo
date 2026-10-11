@@ -302,8 +302,8 @@ with `uv sync --locked --extra train --extra fast`. On the study's L4, a five-st
 validation measured about 37.6 seconds per warm step versus 50.8 with the PyTorch
 fallback. These short-run timings are preliminary; kernel numerical differences
 and all trial evidence are documented in [the investigation](results/study/kernel-probe/README.md).
-The six controlled reward runs use FLA consistently; the original pilot and
-local transfer runs retain their fallback backend. Do not silently mix backends
+The archived Colab controlled runs use FLA; the replacement six-run laptop grid,
+original pilot, and local transfer runs use reference kernels. Do not silently mix backends
 within a comparison. Optional `causal-conv1d` remains uninstalled, and vLLM is
 left out of the initial
 implementation. Consult the [Qwen3.5 documentation](https://huggingface.co/docs/transformers/model_doc/qwen3_5)
@@ -319,6 +319,11 @@ Following Colab runtime loss, the full six-run reward comparison is being rerun
 on this laptop under `controlled-local-v2`. Earlier Colab results remain separate.
 The existing local environment and scientific settings are preserved.
 [Approved design and execution instructions](docs/local-controlled-recovery.md).
+
+The first local controlled run (binary seed 42) completed all 300 steps and scored
+**80/256 (31.25%; Wilson 95% 25.9–37.2%)**, with strict/diagnostic agreement.
+Five runs remain; this is not a final reward comparison.
+[Audited interim evidence and W&B links](results/study/controlled-local-progress/README.md).
 
 ```bash
 PYTHONPATH=src .venv/bin/python -u scripts/run_local_controlled.py
