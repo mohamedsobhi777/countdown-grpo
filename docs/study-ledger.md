@@ -340,3 +340,16 @@ on the RTX 4090 Laptop GPU, with all original scientific settings unchanged.
 A frozen detached checkout isolates training from ongoing documentation updates.
 The runner captures finished provenance and audits every completed job before
 aggregating the complete grid. Colab evidence remains separate.
+
+### Local queue launched
+
+After 48 CPU tests passed, tmux session `countdown-local-controlled` launched
+the six-run queue. Frozen source is `f0dbd20170a8c1ed02e06577702d53dba17d261b`,
+under `outputs/local-controlled-source`. Queue PID 4109686; first training run
+`eudebo7g` is binary seed 42. Logs are in
+`outputs/launch/controlled-local-v2.log`; job outputs and queue state are under
+`outputs/local-controlled-source/outputs/controlled-local-v2`. The isolated
+checkout uses the existing main `.venv` with its own source on PYTHONPATH.
+No packages were installed or upgraded. Aggregate results will first appear in
+the isolated checkout's `results/study/controlled-local` and will be audited,
+plotted, and published to the main checkout after completion.

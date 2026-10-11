@@ -153,8 +153,9 @@ and sample standard deviations, together with paired reward differences for each
 seed. Repeated evaluation of the same holdout is not pooled into 768 independent
 puzzles. Synthetic manifest tests reject unfinished runs and altered scores.
 The controlled aggregator additionally requires identical clean source, hardware,
-Python, normalized full package requirements, and pinned FLA versions across
-all six runs. The local transfer source/runtime audits are reported separately.
+Python, and normalized full package requirements across all six runs. Its Colab
+profile requires pinned FLA versions; its separately selected laptop profile
+requires the unchanged reference-kernel environment. The local transfer source/runtime audits are reported separately.
 
 \paragraph{Interim controlled reward result.}
 The first L4/FLA controlled run (binary reward, seed 42) completed 300 steps in
@@ -195,9 +196,21 @@ shaped run stopped at logged step 197 when the Colab runtime disappeared; the
 specific termination cause is not established. Its committed step-150 resumable
 checkpoint is secured locally. A replacement L4 allocation was rejected for
 quota or entitlement. The partial run is excluded from completed comparisons,
-and compute recovery remains pending. The
+and the user subsequently approved a complete six-run laptop rerun. The
 \href{https://github.com/mohamedsobhi777/countdown-grpo/tree/main/results/study/runtime-interruption}{interruption record}
 preserves evidence and distinguishes completed from interrupted work.
+
+\paragraph{Approved laptop rerun.}
+A fresh six-run grid, \texttt{controlled-local-v2}, is now running on the RTX 4090
+Laptop GPU. Binary and shaped rewards use seeds 42, 43, and 44 with the same
+scientific settings, puzzle split, and budgets. All runs start from scratch using
+one clean detached source checkout, the existing Python 3.12 environment, and
+reference kernels. The earlier Colab results remain separate and are not pooled
+with this grid. The queue audits each completed job and requires all six local
+runs before reporting reward-group means. Training logs and checkpoints are
+streamed to W\&B; the
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/eudebo7g}{first laptop run}
+has started. No new laptop-controlled accuracy result is claimed yet.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
