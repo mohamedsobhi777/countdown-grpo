@@ -314,3 +314,20 @@ puzzle, the base expression has exact value 1274/19 and the adapter answer is 66
 This is not an additional benchmark. Archived-mode checks remain documented
 separately. The demo and all transfer evaluations are now complete; four
 controlled reward runs and the final consolidated audit remain outstanding.
+
+## Colab runtime loss and recovery evidence
+
+The original runtime disappeared from the server. W&B confirms binary seed 43
+finished 300 steps in 11531.0974 seconds and evaluated at 64/256 (25.0%; Wilson
+95% 20.1–30.6%), with 180 truncated outputs. The collector secured its archive
+before runtime loss; full configuration, step, data, score, and provenance gates
+pass. It is published in `results/study/controlled-progress/binary-43`.
+
+Shaped seed 43 (`vd89ey0e`) is crashed with last logged step 197. Its committed
+step-150 checkpoint (`model-shaped-43-train:v3`) was downloaded and all resume
+files verified. Its partial evidence is preserved separately and excluded from
+completed comparisons. The termination cause is not established. Colab lists no
+active sessions; a replacement L4 request was rejected for quota/entitlement.
+The collector was stopped after confirming the session is gone. The user was
+asked to restore L4 access or choose a complete, consistently configured local
+rerun. Recovery is pending; the study remains incomplete.

@@ -1,0 +1,12 @@
+{
+  "state": "crashed",
+  "url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/vd89ey0e",
+  "summary": {
+    "train/global_step": 197,
+    "train/reward": 0.05000000074505806,
+    "runtime/seconds_per_step": 25.301250903055823,
+    "runtime/estimated_remaining_seconds": 2606.02884301475,
+    "runtime/peak_vram_gib": 2.567890167236328,
+    "_runtime": 5022.851413665
+  }
+}

@@ -61,3 +61,12 @@ This example illustrates the recorded failure category; it is not a separate
 estimate of its prevalence.
 
 [Audited seed-42 reward-pair evidence artifact](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/h8l3bwko).
+
+## Binary seed 43 and runtime interruption
+
+[Binary seed 43](binary-43/summary.json) passed the complete audit at
+**64/256 (25.0%; Wilson 95% 20.1–30.6%)**, with strict and diagnostic agreement
+and 180 truncated outputs. [Evaluation](https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/pz78iffl).
+Three controlled runs are complete. The next shaped run was interrupted;
+[recovery evidence](../runtime-interruption/README.md) records its saved checkpoint
+and the rejected replacement L4 request. The six-run comparison remains incomplete.

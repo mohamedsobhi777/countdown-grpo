@@ -1,0 +1,50 @@
+{
+  "os": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "python": "CPython 3.13.15",
+  "startedAt": "2026-10-10T23:09:34.929441Z",
+  "args": [
+    "train",
+    "--output-dir",
+    "outputs/controlled-l4-fla-v1/shaped-43/training",
+    "--config",
+    "configs/study/shaped-43.toml",
+    "--wandb",
+    "--group",
+    "controlled-l4-fla-v1",
+    "--run-name",
+    "shaped-43-train"
+  ],
+  "program": "-m countdown_grpo.cli",
+  "git": {
+    "remote": "https://github.com/mohamedsobhi777/countdown-grpo.git",
+    "commit": "1b97d4a38e463f964aee5386b83524ed37ca8f85"
+  },
+  "email": "mohamedsobhi777@gmail.com",
+  "root": "/content/countdown-grpo/outputs/wandb",
+  "host": "3e61249870bc",
+  "executable": "/content/countdown-grpo/.venv/bin/python",
+  "cpu_count": 6,
+  "cpu_count_logical": 12,
+  "gpu": "NVIDIA L4",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "253055008768",
+      "used": "58824224768"
+    }
+  },
+  "memory": {
+    "total": "56863334400"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA L4",
+      "memoryTotal": "24152899584",
+      "cudaCores": 7424,
+      "architecture": "Ada",
+      "uuid": "GPU-964be1a2-b161-8a40-ed1b-59380499c84b"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "cbkxx0ptou1hpxpwwonxsnatuf9ce27m"
+}

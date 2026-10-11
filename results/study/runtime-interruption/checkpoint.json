@@ -1,0 +1,7 @@
+{
+  "artifact": "mohamedsobhi777/countdown-grpo/model-shaped-43-train:v3",
+  "state": "COMMITTED",
+  "global_step": 150,
+  "last_logged_step": 197,
+  "scope": "Interrupted run; excluded from completed comparisons."
+}
