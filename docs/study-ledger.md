@@ -446,3 +446,33 @@ re-ran the 48 CPU tests and the archived-mode demo browser check, confirmed
 Overleaf matches the repository report, and resolved all 93 linked W&B runs
 and artifacts. It also fixed stale wording: the plan's unchecked boxes, the
 report's running-log tense, and "pending" notes on superseded interim pages.
+
+## Follow-up: checkpoint trajectory (pre-registered 2026-10-20, before any result)
+
+The final-checkpoint grid shows *that* the validity bonus lowered accuracy but
+not *how*: the report's "policy settles on the bonus" explanation rests only on
+step-300 outputs. This follow-up adds no training. It re-uses the laptop grid's
+committed W&B checkpoints and logged training samples.
+
+- **Held-out trajectory.** Evaluate the step 50, 100, 150, 200, 250 and 300
+  checkpoints of all six `controlled-local-v2` runs on the original 256-puzzle
+  holdout with the unchanged protocol (greedy, 256-token cap,
+  `declared-expression-v1`), plus the untrained base model as step 0. W&B group
+  `checkpoint-trajectory-v1`; runner `scripts/run_checkpoint_trajectory.py`.
+  Each checkpoint must be logged by the matching laptop training run and hold
+  the stated global step.
+- **Reproduction gate.** The step-300 checkpoint adapter is byte-identical to
+  each published final adapter, so its re-evaluation must reproduce the
+  published per-puzzle completions and scores exactly. Any mismatch is reported
+  and the trajectory is interpreted only up to it.
+- **Training-sample trajectory.** Re-score the 32 sampled completions logged at
+  each of the 300 steps of every run (W&B `run-<id>-completions` tables) with the
+  strict verifier and the diagnostic. Recomputed rewards must equal the logged
+  rewards.
+- **Questions.** (1) Did any shaped run reach higher held-out accuracy at an
+  intermediate checkpoint than at step 300, i.e. learn and then collapse, or
+  did it never learn? (2) When do valid-but-wrong answers become the majority in
+  shaped runs, relative to the first correct samples? (3) Is binary seed 43
+  still improving at step 300 or has it plateaued? Intermediate-checkpoint
+  differences are descriptive: six checkpoints per run, three seeds, no
+  multiplicity-adjusted tests.
