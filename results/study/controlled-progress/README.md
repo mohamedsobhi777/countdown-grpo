@@ -1,3 +1,5 @@
+> Historical record of the Colab/L4 grid, which was interrupted after three completed runs and never finished. The completed six-run comparison was rerun on the laptop: see [controlled-local](../controlled-local/README.md). "Pending" below describes the state when this page was written.
+
 # Controlled reward study: interim evidence
 
 The binary and shaped seed-42 runs are complete. **Four runs remain pending**;

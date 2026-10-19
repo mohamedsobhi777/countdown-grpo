@@ -65,10 +65,10 @@ The existing 300-step run is a pilot, not the entire study.
 - [x] Audit scores and failure categories; log evidence to W&B.
 - [x] Create and compile initial Overleaf report.
 - [x] Run matched output-budget evaluations.
-- [ ] Run fixed-split, multi-seed reward comparisons.
+- [x] Run fixed-split, multi-seed reward comparisons (laptop grid `controlled-local-v2`; see [results](../results/study/controlled-local/README.md)).
 - [x] Run three-to-four-number transfer and distribution-shift evaluations.
 - [x] Build and verify the interactive comparison demo.
-- [ ] Publish complete report and perform requirement-by-requirement audit.
+- [x] Publish complete report and perform requirement-by-requirement audit ([completion audit](completion-audit.md), 2026-10-20).
 
 ## Approved compute recovery
 

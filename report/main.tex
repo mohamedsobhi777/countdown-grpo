@@ -5,15 +5,15 @@
 \usepackage{enumitem}
 \title{Arithmetic, Answer Formatting, and Generalization\\in a Tiny Language Model Trained with GRPO}
 \author{Mohamed Sobhy}
-\date{Living experiment report --- October 2026}
+\date{Experiment report --- October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
 This project investigates direct reinforcement learning on a pretrained
 0.8-billion-parameter language model for Countdown arithmetic. A pilot run
 improved strict greedy accuracy from 0/256 to 85/256 (33.2\%) on a fixed held-out
-set after 300 optimizer steps. This report distinguishes measured findings from
-planned experiments. A post-hoc audit using a conservative declared-expression
+set after 300 optimizer steps. Every experiment reported here is complete, and
+the report distinguishes measured findings from interpretation. A post-hoc audit using a conservative declared-expression
 parser recovers the same correct counts when the answer-tag requirement is
 relaxed. This supports investigating arithmetic task improvement, while not
 establishing general reasoning or fully identifying the role of formatting.
@@ -119,7 +119,7 @@ category (20 records total) found agreement with the specified extraction rule;
 this is not a blinded human annotation study. Prose-heavy and incomplete outputs
 illustrate the parser's coverage limitations.
 
-\section{Controlled study design and current status}
+\section{Study design}
 The study keeps the original strict metric alongside the diagnostic. The matched
 budget grid and mixed-arity pilot generalization grid are complete. All three
 transfer seeds and all six laptop controlled reward runs are complete:
@@ -133,8 +133,9 @@ transfer seeds and all six laptop controlled reward runs are complete:
       inputs and out-of-range targets; solutions are never included in prompts.
 \item A comparison demo with exact verifier feedback and archived examples.
 \end{itemize}
-Per-seed results and held-out uncertainty will be reported separately. Four
-distribution-shift/arity suites have been frozen before querying trained models.
+Per-seed results and held-out uncertainty are reported in the sections that
+follow. The four distribution-shift/arity suites were frozen before any trained
+model was queried on them.
 
 \paragraph{Uncertainty and paired analysis.} Individual checkpoint accuracies use
 95\% Wilson score intervals, following the
@@ -157,7 +158,7 @@ Python, and normalized full package requirements across all six runs. Its Colab
 profile requires pinned FLA versions; its separately selected laptop profile
 requires the unchanged reference-kernel environment. The local transfer source/runtime audits are reported separately.
 
-\paragraph{Interim controlled reward result.}
+\paragraph{Archived Colab/L4 controlled runs (incomplete grid).}
 The first L4/FLA controlled run (binary reward, seed 42) completed 300 steps in
 192.9 minutes and solves 68/256 held-out puzzles (26.6\%; 95\% Wilson interval
 21.5--32.3\%). Strict and diagnostic scores agree; 174/256 outputs are truncated.
@@ -169,8 +170,9 @@ are committed in W\&B. Diagnostic outcomes comprise 68 correct expressions,
 eight wrong values, and one ambiguous or incomplete answer. Truncation overlaps
 these categories. \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/9xwjji2l}{Evaluation evidence}
 and raw outputs are archived under \texttt{results/study/controlled-progress}.
-The matched shaped seed-42 run has also completed. Binary seed 43 subsequently
-finished; shaped seed 43 was interrupted and both seed-44 runs remain unstarted.
+The matched shaped seed-42 run also completed. Binary seed 43 later finished,
+shaped seed 43 was interrupted, and neither seed-44 run was started on Colab;
+the whole grid was instead rerun on the laptop (below).
 The historical laptop/fallback pilot used a different runtime environment, so
 its 85/256 score cannot isolate a hardware or kernel effect relative to this run.
 
@@ -182,9 +184,9 @@ full per-answer audits and have identical ordered puzzle lists, clean source,
 Python, full normalized requirements, optional kernels, and hardware metadata.
 Shaped reward gains 11 solutions and loses 53 relative to binary reward, with
 15 jointly correct: a $-16.4$ percentage-point difference for this seed.
-This is improved expression validity alongside lower correctness, not a completed
-multi-seed conclusion. Raw training rewards differ in definition and cannot be
-compared directly. At that point three Colab controlled runs remained incomplete.
+This single pair showed improved expression validity alongside lower correctness.
+Raw training rewards differ in definition and cannot be compared directly.
+The remaining three Colab controlled runs were never completed.
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/83tmr7i5}{Shaped evaluation}
 and the repository's \texttt{seed-42-comparison.json} preserve the evidence.
 
@@ -200,13 +202,13 @@ and the user subsequently approved a complete six-run laptop rerun. The
 \href{https://github.com/mohamedsobhi777/countdown-grpo/tree/main/results/study/runtime-interruption}{interruption record}
 preserves evidence and distinguishes completed from interrupted work.
 
-\paragraph{Approved laptop rerun.}
-A fresh six-run grid, \texttt{controlled-local-v2}, is now running on the RTX 4090
+\paragraph{Approved laptop rerun: per-run results.}
+A fresh six-run grid, \texttt{controlled-local-v2}, was run on the RTX 4090
 Laptop GPU. Binary and shaped rewards use seeds 42, 43, and 44 with the same
 scientific settings, puzzle split, and budgets. All runs start from scratch using
 one clean detached source checkout, the existing Python 3.12 environment, and
 reference kernels. The earlier Colab results remain separate and are not pooled
-with this grid. The queue audits each completed job and requires all six local
+with this grid. The queue audited each completed job and required all six local
 runs before reporting reward-group means. Training logs and checkpoints are
 streamed to W\&B. The
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/eudebo7g}{binary seed-42 run}
@@ -226,8 +228,7 @@ are truncated, and strict and diagnostic scores agree. It gains one solution
 and loses 80 relative to binary reward, with no jointly correct puzzles:
 a $-30.86$ percentage-point difference. Both runs pass full audits and match
 in ordered puzzle lists, source, environment, and hardware. This seed shows
-improved validity alongside markedly lower correctness. At that point four runs remained;
-the paired result is not a multi-seed conclusion. The
+improved validity alongside markedly lower correctness. The
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/8694c6tk}{shaped evaluation}
 preserves the raw evidence.
 
@@ -252,7 +253,7 @@ a $+2.34$ percentage-point difference. The exact paired McNemar $p=0.327$
 is exploratory and unadjusted, and does not measure training-seed uncertainty.
 Both runs pass the full audit with identical ordered puzzles, source,
 environment, and hardware. This pair reverses the direction observed for
-seed 42; both seed-44 runs remain before the final multi-seed comparison.
+seed 42.
 The \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/f4jnc8d5}{shaped seed-43 evaluation}
 archives the raw evidence.
 
@@ -467,7 +468,8 @@ not learning quality. The original training process resumed automatically after
 a recorded 266.62-second suspension. On this evidence, the fallback attempt was
 subsequently stopped after 41 steps and archived, and all six controlled reward
 runs were restarted consistently with the pinned FLA backend in
-\texttt{controlled-l4-fla-v1}. Neither short trial enters the completed reward
+\texttt{controlled-l4-fla-v1}; that grid was later interrupted by the runtime
+loss described above. Neither short trial enters the completed reward
 comparison. Original pilot and local transfer runs retain their fallback backend;
 this distinction must be retained in interpretation and reproduction.
 
@@ -515,11 +517,14 @@ validation, statistical analysis, demo HTTP behavior, schema compatibility,
 and remote archive-integrity checks. These tests do not substitute for the
 training runs themselves or live model/browser validation.
 
-An automatic collector preserves each completed remote job and exports W\&B
-hardware and software provenance. The dedicated L4 VM is released only after
-all six completed jobs are downloaded and validated; aggregate analysis then
-runs locally. These safeguards do not imply that pending experiments have
-completed.
+For the Colab runs, an automatic collector preserved each completed remote job
+and exported W\&B hardware and software provenance before any VM was released.
+For the laptop grid, the queue controller
+(\texttt{scripts/run\_local\_controlled.py}) exported provenance and audited
+each job as it finished, and computed the aggregate only after all six runs had
+passed. Every W\&B run and artifact link in the repository and this report was
+re-resolved through the W\&B API on 20 October 2026; the only non-finished
+linked runs are the three interrupted runs described above.
 
 \paragraph{Local transfer source audit.}
 The first transfer run reports a dirty working tree at commit

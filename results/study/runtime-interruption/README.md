@@ -1,3 +1,5 @@
+> Historical record. The interrupted Colab grid was not resumed; the user approved a full six-run laptop rerun, which is complete: see [controlled-local](../controlled-local/README.md).
+
 # Colab runtime interruption
 
 The original `countdown-study` session disappeared from the server. W&B records

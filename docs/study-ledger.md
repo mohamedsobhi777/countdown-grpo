@@ -437,3 +437,12 @@ ordered puzzles) and logged the analysis to W&B. Binary mean accuracy 23.05%
 difference −17.32 pp (SD 17.43 pp). Final results, figure, and findings are in
 `results/study/controlled-local`. The figure was produced with
 `python3 scripts/plot_seed_studies.py controlled --source results/study/controlled-local/summary.json`.
+
+## Completion audit, 2026-10-20
+
+Requirement-by-requirement audit against the approved plan:
+[completion-audit.md](completion-audit.md). Every deliverable is met. The audit
+re-ran the 48 CPU tests and the archived-mode demo browser check, confirmed
+Overleaf matches the repository report, and resolved all 93 linked W&B runs
+and artifacts. It also fixed stale wording: the plan's unchecked boxes, the
+report's running-log tense, and "pending" notes on superseded interim pages.

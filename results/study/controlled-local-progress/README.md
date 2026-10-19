@@ -1,3 +1,5 @@
+> Superseded by the [final six-run analysis](../controlled-local/README.md). The per-run records below were written as each run finished, so "pending" refers to runs that have since completed.
+
 # Laptop controlled reward study: interim evidence
 
 All six runs in `controlled-local-v2` are complete. This page keeps the

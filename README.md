@@ -8,8 +8,9 @@ using BF16 LoRA and Hugging Face TRL's GRPO trainer.
 **Expanded study:** separating arithmetic success from formatting,
 testing output budgets, comparing rewards across three seeds, and measuring
 generalization. See the [study ledger](docs/study-ledger.md),
-[Overleaf report](https://www.overleaf.com/project/6aca3d97baaac8402a980db8), and
-[compiled report](report/main.pdf). The section below describes the original pilot.
+[Overleaf report](https://www.overleaf.com/project/6aca3d97baaac8402a980db8),
+[compiled report](report/main.pdf), and the requirement-by-requirement
+[completion audit](docs/completion-audit.md). The section below describes the original pilot.
 
 **Controlled reward comparison (complete, six laptop runs):** binary correctness
 reward averaged **23.0%** held-out accuracy across seeds 42/43/44 (80, 13, 84 of 256),
