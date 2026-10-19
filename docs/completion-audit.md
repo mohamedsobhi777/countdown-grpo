@@ -48,5 +48,8 @@ The original improvement proposal (2026-10-10) also suggested showing how
 failure categories change *during* training. The approved plan dropped that
 item, and nothing in the study measured it. The study's main mechanistic claim,
 that shaped policies settle on the validity bonus, rested only on final
-checkpoints. The checkpoint-trajectory follow-up in
-[study-ledger.md](study-ledger.md) addresses this.
+checkpoints. The checkpoint-trajectory follow-up, pre-registered in
+[study-ledger.md](study-ledger.md), measured it on 2026-10-20: see
+[checkpoint-trajectory](../results/study/checkpoint-trajectory/README.md). Both
+of its integrity gates passed: exact step-300 reproduction and exact training-reward
+recomputation.

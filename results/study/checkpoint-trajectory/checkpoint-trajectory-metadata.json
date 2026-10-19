@@ -1,0 +1,7 @@
+{
+  "source": "results/study/checkpoint-trajectory/summary.json",
+  "source_sha256": "5cb8d793b9513a7bb3b04b70b4311bb90c8894b6a2b1cec0e3998713b3d71c42",
+  "script": "scripts/plot_checkpoint_trajectory.py",
+  "matplotlib": "3.6.3",
+  "rolling_window_steps": 25
+}

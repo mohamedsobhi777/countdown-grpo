@@ -21,6 +21,14 @@ points) and slightly better on the seed where binary training largely failed
 expressions that were mostly wrong — the bonus became the easier target.
 [Final results and figure](results/study/controlled-local/README.md).
 
+**When the bonus takes over (checkpoint trajectory):** re-evaluating the step 50–300
+checkpoints of all six runs (their step-300 re-evaluations reproduce the published results
+exactly) shows that shaped runs never learned and then collapsed. By step 50–100, 89–100% of their held-out answers were
+valid but wrong, and accuracy then stayed flat while binary runs kept climbing (seed 44: 14 → 84
+solves). The weakest binary seed received no nonzero reward, and so no gradient, for its first 76
+steps; its step-50 model is identical to the base model, and it was still improving at step 300.
+[Trajectory results and figure](results/study/checkpoint-trajectory/README.md).
+
 ## Results
 
 One 300-step run improved greedy exact-solve accuracy from **0/256 to 85/256

@@ -1,0 +1,6832 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3.5-0.8B-Base",
+    "model_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+    "dataset": "Jiayi-Pan/Countdown-Tasks-3to4",
+    "dataset_revision": "408f70d177020686d34a56bba5952feb45aaaee4",
+    "output_dir": "outputs/countdown",
+    "seed": 44,
+    "split_seed": 42,
+    "train_num_count": null,
+    "eval_fraction": 0.02,
+    "eval_samples": 256,
+    "train_samples": 20000,
+    "max_steps": 300,
+    "max_completion_length": 256,
+    "num_generations": 8,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 32,
+    "learning_rate": 1e-05,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "save_steps": 50,
+    "format_reward": 0.05
+  },
+  "adapter": "outputs/checkpoint-trajectory-v1/shaped-44/step-50/adapter",
+  "decoding": "greedy",
+  "samples": 256,
+  "solve_rate": 0.09375,
+  "valid_rate": 0.984375,
+  "diagnostic_solve_rate": 0.09375,
+  "truncation_rate": 0.0,
+  "generation_seconds": 62.51722383897868,
+  "diagnostic_policy": "declared-expression-v1",
+  "wandb_url": "https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/3pm987e2",
+  "suite": "original-holdout",
+  "suite_sha256": null,
+  "results": [
+    {
+      "target": 81,
+      "nums": [
+        2,
+        4,
+        55,
+        25
+      ],
+      "completion": "(2 + 4) * (55 - 25) = 81\n\n<answer>(2 + 4) * (55 - 25)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 42,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(2 + 4) * (55 - 25)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "180"
+      }
+    },
+    {
+      "target": 58,
+      "nums": [
+        22,
+        2,
+        78,
+        57
+      ],
+      "completion": "(22 + 2) - 78 + 57 = 58\n\n<answer>(22 + 2) - 78 + 57</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(22 + 2) - 78 + 57",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "3"
+      }
+    },
+    {
+      "target": 66,
+      "nums": [
+        67,
+        54,
+        98,
+        19
+      ],
+      "completion": "(67 - 54) + 98 - 19 = 66\n\n<answer>(67-54)+98-19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(67-54)+98-19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "92"
+      }
+    },
+    {
+      "target": 75,
+      "nums": [
+        1,
+        26,
+        51,
+        17
+      ],
+      "completion": "(1 + 26) - 51 + 17 = 75\n\n<answer>(1 + 26) - 51 + 17</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(1 + 26) - 51 + 17",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-7"
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        9,
+        31,
+        67
+      ],
+      "completion": "(9 + 31) - 67 = 45\n\n<answer>(9 + 31) - 67</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(9 + 31) - 67",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-27"
+      }
+    },
+    {
+      "target": 77,
+      "nums": [
+        1,
+        30,
+        79,
+        60
+      ],
+      "completion": "(79 - 30) + 60 = 77\n\n<answer>(79-30)+60</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(79-30)+60",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          1
+        ],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        27,
+        83,
+        5,
+        5
+      ],
+      "completion": "(27 - 83) + 5 = 55\n\n<answer>(27-83)+5</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(27-83)+5",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          5
+        ],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 46,
+      "nums": [
+        65,
+        20,
+        41,
+        42
+      ],
+      "completion": "(65 - 20) + (41 + 42) = 46\n\n<answer>(65 - 20) + (41 + 42)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(65 - 20) + (41 + 42)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "128"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        42,
+        40,
+        12,
+        29
+      ],
+      "completion": "(42 + 40) - 12 + 29 = 82\n\n<answer>(42 + 40) - 12 + 29</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(42 + 40) - 12 + 29",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "99"
+      }
+    },
+    {
+      "target": 59,
+      "nums": [
+        65,
+        9,
+        53,
+        11
+      ],
+      "completion": "(65 - 9) + (53 - 11) = 59\n\n<answer>(65 - 9) + (53 - 11)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(65 - 9) + (53 - 11)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "98"
+      }
+    },
+    {
+      "target": 89,
+      "nums": [
+        70,
+        40,
+        20,
+        17
+      ],
+      "completion": "(70 - 40) + (20 - 17) = 89\n\n<answer>(70 - 40) + (20 - 17)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(70 - 40) + (20 - 17)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "33"
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        26,
+        96,
+        4
+      ],
+      "completion": "(26 + 96) - 4 = 50\n\n<answer>(26+96)-4</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(26+96)-4",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "118"
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        8,
+        8,
+        34
+      ],
+      "completion": "(8 + 8) - 34 = 50\n\n<answer>(8 + 8) - 34</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 33,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(8 + 8) - 34",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-18"
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        13,
+        88,
+        6
+      ],
+      "completion": "(13 + 88) - 6 = 109 - 6 = 103\n\n<answer>(13 + 88) - 6</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(13 + 88) - 6",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "95"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        67,
+        65,
+        41
+      ],
+      "completion": "(67 - 65) + 41 = 82\n\n<answer>(67-65)+41</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(67-65)+41",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "43"
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        92,
+        95,
+        99
+      ],
+      "completion": "(92 + 95) - 99 = 33\n\n<answer>(92 + 95) - 99</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(92 + 95) - 99",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "88"
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        92,
+        28,
+        43,
+        53
+      ],
+      "completion": "(92 - 28) + (43 + 53) = 32\n\n<answer>(92 - 28) + (43 + 53)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(92 - 28) + (43 + 53)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "160"
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        10,
+        4,
+        16
+      ],
+      "completion": "(10 + 4) * 16 = 56\n\n<answer>(10 + 4) * 16</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(10 + 4) * 16",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "224"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        55,
+        75,
+        46,
+        16
+      ],
+      "completion": "(55 + 75) - (46 - 16) = 69\n\n<answer>(55 + 75) - (46 - 16)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(55 + 75) - (46 - 16)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "100"
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        47,
+        16,
+        4,
+        14
+      ],
+      "completion": "(47 - 16) + 4 - 14 = 98\n\n<answer>(47-16)+4-14</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47-16)+4-14",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "21"
+      }
+    },
+    {
+      "target": 22,
+      "nums": [
+        73,
+        19,
+        47,
+        15
+      ],
+      "completion": "(73 - 19) + 47 - 15 = 22\n\n<answer>(73 - 19) + 47 - 15</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(73 - 19) + 47 - 15",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "86"
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        25,
+        91,
+        90
+      ],
+      "completion": "(25 - 91) + 90 = 24\n\n<answer>(25-91)+90</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(25-91)+90",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "24"
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        43,
+        24,
+        61
+      ],
+      "completion": "(43 - 24) + 61 = 42\n\n<answer>(43 - 24) + 61</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(43 - 24) + 61",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "80"
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        26,
+        21,
+        20
+      ],
+      "completion": "(26 - 21) + 20 = 100\n\n<answer>(26 - 21) + 20</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 38,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(26 - 21) + 20",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "25"
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        14,
+        29,
+        36
+      ],
+      "completion": "(14 + 29) - 36 = 98\n\n<answer>(14 + 29) - 36</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(14 + 29) - 36",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "7"
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        69,
+        11,
+        26
+      ],
+      "completion": "(69 - 11) + 26 = 54\n\n<answer>(69 - 11) + 26</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(69 - 11) + 26",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "84"
+      }
+    },
+    {
+      "target": 40,
+      "nums": [
+        46,
+        29,
+        10,
+        47
+      ],
+      "completion": "(46 + 29) - 10 + 47 = 40\n\n<answer>(46 + 29) - 10 + 47</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(46 + 29) - 10 + 47",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "112"
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        19,
+        17,
+        76
+      ],
+      "completion": "(19 + 17) - 76 = 74\n\n<answer>(19 + 17) - 76</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(19 + 17) - 76",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-40"
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        65,
+        79,
+        49
+      ],
+      "completion": "(65 - 49) + 79 = 35\n\n<answer>(65-49)+79</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(65-49)+79",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "95"
+      }
+    },
+    {
+      "target": 64,
+      "nums": [
+        10,
+        81,
+        7
+      ],
+      "completion": "(10 + 81) - 7 = 64\n\n<answer>(10 + 81) - 7</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(10 + 81) - 7",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "84"
+      }
+    },
+    {
+      "target": 29,
+      "nums": [
+        60,
+        58,
+        14,
+        48
+      ],
+      "completion": "(60 - 58) + 14 + 48 = 29\n\n<answer>(60 - 58) + 14 + 48</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(60 - 58) + 14 + 48",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "64"
+      }
+    },
+    {
+      "target": 66,
+      "nums": [
+        13,
+        25,
+        44,
+        11
+      ],
+      "completion": "(13 + 25) - 44 + 11 = 66\n\n<answer>(13 + 25) - 44 + 11</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(13 + 25) - 44 + 11",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "5"
+      }
+    },
+    {
+      "target": 36,
+      "nums": [
+        96,
+        7,
+        44,
+        56
+      ],
+      "completion": "(96 - 44) + 7 + 56 = 36\n\n<answer>(96-44)+7+56</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(96-44)+7+56",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "115"
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        62,
+        87,
+        30
+      ],
+      "completion": "(62 + 87) - 30 = 55\n\n<answer>(62 + 87) - 30</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(62 + 87) - 30",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "119"
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        26,
+        38,
+        37
+      ],
+      "completion": "(26 + 38) - 37 = 49\n\n<answer>(26 + 38) - 37</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(26 + 38) - 37",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "27"
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        48,
+        30,
+        60
+      ],
+      "completion": "(48 + 30) - 60 = 42\n\n<answer>(48 + 30) - 60</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(48 + 30) - 60",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "18"
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        15,
+        18,
+        99
+      ],
+      "completion": "(15 + 18) - 99 = 33\n\n<answer>(15 + 18) - 99</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(15 + 18) - 99",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-66"
+      }
+    },
+    {
+      "target": 16,
+      "nums": [
+        2,
+        78,
+        86,
+        81
+      ],
+      "completion": "(78 + 86) - 81 + 2 = 16\n\n<answer>(78+86)-81+2</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(78+86)-81+2",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "85"
+      }
+    },
+    {
+      "target": 79,
+      "nums": [
+        75,
+        10,
+        63,
+        23
+      ],
+      "completion": "(75 - 10) + 63 + 23 = 79\n\n<answer>(75-10)+63+23</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(75-10)+63+23",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "151"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        2,
+        94,
+        27
+      ],
+      "completion": "(2 + 94 - 27) = 69\n\n<answer>(2 + 94 - 27)</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(2 + 94 - 27)",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "69"
+      }
+    },
+    {
+      "target": 83,
+      "nums": [
+        32,
+        86,
+        60,
+        77
+      ],
+      "completion": "(32 + 86) - 60 + 77 = 83\n\n<answer>(32 + 86) - 60 + 77</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(32 + 86) - 60 + 77",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "135"
+      }
+    },
+    {
+      "target": 57,
+      "nums": [
+        7,
+        46,
+        18
+      ],
+      "completion": "(7 + 46) - 18 = 57\n\n<answer>(7 + 46) - 18</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(7 + 46) - 18",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "35"
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        64,
+        66,
+        64
+      ],
+      "completion": "(64 + 64) - 66 = 67\n\n<answer>(64 + 64) - 66</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(64 + 64) - 66",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "62"
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        11,
+        23,
+        29,
+        35
+      ],
+      "completion": "(23 - 11) + 29 + 35 = 28\n\n<answer>(23 - 11) + 29 + 35</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(23 - 11) + 29 + 35",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "76"
+      }
+    },
+    {
+      "target": 31,
+      "nums": [
+        90,
+        22,
+        69,
+        59
+      ],
+      "completion": "(90 - 22) + 69 + 59 = 31\n\n<answer>(90 - 22) + 69 + 59</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(90 - 22) + 69 + 59",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "196"
+      }
+    },
+    {
+      "target": 75,
+      "nums": [
+        37,
+        98,
+        71,
+        11
+      ],
+      "completion": "(37 + 98) - 71 + 11 = 75\n\n<answer>(37 + 98) - 71 + 11</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(37 + 98) - 71 + 11",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "75"
+      }
+    },
+    {
+      "target": 41,
+      "nums": [
+        47,
+        48,
+        41
+      ],
+      "completion": "(47 - 48) + 41 = 41\n\n<answer>(47 - 48) + 41</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 - 48) + 41",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "40"
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        46,
+        67,
+        77
+      ],
+      "completion": "(46 + 67) - 77 = 98\n\n<answer>(46+67)-77</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(46+67)-77",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "36"
+      }
+    },
+    {
+      "target": 43,
+      "nums": [
+        56,
+        41,
+        28
+      ],
+      "completion": "(56 - 41) + 28 = 43\n\n<answer>(56-41)+28</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(56-41)+28",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "43"
+      }
+    },
+    {
+      "target": 48,
+      "nums": [
+        23,
+        38,
+        88,
+        46
+      ],
+      "completion": "(23 + 38) - (88 - 46) = 48\n\n<answer>(23 + 38) - (88 - 46)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(23 + 38) - (88 - 46)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "19"
+      }
+    },
+    {
+      "target": 61,
+      "nums": [
+        33,
+        52,
+        80
+      ],
+      "completion": "(33 + 52) - 80 = 61\n\n<answer>(33 + 52) - 80</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(33 + 52) - 80",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "5"
+      }
+    },
+    {
+      "target": 97,
+      "nums": [
+        85,
+        43,
+        26,
+        36
+      ],
+      "completion": "(85 - 43) + (26 + 36) = 97\n\n<answer>(85 - 43) + (26 + 36)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(85 - 43) + (26 + 36)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "104"
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        99,
+        33,
+        47
+      ],
+      "completion": "(99 - 33) + 47 = 85\n\n<answer>(99 - 33) + 47</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(99 - 33) + 47",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "113"
+      }
+    },
+    {
+      "target": 64,
+      "nums": [
+        16,
+        24,
+        72
+      ],
+      "completion": "(16 + 24) - 72 = 64\n\n<answer>(16 + 24) - 72</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(16 + 24) - 72",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-32"
+      }
+    },
+    {
+      "target": 23,
+      "nums": [
+        10,
+        82,
+        69
+      ],
+      "completion": "(10 + 82 - 69) = 23\n\n<answer>(10 + 82 - 69)</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 36,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(10 + 82 - 69)",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "23"
+      }
+    },
+    {
+      "target": 87,
+      "nums": [
+        12,
+        94,
+        71,
+        98
+      ],
+      "completion": "(94 - 12) + (71 + 98) = 87\n\n<answer>(94 - 12) + (71 + 98)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(94 - 12) + (71 + 98)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "251"
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        17,
+        96,
+        91,
+        17
+      ],
+      "completion": "(96 - 17) + 91 - 17 = 28\n\n<answer>(96-17)+91-17</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(96-17)+91-17",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "153"
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        41,
+        91,
+        88,
+        44
+      ],
+      "completion": "(41 + 91) - (88 - 44) = 100\n\n<answer>(41 + 91) - (88 - 44)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 47,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(41 + 91) - (88 - 44)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "88"
+      }
+    },
+    {
+      "target": 38,
+      "nums": [
+        7,
+        40,
+        63,
+        22
+      ],
+      "completion": "(7 + 40) - 63 + 22 = 38\n\n<answer>(7 + 40) - 63 + 22</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(7 + 40) - 63 + 22",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "6"
+      }
+    },
+    {
+      "target": 37,
+      "nums": [
+        15,
+        25,
+        3
+      ],
+      "completion": "(15 + 25) - 3 = 37\n\n<answer>(15 + 25) - 3</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(15 + 25) - 3",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "37"
+      }
+    },
+    {
+      "target": 30,
+      "nums": [
+        75,
+        47,
+        92
+      ],
+      "completion": "(75 - 47) + 92 = 30\n\n<answer>(75-47)+92</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(75-47)+92",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "120"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        57,
+        49,
+        36,
+        52
+      ],
+      "completion": "(57 - 49) + 36 + 52 = 69\n\n<answer>(57-49)+36+52</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(57-49)+36+52",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "96"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        5,
+        80,
+        7
+      ],
+      "completion": "(5 + 80 - 7) = 82\n\n<answer>(5 + 80 - 7)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(5 + 80 - 7)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "78"
+      }
+    },
+    {
+      "target": 90,
+      "nums": [
+        19,
+        99,
+        10
+      ],
+      "completion": "(19 + 99 - 10) = 90\n\n<answer>(19 + 99 - 10)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 36,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(19 + 99 - 10)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "108"
+      }
+    },
+    {
+      "target": 38,
+      "nums": [
+        33,
+        19,
+        38,
+        62
+      ],
+      "completion": "(33 + 19) + 38 - 62 = 38\n\n<answer>(33 + 19) + 38 - 62</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(33 + 19) + 38 - 62",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "28"
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        35,
+        85,
+        19,
+        69
+      ],
+      "completion": "(35 + 85) - 19 + 69 = 100\n\n<answer>(35 + 85) - 19 + 69</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(35 + 85) - 19 + 69",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "170"
+      }
+    },
+    {
+      "target": 79,
+      "nums": [
+        69,
+        8,
+        80
+      ],
+      "completion": "(80 - 69) + 8 = 79\n\n<answer>(80-69)+8</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(80-69)+8",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "19"
+      }
+    },
+    {
+      "target": 91,
+      "nums": [
+        54,
+        3,
+        71
+      ],
+      "completion": "(54 + 3) - 71 = 91\n\n<answer>(54 + 3) - 71</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(54 + 3) - 71",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-14"
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        12,
+        16,
+        42
+      ],
+      "completion": "(12 + 16) - 42 = 56\n\n<answer>(12 + 16) - 42</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(12 + 16) - 42",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-14"
+      }
+    },
+    {
+      "target": 83,
+      "nums": [
+        80,
+        92,
+        95
+      ],
+      "completion": "(92 - 80) + 95 = 83\n\n<answer>(92-80)+95</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(92-80)+95",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "107"
+      }
+    },
+    {
+      "target": 60,
+      "nums": [
+        12,
+        47,
+        25
+      ],
+      "completion": "(12 + 47) - 25 = 60\n\n<answer>(12 + 47) - 25</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(12 + 47) - 25",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "34"
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        91,
+        4,
+        29,
+        92
+      ],
+      "completion": "(91 - 4) * 29 + 92 = 24\n\n<answer>(91-4)*29+92</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(91-4)*29+92",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "2615"
+      }
+    },
+    {
+      "target": 94,
+      "nums": [
+        8,
+        82,
+        15,
+        50
+      ],
+      "completion": "(82 - 8) + 15 + 50 = 94\n\n<answer>(82-8)+15+50</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(82-8)+15+50",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "139"
+      }
+    },
+    {
+      "target": 15,
+      "nums": [
+        12,
+        36,
+        33
+      ],
+      "completion": "(12 + 36) - 33 = 15\n\n<answer>(12 + 36) - 33</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(12 + 36) - 33",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "15"
+      }
+    },
+    {
+      "target": 96,
+      "nums": [
+        9,
+        23,
+        82
+      ],
+      "completion": "(9 + 23) - 82 = 96\n\n<answer>(9 + 23) - 82</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(9 + 23) - 82",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-50"
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        57,
+        27,
+        69
+      ],
+      "completion": "(57 - 27) + 69 = 99\n\n<answer>(57-27)+69</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(57-27)+69",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "99"
+      }
+    },
+    {
+      "target": 39,
+      "nums": [
+        28,
+        4,
+        6,
+        79
+      ],
+      "completion": "(28 + 4) - 6 + 79 = 39\n\n<answer>(28 + 4) - 6 + 79</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(28 + 4) - 6 + 79",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "105"
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        5,
+        71,
+        22,
+        89
+      ],
+      "completion": "(71 - 5) + 22 + 89 = 109\n\n<answer>(71-5)+22+89</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 40,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(71-5)+22+89",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "177"
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        52,
+        89,
+        93
+      ],
+      "completion": "(52 + 89) - 93 = 56\n\n<answer>(52 + 89) - 93</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(52 + 89) - 93",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        76,
+        84,
+        34
+      ],
+      "completion": "(76 - 84) + 34 = 42\n\n<answer>(76-84)+34</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(76-84)+34",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "26"
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        24,
+        91,
+        35
+      ],
+      "completion": "(24 + 91) - 35 = 32\n\n<answer>(24 + 91) - 35</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(24 + 91) - 35",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "80"
+      }
+    },
+    {
+      "target": 46,
+      "nums": [
+        76,
+        87,
+        35
+      ],
+      "completion": "(76 - 87) + 35 = 46\n\n<answer>(76 - 87) + 35</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(76 - 87) + 35",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "24"
+      }
+    },
+    {
+      "target": 89,
+      "nums": [
+        87,
+        12,
+        78,
+        9
+      ],
+      "completion": "(87 - 12) + 78 - 9 = 89\n\n<answer>(87 - 12) + 78 - 9</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(87 - 12) + 78 - 9",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "144"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        20,
+        31,
+        11,
+        70
+      ],
+      "completion": "(20 + 31) - 11 + 70 = 69\n\n<answer>(20 + 31) - 11 + 70</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(20 + 31) - 11 + 70",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "110"
+      }
+    },
+    {
+      "target": 43,
+      "nums": [
+        3,
+        62,
+        57
+      ],
+      "completion": "(62 - 3) + 57 = 43\n\n<answer>(62-3)+57</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(62-3)+57",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "116"
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        49,
+        11,
+        49
+      ],
+      "completion": "(49 - 11) + 49 = 10\n\n<answer>(49 - 11) + 49</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(49 - 11) + 49",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "87"
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        81,
+        46,
+        22
+      ],
+      "completion": "(81 - 46) + 22 = 13\n\n<answer>(81 - 46) + 22</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(81 - 46) + 22",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "57"
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        17,
+        46,
+        11,
+        14
+      ],
+      "completion": "(17 - 46) + 11 + 14 = 32\n\n<answer>(17 - 46) + 11 + 14</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(17 - 46) + 11 + 14",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-4"
+      }
+    },
+    {
+      "target": 70,
+      "nums": [
+        8,
+        26,
+        88
+      ],
+      "completion": "(88 - 26) + 8 = 70\n\n<answer>(88 - 26) + 8</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(88 - 26) + 8",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "70"
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        48,
+        40,
+        34
+      ],
+      "completion": "(48 - 40) + 34 = 26\n\n<answer>(48 - 40) + 34</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(48 - 40) + 34",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "42"
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        61,
+        48,
+        21,
+        29
+      ],
+      "completion": "(61 + 48) - 21 + 29 = 67\n\n<answer>(61 + 48) - 21 + 29</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(61 + 48) - 21 + 29",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "117"
+      }
+    },
+    {
+      "target": 61,
+      "nums": [
+        12,
+        97,
+        24
+      ],
+      "completion": "(12 + 97) - 24 = 61\n\n<answer>(12 + 97) - 24</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(12 + 97) - 24",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "85"
+      }
+    },
+    {
+      "target": 57,
+      "nums": [
+        68,
+        64,
+        80,
+        27
+      ],
+      "completion": "(68 - 64) + 80 - 27 = 57\n\n<answer>(68-64)+80-27</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(68-64)+80-27",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "57"
+      }
+    },
+    {
+      "target": 89,
+      "nums": [
+        49,
+        46,
+        69,
+        48
+      ],
+      "completion": "(49 + 46) - (48 - 69) = 89\n\n<answer>(49 + 46) - (48 - 69)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(49 + 46) - (48 - 69)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "116"
+      }
+    },
+    {
+      "target": 36,
+      "nums": [
+        10,
+        93,
+        98,
+        86
+      ],
+      "completion": "(93 - 10) + (98 - 86) = 36\n\n<answer>(93 - 10) + (98 - 86)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(93 - 10) + (98 - 86)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "95"
+      }
+    },
+    {
+      "target": 75,
+      "nums": [
+        94,
+        36,
+        5,
+        60
+      ],
+      "completion": "(94 - 36) + 5 + 60 = 75\n\n<answer>(94 - 36) + 5 + 60</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(94 - 36) + 5 + 60",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "123"
+      }
+    },
+    {
+      "target": 91,
+      "nums": [
+        97,
+        24,
+        1,
+        18
+      ],
+      "completion": "(97 - 24) + 1 + 18 = 91\n\n<answer>(97-24)+1+18</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(97-24)+1+18",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "92"
+      }
+    },
+    {
+      "target": 95,
+      "nums": [
+        8,
+        11,
+        76
+      ],
+      "completion": "(8 + 11) - 76 = 95\n\n<answer>(8 + 11) - 76</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(8 + 11) - 76",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-57"
+      }
+    },
+    {
+      "target": 22,
+      "nums": [
+        14,
+        11,
+        19
+      ],
+      "completion": "(14 + 11) - 19 = 22\n\n<answer>(14 + 11) - 19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(14 + 11) - 19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "6"
+      }
+    },
+    {
+      "target": 23,
+      "nums": [
+        9,
+        43,
+        1,
+        56
+      ],
+      "completion": "(9 + 43) - 1 + 56 = 23\n\n<answer>(9 + 43) - 1 + 56</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(9 + 43) - 1 + 56",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "107"
+      }
+    },
+    {
+      "target": 29,
+      "nums": [
+        73,
+        58,
+        87,
+        59
+      ],
+      "completion": "(73 + 58) - (87 - 59) = 29\n\n<answer>(73 + 58) - (87 - 59)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(73 + 58) - (87 - 59)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "103"
+      }
+    },
+    {
+      "target": 19,
+      "nums": [
+        50,
+        2,
+        18,
+        49
+      ],
+      "completion": "(50 - 2) + (18 + 49) = 19\n\n<answer>(50 - 2) + (18 + 49)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(50 - 2) + (18 + 49)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "115"
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        54,
+        16,
+        58,
+        35
+      ],
+      "completion": "(54 + 16) + (58 - 35) = 76\n\n<answer>(54 + 16) + (58 - 35)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(54 + 16) + (58 - 35)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "93"
+      }
+    },
+    {
+      "target": 75,
+      "nums": [
+        61,
+        20,
+        68,
+        2
+      ],
+      "completion": "(61 - 20) + 68 + 2 = 75\n\n<answer>(61-20)+68+2</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(61-20)+68+2",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "111"
+      }
+    },
+    {
+      "target": 29,
+      "nums": [
+        22,
+        34,
+        41
+      ],
+      "completion": "(22 + 34) - 41 = 29\n\n<answer>(22 + 34) - 41</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(22 + 34) - 41",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "15"
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        90,
+        99,
+        88
+      ],
+      "completion": "(90 + 99) - 88 = 80\n\n<answer>(90 + 99) - 88</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(90 + 99) - 88",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "101"
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        15,
+        67,
+        32
+      ],
+      "completion": "(15 + 67) - 32 = 50\n\n<answer>(15 + 67) - 32</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(15 + 67) - 32",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "50"
+      }
+    },
+    {
+      "target": 34,
+      "nums": [
+        31,
+        6,
+        3
+      ],
+      "completion": "(31 + 6) - 3 = 34\n\n<answer>(31 + 6) - 3</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 33,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(31 + 6) - 3",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "34"
+      }
+    },
+    {
+      "target": 53,
+      "nums": [
+        34,
+        73,
+        82,
+        3
+      ],
+      "completion": "(34 + 73 - 82) + 3 = 53\n\n<answer>(34 + 73 - 82) + 3</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(34 + 73 - 82) + 3",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "28"
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        13,
+        30,
+        43,
+        54
+      ],
+      "completion": "(13 + 30) - (43 - 54) = 54\n\n<answer>(13 + 30) - (43 - 54)</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(13 + 30) - (43 - 54)",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "54"
+      }
+    },
+    {
+      "target": 39,
+      "nums": [
+        70,
+        97,
+        5,
+        7
+      ],
+      "completion": "(70 - 97 + 5) / 7 = 39\n\n<answer>(70 - 97 + 5) / 7</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(70 - 97 + 5) / 7",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-22/7"
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        95,
+        41,
+        89
+      ],
+      "completion": "(95 - 41) + 89 = 35\n\n<answer>(95 - 41) + 89</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(95 - 41) + 89",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "143"
+      }
+    },
+    {
+      "target": 81,
+      "nums": [
+        70,
+        38,
+        37,
+        3
+      ],
+      "completion": "(70 - 38) + 37 + 3 = 81\n\n<answer>(70 - 38) + 37 + 3</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(70 - 38) + 37 + 3",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "72"
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        81,
+        70,
+        20,
+        76
+      ],
+      "completion": "(81 - 70) + 20 + 76 = 45\n\n<answer>(81 - 70) + 20 + 76</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(81 - 70) + 20 + 76",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "107"
+      }
+    },
+    {
+      "target": 73,
+      "nums": [
+        71,
+        18,
+        77,
+        57
+      ],
+      "completion": "(71 + 18) - 77 + 57 = 73\n\n<answer>(71 + 18) - 77 + 57</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(71 + 18) - 77 + 57",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "69"
+      }
+    },
+    {
+      "target": 97,
+      "nums": [
+        30,
+        61,
+        66
+      ],
+      "completion": "(61 + 66) - 30 = 97\n\n<answer>(61+66)-30</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(61+66)-30",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "97"
+      }
+    },
+    {
+      "target": 56,
+      "nums": [
+        58,
+        69,
+        67
+      ],
+      "completion": "(69 - 58) + 67 = 56\n\n<answer>(69-58)+67</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(69-58)+67",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "78"
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        49,
+        53,
+        75
+      ],
+      "completion": "(49 + 53) - 75 = 27\n\n<answer>(49 + 53) - 75</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(49 + 53) - 75",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "27"
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        18,
+        81,
+        68,
+        65
+      ],
+      "completion": "(68 - 18) + (81 - 65) = 27\n\n<answer>(68-18)+(81-65)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 42,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(68-18)+(81-65)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "66"
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        47,
+        40,
+        54,
+        2
+      ],
+      "completion": "(47 - 40) + 54 - 2 = 49\n\n<answer>(47 - 40) + 54 - 2</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 - 40) + 54 - 2",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "59"
+      }
+    },
+    {
+      "target": 48,
+      "nums": [
+        13,
+        84,
+        49
+      ],
+      "completion": "(13 + 84) - 49 = 48\n\n<answer>(13 + 84) - 49</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(13 + 84) - 49",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        83,
+        28,
+        29
+      ],
+      "completion": "(83 - 28) + 29 = 82\n\n<answer>(83 - 28) + 29</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(83 - 28) + 29",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "84"
+      }
+    },
+    {
+      "target": 63,
+      "nums": [
+        21,
+        40,
+        2,
+        19
+      ],
+      "completion": "(21 - 40 + 2) * 19 = 63\n\n<answer>(21 - 40 + 2) * 19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(21 - 40 + 2) * 19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-323"
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        77,
+        68,
+        51,
+        78
+      ],
+      "completion": "(77 - 68) + 51 + 78 = 27\n\n<answer>(77-68)+51+78</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(77-68)+51+78",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "138"
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        41,
+        25,
+        64
+      ],
+      "completion": "(41 + 25) - 64 = 80\n\n<answer>(41 + 25) - 64</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(41 + 25) - 64",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "2"
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        11,
+        69,
+        9
+      ],
+      "completion": "(11 + 69) - 9 = 49\n\n<answer>(11 + 69) - 9</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(11 + 69) - 9",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "71"
+      }
+    },
+    {
+      "target": 18,
+      "nums": [
+        11,
+        3,
+        4
+      ],
+      "completion": "(11 + 3) - 4 = 18\n\n<answer>(11 + 3) - 4</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 33,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(11 + 3) - 4",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "10"
+      }
+    },
+    {
+      "target": 84,
+      "nums": [
+        39,
+        86,
+        18,
+        75
+      ],
+      "completion": "(39 + 86) - 18 + 75 = 84\n\n<answer>(39 + 86) - 18 + 75</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(39 + 86) - 18 + 75",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "182"
+      }
+    },
+    {
+      "target": 79,
+      "nums": [
+        25,
+        96,
+        42
+      ],
+      "completion": "(25 + 96) - 42 = 79\n\n<answer>(25 + 96) - 42</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(25 + 96) - 42",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "79"
+      }
+    },
+    {
+      "target": 30,
+      "nums": [
+        94,
+        44,
+        20
+      ],
+      "completion": "(94 - 44) + 20 = 30\n\n<answer>(94 - 44) + 20</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(94 - 44) + 20",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "70"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        2,
+        90,
+        74
+      ],
+      "completion": "(90 - 2) + 74 = 82\n\n<answer>(90 - 2) + 74</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(90 - 2) + 74",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "162"
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        1,
+        96,
+        27,
+        57
+      ],
+      "completion": "(96 - 27) + 57 - 1 = 45\n\n<answer>(96-27)+57-1</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(96-27)+57-1",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "125"
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        77,
+        87,
+        90,
+        97
+      ],
+      "completion": "(97 - 87) + 77 - 90 = 76\n\n<answer>(97-87)+77-90</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(97-87)+77-90",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-3"
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        77,
+        75,
+        76
+      ],
+      "completion": "(77 - 75) + 76 = 76\n\n<answer>(77 - 75) + 76</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(77 - 75) + 76",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "78"
+      }
+    },
+    {
+      "target": 92,
+      "nums": [
+        65,
+        13,
+        14
+      ],
+      "completion": "(65 - 13) + 14 = 92\n\n<answer>(65-13)+14</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(65-13)+14",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "66"
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        18,
+        66,
+        96,
+        55
+      ],
+      "completion": "(18 + 66) - 96 + 55 = 11\n\n<answer>(18 + 66) - 96 + 55</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(18 + 66) - 96 + 55",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "43"
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        3,
+        83,
+        27
+      ],
+      "completion": "(83 - 3) + 27 = 74\n\n<answer>(83-3)+27</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(83-3)+27",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "107"
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        12,
+        3,
+        19
+      ],
+      "completion": "(12 + 3) - 19 = 28\n\n<answer>(12 + 3) - 19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(12 + 3) - 19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-4"
+      }
+    },
+    {
+      "target": 41,
+      "nums": [
+        70,
+        31,
+        98,
+        44
+      ],
+      "completion": "(70 + 31) - 98 + 44 = 41\n\n<answer>(70 + 31) - 98 + 44</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(70 + 31) - 98 + 44",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "47"
+      }
+    },
+    {
+      "target": 44,
+      "nums": [
+        88,
+        52,
+        39,
+        41
+      ],
+      "completion": "(88 - 52) + (39 - 41) = 44\n\n<answer>(88 - 52) + (39 - 41)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(88 - 52) + (39 - 41)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "34"
+      }
+    },
+    {
+      "target": 61,
+      "nums": [
+        21,
+        84,
+        57
+      ],
+      "completion": "(21 + 84) - 57 = 61\n\n<answer>(21 + 84) - 57</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(21 + 84) - 57",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 38,
+      "nums": [
+        74,
+        18,
+        7,
+        90
+      ],
+      "completion": "(74 - 18) + 7 - 90 = 38\n\n<answer>(74 - 18) + 7 - 90</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(74 - 18) + 7 - 90",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-27"
+      }
+    },
+    {
+      "target": 93,
+      "nums": [
+        2,
+        69,
+        46,
+        2
+      ],
+      "completion": "(2 + 69 - 46) + 2 = 93\n\n<answer>(2 + 69 - 46) + 2</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(2 + 69 - 46) + 2",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "27"
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        35,
+        20,
+        68
+      ],
+      "completion": "(35 - 20) + 68 = 13\n\n<answer>(35 - 20) + 68</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(35 - 20) + 68",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "83"
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        13,
+        29,
+        26
+      ],
+      "completion": "(29 - 13) + 26 = 27\n\n<answer>(29 - 13) + 26</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(29 - 13) + 26",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "42"
+      }
+    },
+    {
+      "target": 10,
+      "nums": [
+        6,
+        41,
+        54,
+        79
+      ],
+      "completion": "(6 + 41) - 54 + 79 = 10\n\n<answer>(6 + 41) - 54 + 79</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(6 + 41) - 54 + 79",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "72"
+      }
+    },
+    {
+      "target": 89,
+      "nums": [
+        8,
+        41,
+        91,
+        37
+      ],
+      "completion": "(8 + 41) - 91 + 37 = 89\n\n<answer>(8 + 41) - 91 + 37</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(8 + 41) - 91 + 37",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-5"
+      }
+    },
+    {
+      "target": 19,
+      "nums": [
+        25,
+        51,
+        70,
+        56
+      ],
+      "completion": "(25 + 51) - 70 + 56 = 19\n\n<answer>(25 + 51) - 70 + 56</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(25 + 51) - 70 + 56",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "62"
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        76,
+        9,
+        39,
+        45
+      ],
+      "completion": "(76 + 9) - (39 - 45) = 72\n\n<answer>(76 + 9) - (39 - 45)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(76 + 9) - (39 - 45)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "91"
+      }
+    },
+    {
+      "target": 17,
+      "nums": [
+        76,
+        48,
+        32,
+        68
+      ],
+      "completion": "(76 - 48) + (32 - 68) = 17\n\n<answer>(76 - 48) + (32 - 68)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(76 - 48) + (32 - 68)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-8"
+      }
+    },
+    {
+      "target": 28,
+      "nums": [
+        72,
+        55,
+        7,
+        18
+      ],
+      "completion": "(72 - 55) + 7 + 18 = 28\n\n<answer>(72-55)+7+18</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(72-55)+7+18",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "42"
+      }
+    },
+    {
+      "target": 96,
+      "nums": [
+        11,
+        61,
+        24
+      ],
+      "completion": "(11 + 61 - 24) = 96\n\n<answer>(11 + 61 - 24)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 36,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(11 + 61 - 24)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 32,
+      "nums": [
+        15,
+        96,
+        45
+      ],
+      "completion": "(15 + 96) - 45 = 32\n\n<answer>(15 + 96) - 45</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(15 + 96) - 45",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "66"
+      }
+    },
+    {
+      "target": 63,
+      "nums": [
+        63,
+        98,
+        99
+      ],
+      "completion": "(98 - 63) + 99 = 63\n\n<answer>(98 - 63) + 99</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(98 - 63) + 99",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "134"
+      }
+    },
+    {
+      "target": 62,
+      "nums": [
+        52,
+        50,
+        68,
+        73
+      ],
+      "completion": "(52 + 50) - 68 + 73 = 62\n\n<answer>(52 + 50) - 68 + 73</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(52 + 50) - 68 + 73",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "107"
+      }
+    },
+    {
+      "target": 34,
+      "nums": [
+        58,
+        12,
+        2
+      ],
+      "completion": "(58 - 12) + 2 = 34\n\n<answer>(58-12)+2</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(58-12)+2",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 83,
+      "nums": [
+        21,
+        67,
+        37
+      ],
+      "completion": "(21 + 67) - 37 = 83\n\n<answer>(21+67)-37</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(21+67)-37",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "51"
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        47,
+        15,
+        66,
+        55
+      ],
+      "completion": "(47 - 15) + 66 + 55 = 54\n\n<answer>(47 - 15) + 66 + 55</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 - 15) + 66 + 55",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "153"
+      }
+    },
+    {
+      "target": 43,
+      "nums": [
+        37,
+        2,
+        1,
+        15
+      ],
+      "completion": "(37 - 2) + (15 - 1) = 43\n\n<answer>(37 - 2) + (15 - 1)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 42,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(37 - 2) + (15 - 1)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "49"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        66,
+        57,
+        60
+      ],
+      "completion": "(66 + 57) - 60 = 69\n\n<answer>(66 + 57) - 60</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(66 + 57) - 60",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "63"
+      }
+    },
+    {
+      "target": 77,
+      "nums": [
+        46,
+        70,
+        53
+      ],
+      "completion": "(46 + 70) - 53 = 77\n\n<answer>(46 + 70) - 53</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(46 + 70) - 53",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "63"
+      }
+    },
+    {
+      "target": 85,
+      "nums": [
+        20,
+        84,
+        20
+      ],
+      "completion": "(20 + 84) - 20 = 85\n\n<answer>(20 + 84) - 20</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(20 + 84) - 20",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "84"
+      }
+    },
+    {
+      "target": 73,
+      "nums": [
+        56,
+        66,
+        77,
+        28
+      ],
+      "completion": "(56 + 66) + (77 - 28) = 73\n\n<answer>(56 + 66) + (77 - 28)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(56 + 66) + (77 - 28)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "171"
+      }
+    },
+    {
+      "target": 19,
+      "nums": [
+        61,
+        30,
+        50
+      ],
+      "completion": "(61 - 30) + 50 = 19\n\n<answer>(61-30)+50</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(61-30)+50",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "81"
+      }
+    },
+    {
+      "target": 57,
+      "nums": [
+        33,
+        39,
+        57,
+        33
+      ],
+      "completion": "(33 + 39) - 57 + 33 = 57\n\n<answer>(33 + 39) - 57 + 33</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(33 + 39) - 57 + 33",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        30,
+        83,
+        55,
+        27
+      ],
+      "completion": "(30 + 83) - 55 + 27 = 82\n\n<answer>(30 + 83) - 55 + 27</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(30 + 83) - 55 + 27",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "85"
+      }
+    },
+    {
+      "target": 42,
+      "nums": [
+        87,
+        96,
+        77,
+        64
+      ],
+      "completion": "(87 - 96) + 77 + 64 = 42\n\n<answer>(87 - 96) + 77 + 64</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(87 - 96) + 77 + 64",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "132"
+      }
+    },
+    {
+      "target": 20,
+      "nums": [
+        35,
+        63,
+        30,
+        34
+      ],
+      "completion": "(35 + 63) - 30 + 34 = 20\n\n<answer>(35 + 63) - 30 + 34</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(35 + 63) - 30 + 34",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "102"
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        29,
+        2,
+        4,
+        33
+      ],
+      "completion": "(29 - 2) + (4 - 33) = 27\n\n<answer>(29 - 2) + (4 - 33)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 42,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(29 - 2) + (4 - 33)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-2"
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        78,
+        97,
+        80
+      ],
+      "completion": "(78 + 97) - 80 = 99\n\n<answer>(78 + 97) - 80</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(78 + 97) - 80",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "95"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        28,
+        87,
+        3,
+        5
+      ],
+      "completion": "(28 + 87) - 3 + 5 = 69\n\n<answer>(28 + 87) - 3 + 5</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(28 + 87) - 3 + 5",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "117"
+      }
+    },
+    {
+      "target": 52,
+      "nums": [
+        75,
+        50,
+        78
+      ],
+      "completion": "(75 - 50) + 78 = 52\n\n<answer>(75-50)+78</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(75-50)+78",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "103"
+      }
+    },
+    {
+      "target": 12,
+      "nums": [
+        11,
+        36,
+        33
+      ],
+      "completion": "(36 - 11) + 33 = 12\n\n<answer>(36 - 11) + 33</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(36 - 11) + 33",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "58"
+      }
+    },
+    {
+      "target": 100,
+      "nums": [
+        4,
+        85,
+        60
+      ],
+      "completion": "(85 - 4) + 60 = 100\n\n<answer>(85-4)+60</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 33,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(85-4)+60",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "141"
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        82,
+        46,
+        12,
+        80
+      ],
+      "completion": "(82 - 46) + (12 + 80) = 35\n\n<answer>(82 - 46) + (12 + 80)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(82 - 46) + (12 + 80)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "128"
+      }
+    },
+    {
+      "target": 24,
+      "nums": [
+        9,
+        77,
+        44
+      ],
+      "completion": "(9 + 77) - 44 = 24\n\n<answer>(9 + 77) - 44</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(9 + 77) - 44",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "42"
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        13,
+        5,
+        7,
+        91
+      ],
+      "completion": "(91 - 5) + 13 + 7 = 54\n\n<answer>(91-5)+13+7</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(91-5)+13+7",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "106"
+      }
+    },
+    {
+      "target": 36,
+      "nums": [
+        56,
+        74,
+        54
+      ],
+      "completion": "(56 - 74) + 54 = 36\n\n<answer>(56-74)+54</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(56-74)+54",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "36"
+      }
+    },
+    {
+      "target": 70,
+      "nums": [
+        47,
+        3,
+        57,
+        98
+      ],
+      "completion": "(47 + 3) - (57 - 98) = 70\n\n<answer>(47 + 3) - (57 - 98)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 + 3) - (57 - 98)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "91"
+      }
+    },
+    {
+      "target": 73,
+      "nums": [
+        7,
+        66,
+        49
+      ],
+      "completion": "(7 + 66) - 49 = 73\n\n<answer>(7 + 66) - 49</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(7 + 66) - 49",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "24"
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        56,
+        6,
+        14,
+        38
+      ],
+      "completion": "(56 - 6) + (14 - 38) = 26\n\n<answer>(56 - 6) + (14 - 38)</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(56 - 6) + (14 - 38)",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "26"
+      }
+    },
+    {
+      "target": 17,
+      "nums": [
+        33,
+        91,
+        18,
+        94
+      ],
+      "completion": "(91 - 33) + 18 + 94 = 17\n\n<answer>(91 - 33) + 18 + 94</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(91 - 33) + 18 + 94",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "170"
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        83,
+        73,
+        3,
+        40
+      ],
+      "completion": "(83 - 73) + 3 + 40 = 72\n\n<answer>(83 - 73) + 3 + 40</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(83 - 73) + 3 + 40",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "53"
+      }
+    },
+    {
+      "target": 76,
+      "nums": [
+        80,
+        88,
+        22
+      ],
+      "completion": "(80 + 88) - 22 = 76\n\n<answer>(80 + 88) - 22</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(80 + 88) - 22",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "146"
+      }
+    },
+    {
+      "target": 15,
+      "nums": [
+        50,
+        1,
+        7,
+        6
+      ],
+      "completion": "(50 - 1) + 7 + 6 = 15\n\n<answer>(50-1)+7+6</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(50-1)+7+6",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "62"
+      }
+    },
+    {
+      "target": 17,
+      "nums": [
+        24,
+        4,
+        68,
+        7
+      ],
+      "completion": "(24 - 4) + 68 - 7 = 17\n\n<answer>(24 - 4) + 68 - 7</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(24 - 4) + 68 - 7",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "81"
+      }
+    },
+    {
+      "target": 95,
+      "nums": [
+        10,
+        79,
+        5,
+        90
+      ],
+      "completion": "(90 - 79) + 10 + 5 = 95\n\n<answer>(90 - 79) + 10 + 5</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(90 - 79) + 10 + 5",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "26"
+      }
+    },
+    {
+      "target": 75,
+      "nums": [
+        66,
+        66,
+        75,
+        34
+      ],
+      "completion": "(66 + 66) + 75 - 34 = 75\n\n<answer>(66 + 66) + 75 - 34</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(66 + 66) + 75 - 34",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "173"
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        10,
+        45,
+        3,
+        12
+      ],
+      "completion": "(10 + 45) - 3 + 12 = 45\n\n<answer>(10 + 45) - 3 + 12</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(10 + 45) - 3 + 12",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "64"
+      }
+    },
+    {
+      "target": 21,
+      "nums": [
+        73,
+        77,
+        14,
+        45
+      ],
+      "completion": "(73 + 77) - 14 + 45 = 21\n\n<answer>(73 + 77) - 14 + 45</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(73 + 77) - 14 + 45",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "181"
+      }
+    },
+    {
+      "target": 84,
+      "nums": [
+        11,
+        24,
+        71
+      ],
+      "completion": "(24 - 11) + 71 = 84\n\n<answer>(24-11)+71</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(24-11)+71",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "84"
+      }
+    },
+    {
+      "target": 20,
+      "nums": [
+        50,
+        73,
+        68,
+        71
+      ],
+      "completion": "(50 + 73) - 68 + 71 = 20\n\n<answer>(50 + 73) - 68 + 71</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(50 + 73) - 68 + 71",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "126"
+      }
+    },
+    {
+      "target": 99,
+      "nums": [
+        78,
+        30,
+        63,
+        33
+      ],
+      "completion": "(78 - 30) + (63 - 33) = 99\n\n<answer>(78 - 30) + (63 - 33)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(78 - 30) + (63 - 33)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "78"
+      }
+    },
+    {
+      "target": 35,
+      "nums": [
+        86,
+        84,
+        49,
+        92
+      ],
+      "completion": "(86 - 84) + 49 + 92 = 35\n\n<answer>(86 - 84) + 49 + 92</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(86 - 84) + 49 + 92",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "143"
+      }
+    },
+    {
+      "target": 46,
+      "nums": [
+        80,
+        47,
+        13
+      ],
+      "completion": "(80 - 47) + 13 = 46\n\n<answer>(80 - 47) + 13</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(80 - 47) + 13",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "46"
+      }
+    },
+    {
+      "target": 65,
+      "nums": [
+        25,
+        5,
+        8
+      ],
+      "completion": "(25 - 5) + 8 = 65\n\n<answer>(25-5)+8</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 30,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(25-5)+8",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "28"
+      }
+    },
+    {
+      "target": 31,
+      "nums": [
+        33,
+        30,
+        49,
+        44
+      ],
+      "completion": "(33 + 30) - (49 - 44) = 31\n\n<answer>(33 + 30) - (49 - 44)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(33 + 30) - (49 - 44)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "58"
+      }
+    },
+    {
+      "target": 29,
+      "nums": [
+        59,
+        44,
+        2
+      ],
+      "completion": "(59 - 44) + 2 = 29\n\n<answer>(59 - 44) + 2</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(59 - 44) + 2",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "17"
+      }
+    },
+    {
+      "target": 22,
+      "nums": [
+        43,
+        23,
+        43
+      ],
+      "completion": "(43 - 23) + 43 = 22\n\n<answer>(43 - 23) + 43</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(43 - 23) + 43",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "63"
+      }
+    },
+    {
+      "target": 59,
+      "nums": [
+        40,
+        76,
+        4
+      ],
+      "completion": "(40 + 76) - 4 = 59\n\n<answer>(40 + 76) - 4</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(40 + 76) - 4",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "112"
+      }
+    },
+    {
+      "target": 55,
+      "nums": [
+        6,
+        42,
+        19
+      ],
+      "completion": "(6 + 42) - 19 = 55\n\n<answer>(6 + 42) - 19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(6 + 42) - 19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "29"
+      }
+    },
+    {
+      "target": 50,
+      "nums": [
+        19,
+        5,
+        6,
+        7
+      ],
+      "completion": "(19 - 5) + 6 + 7 = 50\n\n<answer>(19 - 5) + 6 + 7</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(19 - 5) + 6 + 7",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "27"
+      }
+    },
+    {
+      "target": 23,
+      "nums": [
+        42,
+        54,
+        35
+      ],
+      "completion": "(42 + 54) - 35 = 23\n\n<answer>(42 + 54) - 35</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(42 + 54) - 35",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "61"
+      }
+    },
+    {
+      "target": 86,
+      "nums": [
+        18,
+        23,
+        81
+      ],
+      "completion": "(18 + 23) - 81 = 86\n\n<answer>(18 + 23) - 81</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(18 + 23) - 81",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-40"
+      }
+    },
+    {
+      "target": 75,
+      "nums": [
+        2,
+        62,
+        15,
+        11
+      ],
+      "completion": "(2 + 62 - 15) * 11 = 75\n\n<answer>(2 + 62 - 15) * 11</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(2 + 62 - 15) * 11",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "539"
+      }
+    },
+    {
+      "target": 18,
+      "nums": [
+        27,
+        3,
+        27
+      ],
+      "completion": "(27 - 3) + 27 = 18\n\n<answer>(27 - 3) + 27</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(27 - 3) + 27",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "51"
+      }
+    },
+    {
+      "target": 69,
+      "nums": [
+        53,
+        78,
+        18,
+        51
+      ],
+      "completion": "(53 + 78) - 18 + 51 = 69\n\n<answer>(53 + 78) - 18 + 51</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(53 + 78) - 18 + 51",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "164"
+      }
+    },
+    {
+      "target": 62,
+      "nums": [
+        6,
+        48,
+        95,
+        87
+      ],
+      "completion": "(95 - 6) + 48 + 87 = 62\n\n<answer>(95-6)+48+87</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(95-6)+48+87",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "224"
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        80,
+        77,
+        14,
+        78
+      ],
+      "completion": "(80 + 77) - 14 + 78 = 67\n\n<answer>(80 + 77) - 14 + 78</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(80 + 77) - 14 + 78",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "221"
+      }
+    },
+    {
+      "target": 44,
+      "nums": [
+        33,
+        49,
+        7,
+        4
+      ],
+      "completion": "(33 + 49) - 7 + 4 = 44\n\n<answer>(33 + 49) - 7 + 4</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(33 + 49) - 7 + 4",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "79"
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        3,
+        55,
+        66,
+        60
+      ],
+      "completion": "(66 - 55) + 3 + 60 = 33\n\n<answer>(66-55)+3+60</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(66-55)+3+60",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "74"
+      }
+    },
+    {
+      "target": 81,
+      "nums": [
+        30,
+        22,
+        19,
+        9
+      ],
+      "completion": "(30 - 22) + (19 - 9) = 81\n\n<answer>(30 - 22) + (19 - 9)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(30 - 22) + (19 - 9)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "18"
+      }
+    },
+    {
+      "target": 60,
+      "nums": [
+        5,
+        25,
+        30
+      ],
+      "completion": "(25 - 5) + 30 = 60\n\n<answer>(25-5)+30</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(25-5)+30",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "50"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        9,
+        62,
+        81,
+        53
+      ],
+      "completion": "(9 + 62) - (81 - 53) = 82\n\n<answer>(9 + 62) - (81 - 53)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(9 + 62) - (81 - 53)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "43"
+      }
+    },
+    {
+      "target": 97,
+      "nums": [
+        33,
+        30,
+        93,
+        66
+      ],
+      "completion": "(33 + 30) - 93 + 66 = 97\n\n<answer>(33 + 30) - 93 + 66</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(33 + 30) - 93 + 66",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "36"
+      }
+    },
+    {
+      "target": 16,
+      "nums": [
+        95,
+        11,
+        8,
+        92
+      ],
+      "completion": "(95 - 11) + 8 + 92 = 16\n\n<answer>(95 - 11) + 8 + 92</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(95 - 11) + 8 + 92",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "184"
+      }
+    },
+    {
+      "target": 65,
+      "nums": [
+        31,
+        59,
+        4,
+        1
+      ],
+      "completion": "(31 + 59) - 4 + 1 = 65\n\n<answer>(31 + 59) - 4 + 1</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(31 + 59) - 4 + 1",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "87"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        19,
+        17,
+        80
+      ],
+      "completion": "(19 + 17) - 80 = 82\n\n<answer>(19 + 17) - 80</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(19 + 17) - 80",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-44"
+      }
+    },
+    {
+      "target": 25,
+      "nums": [
+        87,
+        43,
+        8,
+        77
+      ],
+      "completion": "(87 - 43) + 8 + 77 = 25\n\n<answer>(87-43)+8+77</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(87-43)+8+77",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "129"
+      }
+    },
+    {
+      "target": 86,
+      "nums": [
+        36,
+        45,
+        5
+      ],
+      "completion": "(36 + 45) - 5 = 86\n\n<answer>(36 + 45) - 5</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(36 + 45) - 5",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "76"
+      }
+    },
+    {
+      "target": 26,
+      "nums": [
+        38,
+        32,
+        20
+      ],
+      "completion": "(38 - 32) + 20 = 26\n\n<answer>(38 - 32) + 20</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(38 - 32) + 20",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "26"
+      }
+    },
+    {
+      "target": 87,
+      "nums": [
+        16,
+        31,
+        2,
+        64
+      ],
+      "completion": "(16 + 2) + (31 - 64) = 87\n\n<answer>(16 + 2) + (31 - 64)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(16 + 2) + (31 - 64)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-15"
+      }
+    },
+    {
+      "target": 44,
+      "nums": [
+        99,
+        77,
+        2,
+        77
+      ],
+      "completion": "(99 - 77) + 2 = 44\n\n<answer>(99 - 77) + 2</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(99 - 77) + 2",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          77
+        ],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 63,
+      "nums": [
+        65,
+        77,
+        22,
+        47
+      ],
+      "completion": "(65 - 77) + 22 + 47 = 63\n\n<answer>(65-77)+22+47</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(65-77)+22+47",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "57"
+      }
+    },
+    {
+      "target": 90,
+      "nums": [
+        12,
+        55,
+        47
+      ],
+      "completion": "(12 + 55 - 47) = 90\n\n<answer>(12 + 55 - 47)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 36,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(12 + 55 - 47)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "20"
+      }
+    },
+    {
+      "target": 78,
+      "nums": [
+        27,
+        78,
+        64,
+        64
+      ],
+      "completion": "(27 + 64) - 64 + 78 = 78\n\n<answer>(27 + 64) - 64 + 78</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 45,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(27 + 64) - 64 + 78",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "105"
+      }
+    },
+    {
+      "target": 38,
+      "nums": [
+        2,
+        61,
+        68,
+        8
+      ],
+      "completion": "(61 + 68) - 2 + 8 = 38\n\n<answer>(61+68)-2+8</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(61+68)-2+8",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "135"
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        19,
+        59,
+        51,
+        72
+      ],
+      "completion": "(59 - 19) + (51 + 72) = 45\n\n<answer>(59 - 19) + (51 + 72)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(59 - 19) + (51 + 72)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "163"
+      }
+    },
+    {
+      "target": 48,
+      "nums": [
+        4,
+        60,
+        49,
+        42
+      ],
+      "completion": "(4 + 60) - (49 - 42) = 48\n\n<answer>(4 + 60) - (49 - 42)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(4 + 60) - (49 - 42)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "57"
+      }
+    },
+    {
+      "target": 93,
+      "nums": [
+        8,
+        42,
+        84,
+        41
+      ],
+      "completion": "(84 - 42) + 41 = 93\n\n<answer>(84-42)+41</answer>\n",
+      "valid": false,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": false,
+        "diagnostic_correct": false,
+        "diagnostic_valid": false,
+        "expression": "(84-42)+41",
+        "answer_source": "answer_block",
+        "failure": "number_mismatch",
+        "truncated": false,
+        "missing_numbers": [
+          8
+        ],
+        "extra_numbers": []
+      }
+    },
+    {
+      "target": 15,
+      "nums": [
+        45,
+        23,
+        43,
+        17
+      ],
+      "completion": "(45 - 23) + (43 - 17) = 15\n\n<answer>(45 - 23) + (43 - 17)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(45 - 23) + (43 - 17)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 81,
+      "nums": [
+        63,
+        26,
+        44
+      ],
+      "completion": "(63 - 26) + 44 = 81\n\n<answer>(63-26)+44</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(63-26)+44",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "81"
+      }
+    },
+    {
+      "target": 67,
+      "nums": [
+        99,
+        1,
+        9,
+        42
+      ],
+      "completion": "(99 - 1 + 9) * 42 = 67\n\n<answer>(99 - 1 + 9) * 42</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(99 - 1 + 9) * 42",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "4494"
+      }
+    },
+    {
+      "target": 27,
+      "nums": [
+        54,
+        32,
+        31,
+        3
+      ],
+      "completion": "(54 - 32) + (31 - 3) = 27\n\n<answer>(54 - 32) + (31 - 3)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 44,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(54 - 32) + (31 - 3)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "50"
+      }
+    },
+    {
+      "target": 51,
+      "nums": [
+        62,
+        31,
+        53
+      ],
+      "completion": "(62 - 31) + 53 = 51\n\n<answer>(62 - 31) + 53</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(62 - 31) + 53",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "84"
+      }
+    },
+    {
+      "target": 80,
+      "nums": [
+        95,
+        9,
+        54,
+        3
+      ],
+      "completion": "(95 - 9) + 54 - 3 = 80\n\n<answer>(95 - 9) + 54 - 3</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 41,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(95 - 9) + 54 - 3",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "137"
+      }
+    },
+    {
+      "target": 12,
+      "nums": [
+        48,
+        15,
+        19
+      ],
+      "completion": "(48 - 15) + 19 = 12\n\n<answer>(48 - 15) + 19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(48 - 15) + 19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "52"
+      }
+    },
+    {
+      "target": 40,
+      "nums": [
+        92,
+        96,
+        10
+      ],
+      "completion": "(92 + 96) - 10 = 40\n\n<answer>(92+96)-10</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(92+96)-10",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "178"
+      }
+    },
+    {
+      "target": 74,
+      "nums": [
+        71,
+        51,
+        54
+      ],
+      "completion": "(71 + 51) - 54 = 74\n\n<answer>(71 + 51) - 54</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(71 + 51) - 54",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "68"
+      }
+    },
+    {
+      "target": 98,
+      "nums": [
+        47,
+        32,
+        19
+      ],
+      "completion": "(47 - 32) + 19 = 98\n\n<answer>(47 - 32) + 19</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 - 32) + 19",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "34"
+      }
+    },
+    {
+      "target": 33,
+      "nums": [
+        4,
+        61,
+        71
+      ],
+      "completion": "(61 - 4) + 71 = 33\n\n<answer>(61-4)+71</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 32,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(61-4)+71",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "128"
+      }
+    },
+    {
+      "target": 37,
+      "nums": [
+        60,
+        62,
+        75,
+        1
+      ],
+      "completion": "(60 + 62) - 75 + 1 = 37\n\n<answer>(60 + 62) - 75 + 1</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(60 + 62) - 75 + 1",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 17,
+      "nums": [
+        45,
+        57,
+        6
+      ],
+      "completion": "(45 - 57) + 6 = 17\n\n<answer>(45 - 57) + 6</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(45 - 57) + 6",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-6"
+      }
+    },
+    {
+      "target": 49,
+      "nums": [
+        72,
+        41,
+        74,
+        65
+      ],
+      "completion": "(72 + 41) - (74 - 65) = 49\n\n<answer>(72 + 41) - (74 - 65)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(72 + 41) - (74 - 65)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "104"
+      }
+    },
+    {
+      "target": 88,
+      "nums": [
+        7,
+        15,
+        11
+      ],
+      "completion": "(15 - 7) + 11 = 88\n\n<answer>(15 - 7) + 11</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 35,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(15 - 7) + 11",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "19"
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        52,
+        26,
+        1,
+        21
+      ],
+      "completion": "(52 - 26) + 1 + 21 = 13\n\n<answer>(52-26)+1+21</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 39,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(52-26)+1+21",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "48"
+      }
+    },
+    {
+      "target": 11,
+      "nums": [
+        80,
+        54,
+        9,
+        28
+      ],
+      "completion": "(80 - 54) + 9 - 28 = 11\n\n<answer>(80 - 54) + 9 - 28</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(80 - 54) + 9 - 28",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "7"
+      }
+    },
+    {
+      "target": 13,
+      "nums": [
+        52,
+        93,
+        54
+      ],
+      "completion": "(52 + 93) - 54 = 13\n\n<answer>(52+93)-54</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(52+93)-54",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "91"
+      }
+    },
+    {
+      "target": 82,
+      "nums": [
+        99,
+        80,
+        97
+      ],
+      "completion": "(99 - 80) + 97 = 82\n\n<answer>(99 - 80) + 97</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(99 - 80) + 97",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "116"
+      }
+    },
+    {
+      "target": 54,
+      "nums": [
+        73,
+        43,
+        62
+      ],
+      "completion": "(73 - 43) + 62 = 54\n\n<answer>(73-43)+62</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(73-43)+62",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "92"
+      }
+    },
+    {
+      "target": 96,
+      "nums": [
+        59,
+        44,
+        20,
+        52
+      ],
+      "completion": "(59 - 44) + (20 + 52) = 96\n\n<answer>(59 - 44) + (20 + 52)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 46,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(59 - 44) + (20 + 52)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "87"
+      }
+    },
+    {
+      "target": 45,
+      "nums": [
+        18,
+        21,
+        15
+      ],
+      "completion": "(18 + 21) - 15 = 45\n\n<answer>(18 + 21) - 15</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(18 + 21) - 15",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "24"
+      }
+    },
+    {
+      "target": 72,
+      "nums": [
+        47,
+        79,
+        40
+      ],
+      "completion": "(47 + 79) - 40 = 72\n\n<answer>(47 + 79) - 40</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 37,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(47 + 79) - 40",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "86"
+      }
+    },
+    {
+      "target": 92,
+      "nums": [
+        13,
+        68,
+        56,
+        8
+      ],
+      "completion": "(13 + 68) - 56 + 8 = 92\n\n<answer>(13 + 68) - 56 + 8</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 43,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(13 + 68) - 56 + 8",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "33"
+      }
+    },
+    {
+      "target": 97,
+      "nums": [
+        13,
+        6,
+        4,
+        56
+      ],
+      "completion": "(13 + 6) + (4 - 56) = 97\n\n<answer>(13 + 6) + (4 - 56)</answer>\n",
+      "valid": true,
+      "correct": false,
+      "generated_tokens": 42,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": false,
+        "strict_valid": true,
+        "diagnostic_correct": false,
+        "diagnostic_valid": true,
+        "expression": "(13 + 6) + (4 - 56)",
+        "answer_source": "answer_block",
+        "failure": "wrong_value",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "-33"
+      }
+    },
+    {
+      "target": 88,
+      "nums": [
+        81,
+        16,
+        23
+      ],
+      "completion": "(81 - 16) + 23 = 88\n\n<answer>(81-16)+23</answer>\n",
+      "valid": true,
+      "correct": true,
+      "generated_tokens": 34,
+      "truncated": false,
+      "diagnostic": {
+        "strict_correct": true,
+        "strict_valid": true,
+        "diagnostic_correct": true,
+        "diagnostic_valid": true,
+        "expression": "(81-16)+23",
+        "answer_source": "answer_block",
+        "failure": "correct",
+        "truncated": false,
+        "missing_numbers": [],
+        "extra_numbers": [],
+        "value": "88"
+      }
+    }
+  ]
+}

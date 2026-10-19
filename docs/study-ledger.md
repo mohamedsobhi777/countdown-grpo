@@ -476,3 +476,22 @@ committed W&B checkpoints and logged training samples.
   still improving at step 300 or has it plateaued? Intermediate-checkpoint
   differences are descriptive: six checkpoints per run, three seeds, no
   multiplicity-adjusted tests.
+
+### Checkpoint trajectory: results, 2026-10-20
+
+All 37 evaluations (base + 6 runs x 6 checkpoints) ran from clean commits
+(`5c7a723`, `d289216`) in W&B group `checkpoint-trajectory-v1`. Five earlier step-300
+evaluations that recorded a dirty tree (untracked analysis files only) are tagged
+`superseded-dirty-tree` and excluded; their results were identical.
+Gates: all six step-300 re-evaluations reproduce the published per-puzzle
+completions and scores exactly; all 57,600 recomputed training rewards equal the
+logged rewards. Analysis run `qwa5nu97`; results in
+`results/study/checkpoint-trajectory`.
+
+Answers: (1) no shaped run learned and then collapsed; 70-94% of held-out answers were
+valid but wrong by step 50 and 89-100% by step 100, and every shaped run ends within 3 pp of
+its best checkpoint while binary seeds 42/44 rise 2->80 and 14->84. (2) Bonus-only training
+samples became the majority at steps 54/44/34 (shaped 42/43/44). (3) Binary seed 43 had zero
+reward and exactly zero gradient for steps 1-76 (step-50 LoRA B all zero; completions
+identical to base on 256/256), every held-out output hit the cap at steps 100-200, then
+it reached 10 and 13 solves at 250 and 300: a late start that was still improving. Descriptive, three seeds.

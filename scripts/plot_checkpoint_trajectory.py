@@ -53,14 +53,14 @@ def main():
             ax.set_axisbelow(True)
     for ax in axes[1]:
         ax.set(xlabel='Training step', xlim=(-5, 305))
-    axes[0, 0].legend(loc='upper center', bbox_to_anchor=(1.1, -1.38), frameon=False, ncol=6, fontsize=8.5)
+    axes[0, 0].legend(loc='upper left', frameon=False, ncol=2, fontsize=8.5)
     fig.suptitle('How the validity bonus takes over · laptop controlled grid · checkpoints every 50 steps', fontsize=12)
     fig.supxlabel('Top: 256 fixed held-out puzzles; step 0 is the base model. Bottom: 32 sampled completions per step, '
                   'scored with the training verifier.\nSolid = binary reward, dashed = +0.05 validity bonus. '
-                  'Per-checkpoint Wilson intervals are in summary.json.', fontsize=9, y=-.04)
+                  'Per-checkpoint Wilson intervals are in summary.json.', fontsize=9)
     destination = SOURCE.parent
     for extension in ('png', 'svg', 'pdf'):
-        fig.savefig(destination / f'checkpoint-trajectory.{extension}', dpi=180, bbox_inches='tight')
+        fig.savefig(destination / f'checkpoint-trajectory.{extension}', dpi=180)
     plt.close(fig)
     (destination / 'checkpoint-trajectory-metadata.json').write_text(json.dumps({
         'source': str(SOURCE), 'source_sha256': hashlib.sha256(raw).hexdigest(),

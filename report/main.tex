@@ -18,7 +18,7 @@ parser recovers the same correct counts when the answer-tag requirement is
 relaxed. This supports investigating arithmetic task improvement, while not
 establishing general reasoning or fully identifying the role of formatting.
 Increasing the pilot's output cap from 256 to 1024 tokens gained one solution
-while costing 3.85 times the evaluation time. Three completed three-number-only training seeds average 57.3\% on three-number puzzles and 11.3\% on four-number puzzles, with sample standard deviations of 5.5 and 3.1 percentage points. A completed six-run controlled comparison finds that adding a small bonus for valid but incorrect expressions lowered mean accuracy from 23.0\% to 5.7\% across three seeds: shaped checkpoints learned to emit valid, untruncated, mostly wrong expressions. Binary-reward accuracy itself varied from 5.1\% to 32.8\% across seeds. The live demo passed real CUDA and browser checks. Results below are explicitly scoped to their checkpoints and suites.
+while costing 3.85 times the evaluation time. Three completed three-number-only training seeds average 57.3\% on three-number puzzles and 11.3\% on four-number puzzles, with sample standard deviations of 5.5 and 3.1 percentage points. A completed six-run controlled comparison finds that adding a small bonus for valid but incorrect expressions lowered mean accuracy from 23.0\% to 5.7\% across three seeds: shaped checkpoints learned to emit valid, untruncated, mostly wrong expressions. Re-evaluating intermediate checkpoints shows that this takeover happened within the first 50--100 steps, after which shaped accuracy stayed flat while binary accuracy kept rising. Binary-reward accuracy itself varied from 5.1\% to 32.8\% across seeds; the weakest seed received no nonzero reward, and therefore no gradient, for its first 76 steps. The live demo passed real CUDA and browser checks. Results below are explicitly scoped to their checkpoints and suites.
 \end{abstract}
 
 \section{Question and experimental scope}
@@ -305,8 +305,8 @@ slightly better only on seed 43, where binary training largely failed. Three
 seeds support the direction rather than a precise effect size. Second, every
 shaped checkpoint produced short, never-truncated expressions that almost always used all
 inputs, yet 231--255 of 256 had wrong values. The bonus is reliably reachable,
-and the policy appears to settle on it instead of solving; the outcomes suggest
-this mechanism without establishing it causally. Third, binary reward is itself
+and the policy appears to settle on it instead of solving. The checkpoint
+trajectory in the next section shows when this happens. Third, binary reward is itself
 high-variance: seeds 42 and 44 reach 31--33\%, consistent with the 33.2\% pilot,
 while seed 43 reaches 5.1\% with mostly invalid or number-mismatched expressions.
 The archived Colab grid is not pooled with these runs; its only completed pair
@@ -314,6 +314,65 @@ The archived Colab grid is not pooled with these runs; its only completed pair
 \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/iph1agef}{aggregate analysis}
 and \href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/k74cqm73}{seed-44 pair archive}
 preserve the evidence.
+
+\section{Checkpoint trajectory: how the bonus takes over}
+This follow-up was pre-registered in the ledger before any result existed and adds
+no training. The step 50--300 checkpoints of all six laptop runs were evaluated
+on the original holdout with the unchanged protocol. Step 0 is the base model.
+The 32 completions sampled at each of the 300 training steps (57,600 in total)
+were also re-scored with the training verifier. Two integrity gates passed. Every
+step-300 re-evaluation reproduced the published per-puzzle completions and scores
+exactly, and every recomputed training reward equals the logged reward.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrrrrr}
+\toprule
+Held-out solves at step & 0 & 50 & 100 & 150 & 200 & 250 & 300\\
+\midrule
+Binary, seed 42 & 0 & 2 & 29 & 44 & 55 & 74 & 80\\
+Binary, seed 43 & 0 & 0 & 1 & 0 & 0 & 10 & 13\\
+Binary, seed 44 & 0 & 14 & 47 & 66 & 78 & 81 & 84\\
+Shaped, seed 42 & 0 & 1 & 1 & 2 & 1 & 1 & 1\\
+Shaped, seed 43 & 0 & 8 & 26 & 19 & 20 & 19 & 19\\
+Shaped, seed 44 & 0 & 24 & 24 & 19 & 20 & 20 & 24\\
+\bottomrule
+\end{tabular}
+\caption{Exact solves out of 256 held-out puzzles per checkpoint (greedy, 256-token cap).}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/checkpoint-trajectory.pdf}
+\caption{Held-out checkpoints (top) and training samples (bottom, 25-step rolling
+share of 32 samples per step). Solid lines use the binary reward; dashed lines add
+the 0.05 validity bonus.}
+\end{figure}
+
+The shaped runs did not learn and then collapse. They stopped improving almost
+immediately. By step 50, 70--94\% of their held-out answers were valid but wrong,
+and by step 100, 89--100\%. Each shaped run ends within three points of its best
+checkpoint, while binary seeds 42 and 44 kept improving through step 300 (from 2
+to 80 and from 14 to 84 solves). In training samples, valid-but-wrong answers
+became the majority at steps 54, 44, and 34 for shaped seeds 42, 43, and 44. At
+that point the matching binary runs rarely produced a correct sample. Shaped
+outputs stayed as short as the base model's (21--40 generated tokens on average)
+and were never truncated. The binary reward passes through a similar phase, with
+89/256 valid-but-wrong answers for seed 42 at step 100. Because it gives that
+phase no credit, the policy moves on.
+
+The failed binary seed 43 was a late start rather than a plateau. Its first
+correct training sample appeared at step 77, compared with steps 2 and 31 for
+seeds 44 and 42. Until then every group reward was zero, so every GRPO advantage
+and gradient was exactly zero. Its step-50 LoRA $B$ matrices are still all zero,
+and its step-50 completions match the base model's on all 256 puzzles. Every
+held-out answer then reached the token cap at steps 100--200, before the run
+recovered to 10 and 13 solves at steps 250 and 300. With three seeds and six
+checkpoints per run, these observations are descriptive. They support the
+mechanism proposed in the previous section but do not test other bonus values or
+longer budgets. Evidence: the
+\href{https://wandb.ai/mohamedsobhi777/countdown-grpo/runs/qwa5nu97}{trajectory analysis}
+and \texttt{results/study/checkpoint-trajectory}.
 
 \section{Completed output-budget experiment} The base model solved 0/256 at
 all three caps. The adapter solved 85/256 (33.2\%) at 256 tokens and 86/256
@@ -548,7 +607,7 @@ repository's \texttt{local-source-audit-seed43.json} and
 
 \section{Limitations}
 The original pilot is one seed on a 256-puzzle holdout. The three-seed transfer
-grid and the six-run laptop controlled reward grid are complete, but three seeds per reward describe direction and spread rather than a precise effect size; the shaping result concerns one bonus value (0.05) and one training budget. These results do not establish robust generalization. Training-dataset
+grid and the six-run laptop controlled reward grid are complete, but three seeds per reward describe direction and spread rather than a precise effect size; the shaping result concerns one bonus value (0.05) and one training budget. Binary seed 43 was still improving at step 300, so a longer budget could narrow the binary seed spread; this was not tested. Natural next experiments are smaller bonus values, a bonus that decays to zero, and longer binary training. These results do not establish robust generalization. Training-dataset
 deduplication cannot rule out exposure in pretraining. Strict success conflates
 arithmetic correctness with protocol compliance; the diagnostic is an imperfect
 post-hoc measure, not a causal decomposition. Long answers may contain useful
